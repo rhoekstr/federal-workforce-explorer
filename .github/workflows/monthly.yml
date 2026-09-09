@@ -34,7 +34,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r pipeline/requirements.txt
-      - name: Restore raw parquet from Releases (so lookups and history rebuild without re-downloading OPM)
+      - name: Restore published fact parquet from Releases (no OPM re-download for old months)
         run: python -m pipeline.restore --since "$SINCE"
       - name: Sync new OPM months
         id: sync

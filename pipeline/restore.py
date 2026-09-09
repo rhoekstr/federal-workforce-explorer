@@ -25,7 +25,7 @@ def _download(url: str, dest) -> None:
                 fh.write(chunk)
 
 
-def restore(since: str) -> int:
+def restore(since: str, include_raw: bool = False) -> int:
     manifest = mf.load()
     RAW.mkdir(parents=True, exist_ok=True)
     WORK.mkdir(parents=True, exist_ok=True)
@@ -39,7 +39,7 @@ def restore(since: str) -> int:
                 _download(entry["release_url"], fact)
                 n += 1
             raw = RAW / f"{dataset}_{yyyymm}_{entry['version']}.parquet"
-            if entry.get("raw_release_url") and not raw.exists():
+            if include_raw and entry.get("raw_release_url") and not raw.exists():
                 _download(entry["raw_release_url"], raw)
                 n += 1
     log.info("restored %d files", n)
@@ -50,4 +50,6 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     p = argparse.ArgumentParser()
     p.add_argument("--since", default="202501")
-    restore(p.parse_args().since)
+    p.add_argument("--raw", action="store_true", help="also restore raw parquet (needed only to rebuild lookups from scratch)")
+    a = p.parse_args()
+    restore(a.since, a.raw)

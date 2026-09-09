@@ -7,7 +7,9 @@
     "n": 15423,
     "parquet_bytes": 107724,
     "publish_date": "2026-04-30T18:44:41.752Z",
-    "release_url": null,
+    "raw_release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202601/accessions_202601_2.parquet",
+    "release_sha256": "9f57b9ea3c76efb0e1a8b2d82863c342d90ab20ed45efa6633a8afeefa790204",
+    "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202601/fact_accessions_202601.parquet",
     "rows_fact": 12020,
     "rows_source": 15423,
     "sha256": "9f57b9ea3c76efb0e1a8b2d82863c342d90ab20ed45efa6633a8afeefa790204",
@@ -100,7 +102,9 @@
     "n": 2035344,
     "parquet_bytes": 8630427,
     "publish_date": "2026-04-30T18:56:43.139Z",
-    "release_url": null,
+    "raw_release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202601/employment_202601_2.parquet",
+    "release_sha256": "f0d60143d459264512295222339f46f96c4beadf24946f749de8d8ffce5a240a",
+    "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202601/fact_employment_202601.parquet",
     "rows_fact": 1447423,
     "rows_source": 2035344,
     "sha256": "f0d60143d459264512295222339f46f96c4beadf24946f749de8d8ffce5a240a",
@@ -193,7 +197,9 @@
     "n": 37883,
     "parquet_bytes": 324716,
     "publish_date": "2026-04-30T18:50:44.361Z",
-    "release_url": null,
+    "raw_release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202601/separations_202601_2.parquet",
+    "release_sha256": "e64d533fe94f6879c36e6510890d5fa4f3ee980b124625a3106b879b1e1f54f9",
+    "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202601/fact_separations_202601.parquet",
     "rows_fact": 35117,
     "rows_source": 37883,
     "sha256": "e64d533fe94f6879c36e6510890d5fa4f3ee980b124625a3106b879b1e1f54f9",
@@ -280,7 +286,7 @@
    }
   }
  },
- "generated": "2026-09-09T23:00:21Z",
+ "generated": "2026-09-09T23:04:06Z",
  "money": {
   "fileb_periods": [
    "FY2026Q3",
