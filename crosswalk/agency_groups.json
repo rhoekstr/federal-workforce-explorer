@@ -1,0 +1,1856 @@
+{
+ "dod": {
+  "name": "Department of Defense (War)",
+  "fwd_agency_codes": [
+   "DD",
+   "AR",
+   "NV",
+   "AF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [
+   "ARCE"
+  ],
+  "usaspending_names": [
+   "Department of Defense"
+  ],
+  "omb_labels": [
+   "War--Military Programs"
+  ],
+  "fevs_labels": [
+   "Department of Defense, Overall"
+  ],
+  "method": "manual",
+  "note": "FWD splits Army, Navy, Air Force, and defense-wide; the Corps of Engineers civil works (ARCE) is carved out into its own group."
+ },
+ "usace": {
+  "name": "Corps of Engineers, Civil Works",
+  "fwd_agency_codes": [],
+  "fwd_org_codes": [
+   "ARCE"
+  ],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Corps of Engineers - Civil Works"
+  ],
+  "omb_labels": [
+   "Corps of Engineers--Civil Works"
+  ],
+  "fevs_labels": [],
+  "method": "manual",
+  "note": "Headcount is the Army sub-element ARCE."
+ },
+ "usaid": {
+  "name": "International Assistance Programs",
+  "fwd_agency_codes": [
+   "AM"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Agency for International Development"
+  ],
+  "omb_labels": [
+   "International Assistance Programs"
+  ],
+  "fevs_labels": [
+   "U.S. Agency for International Development"
+  ],
+  "method": "manual",
+  "note": "OMB's line pools USAID with other foreign assistance; USAID headcount is what FWD carries."
+ },
+ "treasury": {
+  "name": "Department Of Treasury",
+  "fwd_agency_codes": [
+   "TR"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of the Treasury"
+  ],
+  "omb_labels": [
+   "Treasury"
+  ],
+  "fevs_labels": [
+   "Department of the Treasury"
+  ],
+  "method": "manual"
+ },
+ "interior": {
+  "name": "Department Of Interior",
+  "fwd_agency_codes": [
+   "IN"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of the Interior"
+  ],
+  "omb_labels": [
+   "Interior"
+  ],
+  "fevs_labels": [
+   "Department of the Interior"
+  ],
+  "method": "manual"
+ },
+ "opm": {
+  "name": "Office Of Personnel Management",
+  "fwd_agency_codes": [
+   "OM"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Office of Personnel Management"
+  ],
+  "omb_labels": [
+   "Office of Personnel Management **"
+  ],
+  "fevs_labels": [
+   "Office of Personnel Management"
+  ],
+  "method": "manual"
+ },
+ "cfpb": {
+  "name": "cfpb",
+  "fwd_agency_codes": [
+   "FZ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Consumer Financial Protection Bureau"
+  ],
+  "omb_labels": [
+   "Bureau of Consumer Financial Protection"
+  ],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "dfc": {
+  "name": "Dfc",
+  "fwd_agency_codes": [
+   "GB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "U.S. International Development Finance Corporation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. International Development Finance Corporation"
+  ],
+  "method": "manual"
+ },
+ "csosa": {
+  "name": "Court Services And Offendr Supervsn Agy",
+  "fwd_agency_codes": [
+   "FQ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Court Services and Offender Supervision Agency"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Court Services and Offender Supervision Agency"
+  ],
+  "method": "manual"
+ },
+ "usagm": {
+  "name": "U.S.Agency For Global Media",
+  "fwd_agency_codes": [
+   "IB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "U.S. Agency for Global Media"
+  ],
+  "omb_labels": [
+   "U.S. Agency for Global Media"
+  ],
+  "fevs_labels": [
+   "U.S. Agency for Global Media"
+  ],
+  "method": "manual"
+ },
+ "eop": {
+  "name": "Executive Office of the President",
+  "fwd_agency_codes": [
+   "BO",
+   "EC",
+   "QQ",
+   "NS",
+   "TS",
+   "CE",
+   "EQ",
+   "DO",
+   "TN",
+   "ZS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Executive Office of the President"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Office of Management and Budget",
+   "Office of the U.S. Trade Representative"
+  ],
+  "method": "manual",
+  "note": "FWD lists EOP components as separate agencies; USAspending reports them as one."
+ },
+ "nea_neh": {
+  "name": "National Endowments for the Arts and Humanities",
+  "fwd_agency_codes": [
+   "AH"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Endowment for the Arts",
+   "National Endowment for the Humanities"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "National Endowment for the Arts",
+   "National Endowment for the Humanities"
+  ],
+  "method": "manual"
+ },
+ "fmcs": {
+  "name": "Fed Mediation And Conciliation Service",
+  "fwd_agency_codes": [
+   "FM"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Mediation and Conciliation Service"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Mediation and Conciliation Service"
+  ],
+  "method": "manual"
+ },
+ "oshrc": {
+  "name": "Occupational Safety & Health Review Cmsn",
+  "fwd_agency_codes": [
+   "OS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Occupational Safety and Health Review Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Occupational Safety and Health Review Commission"
+  ],
+  "method": "manual"
+ },
+ "csb": {
+  "name": "Chemical Safety/Hazard Investigation Bd",
+  "fwd_agency_codes": [
+   "FJ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "United States Chemical Safety Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. Chemical Safety and Hazard Investigation Board"
+  ],
+  "method": "manual"
+ },
+ "achp": {
+  "name": "Adv Council On Historic Preservation",
+  "fwd_agency_codes": [
+   "HP"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Advisory Council on Historic Preservation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Advisory Council on Historic Preservation"
+  ],
+  "method": "manual"
+ },
+ "abilityone": {
+  "name": "Cmte For Purch Frm Pple Blind Or Sev Dis",
+  "fwd_agency_codes": [
+   "HB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Committee for Purchase from People Who Are Blind or Severely Disabled"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "AbilityOne Commission"
+  ],
+  "method": "manual"
+ },
+ "udall": {
+  "name": "Morris K. Udall & Stewart L. Udall Found",
+  "fwd_agency_codes": [
+   "EO"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Morris K. Udall and Stewart L. Udall Foundation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "pclob": {
+  "name": "Privacy And Civil Liberties Oversight",
+  "fwd_agency_codes": [
+   "VD"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Privacy and Civil Liberties Oversight Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Privacy and Civil Liberties Oversight Board"
+  ],
+  "method": "manual"
+ },
+ "fmshrc": {
+  "name": "Fed Mine Safety And Health Review Cmsn",
+  "fwd_agency_codes": [
+   "RS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Mine Safety and Health Review Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "cigie": {
+  "name": "Council Of Insp. Gen. On Integ.& Effic.",
+  "fwd_agency_codes": [
+   "IG"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Council of the Inspectors General on Integrity and Efficiency"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "fpisc": {
+  "name": "Federal Permitting Improvement Steer",
+  "fwd_agency_codes": [
+   "WK"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Permitting Improvement Steering Council"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Permitting Improvement Steering Council"
+  ],
+  "method": "manual"
+ },
+ "heritage_abroad": {
+  "name": "Cmsn For Pres Of America'S Heritage Abrd",
+  "fwd_agency_codes": [
+   "BH"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Commission for the Preservation of America's Heritage Abroad"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "ffiec": {
+  "name": "Federal Financial Inst. Exam. Council",
+  "fwd_agency_codes": [
+   "FI"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Financial Institutions Examination Council"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "acus": {
+  "name": "Admin Conference Of The United States",
+  "fwd_agency_codes": [
+   "AA"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Administrative Conference of the U.S."
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "jusfc": {
+  "name": "Japan-United States Friendship Cmsn",
+  "fwd_agency_codes": [
+   "UJ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Japan-United States Friendship Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "access_board": {
+  "name": "Architectl & Trans Barrier Compliance Bd",
+  "fwd_agency_codes": [
+   "BT"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Access Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. Access Board"
+  ],
+  "method": "manual"
+ },
+ "truman": {
+  "name": "Harry S. Truman Scholarship Foundation",
+  "fwd_agency_codes": [
+   "HT"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Harry S Truman Scholarship Foundation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "madison": {
+  "name": "James Madison Memorial Fellowship Found",
+  "fwd_agency_codes": [
+   "BK"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "James Madison Memorial Fellowship Foundation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "goldwater": {
+  "name": "Barry Goldwater Schol & Excel In Ed Foun",
+  "fwd_agency_codes": [
+   "GE"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Barry Goldwater Scholarship and Excellence In Education Foundation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "manual"
+ },
+ "frtib": {
+  "name": "Federal Retirement Thrift Investment Board",
+  "fwd_agency_codes": [
+   "RF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Retirement Thrift Investment Board"
+  ],
+  "method": "manual"
+ },
+ "ibwc": {
+  "name": "International Boundary and Water Commission",
+  "fwd_agency_codes": [
+   "GW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [
+   "International Boundary and Water Commission"
+  ],
+  "method": "manual"
+ },
+ "smithsonian": {
+  "name": "Smithsonian Institution",
+  "fwd_agency_codes": [
+   "SM"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [
+   "Smithsonian Institution"
+  ],
+  "fevs_labels": [],
+  "method": "manual",
+  "note": "Trust instrumentality; not in USAspending account data."
+ },
+ "va": {
+  "name": "Department of Veterans Affairs",
+  "fwd_agency_codes": [
+   "VA"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Veterans Affairs"
+  ],
+  "omb_labels": [
+   "Veterans Affairs"
+  ],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "dhs": {
+  "name": "Department of Homeland Security",
+  "fwd_agency_codes": [
+   "HS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Homeland Security"
+  ],
+  "omb_labels": [
+   "Homeland Security"
+  ],
+  "fevs_labels": [
+   "Department of Homeland Security"
+  ],
+  "method": "normalized"
+ },
+ "doj": {
+  "name": "Department of Justice",
+  "fwd_agency_codes": [
+   "DJ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Justice"
+  ],
+  "omb_labels": [
+   "Justice"
+  ],
+  "fevs_labels": [
+   "Department of Justice"
+  ],
+  "method": "normalized"
+ },
+ "usda": {
+  "name": "Department of Agriculture",
+  "fwd_agency_codes": [
+   "AG"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Agriculture"
+  ],
+  "omb_labels": [
+   "Agriculture"
+  ],
+  "fevs_labels": [
+   "Department of Agriculture"
+  ],
+  "method": "normalized"
+ },
+ "hhs": {
+  "name": "Department of Health and Human Services",
+  "fwd_agency_codes": [
+   "HE"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Health and Human Services"
+  ],
+  "omb_labels": [
+   "Health and Human Services"
+  ],
+  "fevs_labels": [
+   "Department of Health and Human Services"
+  ],
+  "method": "normalized"
+ },
+ "dot": {
+  "name": "Department of Transportation",
+  "fwd_agency_codes": [
+   "TD"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Transportation"
+  ],
+  "omb_labels": [
+   "Transportation"
+  ],
+  "fevs_labels": [
+   "Department of Transportation"
+  ],
+  "method": "normalized"
+ },
+ "ssa": {
+  "name": "Social Security Administration",
+  "fwd_agency_codes": [
+   "SZ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Social Security Administration"
+  ],
+  "omb_labels": [
+   "Social Security Administration"
+  ],
+  "fevs_labels": [
+   "Social Security Administration"
+  ],
+  "method": "normalized"
+ },
+ "doc": {
+  "name": "Department of Commerce",
+  "fwd_agency_codes": [
+   "CM"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Commerce"
+  ],
+  "omb_labels": [
+   "Commerce"
+  ],
+  "fevs_labels": [
+   "Department of Commerce"
+  ],
+  "method": "normalized"
+ },
+ "nasa": {
+  "name": "National Aeronautics and Space Administration",
+  "fwd_agency_codes": [
+   "NN"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Aeronautics and Space Administration"
+  ],
+  "omb_labels": [
+   "National Aeronautics and Space Administration"
+  ],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "doe": {
+  "name": "Department of Energy",
+  "fwd_agency_codes": [
+   "DN"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Energy"
+  ],
+  "omb_labels": [
+   "Energy"
+  ],
+  "fevs_labels": [
+   "Department of Energy"
+  ],
+  "method": "normalized"
+ },
+ "epa": {
+  "name": "Environmental Protection Agency",
+  "fwd_agency_codes": [
+   "EP"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Environmental Protection Agency"
+  ],
+  "omb_labels": [
+   "Environmental Protection Agency"
+  ],
+  "fevs_labels": [
+   "Environmental Protection Agency"
+  ],
+  "method": "normalized"
+ },
+ "dos": {
+  "name": "Department of State",
+  "fwd_agency_codes": [
+   "ST"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of State"
+  ],
+  "omb_labels": [
+   "State"
+  ],
+  "fevs_labels": [
+   "Department of State"
+  ],
+  "method": "normalized"
+ },
+ "dol": {
+  "name": "Department of Labor",
+  "fwd_agency_codes": [
+   "DL"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Labor"
+  ],
+  "omb_labels": [
+   "Labor"
+  ],
+  "fevs_labels": [
+   "Department of Labor"
+  ],
+  "method": "normalized"
+ },
+ "gsa": {
+  "name": "General Services Administration",
+  "fwd_agency_codes": [
+   "GS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "General Services Administration"
+  ],
+  "omb_labels": [
+   "General Services Administration"
+  ],
+  "fevs_labels": [
+   "General Services Administration"
+  ],
+  "method": "normalized"
+ },
+ "hud": {
+  "name": "Department of Housing and Urban Development",
+  "fwd_agency_codes": [
+   "HU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Housing and Urban Development"
+  ],
+  "omb_labels": [
+   "Housing and Urban Development"
+  ],
+  "fevs_labels": [
+   "Department of Housing and Urban Development"
+  ],
+  "method": "normalized"
+ },
+ "sba": {
+  "name": "Small Business Administration",
+  "fwd_agency_codes": [
+   "SB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Small Business Administration"
+  ],
+  "omb_labels": [
+   "Small Business Administration"
+  ],
+  "fevs_labels": [
+   "Small Business Administration"
+  ],
+  "method": "normalized"
+ },
+ "fdic": {
+  "name": "Federal Deposit Insurance Corporation",
+  "fwd_agency_codes": [
+   "FD"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Deposit Insurance Corporation"
+  ],
+  "omb_labels": [
+   "Federal Deposit Insurance Corporation"
+  ],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "sec": {
+  "name": "Securities and Exchange Commission",
+  "fwd_agency_codes": [
+   "SE"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Securities and Exchange Commission"
+  ],
+  "omb_labels": [
+   "Securities and Exchange Commission"
+  ],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "nrc": {
+  "name": "Nuclear Regulatory Commission",
+  "fwd_agency_codes": [
+   "NU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Nuclear Regulatory Commission"
+  ],
+  "omb_labels": [
+   "Nuclear Regulatory Commission"
+  ],
+  "fevs_labels": [
+   "Nuclear Regulatory Commission"
+  ],
+  "method": "normalized"
+ },
+ "nara": {
+  "name": "National Archives and Records Administration",
+  "fwd_agency_codes": [
+   "NQ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Archives and Records Administration"
+  ],
+  "omb_labels": [
+   "National Archives and Records Administration"
+  ],
+  "fevs_labels": [
+   "National Archives and Records Administration"
+  ],
+  "method": "normalized"
+ },
+ "ed": {
+  "name": "Department of Education",
+  "fwd_agency_codes": [
+   "ED"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Department of Education"
+  ],
+  "omb_labels": [
+   "Education"
+  ],
+  "fevs_labels": [
+   "Department of Education"
+  ],
+  "method": "normalized"
+ },
+ "eeoc": {
+  "name": "Equal Employment Opportunity Commission",
+  "fwd_agency_codes": [
+   "EE"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Equal Employment Opportunity Commission"
+  ],
+  "omb_labels": [
+   "Equal Employment Opportunity Commission"
+  ],
+  "fevs_labels": [
+   "Equal Employment Opportunity Commission"
+  ],
+  "method": "normalized"
+ },
+ "lp": {
+  "name": "Government Publishing Office",
+  "fwd_agency_codes": [
+   "LP"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "fcc": {
+  "name": "Federal Communications Commission",
+  "fwd_agency_codes": [
+   "FC"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Communications Commission"
+  ],
+  "omb_labels": [
+   "Federal Communications Commission"
+  ],
+  "fevs_labels": [
+   "Federal Communications Commission"
+  ],
+  "method": "normalized"
+ },
+ "nsf": {
+  "name": "National Science Foundation",
+  "fwd_agency_codes": [
+   "NF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Science Foundation"
+  ],
+  "omb_labels": [
+   "National Science Foundation"
+  ],
+  "fevs_labels": [
+   "National Science Foundation"
+  ],
+  "method": "normalized"
+ },
+ "fr": {
+  "name": "Federal Reserve System",
+  "fwd_agency_codes": [
+   "FR"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "nlrb": {
+  "name": "National Labor Relations Board",
+  "fwd_agency_codes": [
+   "NL"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Labor Relations Board"
+  ],
+  "omb_labels": [
+   "National Labor Relations Board"
+  ],
+  "fevs_labels": [
+   "National Labor Relations Board"
+  ],
+  "method": "normalized"
+ },
+ "ftc": {
+  "name": "Federal Trade Commission",
+  "fwd_agency_codes": [
+   "FT"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Trade Commission"
+  ],
+  "omb_labels": [
+   "Federal Trade Commission"
+  ],
+  "fevs_labels": [
+   "Federal Trade Commission"
+  ],
+  "method": "normalized"
+ },
+ "ncua": {
+  "name": "National Credit Union Administration",
+  "fwd_agency_codes": [
+   "CU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Credit Union Administration"
+  ],
+  "omb_labels": [
+   "National Credit Union Administration"
+  ],
+  "fevs_labels": [
+   "National Credit Union Administration"
+  ],
+  "method": "normalized"
+ },
+ "pbgc": {
+  "name": "Pension Benefit Guaranty Corporation",
+  "fwd_agency_codes": [
+   "BG"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Pension Benefit Guaranty Corporation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Pension Benefit Guaranty Corporation"
+  ],
+  "method": "normalized"
+ },
+ "rrb": {
+  "name": "Railroad Retirement Board",
+  "fwd_agency_codes": [
+   "RR"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Railroad Retirement Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Railroad Retirement Board"
+  ],
+  "method": "normalized"
+ },
+ "pc": {
+  "name": "Peace Corps",
+  "fwd_agency_codes": [
+   "PU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Peace Corps"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Peace Corps"
+  ],
+  "method": "normalized"
+ },
+ "hf": {
+  "name": "Federal Housing Finance Agency",
+  "fwd_agency_codes": [
+   "HF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Housing Finance Agency"
+  ],
+  "method": "fwd_only"
+ },
+ "cftc": {
+  "name": "Commodity Futures Trading Commission",
+  "fwd_agency_codes": [
+   "CT"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Commodity Futures Trading Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Commodity Futures Trading Commission"
+  ],
+  "method": "normalized"
+ },
+ "cpsc": {
+  "name": "Consumer Product Safety Commission",
+  "fwd_agency_codes": [
+   "SK"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Consumer Product Safety Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Consumer Product Safety Commission"
+  ],
+  "method": "normalized"
+ },
+ "ntsb": {
+  "name": "National Transportation Safety Board",
+  "fwd_agency_codes": [
+   "TB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Transportation Safety Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "National Transportation Safety Board"
+  ],
+  "method": "normalized"
+ },
+ "usitc": {
+  "name": "International Trade Commission",
+  "fwd_agency_codes": [
+   "TC"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "International Trade Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. International Trade Commission"
+  ],
+  "method": "normalized"
+ },
+ "cncs": {
+  "name": "Corporation for National and Community Service",
+  "fwd_agency_codes": [
+   "KS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Corporation for National and Community Service"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Corporation for National and Community Service"
+  ],
+  "method": "normalized"
+ },
+ "exim": {
+  "name": "Export-Import Bank of the United States",
+  "fwd_agency_codes": [
+   "EB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Export-Import Bank of the United States"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Export-Import Bank of the United States"
+  ],
+  "method": "normalized"
+ },
+ "presidio": {
+  "name": "Presidio Trust",
+  "fwd_agency_codes": [
+   "GJ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Presidio Trust"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "fl": {
+  "name": "Farm Credit Administration",
+  "fwd_agency_codes": [
+   "FL"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Farm Credit Administration"
+  ],
+  "method": "fwd_only"
+ },
+ "afrh": {
+  "name": "Armed Forces Retirement Home",
+  "fwd_agency_codes": [
+   "RH"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Armed Forces Retirement Home"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "fec": {
+  "name": "Federal Election Commission",
+  "fwd_agency_codes": [
+   "LF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Election Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Election Commission"
+  ],
+  "method": "normalized"
+ },
+ "mcc": {
+  "name": "Millennium Challenge Corporation",
+  "fwd_agency_codes": [
+   "MI"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Millennium Challenge Corporation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "jl": {
+  "name": "Judicial Branch",
+  "fwd_agency_codes": [
+   "JL"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "mspb": {
+  "name": "Merit Systems Protection Board",
+  "fwd_agency_codes": [
+   "BD"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Merit Systems Protection Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Merit Systems Protection Board"
+  ],
+  "method": "normalized"
+ },
+ "osc": {
+  "name": "Office of Special Counsel",
+  "fwd_agency_codes": [
+   "FW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Office of Special Counsel"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. Office of Special Counsel"
+  ],
+  "method": "normalized"
+ },
+ "sss": {
+  "name": "Selective Service System",
+  "fwd_agency_codes": [
+   "SS"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Selective Service System"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Selective Service System"
+  ],
+  "method": "normalized"
+ },
+ "fmc": {
+  "name": "Federal Maritime Commission",
+  "fwd_agency_codes": [
+   "MC"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Maritime Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Maritime Commission"
+  ],
+  "method": "normalized"
+ },
+ "stb": {
+  "name": "Surface Transportation Board",
+  "fwd_agency_codes": [
+   "TW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Surface Transportation Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Surface Transportation Board"
+  ],
+  "method": "normalized"
+ },
+ "dnfsb": {
+  "name": "Defense Nuclear Facilities Safety Board",
+  "fwd_agency_codes": [
+   "BF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Defense Nuclear Facilities Safety Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Defense Nuclear Facilities Safety Board"
+  ],
+  "method": "normalized"
+ },
+ "hd": {
+  "name": "U.S. Holocaust Memorial Museum",
+  "fwd_agency_codes": [
+   "HD"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "abmc": {
+  "name": "American Battle Monuments Commission",
+  "fwd_agency_codes": [
+   "AB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "American Battle Monuments Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "American Battle Monuments Commission"
+  ],
+  "method": "normalized"
+ },
+ "flra": {
+  "name": "Federal Labor Relations Authority",
+  "fwd_agency_codes": [
+   "AU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Federal Labor Relations Authority"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Federal Labor Relations Authority"
+  ],
+  "method": "normalized"
+ },
+ "eac": {
+  "name": "Election Assistance Commission",
+  "fwd_agency_codes": [
+   "GQ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Election Assistance Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "oge": {
+  "name": "Office of Government Ethics",
+  "fwd_agency_codes": [
+   "GG"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Office of Government Ethics"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. Office of Government Ethics"
+  ],
+  "method": "normalized"
+ },
+ "ro": {
+  "name": "Medicaid & Chip Payment & Access Comm",
+  "fwd_agency_codes": [
+   "RO"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "usccr": {
+  "name": "Commission on Civil Rights",
+  "fwd_agency_codes": [
+   "CC"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Commission on Civil Rights"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Commission on Civil Rights"
+  ],
+  "method": "normalized"
+ },
+ "ustda": {
+  "name": "United States Trade and Development Agency",
+  "fwd_agency_codes": [
+   "EW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "United States Trade and Development Agency"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "U.S. Trade and Development Agency"
+  ],
+  "method": "normalized"
+ },
+ "ncpc": {
+  "name": "National Capital Planning Commission",
+  "fwd_agency_codes": [
+   "NP"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Capital Planning Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "National Capital Planning Commission"
+  ],
+  "method": "normalized"
+ },
+ "nmb": {
+  "name": "National Mediation Board",
+  "fwd_agency_codes": [
+   "NM"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Mediation Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "National Mediation Board"
+  ],
+  "method": "normalized"
+ },
+ "zp": {
+  "name": "U.S. Cmsn On Internatl Religious Freedom",
+  "fwd_agency_codes": [
+   "ZP"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "mmc": {
+  "name": "Marine Mammal Commission",
+  "fwd_agency_codes": [
+   "MA"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Marine Mammal Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Marine Mammal Commission"
+  ],
+  "method": "normalized"
+ },
+ "gx": {
+  "name": "Internat Boundary Cmsn: U.S. And Canada",
+  "fwd_agency_codes": [
+   "GX"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "iaf": {
+  "name": "Inter-American Foundation",
+  "fwd_agency_codes": [
+   "IF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Inter-American Foundation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Inter-American Foundation"
+  ],
+  "method": "normalized"
+ },
+ "usadf": {
+  "name": "African Development Foundation",
+  "fwd_agency_codes": [
+   "AN"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "African Development Foundation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "African Development Foundation"
+  ],
+  "method": "normalized"
+ },
+ "gcerc": {
+  "name": "Gulf Coast Ecosystem Restoration Council",
+  "fwd_agency_codes": [
+   "GC"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Gulf Coast Ecosystem Restoration Council"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "ncd": {
+  "name": "National Council on Disability",
+  "fwd_agency_codes": [
+   "NK"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "National Council on Disability"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "National Council on Disability"
+  ],
+  "method": "normalized"
+ },
+ "cx": {
+  "name": "Nat Cmsn On Libraries And Info Science",
+  "fwd_agency_codes": [
+   "CX"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "gy": {
+  "name": "International Joint Cmsn: U.S. & Canada",
+  "fwd_agency_codes": [
+   "GY"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "denali": {
+  "name": "Denali Commission",
+  "fwd_agency_codes": [
+   "DQ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Denali Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "rj": {
+  "name": "Civil Rights Cold Case Review Board",
+  "fwd_agency_codes": [
+   "RJ"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "nwtrb": {
+  "name": "Nuclear Waste Technical Review Board",
+  "fwd_agency_codes": [
+   "BW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Nuclear Waste Technical Review Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "ut": {
+  "name": "Utah Reclamatn Mitigatn & Conservtn Cmsn",
+  "fwd_agency_codes": [
+   "UT"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "usich": {
+  "name": "U.S. Interagency Council on Homelessness",
+  "fwd_agency_codes": [
+   "HW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "U.S. Interagency Council on Homelessness"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "fcsic": {
+  "name": "Farm Credit System Insurance Corporation",
+  "fwd_agency_codes": [
+   "FK"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Farm Credit System Insurance Corporation"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [
+   "Farm Credit System Insurance Corporation"
+  ],
+  "method": "normalized"
+ },
+ "db": {
+  "name": "Public Interest Declassification Board",
+  "fwd_agency_codes": [
+   "DB"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "cfa": {
+  "name": "Commission of Fine Arts",
+  "fwd_agency_codes": [
+   "CF"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Commission of Fine Arts"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "gu": {
+  "name": "The Us Semiquincentennial Commission",
+  "fwd_agency_codes": [
+   "GU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "pbrb": {
+  "name": "Public Buildings Reform Board",
+  "fwd_agency_codes": [
+   "KY"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Public Buildings Reform Board"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "arc": {
+  "name": "Appalachian Regional Commission",
+  "fwd_agency_codes": [
+   "AP"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Appalachian Regional Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "nbrc": {
+  "name": "Northern Border Regional Commission",
+  "fwd_agency_codes": [
+   "DG"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Northern Border Regional Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "aw": {
+  "name": "Arctic Research Commission",
+  "fwd_agency_codes": [
+   "AW"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "fwd_only"
+ },
+ "dra": {
+  "name": "Delta Regional Authority",
+  "fwd_agency_codes": [
+   "DA"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Delta Regional Authority"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ },
+ "sbrc": {
+  "name": "Southwest Border Regional Commission",
+  "fwd_agency_codes": [
+   "WU"
+  ],
+  "fwd_org_codes": [],
+  "fwd_exclude_org_codes": [],
+  "usaspending_names": [
+   "Southwest Border Regional Commission"
+  ],
+  "omb_labels": [],
+  "fevs_labels": [],
+  "method": "normalized"
+ }
+}

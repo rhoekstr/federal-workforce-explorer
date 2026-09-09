@@ -1,0 +1,89 @@
+{
+ "datasets": {
+  "accessions": {
+   "202607": {
+    "file": "fact_accessions_202607.parquet",
+    "incomplete_note": null,
+    "n": 19024,
+    "parquet_bytes": 136241,
+    "publish_date": null,
+    "release_url": null,
+    "rows_fact": 15271,
+    "rows_source": 19024,
+    "sha256": "12b96d9780668db00542d697fd75ac8475affab788c43b3ee57bedf1526eca51",
+    "source_file": "accessions_202607_1.txt",
+    "version": 1
+   }
+  },
+  "employment": {
+   "202601": {
+    "file": "fact_employment_202601.parquet",
+    "incomplete_note": null,
+    "n": 2035344,
+    "parquet_bytes": 8630427,
+    "publish_date": "2026-04-30T18:56:43.139Z",
+    "release_url": null,
+    "rows_fact": 1447423,
+    "rows_source": 2035344,
+    "sha256": "f0d60143d459264512295222339f46f96c4beadf24946f749de8d8ffce5a240a",
+    "source_file": "employment_202601_2.parquet",
+    "version": 2
+   },
+   "202602": {
+    "file": "fact_employment_202602.parquet",
+    "incomplete_note": null,
+    "n": 2027301,
+    "parquet_bytes": 8602650,
+    "publish_date": "2026-04-30T18:50:59.080Z",
+    "release_url": null,
+    "rows_fact": 1440813,
+    "rows_source": 2027301,
+    "sha256": "924f2463088806e5d951ca03e33eebedf196257e53accb7b1b975f79fd3c3a0a",
+    "source_file": "employment_202602_2.parquet",
+    "version": 2
+   },
+   "202607": {
+    "file": "fact_employment_202607.parquet",
+    "incomplete_note": null,
+    "n": 2020230,
+    "parquet_bytes": 8679177,
+    "publish_date": null,
+    "release_url": null,
+    "rows_fact": 1438035,
+    "rows_source": 2020230,
+    "sha256": "ebc5b7b6a3b5fc66fcd4b08c1f64c2c11850d4c223576e2856d8adab6530c42b",
+    "source_file": "employment_202607_1.parquet",
+    "version": 1
+   }
+  },
+  "separations": {
+   "202607": {
+    "file": "fact_separations_202607.parquet",
+    "incomplete_note": null,
+    "n": 16681,
+    "parquet_bytes": 168762,
+    "publish_date": null,
+    "release_url": null,
+    "rows_fact": 15482,
+    "rows_source": 16681,
+    "sha256": "e86adc85167a5d8c74391ef17f0915a7909f8f2c98ba43351cc57067fe4c3bce",
+    "source_file": "separations_202607_1.txt",
+    "version": 1
+   }
+  }
+ },
+ "generated": "2026-09-09T22:52:18Z",
+ "money": {
+  "fileb_periods": [
+   "FY2026Q3",
+   "FY2025Q4",
+   "FY2025Q3"
+  ],
+  "fy": 2026,
+  "groups": 118,
+  "omb_table": "AP FY2027 Table 5-1",
+  "period": "FY2026Q3",
+  "quarter": 3
+ },
+ "releases": {}
+}

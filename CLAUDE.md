@@ -60,5 +60,5 @@ manifest.json    what is published, versions, checksums
 - Pay band: `floor(pay / 10000) * 10` as a string; `R` if redacted.
 - In-sourcing ratio: personnel (11.x, 12.x, 13.0) ÷ (personnel + 25.1 + 25.2). Class 25.3 is shown, never in the ratio.
 - Administered vs operations: PRD 5.8.
-- Rolling four quarters: `YTD(Y,P) + YTD(Y-1,12) − YTD(Y-1,P)`.
+- Rolling four quarters: `YTD(Y,P) + YTD(Y-1,12) − YTD(Y-1,P)`. Direct obligations only (`direct_or_reimbursable_funding_source = 'D'`); reimbursable double counts across government.
 - Action attribution: charts use effective month; file month is kept in the fact table.

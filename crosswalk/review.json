@@ -1,0 +1,128 @@
+{
+ "fwd_agencies_unmapped_to_usaspending": [
+  {
+   "code": "SM",
+   "name": "SMITHSONIAN INSTITUTION",
+   "headcount": 4096
+  },
+  {
+   "code": "LP",
+   "name": "GOVERNMENT PUBLISHING OFFICE",
+   "headcount": 1625
+  },
+  {
+   "code": "FR",
+   "name": "FEDERAL RESERVE SYSTEM",
+   "headcount": 1069
+  },
+  {
+   "code": "HF",
+   "name": "FEDERAL HOUSING FINANCE AGENCY",
+   "headcount": 599
+  },
+  {
+   "code": "FL",
+   "name": "FARM CREDIT ADMINISTRATION",
+   "headcount": 317
+  },
+  {
+   "code": "GW",
+   "name": "INTER BOUND AND WATER COMM U.S. SECTION",
+   "headcount": 244
+  },
+  {
+   "code": "RF",
+   "name": "FED RETIREMENT THRIFT INVESTMENT BOARD",
+   "headcount": 232
+  },
+  {
+   "code": "JL",
+   "name": "JUDICIAL BRANCH",
+   "headcount": 168
+  },
+  {
+   "code": "HD",
+   "name": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+   "headcount": 90
+  },
+  {
+   "code": "RO",
+   "name": "MEDICAID & CHIP PAYMENT & ACCESS COMM",
+   "headcount": 50
+  },
+  {
+   "code": "ZP",
+   "name": "U.S. CMSN ON INTERNATL RELIGIOUS FREEDOM",
+   "headcount": 28
+  },
+  {
+   "code": "GX",
+   "name": "INTERNAT BOUNDARY CMSN: U.S. AND CANADA",
+   "headcount": 22
+  },
+  {
+   "code": "CX",
+   "name": "NAT CMSN ON LIBRARIES AND INFO SCIENCE",
+   "headcount": 17
+  },
+  {
+   "code": "GY",
+   "name": "INTERNATIONAL JOINT CMSN: U.S. & CANADA",
+   "headcount": 15
+  },
+  {
+   "code": "RJ",
+   "name": "CIVIL RIGHTS COLD CASE REVIEW BOARD",
+   "headcount": 11
+  },
+  {
+   "code": "UT",
+   "name": "UTAH RECLAMATN MITIGATN & CONSERVTN CMSN",
+   "headcount": 11
+  },
+  {
+   "code": "DB",
+   "name": "PUBLIC INTEREST DECLASSIFICATION BOARD",
+   "headcount": 9
+  },
+  {
+   "code": "GU",
+   "name": "THE US SEMIQUINCENTENNIAL COMMISSION",
+   "headcount": 8
+  },
+  {
+   "code": "AW",
+   "name": "ARCTIC RESEARCH COMMISSION",
+   "headcount": 2
+  }
+ ],
+ "usaspending_agencies_without_group": [
+  "400 Years of African-American History Commission",
+  "District of Columbia Courts",
+  "Government Accountability Office",
+  "Institute of Museum and Library Services",
+  "John F. Kennedy Center for the Performing Arts",
+  "Office of Navajo and Hopi Indian Relocation",
+  "Overseas Private Investment Corporation",
+  "Patient-Centered Outcomes Research Trust Fund",
+  "Southeast Crescent Regional Commission",
+  "United States Court of Appeals for Veterans Claims",
+  "Vietnam Education Foundation"
+ ],
+ "omb_labels_without_group": [
+  "Tennessee Valley Authority"
+ ],
+ "fevs_labels_without_group": [
+  "Federal Energy Regulatory Commission",
+  "Institute of Museum and Library Services",
+  "John F. Kennedy Center for the Performing Arts",
+  "National Gallery of Art",
+  "National Indian Gaming Commission",
+  "OSD, Joint Staff, Defense Agencies, and Field Activities (DOD 4th Estate)",
+  "Office of Navajo and Hopi Indian Relocation",
+  "Postal Regulatory Commission",
+  "United States Department of the Air Force",
+  "United States Department of the Army",
+  "United States Department of the Navy"
+ ]
+}
