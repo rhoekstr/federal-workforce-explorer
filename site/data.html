@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data · Federal Workforce Explorer</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <h1>Data, methods, and caveats</h1>
+  <p class="lede">Everything on this site is a strict coarsening of public releases. The cleaned tables are published as parquet so anyone can rebuild it.</p>
+
+  <h2>Published months</h2>
+  <p class="muted" id="gen"></p>
+  <div class="table-wrap"><table id="months"></table></div>
+
+  <h2>Fact table schema</h2>
+  <p>One row per distinct combination of the dimensions below within a month, with four measures. Labels are in the lookups; fact tables carry codes only.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>snapshot_yyyymm / file_yyyymm</td><td>Employment snapshot month, or the OPM file an action came from</td></tr>
+      <tr><td>effective_yyyymm</td><td>Actions only: personnel action effective month. Charts use this.</td></tr>
+      <tr><td>org_code</td><td>OPM agency sub-element code. Starts with the agency code, so prefix filters select a whole agency.</td></tr>
+      <tr><td>duty_station_code</td><td>OPM 9-digit duty station, or <code>NDS</code> when OPM withheld it</td></tr>
+      <tr><td>series_code</td><td>Occupational series</td></tr>
+      <tr><td>pay_plan_code, grade, step_code</td><td>Pay plan, grade, step or rate</td></tr>
+      <tr><td>pay_band</td><td>Annualized adjusted basic pay in $10k bands ("120" = $120,000 to $129,999); <code>R</code> when redacted</td></tr>
+      <tr><td>supervisory_code, work_schedule_code, appointment_type_code, position_occupied_code, tenure_code</td><td>OPM codes; see lookups/codes.json</td></tr>
+      <tr><td>age_bracket, education_bracket, veteran, flsa_code, pay_basis_code</td><td>As delivered by OPM</td></tr>
+      <tr><td>accession_category_code, pathways_group / separation_category_code, drp_indicator</td><td>Actions only</td></tr>
+      <tr><td>n</td><td>Employees (or actions) in the cell</td></tr>
+      <tr><td>pay_sum, pay_n</td><td>Sum of disclosed pay and how many employees it covers, so averages are exact at any filter</td></tr>
+      <tr><td>los_sum</td><td>Sum of length of service in years (denominator is n)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Sources</h2>
+  <ul>
+    <li><strong>OPM Federal Workforce Data</strong> (data.opm.gov): record-level monthly employment, accessions, and separations with no personally identifiable information. Excludes the Postal Service, intelligence agencies, and some others.</li>
+    <li><strong>USAspending</strong> account breakdown by object class (File B): direct obligations, cumulative fiscal-year-to-date, rolled to four quarters as YTD(Y,P) + YTD(Y−1,12) − YTD(Y−1,P).</li>
+    <li><strong>OMB Analytical Perspectives</strong>, FY2027 Table 5-1: executive branch civilian FTE by agency. FY2026 and FY2027 are estimates.</li>
+  </ul>
+
+  <h2>Definitions</h2>
+  <ul>
+    <li><strong>In-sourcing ratio</strong> = personnel compensation and benefits (object classes 11, 12, 13) ÷ (personnel + advisory and assistance services 25.1 + other services from non-federal sources 25.2). Services bought from other federal agencies (25.3) are shown but excluded: they are neither in-house nor contractor labor.</li>
+    <li><strong>Administered</strong> = grants (41), insurance claims and benefits (42), interest (43), refunds (44), investments and loans (33), financial transfers (94). <strong>Operations</strong> = personnel, services, travel, rent, printing, equipment, land and structures (11 through 26, 31, 32).</li>
+    <li><strong>Headcount</strong> is OPM's end-of-month snapshot of employees on the rolls. It is not FTE.</li>
+  </ul>
+
+  <h2>Caveats</h2>
+  <ul>
+    <li><strong>Redaction.</strong> OPM withholds duty station, pay, locality, and bargaining unit for about 47% of employees, concentrated in Defense (100%), Homeland Security (76%), and Justice (66%). Every view that touches location or pay carries a disclosed-share badge.</li>
+    <li><strong>Late actions.</strong> Each monthly actions file includes actions with earlier effective dates. Charts attribute by effective month, so recent months are revised upward as later files arrive.</li>
+    <li><strong>Department of War reporting gap.</strong> OPM reports that some DOW components did not submit June and July 2026 data. Those months understate Defense until OPM republishes.</li>
+    <li><strong>Reimbursable obligations</strong> are excluded from money figures to avoid double counting across agencies. Personnel funded by reimbursable orders is therefore not in the personnel figure.</li>
+    <li><strong>Names drift; codes do not.</strong> OPM changed "Department of Defense" to "Department of War" in its interface while the files still carry the old name. Lookups keep a name history by month.</li>
+  </ul>
+
+  <h2>What this site does not do</h2>
+  <p>It does not identify individuals, and it does not link the statutory list of executives to workforce records. The three most identifying fields in the source (exact pay, service computation date, length of service in tenths) are dropped or bucketed before publication.</p>
+</main>
+<footer></footer>
+<script type="module">
+import { loadJSON, fmt, el, renderChrome } from "./js/common.js";
+renderChrome("data.html");
+const manifest = await loadJSON("data/manifest.json");
+document.getElementById("gen").textContent = `Manifest generated ${manifest.generated || "—"}. Money period ${manifest.money?.period || "—"}.`;
+const t = document.getElementById("months");
+t.append(el("thead", {}, el("tr", {}, ["Dataset", "Month", "OPM version", "Published by OPM", "Source rows", "Fact rows", "Parquet", "Download"].map((h) => el("th", { scope: "col" }, h)))));
+const tb = el("tbody");
+for (const [ds, monthsObj] of Object.entries(manifest.datasets || {})) {
+  for (const [m, v] of Object.entries(monthsObj).sort()) {
+    tb.append(el("tr", {}, el("td", {}, ds), el("td", {}, fmt.month(m)), el("td", {}, String(v.version)), el("td", {}, (v.publish_date || "").slice(0, 10)), el("td", { class: "num" }, fmt.int(v.rows_source)), el("td", { class: "num" }, fmt.int(v.rows_fact)), el("td", { class: "num" }, fmt.money(v.parquet_bytes) + "B"), el("td", {}, v.release_url ? el("a", { href: v.release_url }, v.file) : el("span", { class: "muted" }, "not yet released"))));
+  }
+}
+t.append(tb);
+</script>
+</body>
+</html>

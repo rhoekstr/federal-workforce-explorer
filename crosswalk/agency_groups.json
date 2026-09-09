@@ -115,9 +115,7 @@
  },
  "cfpb": {
   "name": "cfpb",
-  "fwd_agency_codes": [
-   "FZ"
-  ],
+  "fwd_agency_codes": [],
   "fwd_org_codes": [],
   "fwd_exclude_org_codes": [],
   "usaspending_names": [

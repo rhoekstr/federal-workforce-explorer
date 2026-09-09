@@ -72,9 +72,9 @@ def test_overview_labor(overview):
 
 
 def test_overview_totals_add_up(overview):
+    groups = json.loads(GROUPS_PATH.read_text())
     for r in overview["rows"]:
-        if r["personnel"] is None:
-            continue
-        assert abs((r["administered"] + r["operations"] + r["other"]) - r["total_obligations"]) < 1.0
-        if r["fte_omb"] is not None:
-            assert r["headcount_latest"] is not None
+        if r["personnel"] is not None:
+            assert abs((r["administered"] + r["operations"] + r["other"]) - r["total_obligations"]) < 1.0
+        if groups[r["group"]]["fwd_agency_codes"] or groups[r["group"]].get("fwd_org_codes"):
+            assert r["headcount_latest"] is not None, r["group"]

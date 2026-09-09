@@ -4,6 +4,7 @@
   python -m pipeline.cli sync --year 2026        # discover, download, build every missing month
   python -m pipeline.cli money                   # USAspending + OMB -> overview
   python -m pipeline.cli slices                  # pre-computed JSON + org tree for the site
+  python -m pipeline.cli site                    # assemble _site/ for local preview or Pages
   python -m pipeline.cli publish                 # upload parquet to GitHub Releases, fill manifest URLs
 """
 from __future__ import annotations
@@ -88,6 +89,13 @@ def cmd_slices(args) -> int:
     return 0
 
 
+def cmd_site(args) -> int:
+    from pipeline.site import assemble
+
+    assemble()
+    return 0
+
+
 def cmd_publish(args) -> int:
     from pipeline.publish import publish_releases
 
@@ -111,6 +119,7 @@ def main(argv=None) -> int:
     m.add_argument("--force", action="store_true")
     m.set_defaults(fn=cmd_money)
     sub.add_parser("slices").set_defaults(fn=cmd_slices)
+    sub.add_parser("site").set_defaults(fn=cmd_site)
     pub = sub.add_parser("publish")
     pub.add_argument("--repo", default=None)
     pub.set_defaults(fn=cmd_publish)

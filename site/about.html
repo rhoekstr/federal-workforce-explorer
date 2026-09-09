@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Federal Workforce Explorer</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <h1>About</h1>
+  <p class="lede">The federal workforce is the government. Its changes are public record, monthly, in files almost nobody can open. This site opens them.</p>
+  <h2>What it is</h2>
+  <p>A static dashboard over OPM's Federal Workforce Data, USAspending, and OMB's employment tables. Start government-wide, pick an agency to see people beside money, then walk down the org chart into personnel detail: headcount, hires, separations by category, grade and step mix, age, pay bands. Every chart has a data table behind it, and every month's cleaned data is downloadable.</p>
+  <h2>What it is not</h2>
+  <p>It is not a people-lookup tool. OPM's files carry no names, and this site adds none. It does not link the statutory list of political appointees and executives to workforce records, because that would re-identify people OPM deliberately de-identified.</p>
+  <h2>Privacy</h2>
+  <p>No analytics, no cookies, no accounts, no server. Pages load data from this site and from GitHub Releases, and chart libraries from a pinned CDN. Queries you run in the "Ask the data" panel execute inside your browser with DuckDB and never leave it.</p>
+  <h2>Who</h2>
+  <p>An <a href="https://awrylabs.com">Awry Labs</a> project by Robert Hoekstra. Independent software, a little off on purpose. Not affiliated with OPM or any agency.</p>
+  <h2>Reuse</h2>
+  <p>The pipeline, site, and cleaned data are open. See <a href="data.html">Data</a> for the schema and the methodology, and the repository for the code.</p>
+</main>
+<footer></footer>
+<script type="module">
+import { renderChrome } from "./js/common.js";
+renderChrome("about.html");
+</script>
+</body>
+</html>

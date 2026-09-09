@@ -42,6 +42,45 @@
     "source_file": "employment_202602_2.parquet",
     "version": 2
    },
+   "202603": {
+    "file": "fact_employment_202603.parquet",
+    "incomplete_note": null,
+    "n": 2023318,
+    "parquet_bytes": 8700012,
+    "publish_date": "2026-04-30T18:45:15.524Z",
+    "release_url": null,
+    "rows_fact": 1438072,
+    "rows_source": 2023318,
+    "sha256": "6cda575de721fd7487b632430641d9e0d1c8c267ac6a7de292d45fe69816068d",
+    "source_file": "employment_202603_1.parquet",
+    "version": 1
+   },
+   "202604": {
+    "file": "fact_employment_202604.parquet",
+    "incomplete_note": null,
+    "n": 2021167,
+    "parquet_bytes": 8700511,
+    "publish_date": "2026-05-28T15:11:19.928Z",
+    "release_url": null,
+    "rows_fact": 1436531,
+    "rows_source": 2021167,
+    "sha256": "056d7bf80c18d90a5731df34c4bc5bdad5283d4b2dcedca7621b52f025d432ad",
+    "source_file": "employment_202604_1.parquet",
+    "version": 1
+   },
+   "202605": {
+    "file": "fact_employment_202605.parquet",
+    "incomplete_note": null,
+    "n": 2025993,
+    "parquet_bytes": 8607987,
+    "publish_date": "2026-06-30T16:41:22.457Z",
+    "release_url": null,
+    "rows_fact": 1439853,
+    "rows_source": 2025993,
+    "sha256": "3c6e7383eb7a3ebce3fc477126f0e332f98084c6c30a05e7b3ebe328f7616942",
+    "source_file": "employment_202605_1.parquet",
+    "version": 1
+   },
    "202607": {
     "file": "fact_employment_202607.parquet",
     "incomplete_note": null,
@@ -72,7 +111,7 @@
    }
   }
  },
- "generated": "2026-09-09T22:52:18Z",
+ "generated": "2026-09-09T22:57:41Z",
  "money": {
   "fileb_periods": [
    "FY2026Q3",

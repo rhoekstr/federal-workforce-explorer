@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Org chart · Federal Workforce Explorer</title>
+<link rel="stylesheet" href="css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <h1>Organization chart</h1>
+  <p class="muted">Every box is a unit OPM reports. Click to select; the branch expands and the detail below re-scopes. Boxes show the latest headcount, the change since the first month shown, and a sparkline.</p>
+  <div class="controls">
+    <label>Find a unit <input type="search" id="search" list="units" placeholder="e.g. Bureau of Labor Statistics" size="40"></label>
+    <datalist id="units"></datalist>
+    <button type="button" id="go">Go</button>
+    <span class="muted" id="selected-note"></span>
+  </div>
+  <div class="orgchart-wrap" id="orgchart"></div>
+  <section id="detail" aria-live="polite">
+    <div class="crumbs" id="crumbs"></div>
+    <h2 id="node-title"></h2>
+    <div id="badges"></div>
+    <div class="cards" id="cards"></div>
+    <div id="charts"></div>
+    <div class="split" id="mixes"></div>
+    <h2>Download and query</h2>
+    <p class="muted" id="download-note"></p>
+    <div id="query"></div>
+  </section>
+</main>
+<footer></footer>
+<script type="module">
+import { loadJSON, fmt, el, qs, setQs, renderChrome, disclosureBadge } from "./js/common.js";
+import { headcountChart, actionsChart, separationsByCategory, mixChart } from "./js/charts.js";
+import { renderOrgChart, pathTo, searchIndex } from "./js/orgchart.js";
+
+renderChrome("org.html");
+const [tree, codes, months, manifest, series_lk, payplan_lk, step_lk] = await Promise.all([
+  loadJSON("data/slices/orgtree.json"), loadJSON("data/lookups/codes.json"), loadJSON("data/slices/months.json"), loadJSON("data/manifest.json"),
+  loadJSON("data/lookups/series.json"), loadJSON("data/lookups/pay_plan.json"), loadJSON("data/lookups/step.json"),
+]);
+let selected = qs("code", "gov");
+if (!tree.nodes[selected]) selected = "gov";
+
+const index = searchIndex(tree);
+const datalist = document.getElementById("units");
+for (const n of index.sort((a, b) => b.latest - a.latest).slice(0, 700)) datalist.append(el("option", { value: `${n.name} (${n.code})` }));
+function resolveSearch(text) {
+  const m = text.match(/\(([A-Z0-9:]+)\)\s*$/);
+  if (m && tree.nodes[m[1]]) return m[1];
+  const q = text.trim().toLowerCase();
+  if (!q) return null;
+  const hit = index.find((n) => n.name.toLowerCase() === q) || index.find((n) => n.name.toLowerCase().includes(q));
+  return hit?.code || null;
+}
+document.getElementById("go").addEventListener("click", () => { const c = resolveSearch(document.getElementById("search").value); if (c) select(c, true); });
+document.getElementById("search").addEventListener("change", () => { const c = resolveSearch(document.getElementById("search").value); if (c) select(c, true); });
+
+function select(code, push = false) {
+  selected = code;
+  setQs({ code }, !push);
+  renderOrgChart(document.getElementById("orgchart"), tree, selected, (c) => select(c, true));
+  renderDetail(code);
+}
+window.addEventListener("popstate", () => { const c = qs("code", "gov"); if (tree.nodes[c]) { selected = c; renderOrgChart(document.getElementById("orgchart"), tree, selected, (x) => select(x, true)); renderDetail(c); } });
+
+async function renderDetail(code) {
+  const node = tree.nodes[code];
+  const crumbs = document.getElementById("crumbs");
+  crumbs.innerHTML = "";
+  const path = pathTo(tree, code);
+  path.forEach((c, i) => {
+    const n = tree.nodes[c];
+    const a = el("a", { href: `org.html?code=${encodeURIComponent(c)}`, onclick: (e) => { e.preventDefault(); select(c, true); } }, n.name);
+    crumbs.append(i ? el("span", {}, a) : a);
+  });
+  document.getElementById("node-title").textContent = node.name;
+  document.getElementById("selected-note").textContent = `Selected: ${node.name}`;
+  const badges = document.getElementById("badges");
+  badges.innerHTML = "";
+  badges.append(el("span", { class: "badge" }, node.level === "subelement" ? "sub-element" : node.level));
+  if (node.group) badges.append(" ", el("a", { class: "badge", href: `agency.html?g=${encodeURIComponent(node.group)}` }, `agency overview: ${tree.groups[node.group]}`));
+  if (node.last_seen && tree.latest && node.last_seen < tree.latest) badges.append(" ", el("span", { class: "badge warn" }, `not in OPM data since ${fmt.month(node.last_seen)}`));
+  if (node.first_seen && months.datasets.employment[0] && node.first_seen > months.datasets.employment[0]) badges.append(" ", el("span", { class: "badge" }, `first seen ${fmt.month(node.first_seen)}`));
+
+  const [series, mix] = await Promise.all([
+    loadJSON(`data/slices/series/${code}.json`).catch(() => ({ months: months.datasets.employment, headcount: {}, accessions: {}, separations: {} })),
+    loadJSON(`data/slices/mix/${code}.json`).catch(() => null),
+  ]);
+  const summary = mix?._summary;
+  if (summary?.disclosed_location_share != null) badges.append(" ", disclosureBadge(summary.disclosed_location_share));
+
+  const cards = document.getElementById("cards");
+  cards.innerHTML = "";
+  const card = (label, value, sub, cls = "") => cards.append(el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value " + cls }, value), sub ? el("div", { class: "sub" }, sub) : null));
+  const latest = tree.latest, first = months.datasets.employment[0];
+  const hNow = node.headcount?.[latest], hFirst = node.headcount?.[first];
+  card("Headcount", fmt.int(hNow), fmt.month(latest));
+  if (hNow != null && hFirst != null) card(`Since ${fmt.month(first)}`, fmt.signed(hNow - hFirst), fmt.pct((hNow - hFirst) / hFirst, 1), hNow - hFirst < 0 ? "neg" : "pos");
+  const sumCats = (obj, skip) => Object.entries(obj || {}).filter(([m]) => m >= first).reduce((s, [, cats]) => s + Object.entries(cats).filter(([c]) => c !== skip).reduce((a, [, n]) => a + n, 0), 0);
+  card("Accessions", fmt.int(sumCats(series.accessions)), `effective ${fmt.month(first)}+`);
+  card("Separations", fmt.int(sumCats(series.separations, "DRP")), `effective ${fmt.month(first)}+`);
+  if (summary?.avg_pay) card("Average pay", "$" + fmt.int(summary.avg_pay), `${fmt.pct(summary.pay_disclosed_share)} disclosed`);
+  if (summary?.avg_los) card("Avg service", summary.avg_los + " yrs", fmt.month(summary.month));
+
+  const charts = document.getElementById("charts");
+  charts.innerHTML = "";
+  charts.append(headcountChart(series, { title: `${node.name}: headcount by month` }));
+  charts.append(actionsChart(series, codes, { months: months.datasets.employment }));
+  charts.append(separationsByCategory(series, codes, { months: months.datasets.employment }));
+
+  const mixes = document.getElementById("mixes");
+  mixes.innerHTML = "";
+  if (mix) {
+    const gradeOrder = (k) => (/^\d+$/.test(k) ? +k : 100 + k.charCodeAt(0));
+    const pieces = [
+      mixChart(mix.grade, { title: "Grade", order: gradeOrder }),
+      mixChart(mix.step_code, { title: "Step or rate", labels: step_lk, order: (k) => (/^\d+$/.test(k) ? +k : 100) }),
+      mixChart(mix.age_bracket, { title: "Age bracket", order: (k) => parseInt(k) || 0 }),
+      mixChart(mix.pay_band, { title: "Pay band ($ thousands)", order: (k) => (k === "R" ? 999 : +k), labels: { R: "Redacted" } }),
+      mixChart(mix.series_code, { title: "Occupational series", labels: series_lk, top: 15 }),
+      mixChart(mix.appointment_type_code, { title: "Appointment type", labels: codes.appointment_type, top: 10 }),
+      mixChart(mix.supervisory_code, { title: "Supervisory status", labels: codes.supervisory_status }),
+      mixChart(mix.work_schedule_code, { title: "Work schedule", labels: codes.work_schedule }),
+    ].filter(Boolean);
+    for (const p of pieces) mixes.append(p);
+  }
+
+  const emp = manifest.datasets?.employment?.[latest];
+  const note = document.getElementById("download-note");
+  note.innerHTML = "";
+  if (emp?.release_url) {
+    note.append(`Fact table for ${fmt.month(latest)}: `, el("a", { href: emp.release_url }, emp.file), ` (${fmt.money(emp.parquet_bytes)}B parquet, ${fmt.int(emp.rows_fact)} rows). Filter on org_code starting with "${code === "gov" ? "" : code.replace("D:", "")}". `, el("a", { href: "data.html" }, "All months and the data dictionary."));
+  } else {
+    note.append(`Fact tables are published to GitHub Releases once a month. `, el("a", { href: "data.html" }, "See the data page."));
+  }
+  const { filterPanel } = await import("./js/query.js");
+  filterPanel(document.getElementById("query"), { fileUrl: emp?.release_url, month: latest, orgCode: code === "gov" ? "" : code.replace("D:", ""), lookups: { codes, series: series_lk, pay_plan: payplan_lk, step: step_lk, duty_station: await loadJSON("data/lookups/duty_station.json").catch(() => ({})) } });
+}
+
+select(selected);
+</script>
+</body>
+</html>

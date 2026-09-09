@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Federal Workforce Explorer</title>
+<meta name="description" content="Headcount, hires, separations, and spending for every federal agency, from OPM, USAspending, and OMB. No tracking.">
+<link rel="stylesheet" href="css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <h1>Federal civilian workforce</h1>
+  <p class="lede" id="lede">Loading…</p>
+  <div class="cards" id="cards"></div>
+  <div id="charts"></div>
+  <h2>Agencies: people beside money</h2>
+  <p class="muted" id="table-note"></p>
+  <div class="table-wrap"><table id="overview" aria-describedby="table-note"></table></div>
+</main>
+<footer></footer>
+<script type="module">
+import { loadJSON, fmt, el, renderChrome, sortableTable } from "./js/common.js";
+import { headcountChart, actionsChart, separationsByCategory } from "./js/charts.js";
+
+renderChrome("index.html");
+const [overview, gov, codes, months] = await Promise.all([
+  loadJSON("data/slices/overview.json"), loadJSON("data/slices/series/gov.json"), loadJSON("data/lookups/codes.json"), loadJSON("data/slices/months.json"),
+]);
+const latest = months.latest;
+const first = months.datasets.employment[0];
+const total = gov.headcount[latest];
+const totalFirst = gov.headcount[first];
+document.getElementById("lede").textContent = `${fmt.int(total)} executive-branch civilian employees as of ${fmt.month(latest)}, per OPM. Government-wide first, then any agency, then down the org chart.`;
+
+const totalSep = Object.entries(gov.separations).filter(([m]) => m >= first).reduce((s, [, cats]) => s + Object.entries(cats).filter(([c]) => c !== "DRP").reduce((a, [, n]) => a + n, 0), 0);
+const totalAcc = Object.entries(gov.accessions).filter(([m]) => m >= first).reduce((s, [, cats]) => s + Object.values(cats).reduce((a, n) => a + n, 0), 0);
+const cards = document.getElementById("cards");
+const card = (label, value, sub, cls = "") => cards.append(el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value " + cls }, value), sub ? el("div", { class: "sub" }, sub) : null));
+card("Headcount", fmt.int(total), fmt.month(latest));
+card("Change since " + fmt.month(first), fmt.signed(total - totalFirst), fmt.pct((total - totalFirst) / totalFirst, 1), total - totalFirst < 0 ? "neg" : "pos");
+card("Accessions", fmt.int(totalAcc), `effective ${fmt.month(first)} to ${fmt.month(latest)}`);
+card("Separations", fmt.int(totalSep), `effective ${fmt.month(first)} to ${fmt.month(latest)}`);
+card("Money period", overview.period, "rolling four quarters, direct obligations");
+
+const charts = document.getElementById("charts");
+charts.append(headcountChart(gov, { title: "Government-wide headcount by month" }));
+charts.append(actionsChart(gov, codes, { months: months.datasets.employment }));
+charts.append(separationsByCategory(gov, codes, { months: months.datasets.employment }));
+
+document.getElementById("table-note").textContent = `Headcount is OPM's ${fmt.month(latest)} snapshot. FTE is OMB's Analytical Perspectives Table 5-1 (hollow means estimate). Money is USAspending direct obligations, ${overview.period} rolling four quarters. In-sourcing = personnel ÷ (personnel + contracted services 25.1 and 25.2). Click a row for the agency page.`;
+const rows = overview.rows.filter((r) => (r.headcount_latest ?? 0) > 0 || r.personnel != null);
+sortableTable(document.getElementById("overview"), rows, [
+  { key: "name", label: "Agency" },
+  { key: "headcount_latest", label: "Headcount", num: true, render: fmt.int },
+  { key: "headcount_change_12m", label: "12-mo change", num: true, render: (v) => v == null ? "—" : el("span", { class: v < 0 ? "neg" : "pos" }, fmt.signed(v)) },
+  { key: "fte_omb", label: "OMB FTE", num: true, title: "Analytical Perspectives Table 5-1", render: (v, r) => v == null ? "—" : el("span", { title: `FY${r.fte_omb_fy} ${r.fte_omb_kind}` }, fmt.int(v) + (r.fte_omb_kind === "estimate" ? "*" : "")) },
+  { key: "personnel", label: "Personnel $", num: true, render: fmt.dollars },
+  { key: "contracted_services", label: "Contracted $", num: true, title: "Object classes 25.1 and 25.2", render: fmt.dollars },
+  { key: "insourcing_ratio", label: "In-sourcing", num: true, render: (v) => fmt.pct(v) },
+  { key: "administered", label: "Administered $", num: true, title: "Grants, benefits, insurance, interest, transfers", render: fmt.dollars },
+  { key: "operations", label: "Operations $", num: true, title: "Personnel, services, travel, rent, equipment", render: fmt.dollars },
+], { initialSort: { key: "headcount_latest", dir: "desc" }, onRow: (r) => { location.href = `agency.html?g=${encodeURIComponent(r.group)}`; } });
+</script>
+</body>
+</html>

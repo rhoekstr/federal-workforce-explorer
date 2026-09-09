@@ -23,6 +23,7 @@ DROP_PREFIXES = ("DEPARTMENT OF THE ", "DEPARTMENT OF ", "UNITED STATES ", "US "
 
 def normalize(name: str) -> str:
     s = name.upper().replace("&", " AND ").replace("--", " ").replace("-", " ")
+    s = re.sub(r"\bU\.S\.\s*", "US ", s)
     s = re.sub(r"[.,'()*]", "", s)
     s = re.sub(r"\bU S\b", "US", s)
     s = " ".join(ABBREV.get(w, w) for w in s.split())
@@ -63,7 +64,7 @@ OVERRIDES = {
     "treasury": {"fwd_agency_codes": ["TR"], "usaspending_names": ["Department of the Treasury"], "omb_labels": ["Treasury"], "fevs_labels": ["Department of the Treasury"]},
     "interior": {"fwd_agency_codes": ["IN"], "usaspending_names": ["Department of the Interior"], "omb_labels": ["Interior"], "fevs_labels": ["Department of the Interior"]},
     "opm": {"fwd_agency_codes": ["OM"], "usaspending_names": ["Office of Personnel Management"], "omb_labels": ["Office of Personnel Management **"], "fevs_labels": ["Office of Personnel Management"]},
-    "cfpb": {"fwd_agency_codes": ["FZ"], "usaspending_names": ["Consumer Financial Protection Bureau"], "omb_labels": ["Bureau of Consumer Financial Protection"], "fevs_labels": []},
+    "cfpb": {"fwd_agency_codes": [], "usaspending_names": ["Consumer Financial Protection Bureau"], "omb_labels": ["Bureau of Consumer Financial Protection"], "fevs_labels": []},
     "dfc": {"fwd_agency_codes": ["GB"], "usaspending_names": ["U.S. International Development Finance Corporation"], "omb_labels": [], "fevs_labels": ["U.S. International Development Finance Corporation"]},
     "csosa": {"fwd_agency_codes": ["FQ"], "usaspending_names": ["Court Services and Offender Supervision Agency"], "omb_labels": [], "fevs_labels": ["Court Services and Offender Supervision Agency"]},
     "usagm": {"fwd_agency_codes": ["IB"], "usaspending_names": ["U.S. Agency for Global Media"], "omb_labels": ["U.S. Agency for Global Media"], "fevs_labels": ["U.S. Agency for Global Media"]},
