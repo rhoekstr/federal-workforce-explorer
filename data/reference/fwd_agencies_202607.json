@@ -1,0 +1,898 @@
+[
+ {
+  "department_code": "VA",
+  "department": "DEPARTMENT OF VETERANS AFFAIRS",
+  "agency_code": "VA",
+  "agency": "DEPARTMENT OF VETERANS AFFAIRS",
+  "headcount_202607": 446459
+ },
+ {
+  "department_code": "HS",
+  "department": "DEPARTMENT OF HOMELAND SECURITY",
+  "agency_code": "HS",
+  "agency": "DEPARTMENT OF HOMELAND SECURITY",
+  "headcount_202607": 225490
+ },
+ {
+  "department_code": "DOD",
+  "department": "DEPARTMENT OF DEFENSE",
+  "agency_code": "NV",
+  "agency": "DEPARTMENT OF THE NAVY",
+  "headcount_202607": 200903
+ },
+ {
+  "department_code": "DOD",
+  "department": "DEPARTMENT OF DEFENSE",
+  "agency_code": "AR",
+  "agency": "DEPARTMENT OF THE ARMY",
+  "headcount_202607": 186285
+ },
+ {
+  "department_code": "DOD",
+  "department": "DEPARTMENT OF DEFENSE",
+  "agency_code": "AF",
+  "agency": "DEPARTMENT OF THE AIR FORCE",
+  "headcount_202607": 151165
+ },
+ {
+  "department_code": "DOD",
+  "department": "DEPARTMENT OF DEFENSE",
+  "agency_code": "DD",
+  "agency": "DEPARTMENT OF DEFENSE",
+  "headcount_202607": 137592
+ },
+ {
+  "department_code": "DJ",
+  "department": "DEPARTMENT OF JUSTICE",
+  "agency_code": "DJ",
+  "agency": "DEPARTMENT OF JUSTICE",
+  "headcount_202607": 107331
+ },
+ {
+  "department_code": "TR",
+  "department": "DEPARTMENT OF THE TREASURY",
+  "agency_code": "TR",
+  "agency": "DEPARTMENT OF TREASURY",
+  "headcount_202607": 83411
+ },
+ {
+  "department_code": "AG",
+  "department": "DEPARTMENT OF AGRICULTURE",
+  "agency_code": "AG",
+  "agency": "DEPARTMENT OF AGRICULTURE",
+  "headcount_202607": 77996
+ },
+ {
+  "department_code": "HE",
+  "department": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+  "agency_code": "HE",
+  "agency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+  "headcount_202607": 72896
+ },
+ {
+  "department_code": "IN",
+  "department": "DEPARTMENT OF THE INTERIOR",
+  "agency_code": "IN",
+  "agency": "DEPARTMENT OF INTERIOR",
+  "headcount_202607": 59933
+ },
+ {
+  "department_code": "TD",
+  "department": "DEPARTMENT OF TRANSPORTATION",
+  "agency_code": "TD",
+  "agency": "DEPARTMENT OF TRANSPORTATION",
+  "headcount_202607": 52914
+ },
+ {
+  "department_code": "SZ",
+  "department": "SOCIAL SECURITY ADMINISTRATION",
+  "agency_code": "SZ",
+  "agency": "SOCIAL SECURITY ADMINISTRATION",
+  "headcount_202607": 49450
+ },
+ {
+  "department_code": "CM",
+  "department": "DEPARTMENT OF COMMERCE",
+  "agency_code": "CM",
+  "agency": "DEPARTMENT OF COMMERCE",
+  "headcount_202607": 41199
+ },
+ {
+  "department_code": "NN",
+  "department": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+  "agency_code": "NN",
+  "agency": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+  "headcount_202607": 14835
+ },
+ {
+  "department_code": "DN",
+  "department": "DEPARTMENT OF ENERGY",
+  "agency_code": "DN",
+  "agency": "DEPARTMENT OF ENERGY",
+  "headcount_202607": 13391
+ },
+ {
+  "department_code": "EP",
+  "department": "ENVIRONMENTAL PROTECTION AGENCY",
+  "agency_code": "EP",
+  "agency": "ENVIRONMENTAL PROTECTION AGENCY",
+  "headcount_202607": 12455
+ },
+ {
+  "department_code": "ST",
+  "department": "DEPARTMENT OF STATE",
+  "agency_code": "ST",
+  "agency": "DEPARTMENT OF STATE",
+  "headcount_202607": 11320
+ },
+ {
+  "department_code": "DL",
+  "department": "DEPARTMENT OF LABOR",
+  "agency_code": "DL",
+  "agency": "DEPARTMENT OF LABOR",
+  "headcount_202607": 11074
+ },
+ {
+  "department_code": "GS",
+  "department": "GENERAL SERVICES ADMINISTRATION",
+  "agency_code": "GS",
+  "agency": "GENERAL SERVICES ADMINISTRATION",
+  "headcount_202607": 8238
+ },
+ {
+  "department_code": "HU",
+  "department": "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT",
+  "agency_code": "HU",
+  "agency": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+  "headcount_202607": 5851
+ },
+ {
+  "department_code": "SB",
+  "department": "SMALL BUSINESS ADMINISTRATION",
+  "agency_code": "SB",
+  "agency": "SMALL BUSINESS ADMINISTRATION",
+  "headcount_202607": 5082
+ },
+ {
+  "department_code": "FD",
+  "department": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+  "agency_code": "FD",
+  "agency": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+  "headcount_202607": 4989
+ },
+ {
+  "department_code": "SM",
+  "department": "SMITHSONIAN INSTITUTION",
+  "agency_code": "SM",
+  "agency": "SMITHSONIAN INSTITUTION",
+  "headcount_202607": 4096
+ },
+ {
+  "department_code": "SE",
+  "department": "SECURITIES AND EXCHANGE COMMISSION",
+  "agency_code": "SE",
+  "agency": "SECURITIES AND EXCHANGE COMMISSION",
+  "headcount_202607": 3911
+ },
+ {
+  "department_code": "NU",
+  "department": "NUCLEAR REGULATORY COMMISSION",
+  "agency_code": "NU",
+  "agency": "NUCLEAR REGULATORY COMMISSION",
+  "headcount_202607": 2489
+ },
+ {
+  "department_code": "NQ",
+  "department": "NATIONAL ARCHIVES AND RECORDS ADMINISTRATION",
+  "agency_code": "NQ",
+  "agency": "NAT ARCHIVES AND RECORDS ADMINISTRATION",
+  "headcount_202607": 2342
+ },
+ {
+  "department_code": "ED",
+  "department": "DEPARTMENT OF EDUCATION",
+  "agency_code": "ED",
+  "agency": "DEPARTMENT OF EDUCATION",
+  "headcount_202607": 2279
+ },
+ {
+  "department_code": "OM",
+  "department": "OFFICE OF PERSONNEL MANAGEMENT",
+  "agency_code": "OM",
+  "agency": "OFFICE OF PERSONNEL MANAGEMENT",
+  "headcount_202607": 1990
+ },
+ {
+  "department_code": "EE",
+  "department": "EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+  "agency_code": "EE",
+  "agency": "EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+  "headcount_202607": 1697
+ },
+ {
+  "department_code": "LP",
+  "department": "GOVERNMENT PUBLISHING OFFICE",
+  "agency_code": "LP",
+  "agency": "GOVERNMENT PUBLISHING OFFICE",
+  "headcount_202607": 1625
+ },
+ {
+  "department_code": "FC",
+  "department": "FEDERAL COMMUNICATIONS COMMISSION",
+  "agency_code": "FC",
+  "agency": "FEDERAL COMMUNICATIONS COMMISSION",
+  "headcount_202607": 1183
+ },
+ {
+  "department_code": "NF",
+  "department": "NATIONAL SCIENCE FOUNDATION",
+  "agency_code": "NF",
+  "agency": "NATIONAL SCIENCE FOUNDATION",
+  "headcount_202607": 1103
+ },
+ {
+  "department_code": "FR",
+  "department": "FEDERAL RESERVE SYSTEM",
+  "agency_code": "FR",
+  "agency": "FEDERAL RESERVE SYSTEM",
+  "headcount_202607": 1069
+ },
+ {
+  "department_code": "NL",
+  "department": "NATIONAL LABOR RELATIONS BOARD",
+  "agency_code": "NL",
+  "agency": "NATIONAL LABOR RELATIONS BOARD",
+  "headcount_202607": 1038
+ },
+ {
+  "department_code": "FT",
+  "department": "FEDERAL TRADE COMMISSION",
+  "agency_code": "FT",
+  "agency": "FEDERAL TRADE COMMISSION",
+  "headcount_202607": 1032
+ },
+ {
+  "department_code": "FQ",
+  "department": "COURT SERVICES AND OFFENDER SUPERVISION AGENCY FOR THE DISTRICT OF COLUMBIA",
+  "agency_code": "FQ",
+  "agency": "COURT SERVICES AND OFFENDR SUPERVSN AGY",
+  "headcount_202607": 936
+ },
+ {
+  "department_code": "CU",
+  "department": "NATIONAL CREDIT UNION ADMINISTRATION",
+  "agency_code": "CU",
+  "agency": "NATIONAL CREDIT UNION ADMINISTRATION",
+  "headcount_202607": 922
+ },
+ {
+  "department_code": "IB",
+  "department": "U.S. AGENCY FOR GLOBAL MEDIA",
+  "agency_code": "IB",
+  "agency": "U.S.AGENCY FOR GLOBAL MEDIA",
+  "headcount_202607": 799
+ },
+ {
+  "department_code": "BG",
+  "department": "PENSION BENEFIT GUARANTY CORPORATION",
+  "agency_code": "BG",
+  "agency": "PENSION BENEFIT GUARANTY CORPORATION",
+  "headcount_202607": 726
+ },
+ {
+  "department_code": "RR",
+  "department": "RAILROAD RETIREMENT BOARD",
+  "agency_code": "RR",
+  "agency": "RAILROAD RETIREMENT BOARD",
+  "headcount_202607": 681
+ },
+ {
+  "department_code": "PU",
+  "department": "PEACE CORPS",
+  "agency_code": "PU",
+  "agency": "PEACE CORPS",
+  "headcount_202607": 604
+ },
+ {
+  "department_code": "HF",
+  "department": "FEDERAL HOUSING FINANCE AGENCY",
+  "agency_code": "HF",
+  "agency": "FEDERAL HOUSING FINANCE AGENCY",
+  "headcount_202607": 599
+ },
+ {
+  "department_code": "CT",
+  "department": "COMMODITY FUTURES TRADING COMMISSION",
+  "agency_code": "CT",
+  "agency": "COMMODITY FUTURES TRADING COMMISSION",
+  "headcount_202607": 580
+ },
+ {
+  "department_code": "GB",
+  "department": "DEVELOPMENT FINANCE CORPORATION",
+  "agency_code": "GB",
+  "agency": "DFC",
+  "headcount_202607": 545
+ },
+ {
+  "department_code": "BO",
+  "department": "OFFICE OF MANAGEMENT AND BUDGET",
+  "agency_code": "BO",
+  "agency": "OFFICE OF MANAGEMENT AND BUDGET",
+  "headcount_202607": 512
+ },
+ {
+  "department_code": "SK",
+  "department": "CONSUMER PRODUCT SAFETY COMMISSION",
+  "agency_code": "SK",
+  "agency": "CONSUMER PRODUCT SAFETY COMMISSION",
+  "headcount_202607": 419
+ },
+ {
+  "department_code": "TB",
+  "department": "NATIONAL TRANSPORTATION SAFETY BOARD",
+  "agency_code": "TB",
+  "agency": "NATIONAL TRANSPORTATION SAFETY BOARD",
+  "headcount_202607": 410
+ },
+ {
+  "department_code": "TC",
+  "department": "U.S. INTERNATIONAL TRADE COMMISSION",
+  "agency_code": "TC",
+  "agency": "U.S. INTERNATIONAL TRADE COMMISSION",
+  "headcount_202607": 408
+ },
+ {
+  "department_code": "KS",
+  "department": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+  "agency_code": "KS",
+  "agency": "CORP FOR NATIONAL AND COMMUNITY SERVICE",
+  "headcount_202607": 373
+ },
+ {
+  "department_code": "EB",
+  "department": "EXPORT-IMPORT BANK OF THE UNITED STATES",
+  "agency_code": "EB",
+  "agency": "EXPORT-IMPORT BANK OF THE UNITED STATES",
+  "headcount_202607": 345
+ },
+ {
+  "department_code": "GJ",
+  "department": "PRESIDIO TRUST",
+  "agency_code": "GJ",
+  "agency": "PRESIDIO TRUST",
+  "headcount_202607": 324
+ },
+ {
+  "department_code": "FL",
+  "department": "FARM CREDIT ADMINISTRATION",
+  "agency_code": "FL",
+  "agency": "FARM CREDIT ADMINISTRATION",
+  "headcount_202607": 317
+ },
+ {
+  "department_code": "RH",
+  "department": "ARMED FORCES RETIREMENT HOME",
+  "agency_code": "RH",
+  "agency": "ARMED FORCES RETIREMENT HOME",
+  "headcount_202607": 280
+ },
+ {
+  "department_code": "EC",
+  "department": "OFFICE OF ADMINISTRATION",
+  "agency_code": "EC",
+  "agency": "OFFICE OF ADMINISTRATION",
+  "headcount_202607": 258
+ },
+ {
+  "department_code": "LF",
+  "department": "FEDERAL ELECTION COMMISSION",
+  "agency_code": "LF",
+  "agency": "FEDERAL ELECTION COMMISSION",
+  "headcount_202607": 255
+ },
+ {
+  "department_code": "GW",
+  "department": "INTERNATIONAL BOUNDARY AND WATER COMMISSION, U.S. SECTION",
+  "agency_code": "GW",
+  "agency": "INTER BOUND AND WATER COMM U.S. SECTION",
+  "headcount_202607": 244
+ },
+ {
+  "department_code": "RF",
+  "department": "FEDERAL RETIREMENT THRIFT INVESTMENT BOARD",
+  "agency_code": "RF",
+  "agency": "FED RETIREMENT THRIFT INVESTMENT BOARD",
+  "headcount_202607": 232
+ },
+ {
+  "department_code": "AM",
+  "department": "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT",
+  "agency_code": "AM",
+  "agency": "U.S. AGENCY FOR INTERNATIONAL DEV",
+  "headcount_202607": 230
+ },
+ {
+  "department_code": "MI",
+  "department": "MILLENNIUM CHALLENGE CORPORATION",
+  "agency_code": "MI",
+  "agency": "MILLENNIUM CHALLENGE CORPORATION",
+  "headcount_202607": 228
+ },
+ {
+  "department_code": "TN",
+  "department": "OFFICE OF THE U.S. TRADE REPRESENTATIVE",
+  "agency_code": "TN",
+  "agency": "OFFICE OF THE U.S. TRADE REPRESENTATIVE",
+  "headcount_202607": 221
+ },
+ {
+  "department_code": "AH",
+  "department": "NATIONAL FOUNDATION ON THE ARTS AND THE HUMANITIES",
+  "agency_code": "AH",
+  "agency": "NAT FOUNDATION ON ARTS AND HUMANITIES",
+  "headcount_202607": 220
+ },
+ {
+  "department_code": "JL",
+  "department": "JUDICIAL BRANCH",
+  "agency_code": "JL",
+  "agency": "JUDICIAL BRANCH",
+  "headcount_202607": 168
+ },
+ {
+  "department_code": "BD",
+  "department": "MERIT SYSTEMS PROTECTION BOARD",
+  "agency_code": "BD",
+  "agency": "MERIT SYSTEMS PROTECTION BOARD",
+  "headcount_202607": 156
+ },
+ {
+  "department_code": "FW",
+  "department": "OFFICE OF SPECIAL COUNSEL",
+  "agency_code": "FW",
+  "agency": "OFFICE OF SPECIAL COUNSEL",
+  "headcount_202607": 124
+ },
+ {
+  "department_code": "SS",
+  "department": "SELECTIVE SERVICE SYSTEM",
+  "agency_code": "SS",
+  "agency": "SELECTIVE SERVICE SYSTEM",
+  "headcount_202607": 122
+ },
+ {
+  "department_code": "MC",
+  "department": "FEDERAL MARITIME COMMISSION",
+  "agency_code": "MC",
+  "agency": "FEDERAL MARITIME COMMISSION",
+  "headcount_202607": 110
+ },
+ {
+  "department_code": "TW",
+  "department": "SURFACE TRANSPORTATION BOARD",
+  "agency_code": "TW",
+  "agency": "SURFACE TRANSPORTATION BOARD",
+  "headcount_202607": 110
+ },
+ {
+  "department_code": "BF",
+  "department": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+  "agency_code": "BF",
+  "agency": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+  "headcount_202607": 102
+ },
+ {
+  "department_code": "FM",
+  "department": "FEDERAL MEDIATION AND CONCILIATION SERVICE",
+  "agency_code": "FM",
+  "agency": "FED MEDIATION AND CONCILIATION SERVICE",
+  "headcount_202607": 95
+ },
+ {
+  "department_code": "HD",
+  "department": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+  "agency_code": "HD",
+  "agency": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+  "headcount_202607": 90
+ },
+ {
+  "department_code": "AB",
+  "department": "AMERICAN BATTLE MONUMENTS COMMISSION",
+  "agency_code": "AB",
+  "agency": "AMERICAN BATTLE MONUMENTS COMMISSION",
+  "headcount_202607": 77
+ },
+ {
+  "department_code": "AU",
+  "department": "FEDERAL LABOR RELATIONS AUTHORITY",
+  "agency_code": "AU",
+  "agency": "FEDERAL LABOR RELATIONS AUTHORITY",
+  "headcount_202607": 76
+ },
+ {
+  "department_code": "QQ",
+  "department": "OFFICE OF NATIONAL DRUG CONTROL POLICY",
+  "agency_code": "QQ",
+  "agency": "OFFICE OF NATIONAL DRUG CONTROL POLICY",
+  "headcount_202607": 62
+ },
+ {
+  "department_code": "GQ",
+  "department": "ELECTION ASSISTANCE COMMISSION",
+  "agency_code": "GQ",
+  "agency": "ELECTION ASSISTANCE COMMISSION",
+  "headcount_202607": 62
+ },
+ {
+  "department_code": "GG",
+  "department": "OFFICE OF GOVERNMENT ETHICS",
+  "agency_code": "GG",
+  "agency": "OFFICE OF GOVERNMENT ETHICS",
+  "headcount_202607": 60
+ },
+ {
+  "department_code": "RO",
+  "department": "MEDICAID AND CHIP PAYMENT AND ACCESS COMMISSION",
+  "agency_code": "RO",
+  "agency": "MEDICAID & CHIP PAYMENT & ACCESS COMM",
+  "headcount_202607": 50
+ },
+ {
+  "department_code": "CC",
+  "department": "COMMISSION ON CIVIL RIGHTS",
+  "agency_code": "CC",
+  "agency": "COMMISSION ON CIVIL RIGHTS",
+  "headcount_202607": 50
+ },
+ {
+  "department_code": "EW",
+  "department": "TRADE AND DEVELOPMENT AGENCY",
+  "agency_code": "EW",
+  "agency": "TRADE AND DEVELOPMENT AGENCY",
+  "headcount_202607": 49
+ },
+ {
+  "department_code": "OS",
+  "department": "OCCUPATIONAL SAFETY AND HEALTH REVIEW COMMISSION",
+  "agency_code": "OS",
+  "agency": "OCCUPATIONAL SAFETY & HEALTH REVIEW CMSN",
+  "headcount_202607": 43
+ },
+ {
+  "department_code": "FJ",
+  "department": "CHEMICAL SAFETY AND HAZARD INVESTIGATION BOARD",
+  "agency_code": "FJ",
+  "agency": "CHEMICAL SAFETY/HAZARD INVESTIGATION BD",
+  "headcount_202607": 43
+ },
+ {
+  "department_code": "HP",
+  "department": "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
+  "agency_code": "HP",
+  "agency": "ADV COUNCIL ON HISTORIC PRESERVATION",
+  "headcount_202607": 36
+ },
+ {
+  "department_code": "NP",
+  "department": "NATIONAL CAPITAL PLANNING COMMISSION",
+  "agency_code": "NP",
+  "agency": "NATIONAL CAPITAL PLANNING COMMISSION",
+  "headcount_202607": 34
+ },
+ {
+  "department_code": "HB",
+  "department": "COMMITTEE FOR PURCHASE FROM PEOPLE WHO ARE BLIND OR SE VERELY DISABLED",
+  "agency_code": "HB",
+  "agency": "CMTE FOR PURCH FRM PPLE BLIND OR SEV DIS",
+  "headcount_202607": 33
+ },
+ {
+  "department_code": "NM",
+  "department": "NATIONAL MEDIATION BOARD",
+  "agency_code": "NM",
+  "agency": "NATIONAL MEDIATION BOARD",
+  "headcount_202607": 33
+ },
+ {
+  "department_code": "BT",
+  "department": "ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD",
+  "agency_code": "BT",
+  "agency": "ARCHITECTL & TRANS BARRIER COMPLIANCE BD",
+  "headcount_202607": 33
+ },
+ {
+  "department_code": "EO",
+  "department": "MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION",
+  "agency_code": "EO",
+  "agency": "MORRIS K. UDALL & STEWART L. UDALL FOUND",
+  "headcount_202607": 32
+ },
+ {
+  "department_code": "ZS",
+  "department": "UNITED STATES-CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
+  "agency_code": "ZS",
+  "agency": "U.S.-CHINA ECONOMIC & SECURITY REV CMSN",
+  "headcount_202607": 30
+ },
+ {
+  "department_code": "DO",
+  "department": "OFFICE OF THE CYBER DIRECTOR",
+  "agency_code": "DO",
+  "agency": "OFC OF THE NAT CYBER DIRECTOR",
+  "headcount_202607": 29
+ },
+ {
+  "department_code": "NS",
+  "department": "NATIONAL SECURITY COUNCIL",
+  "agency_code": "NS",
+  "agency": "NATIONAL SECURITY COUNCIL",
+  "headcount_202607": 28
+ },
+ {
+  "department_code": "ZP",
+  "department": "U.S. COMMISSION ON INTERNATIONAL RELIGIOUS FREEDOM",
+  "agency_code": "ZP",
+  "agency": "U.S. CMSN ON INTERNATL RELIGIOUS FREEDOM",
+  "headcount_202607": 28
+ },
+ {
+  "department_code": "VD",
+  "department": "PRIVACY AND CIVIL LIBERTIES OVERSIGHT BOARD",
+  "agency_code": "VD",
+  "agency": "PRIVACY AND CIVIL LIBERTIES OVERSIGHT",
+  "headcount_202607": 25
+ },
+ {
+  "department_code": "RS",
+  "department": "FEDERAL MINE SAFETY AND HEALTH REVIEW COMMISSION",
+  "agency_code": "RS",
+  "agency": "FED MINE SAFETY AND HEALTH REVIEW CMSN",
+  "headcount_202607": 24
+ },
+ {
+  "department_code": "MA",
+  "department": "MARINE MAMMAL COMMISSION",
+  "agency_code": "MA",
+  "agency": "MARINE MAMMAL COMMISSION",
+  "headcount_202607": 24
+ },
+ {
+  "department_code": "IG",
+  "department": "COUNCIL OF THE INSPECTORS GENERAL ON INTEGRITY AND EFFICIENCY",
+  "agency_code": "IG",
+  "agency": "COUNCIL OF INSP. GEN. ON INTEG.& EFFIC.",
+  "headcount_202607": 24
+ },
+ {
+  "department_code": "TS",
+  "department": "OFFICE OF SCIENCE AND TECHNOLOGY POLICY",
+  "agency_code": "TS",
+  "agency": "OFFICE OF SCIENCE AND TECHNOLOGY POLICY",
+  "headcount_202607": 23
+ },
+ {
+  "department_code": "CE",
+  "department": "COUNCIL OF ECONOMIC ADVISERS",
+  "agency_code": "CE",
+  "agency": "COUNCIL OF ECONOMIC ADVISERS",
+  "headcount_202607": 23
+ },
+ {
+  "department_code": "GX",
+  "department": "INTERNATIONAL BOUNDARY COMMISSION:  UNITED STATES AND CANADA",
+  "agency_code": "GX",
+  "agency": "INTERNAT BOUNDARY CMSN: U.S. AND CANADA",
+  "headcount_202607": 22
+ },
+ {
+  "department_code": "IF",
+  "department": "INTER-AMERICAN FOUNDATION",
+  "agency_code": "IF",
+  "agency": "INTER-AMERICAN FOUNDATION",
+  "headcount_202607": 21
+ },
+ {
+  "department_code": "AN",
+  "department": "AFRICAN DEVELOPMENT FOUNDATION",
+  "agency_code": "AN",
+  "agency": "AFRICAN DEVELOPMENT FOUNDATION",
+  "headcount_202607": 21
+ },
+ {
+  "department_code": "GC",
+  "department": "GULF COAST ECOSYSTEM RESTORATION COUNCIL",
+  "agency_code": "GC",
+  "agency": "GULF COAST ECOSYSTEM RESTORATION COUNCIL",
+  "headcount_202607": 20
+ },
+ {
+  "department_code": "WK",
+  "department": "FEDERAL PERMITTING IMPROVEMENT STEERING COUNCIL",
+  "agency_code": "WK",
+  "agency": "FEDERAL PERMITTING IMPROVEMENT STEER",
+  "headcount_202607": 19
+ },
+ {
+  "department_code": "NK",
+  "department": "NATIONAL COUNCIL ON DISABILITY",
+  "agency_code": "NK",
+  "agency": "NATIONAL COUNCIL ON DISABILITY",
+  "headcount_202607": 19
+ },
+ {
+  "department_code": "EQ",
+  "department": "COUNCIL ON ENVIRONMENTAL QUALITY/OFFICE OF ENVIRONMENTAL QUALITY",
+  "agency_code": "EQ",
+  "agency": "COUNCIL ON ENVIR QUAL/OFC OF ENVIR QUAL",
+  "headcount_202607": 19
+ },
+ {
+  "department_code": "BH",
+  "department": "COMMISSION FOR THE PRESERVATION OF AMERICA'S HERITAGE ABROAD",
+  "agency_code": "BH",
+  "agency": "CMSN FOR PRES OF AMERICA'S HERITAGE ABRD",
+  "headcount_202607": 18
+ },
+ {
+  "department_code": "CX",
+  "department": "NATIONAL COMMISSION ON LIBRARIES AND INFORMATION SCIENCE",
+  "agency_code": "CX",
+  "agency": "NAT CMSN ON LIBRARIES AND INFO SCIENCE",
+  "headcount_202607": 17
+ },
+ {
+  "department_code": "GY",
+  "department": "INTERNATIONAL JOINT COMMISSION:  UNITED STATES AND CANADA",
+  "agency_code": "GY",
+  "agency": "INTERNATIONAL JOINT CMSN: U.S. & CANADA",
+  "headcount_202607": 15
+ },
+ {
+  "department_code": "DQ",
+  "department": "DENALI COMMISSION",
+  "agency_code": "DQ",
+  "agency": "DENALI COMMISSION",
+  "headcount_202607": 12
+ },
+ {
+  "department_code": "FI",
+  "department": "FEDERAL FINANCIAL INSTITUTIONS EXAMINATION COUNCIL",
+  "agency_code": "FI",
+  "agency": "FEDERAL FINANCIAL INST. EXAM. COUNCIL",
+  "headcount_202607": 11
+ },
+ {
+  "department_code": "RJ",
+  "department": "CIVIL RIGHTS COLD CASE REVIEW BOARD (CRCCRB)",
+  "agency_code": "RJ",
+  "agency": "CIVIL RIGHTS COLD CASE REVIEW BOARD",
+  "headcount_202607": 11
+ },
+ {
+  "department_code": "BW",
+  "department": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+  "agency_code": "BW",
+  "agency": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+  "headcount_202607": 11
+ },
+ {
+  "department_code": "UT",
+  "department": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
+  "agency_code": "UT",
+  "agency": "UTAH RECLAMATN MITIGATN & CONSERVTN CMSN",
+  "headcount_202607": 11
+ },
+ {
+  "department_code": "HW",
+  "department": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+  "agency_code": "HW",
+  "agency": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+  "headcount_202607": 10
+ },
+ {
+  "department_code": "FK",
+  "department": "FARM CREDIT SYSTEM INSURANCE CORPORATION",
+  "agency_code": "FK",
+  "agency": "FARM CREDIT SYSTEM INSURANCE CORPORATION",
+  "headcount_202607": 10
+ },
+ {
+  "department_code": "AA",
+  "department": "ADMINISTRATIVE CONFERENCE OF THE UNITED STATES",
+  "agency_code": "AA",
+  "agency": "ADMIN CONFERENCE OF THE UNITED STATES",
+  "headcount_202607": 10
+ },
+ {
+  "department_code": "DB",
+  "department": "PUBLIC INTEREST DECLASSIFICATION BOARD",
+  "agency_code": "DB",
+  "agency": "PUBLIC INTEREST DECLASSIFICATION BOARD",
+  "headcount_202607": 9
+ },
+ {
+  "department_code": "UJ",
+  "department": "JAPAN-UNITED STATES FRIENDSHIP COMMISSION",
+  "agency_code": "UJ",
+  "agency": "JAPAN-UNITED STATES FRIENDSHIP CMSN",
+  "headcount_202607": 9
+ },
+ {
+  "department_code": "CF",
+  "department": "COMMISSION OF FINE ARTS",
+  "agency_code": "CF",
+  "agency": "COMMISSION OF FINE ARTS",
+  "headcount_202607": 8
+ },
+ {
+  "department_code": "GU",
+  "department": "THE US SEMIQUINCENTENNIAL COMMISSION",
+  "agency_code": "GU",
+  "agency": "THE US SEMIQUINCENTENNIAL COMMISSION",
+  "headcount_202607": 8
+ },
+ {
+  "department_code": "KY",
+  "department": "PUBLIC BUILDINGS REFORM BOARD",
+  "agency_code": "KY",
+  "agency": "PUBLIC BUILDINGS REFORM BOARD",
+  "headcount_202607": 7
+ },
+ {
+  "department_code": "AP",
+  "department": "APPALACHIAN REGIONAL COMMISSION",
+  "agency_code": "AP",
+  "agency": "APPALACHIAN REGIONAL COMMISSION",
+  "headcount_202607": 5
+ },
+ {
+  "department_code": "HT",
+  "department": "HARRY S. TRUMAN SCHOLARSHIP FOUNDATION",
+  "agency_code": "HT",
+  "agency": "HARRY S. TRUMAN SCHOLARSHIP FOUNDATION",
+  "headcount_202607": 5
+ },
+ {
+  "department_code": "BK",
+  "department": "JAMES MADISON MEMORIAL FELLOWSHIP FOUNDATION",
+  "agency_code": "BK",
+  "agency": "JAMES MADISON MEMORIAL FELLOWSHIP FOUND",
+  "headcount_202607": 5
+ },
+ {
+  "department_code": "DG",
+  "department": "NORTHERN BORDER REGIONAL COMMISSION",
+  "agency_code": "DG",
+  "agency": "NORTHERN BORDER REGIONAL COMMISSION",
+  "headcount_202607": 2
+ },
+ {
+  "department_code": "AW",
+  "department": "ARCTIC RESEARCH COMMISSION",
+  "agency_code": "AW",
+  "agency": "ARCTIC RESEARCH COMMISSION",
+  "headcount_202607": 2
+ },
+ {
+  "department_code": "GE",
+  "department": "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
+  "agency_code": "GE",
+  "agency": "BARRY GOLDWATER SCHOL & EXCEL IN ED FOUN",
+  "headcount_202607": 2
+ },
+ {
+  "department_code": "DA",
+  "department": "DELTA REGIONAL AUTHORITY",
+  "agency_code": "DA",
+  "agency": "DELTA REGIONAL AUTHORITY",
+  "headcount_202607": 1
+ },
+ {
+  "department_code": "WU",
+  "department": "SOUTHWEST BORDER REGIONAL COMMISSION",
+  "agency_code": "WU",
+  "agency": "SOUTHWEST BORDER REGIONAL COMMISSION",
+  "headcount_202607": 1
+ }
+]

@@ -1,0 +1,16 @@
+# data
+data/raw/
+data/work/
+*.parquet
+!data/reference/*.parquet
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# node / misc
+node_modules/
+.DS_Store
+.env
