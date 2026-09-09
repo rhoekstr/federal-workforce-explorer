@@ -16,16 +16,31 @@ log = logging.getLogger(__name__)
 SMALL_AGENCY_MAX_SUBELEMENTS = 1
 
 
+ABBREV = {
+    "nat": "National", "natl": "National", "developm": "Development", "offendr": "Offender", "supervsn": "Supervision",
+    "agy": "Agency", "cmsn": "Commission", "comm": "Commission", "corp": "Corporation", "fed": "Federal", "internat": "International",
+    "internatl": "International", "admin": "Administration", "ofc": "Office", "dept": "Department", "svcs": "Services", "svc": "Service",
+    "mgmt": "Management", "hq": "Headquarters", "ctr": "Center", "asst": "Assistant", "sec": "Secretary", "dev": "Development",
+}
+UPPER = {"u.s.", "us", "dc", "epa", "nasa", "fdic", "dfc", "osd", "irs", "fbi", "dea", "atf", "cbp", "ice", "tsa", "fema", "cisa", "faa", "nih", "cdc", "fda", "cms", "va", "bls", "osha", "msha", "eta", "ebsa", "owcp", "ig", "oig", "cfo", "cio", "hr", "it"}
+
+
 def _title(name: str) -> str:
     small = {"of", "and", "the", "for", "on", "in", "to", "at", "&"}
     words = []
-    for i, w in enumerate(name.lower().split()):
-        if w in ("u.s.", "us", "dc", "epa", "nasa", "fdic", "dfc", "osd"):
-            words.append(w.upper())
-        elif i and w in small:
-            words.append(w)
-        else:
-            words.append(w.capitalize())
+    for i, raw in enumerate(name.lower().split()):
+        parts = raw.split("-")
+        fixed = []
+        for w in parts:
+            if w in UPPER:
+                fixed.append(w.upper())
+            elif w in ABBREV:
+                fixed.append(ABBREV[w])
+            elif i and w in small and len(parts) == 1:
+                fixed.append(w)
+            else:
+                fixed.append(w.capitalize())
+        words.append("-".join(fixed))
     return " ".join(words)
 
 

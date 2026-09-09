@@ -30,7 +30,7 @@ export function headcountChart(series, { title = "Headcount by month", compare }
     marks.push(Plot.lineY(compare, { x: "date", y: "n", stroke: PALETTE[1], strokeDasharray: "4 3", strokeWidth: 2 }));
     marks.push(Plot.dot(compare, { x: "date", y: "n", stroke: PALETTE[1], fill: (d) => (d.kind === "estimate" ? "white" : PALETTE[1]), r: 4, title: (d) => `${d.label}: ${fmt.int(d.n)} (${d.kind})` }));
   }
-  const plot = Plot.plot({ width: width(), height: 260, marginLeft: 60, x: { type: "utc", label: null }, y: { grid: true, label: "Employees", tickFormat: "~s", domain: [0, d3.max(data, (d) => d.n) * 1.08] }, marks });
+  const plot = Plot.plot({ width: width(), height: 260, marginLeft: 60, x: { type: "utc", label: null, ticks: d3.utcMonth.every(data.length > 18 ? 3 : 1), tickFormat: d3.utcFormat("%b %y") }, y: { grid: true, label: "Employees", tickFormat: "~s", domain: [0, d3.max(data, (d) => d.n) * 1.08] }, marks });
   const alt = altTable(["Month", "Headcount"], data.map((d) => [fmt.month(d.month), fmt.int(d.n)]));
   return figure(title, plot, alt);
 }
@@ -55,7 +55,7 @@ export function actionsChart(series, codes, { title = "Hires and separations by 
   if (!rows.length) return el("p", { class: "muted" }, "No personnel actions in range.");
   const cats = [...new Set(rows.map((r) => r.cat))];
   const plot = Plot.plot({
-    width: width(), height: 300, marginLeft: 60, x: { type: "utc", label: null, interval: "month" },
+    width: width(), height: 300, marginLeft: 60, x: { type: "utc", label: null, interval: "month", ticks: d3.utcMonth.every(1), tickFormat: d3.utcFormat("%b %y") },
     y: { grid: true, label: "Accessions ↑ / Separations ↓", tickFormat: (v) => fmt.money(Math.abs(v)) },
     color: { domain: cats, range: PALETTE, legend: true },
     marks: [Plot.ruleY([0]), Plot.rectY(rows, { x: "date", y: "n", fill: "cat", interval: "month", title: (d) => `${fmt.month(d.month)} ${d.cat}: ${fmt.int(Math.abs(d.n))}` })],

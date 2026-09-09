@@ -53,7 +53,7 @@ def cmd_build(args) -> int:
 
 def cmd_sync(args) -> int:
     manifest = mf.load()
-    todo = missing_files(manifest, args.year)
+    todo = [f for f in missing_files(manifest, args.year) if f["yyyymm"] >= (args.since or "000000")]
     if args.limit:
         todo = todo[: args.limit]
     log.info("%d files to fetch", len(todo))
@@ -99,7 +99,7 @@ def cmd_site(args) -> int:
 def cmd_publish(args) -> int:
     from pipeline.publish import publish_releases
 
-    publish_releases(repo=args.repo)
+    publish_releases(repo=args.repo, include_raw=not args.no_raw)
     return 0
 
 
@@ -113,6 +113,7 @@ def main(argv=None) -> int:
     b.set_defaults(fn=cmd_build)
     s = sub.add_parser("sync")
     s.add_argument("--year", type=int, default=None)
+    s.add_argument("--since", default=None, help="earliest YYYYMM to fetch")
     s.add_argument("--limit", type=int, default=0)
     s.set_defaults(fn=cmd_sync)
     m = sub.add_parser("money")
@@ -122,6 +123,7 @@ def main(argv=None) -> int:
     sub.add_parser("site").set_defaults(fn=cmd_site)
     pub = sub.add_parser("publish")
     pub.add_argument("--repo", default=None)
+    pub.add_argument("--no-raw", action="store_true")
     pub.set_defaults(fn=cmd_publish)
     args = p.parse_args(argv)
     return args.fn(args)

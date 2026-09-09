@@ -1,6 +1,84 @@
 {
  "datasets": {
   "accessions": {
+   "202601": {
+    "file": "fact_accessions_202601.parquet",
+    "incomplete_note": null,
+    "n": 15423,
+    "parquet_bytes": 107724,
+    "publish_date": "2026-04-30T18:44:41.752Z",
+    "release_url": null,
+    "rows_fact": 12020,
+    "rows_source": 15423,
+    "sha256": "9f57b9ea3c76efb0e1a8b2d82863c342d90ab20ed45efa6633a8afeefa790204",
+    "source_file": "accessions_202601_2.parquet",
+    "version": 2
+   },
+   "202602": {
+    "file": "fact_accessions_202602.parquet",
+    "incomplete_note": null,
+    "n": 8997,
+    "parquet_bytes": 69395,
+    "publish_date": "2026-04-30T18:43:28.508Z",
+    "release_url": null,
+    "rows_fact": 7422,
+    "rows_source": 8997,
+    "sha256": "f1da1a15c793c846399d7a668c41b9cb23fa31cf3b14dd42dcde49dfd436b662",
+    "source_file": "accessions_202602_2.parquet",
+    "version": 2
+   },
+   "202603": {
+    "file": "fact_accessions_202603.parquet",
+    "incomplete_note": null,
+    "n": 15100,
+    "parquet_bytes": 117368,
+    "publish_date": "2026-04-30T18:41:44.378Z",
+    "release_url": null,
+    "rows_fact": 12881,
+    "rows_source": 15100,
+    "sha256": "0262e55de5b8cc08d444cc5d730d7de75688675be4b49284b39ddd9bc89d118d",
+    "source_file": "accessions_202603_1.parquet",
+    "version": 1
+   },
+   "202604": {
+    "file": "fact_accessions_202604.parquet",
+    "incomplete_note": null,
+    "n": 16021,
+    "parquet_bytes": 122070,
+    "publish_date": "2026-05-28T15:11:21.595Z",
+    "release_url": null,
+    "rows_fact": 13394,
+    "rows_source": 16021,
+    "sha256": "d0af52255b2b702f07a998aaa458c46ab4e49ad3891512dcbf163cbc12467359",
+    "source_file": "accessions_202604_1.parquet",
+    "version": 1
+   },
+   "202605": {
+    "file": "fact_accessions_202605.parquet",
+    "incomplete_note": null,
+    "n": 24325,
+    "parquet_bytes": 170010,
+    "publish_date": "2026-06-30T16:41:47.880Z",
+    "release_url": null,
+    "rows_fact": 19729,
+    "rows_source": 24325,
+    "sha256": "de1209496abcba3e932c628492179ed33e8429060de71f48a6c6af41f766d6b6",
+    "source_file": "accessions_202605_1.parquet",
+    "version": 1
+   },
+   "202606": {
+    "file": "fact_accessions_202606.parquet",
+    "incomplete_note": null,
+    "n": 16610,
+    "parquet_bytes": 117863,
+    "publish_date": "2026-09-02T14:13:59.710Z",
+    "release_url": null,
+    "rows_fact": 13252,
+    "rows_source": 16610,
+    "sha256": "6a7beb7f6834f98fe7b0dda7342714c752d57dfa5d67d1dae75a246e3c03bb62",
+    "source_file": "accessions_202606_3.parquet",
+    "version": 3
+   },
    "202607": {
     "file": "fact_accessions_202607.parquet",
     "incomplete_note": null,
@@ -81,6 +159,19 @@
     "source_file": "employment_202605_1.parquet",
     "version": 1
    },
+   "202606": {
+    "file": "fact_employment_202606.parquet",
+    "incomplete_note": null,
+    "n": 2029748,
+    "parquet_bytes": 8674874,
+    "publish_date": "2026-09-02T13:32:10.679Z",
+    "release_url": null,
+    "rows_fact": 1436063,
+    "rows_source": 2029748,
+    "sha256": "78655ea3c98733e98683c355f5f6f0925801d36a990081ba48d1c63544d5a024",
+    "source_file": "employment_202606_2.parquet",
+    "version": 2
+   },
    "202607": {
     "file": "fact_employment_202607.parquet",
     "incomplete_note": null,
@@ -96,6 +187,84 @@
    }
   },
   "separations": {
+   "202601": {
+    "file": "fact_separations_202601.parquet",
+    "incomplete_note": null,
+    "n": 37883,
+    "parquet_bytes": 324716,
+    "publish_date": "2026-04-30T18:50:44.361Z",
+    "release_url": null,
+    "rows_fact": 35117,
+    "rows_source": 37883,
+    "sha256": "e64d533fe94f6879c36e6510890d5fa4f3ee980b124625a3106b879b1e1f54f9",
+    "source_file": "separations_202601_2.parquet",
+    "version": 2
+   },
+   "202602": {
+    "file": "fact_separations_202602.parquet",
+    "incomplete_note": null,
+    "n": 16988,
+    "parquet_bytes": 160806,
+    "publish_date": "2026-04-30T18:50:01.711Z",
+    "release_url": null,
+    "rows_fact": 16296,
+    "rows_source": 16988,
+    "sha256": "f39873dc53986a9adb779cf460c238d819c62b7f7adae2f9d92e18880c7ebbd6",
+    "source_file": "separations_202602_2.parquet",
+    "version": 2
+   },
+   "202603": {
+    "file": "fact_separations_202603.parquet",
+    "incomplete_note": null,
+    "n": 21991,
+    "parquet_bytes": 218448,
+    "publish_date": "2026-04-30T18:49:18.058Z",
+    "release_url": null,
+    "rows_fact": 21140,
+    "rows_source": 21991,
+    "sha256": "3f2b870d1d81fb0cc316d62e826d1c1a0fb10d08e11cc99f308ebd3cbc7c7901",
+    "source_file": "separations_202603_1.parquet",
+    "version": 1
+   },
+   "202604": {
+    "file": "fact_separations_202604.parquet",
+    "incomplete_note": null,
+    "n": 15571,
+    "parquet_bytes": 159037,
+    "publish_date": "2026-05-28T15:11:21.601Z",
+    "release_url": null,
+    "rows_fact": 14783,
+    "rows_source": 15571,
+    "sha256": "2ed4c37829a7a6f648f15d6cb31f4d809e4606e874eba8974fb171681f49a6f4",
+    "source_file": "separations_202604_1.parquet",
+    "version": 1
+   },
+   "202605": {
+    "file": "fact_separations_202605.parquet",
+    "incomplete_note": null,
+    "n": 17872,
+    "parquet_bytes": 175823,
+    "publish_date": "2026-06-30T16:41:48.004Z",
+    "release_url": null,
+    "rows_fact": 17008,
+    "rows_source": 17872,
+    "sha256": "4cfde1938a9d4a2e9df43caa0314e941038a131db36bb814c9aeb68f9b90f145",
+    "source_file": "separations_202605_1.parquet",
+    "version": 1
+   },
+   "202606": {
+    "file": "fact_separations_202606.parquet",
+    "incomplete_note": null,
+    "n": 16299,
+    "parquet_bytes": 157665,
+    "publish_date": "2026-09-02T14:13:59.838Z",
+    "release_url": null,
+    "rows_fact": 14895,
+    "rows_source": 16299,
+    "sha256": "5f2747f5fe20d5107a8e356a043d5f9675fa204cc60f9eec1257c6176ae8158d",
+    "source_file": "separations_202606_3.parquet",
+    "version": 3
+   },
    "202607": {
     "file": "fact_separations_202607.parquet",
     "incomplete_note": null,
@@ -111,7 +280,7 @@
    }
   }
  },
- "generated": "2026-09-09T22:57:41Z",
+ "generated": "2026-09-09T23:00:21Z",
  "money": {
   "fileb_periods": [
    "FY2026Q3",

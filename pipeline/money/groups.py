@@ -135,7 +135,7 @@ def seed_groups() -> tuple[dict, dict]:
 
     for gid, spec in OVERRIDES.items():
         g = {
-            "name": spec.get("name") or next((r["agency"].title() for r in fwd if r["agency_code"] in spec["fwd_agency_codes"]), gid),
+            "name": spec.get("name") or (spec.get("usaspending_names") or [None])[0] or next((r["agency"].title() for r in fwd if r["agency_code"] in spec["fwd_agency_codes"]), gid),
             "fwd_agency_codes": spec.get("fwd_agency_codes", []),
             "fwd_org_codes": spec.get("fwd_org_codes", []),
             "fwd_exclude_org_codes": spec.get("fwd_exclude_org_codes", []),

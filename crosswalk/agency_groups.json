@@ -60,7 +60,7 @@
   "note": "OMB's line pools USAID with other foreign assistance; USAID headcount is what FWD carries."
  },
  "treasury": {
-  "name": "Department Of Treasury",
+  "name": "Department of the Treasury",
   "fwd_agency_codes": [
    "TR"
   ],
@@ -78,7 +78,7 @@
   "method": "manual"
  },
  "interior": {
-  "name": "Department Of Interior",
+  "name": "Department of the Interior",
   "fwd_agency_codes": [
    "IN"
   ],
@@ -96,7 +96,7 @@
   "method": "manual"
  },
  "opm": {
-  "name": "Office Of Personnel Management",
+  "name": "Office of Personnel Management",
   "fwd_agency_codes": [
    "OM"
   ],
@@ -114,7 +114,7 @@
   "method": "manual"
  },
  "cfpb": {
-  "name": "cfpb",
+  "name": "Consumer Financial Protection Bureau",
   "fwd_agency_codes": [],
   "fwd_org_codes": [],
   "fwd_exclude_org_codes": [],
@@ -128,7 +128,7 @@
   "method": "manual"
  },
  "dfc": {
-  "name": "Dfc",
+  "name": "U.S. International Development Finance Corporation",
   "fwd_agency_codes": [
    "GB"
   ],
@@ -144,7 +144,7 @@
   "method": "manual"
  },
  "csosa": {
-  "name": "Court Services And Offendr Supervsn Agy",
+  "name": "Court Services and Offender Supervision Agency",
   "fwd_agency_codes": [
    "FQ"
   ],
@@ -160,7 +160,7 @@
   "method": "manual"
  },
  "usagm": {
-  "name": "U.S.Agency For Global Media",
+  "name": "U.S. Agency for Global Media",
   "fwd_agency_codes": [
    "IB"
   ],
@@ -223,7 +223,7 @@
   "method": "manual"
  },
  "fmcs": {
-  "name": "Fed Mediation And Conciliation Service",
+  "name": "Federal Mediation and Conciliation Service",
   "fwd_agency_codes": [
    "FM"
   ],
@@ -239,7 +239,7 @@
   "method": "manual"
  },
  "oshrc": {
-  "name": "Occupational Safety & Health Review Cmsn",
+  "name": "Occupational Safety and Health Review Commission",
   "fwd_agency_codes": [
    "OS"
   ],
@@ -255,7 +255,7 @@
   "method": "manual"
  },
  "csb": {
-  "name": "Chemical Safety/Hazard Investigation Bd",
+  "name": "United States Chemical Safety Board",
   "fwd_agency_codes": [
    "FJ"
   ],
@@ -271,7 +271,7 @@
   "method": "manual"
  },
  "achp": {
-  "name": "Adv Council On Historic Preservation",
+  "name": "Advisory Council on Historic Preservation",
   "fwd_agency_codes": [
    "HP"
   ],
@@ -287,7 +287,7 @@
   "method": "manual"
  },
  "abilityone": {
-  "name": "Cmte For Purch Frm Pple Blind Or Sev Dis",
+  "name": "Committee for Purchase from People Who Are Blind or Severely Disabled",
   "fwd_agency_codes": [
    "HB"
   ],
@@ -303,7 +303,7 @@
   "method": "manual"
  },
  "udall": {
-  "name": "Morris K. Udall & Stewart L. Udall Found",
+  "name": "Morris K. Udall and Stewart L. Udall Foundation",
   "fwd_agency_codes": [
    "EO"
   ],
@@ -317,7 +317,7 @@
   "method": "manual"
  },
  "pclob": {
-  "name": "Privacy And Civil Liberties Oversight",
+  "name": "Privacy and Civil Liberties Oversight Board",
   "fwd_agency_codes": [
    "VD"
   ],
@@ -333,7 +333,7 @@
   "method": "manual"
  },
  "fmshrc": {
-  "name": "Fed Mine Safety And Health Review Cmsn",
+  "name": "Federal Mine Safety and Health Review Commission",
   "fwd_agency_codes": [
    "RS"
   ],
@@ -347,7 +347,7 @@
   "method": "manual"
  },
  "cigie": {
-  "name": "Council Of Insp. Gen. On Integ.& Effic.",
+  "name": "Council of the Inspectors General on Integrity and Efficiency",
   "fwd_agency_codes": [
    "IG"
   ],
@@ -361,7 +361,7 @@
   "method": "manual"
  },
  "fpisc": {
-  "name": "Federal Permitting Improvement Steer",
+  "name": "Federal Permitting Improvement Steering Council",
   "fwd_agency_codes": [
    "WK"
   ],
@@ -377,7 +377,7 @@
   "method": "manual"
  },
  "heritage_abroad": {
-  "name": "Cmsn For Pres Of America'S Heritage Abrd",
+  "name": "Commission for the Preservation of America's Heritage Abroad",
   "fwd_agency_codes": [
    "BH"
   ],
@@ -391,7 +391,7 @@
   "method": "manual"
  },
  "ffiec": {
-  "name": "Federal Financial Inst. Exam. Council",
+  "name": "Federal Financial Institutions Examination Council",
   "fwd_agency_codes": [
    "FI"
   ],
@@ -405,7 +405,7 @@
   "method": "manual"
  },
  "acus": {
-  "name": "Admin Conference Of The United States",
+  "name": "Administrative Conference of the U.S.",
   "fwd_agency_codes": [
    "AA"
   ],
@@ -419,7 +419,7 @@
   "method": "manual"
  },
  "jusfc": {
-  "name": "Japan-United States Friendship Cmsn",
+  "name": "Japan-United States Friendship Commission",
   "fwd_agency_codes": [
    "UJ"
   ],
@@ -433,7 +433,7 @@
   "method": "manual"
  },
  "access_board": {
-  "name": "Architectl & Trans Barrier Compliance Bd",
+  "name": "Access Board",
   "fwd_agency_codes": [
    "BT"
   ],
@@ -449,7 +449,7 @@
   "method": "manual"
  },
  "truman": {
-  "name": "Harry S. Truman Scholarship Foundation",
+  "name": "Harry S Truman Scholarship Foundation",
   "fwd_agency_codes": [
    "HT"
   ],
@@ -463,7 +463,7 @@
   "method": "manual"
  },
  "madison": {
-  "name": "James Madison Memorial Fellowship Found",
+  "name": "James Madison Memorial Fellowship Foundation",
   "fwd_agency_codes": [
    "BK"
   ],
@@ -477,7 +477,7 @@
   "method": "manual"
  },
  "goldwater": {
-  "name": "Barry Goldwater Schol & Excel In Ed Foun",
+  "name": "Barry Goldwater Scholarship and Excellence In Education Foundation",
   "fwd_agency_codes": [
    "GE"
   ],
