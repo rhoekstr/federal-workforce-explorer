@@ -133,13 +133,14 @@ async function renderDetail(code) {
   const emp = manifest.datasets?.employment?.[latest];
   const note = document.getElementById("download-note");
   note.innerHTML = "";
-  if (emp?.release_url) {
-    note.append(`Fact table for ${fmt.month(latest)}: `, el("a", { href: emp.release_url }, emp.file), ` (${fmt.money(emp.parquet_bytes)}B parquet, ${fmt.int(emp.rows_fact)} rows). Filter on org_code starting with "${code === "gov" ? "" : code.replace("D:", "")}". `, el("a", { href: "data.html" }, "All months and the data dictionary."));
+  const fileUrl = emp?.site_url || emp?.release_url;
+  if (fileUrl) {
+    note.append(`Fact table for ${fmt.month(latest)}: `, el("a", { href: fileUrl }, emp.file), ` (${fmt.money(emp.parquet_bytes)}B parquet, ${fmt.int(emp.rows_fact)} rows). Filter on org_code starting with "${code === "gov" ? "" : code.replace("D:", "")}". `, el("a", { href: "data.html" }, "All months and the data dictionary."));
   } else {
-    note.append(`Fact tables are published to GitHub Releases once a month. `, el("a", { href: "data.html" }, "See the data page."));
+    note.append(`Fact tables are published once a month. `, el("a", { href: "data.html" }, "See the data page."));
   }
   const { filterPanel } = await import("./js/query.js");
-  filterPanel(document.getElementById("query"), { fileUrl: emp?.release_url, month: latest, orgCode: code === "gov" ? "" : code.replace("D:", ""), lookups: { codes, series: series_lk, pay_plan: payplan_lk, step: step_lk, duty_station: await loadJSON("data/lookups/duty_station.json").catch(() => ({})) } });
+  filterPanel(document.getElementById("query"), { fileUrl: fileUrl ? new URL(fileUrl, location.href).href : null, month: latest, orgCode: code === "gov" ? "" : code.replace("D:", ""), lookups: { codes, series: series_lk, pay_plan: payplan_lk, step: step_lk, duty_station: await loadJSON("data/lookups/duty_station.json").catch(() => ({})) } });
 }
 
 select(selected);

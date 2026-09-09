@@ -71,8 +71,10 @@ jobs:
         if: failure()
         run: gh issue create --title "Monthly refresh failed $(date -u +%Y-%m-%d)" --body "See run ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" --label "pipeline" || true
 
+  # Pages needs a public repo on a free plan. Set repository variable PAGES_ENABLED=true once Pages is on.
   deploy:
     needs: refresh
+    if: vars.PAGES_ENABLED == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

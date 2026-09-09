@@ -74,7 +74,7 @@ t.append(el("thead", {}, el("tr", {}, ["Dataset", "Month", "OPM version", "Publi
 const tb = el("tbody");
 for (const [ds, monthsObj] of Object.entries(manifest.datasets || {})) {
   for (const [m, v] of Object.entries(monthsObj).sort()) {
-    tb.append(el("tr", {}, el("td", {}, ds), el("td", {}, fmt.month(m)), el("td", {}, String(v.version)), el("td", {}, (v.publish_date || "").slice(0, 10)), el("td", { class: "num" }, fmt.int(v.rows_source)), el("td", { class: "num" }, fmt.int(v.rows_fact)), el("td", { class: "num" }, fmt.money(v.parquet_bytes) + "B"), el("td", {}, v.release_url ? el("a", { href: v.release_url }, v.file) : el("span", { class: "muted" }, "not yet released"))));
+    tb.append(el("tr", {}, el("td", {}, ds), el("td", {}, fmt.month(m)), el("td", {}, String(v.version)), el("td", {}, (v.publish_date || "").slice(0, 10)), el("td", { class: "num" }, fmt.int(v.rows_source)), el("td", { class: "num" }, fmt.int(v.rows_fact)), el("td", { class: "num" }, fmt.money(v.parquet_bytes) + "B"), el("td", {}, (v.site_url || v.release_url) ? el("a", { href: v.site_url || v.release_url }, v.file) : el("span", { class: "muted" }, "not yet released"))));
   }
 }
 t.append(tb);
