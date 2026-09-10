@@ -1,6 +1,6 @@
-# Federal Workforce Explorer — repo instructions
+# Fed Pulse — repo instructions
 
-Awry Labs project. Static, privacy-first dashboard over OPM Federal Workforce Data (FWD), PLUM, USAspending, and OMB FTE. Read `PRD.md` before changing scope; read `RUNBOOK.md` before building. Every number in those documents was measured on the July 2026 files on 2026-09-09.
+Awry Labs project (product name: Fed Pulse; repo keeps its original name). Static, privacy-first dashboard over OPM Federal Workforce Data (FWD), PLUM, USAspending, and OMB FTE. Read `PRD.md` before changing scope; read `RUNBOOK.md` before building. Every number in those documents was measured on the July 2026 files on 2026-09-09.
 
 ## Hard rules
 

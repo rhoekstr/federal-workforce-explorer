@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agency · Federal Workforce Explorer</title>
+<title>Agency · Fed Pulse</title>
 <link rel="stylesheet" href="css/site.css">
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
@@ -40,7 +40,7 @@ if (!row || !spec) {
   document.getElementById("title").textContent = "Unknown agency";
   document.getElementById("lede").textContent = "Pick an agency from the overview.";
 } else {
-  document.title = `${row.name} · Federal Workforce Explorer`;
+  document.title = `${row.name} · Fed Pulse`;
   document.getElementById("title").textContent = row.name;
   document.getElementById("crumb").textContent = row.name;
   const fwdCodes = spec.fwd_agency_codes.filter((c) => tree.nodes[c]);

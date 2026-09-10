@@ -63,7 +63,7 @@ export function renderChrome(current) {
   const header = document.querySelector("header.top");
   if (header) {
     header.innerHTML = "";
-    const inner = el("div", { class: "inner" }, el("a", { class: "brand", href: "index.html" }, "Federal Workforce Explorer"));
+    const inner = el("div", { class: "inner" }, el("a", { class: "brand", href: "index.html" }, "Fed Pulse"));
     const nav = el("nav", { "aria-label": "Site" });
     for (const [href, label] of links) nav.append(el("a", { href, ...(href === current ? { "aria-current": "page" } : {}) }, label));
     inner.append(nav);

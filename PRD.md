@@ -1,6 +1,6 @@
-# Federal Workforce Explorer — Product Requirements Document
+# Fed Pulse — Product Requirements Document
 
-**Working title:** Federal Workforce Explorer (repo: `opm_search`; Awry Labs name TBD)
+**Name:** Fed Pulse (chosen 2026-09-10). Repo `rhoekstr/federal-workforce-explorer`; live at fedpulse.awrylabs.com.
 **Version:** 1.1
 **Status:** draft
 **Created:** 2026-09-09
@@ -340,10 +340,10 @@ FEVS is a leading indicator; separations are the outcome. The product puts them 
 | 2 | Show exact salary on executive person pages? PLUM publishes it by name under statute. | open 2026-09-09 | Show it in the position row, not in headline. It is public by design of the PLUM Act. |
 | 3 | Action time attribution: effective month (restates history as late actions arrive) or file month (never restates, smears events)? | open 2026-09-09 | Effective month for charts, with a "revised since last release" marker; file month kept in the fact table. |
 | 4 | History depth: start at January 2026 or backfill legacy FedScope quarterly cubes (different schema, 1998 onward)? | **resolved 2026-09-09** | The FWD metadata API lists the same schema back to March 2005 (quarterly to 2011, monthly from July 2011): 207 employment and 259 action files. No legacy cubes needed. MVP builds 2025 and 2026; deeper backfill is a matter of runner time, roughly 2.5 minutes per employment month. |
-| 5 | Product name under Awry Labs. | open 2026-09-09 | "Federal Workforce Explorer" as a descriptive working title. |
-| 6 | Hosting path: awrylabs.com/{name} in the site repo, or a separate repo with a custom subpath? | open 2026-09-09 | Separate repo (pipeline, releases, and issues need their own home), published to a subpath of awrylabs.com via Pages. |
+| 5 | Product name under Awry Labs. | **resolved 2026-09-10** | Fed Pulse, at fedpulse.awrylabs.com. |
+| 6 | Hosting path. | **resolved 2026-09-10** | Separate repo, GitHub Pages, custom subdomain fedpulse.awrylabs.com (CNAME to rhoekstr.github.io). |
 | 7 | Whether PLUM's `get-historical-incumbencies` endpoint carries more than the CSV's Historical rows. | open 2026-09-09 | Probe in Phase 3. |
-| 8 | Whether to keep raw (unaggregated) parquet on Releases for reproducibility, ~55 MB/month. | open 2026-09-09 | Yes. Cheap, and it means re-aggregation never requires re-downloading from OPM. |
+| 8 | Whether to keep raw (unaggregated) parquet on Releases. | **resolved 2026-09-10** | No. Fact tables only are public; raw files stay local and at OPM. |
 | 9 | Suppression of small cells? The source publishes record level, so the fact table adds no exposure, but a k-threshold on displayed cells (not stored) may be wise for the UI. | open 2026-09-09 | No suppression in data; UI displays "fewer than 5" for cells under 5 in any view that names a duty station. |
 | 10 | In-sourcing ratio definition. | **resolved 2026-09-09** | Labor substitution: personnel (11–13) ÷ (personnel + 25.1 + 25.2). See 5.8. |
 | 11 | Dollars administered vs operations. | **resolved 2026-09-09** | Two numbers, split by object class as in 5.8. |

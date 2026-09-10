@@ -99,7 +99,7 @@ def cmd_site(args) -> int:
 def cmd_publish(args) -> int:
     from pipeline.publish import publish_releases
 
-    publish_releases(repo=args.repo, include_raw=not args.no_raw)
+    publish_releases(repo=args.repo, include_raw=args.raw)
     return 0
 
 
@@ -123,7 +123,7 @@ def main(argv=None) -> int:
     sub.add_parser("site").set_defaults(fn=cmd_site)
     pub = sub.add_parser("publish")
     pub.add_argument("--repo", default=None)
-    pub.add_argument("--no-raw", action="store_true")
+    pub.add_argument("--raw", action="store_true", help="also upload raw parquet (off by default; Robert decided fact tables only)")
     pub.set_defaults(fn=cmd_publish)
     args = p.parse_args(argv)
     return args.fn(args)

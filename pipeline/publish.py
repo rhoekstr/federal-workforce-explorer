@@ -39,7 +39,7 @@ def ensure_release(repo: str, tag: str, yyyymm: str) -> None:
     title = f"Data {yyyymm[:4]}-{yyyymm[4:]}"
     notes = (
         f"Aggregated OPM Federal Workforce Data for {yyyymm[:4]}-{yyyymm[4:]}: employment snapshot, accessions, separations. "
-        "Schema and definitions: see data.html on the site and PRD.md in the repo. Raw parquet (all source columns, no PII) is included for reproducibility."
+        "Schema and definitions: see the Data page on the site and PRD.md in the repo. Fact tables only; the raw OPM files are public at data.opm.gov."
     )
     _gh("release", "create", tag, "--repo", repo, "--title", title, "--notes", notes)
     log.info("created release %s", tag)
@@ -50,7 +50,7 @@ def upload(repo: str, tag: str, path: Path) -> str:
     return f"https://github.com/{repo}/releases/download/{tag}/{path.name}"
 
 
-def publish_releases(repo: str | None = None, include_raw: bool = True, only_missing: bool = True) -> dict:
+def publish_releases(repo: str | None = None, include_raw: bool = False, only_missing: bool = True) -> dict:
     repo = current_repo(repo)
     manifest = mf.load()
     published = {}
