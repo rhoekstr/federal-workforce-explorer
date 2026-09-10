@@ -83,9 +83,11 @@ def cmd_money(args) -> int:
 def cmd_slices(args) -> int:
     from pipeline.orgtree import build_orgtree
     from pipeline.slices import build_slices
+    from pipeline.trends import build_trends
 
     build_slices()
     build_orgtree()
+    build_trends()
     return 0
 
 

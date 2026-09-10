@@ -1,10 +1,10 @@
 # Fed Pulse — Product Requirements Document
 
 **Name:** Fed Pulse (chosen 2026-09-10). Repo `rhoekstr/federal-workforce-explorer`; live at fedpulse.awrylabs.com.
-**Version:** 1.1
+**Version:** 1.3
 **Status:** draft
 **Created:** 2026-09-09
-**Updated:** 2026-09-09 (v1.1: agency overview from USAspending and OMB; MVP defined; runbook added)
+**Updated:** 2026-09-10 (v1.3: named Fed Pulse at fedpulse.awrylabs.com; fact-only Releases; v0.2 enhancement plan in docs/ENHANCEMENT-PLAN.md covers the map, the configurable trend, the flows chart, and the spine-and-shelf navigator)
 **Author:** Robert Hoekstra, with Claude (workshop session 2026-09-09)
 
 Every number in this document was measured against the July 2026 OPM files on 2026-09-09 unless stated otherwise. Re-verify before relying on them in code.
@@ -158,7 +158,8 @@ The navigation is a funnel: government, then agency, then org chart, with money 
 - `/` — cross-government overview: one row per agency (overview group) with headcount, OMB FTE, personnel compensation, contracted services, in-sourcing ratio, dollars administered, dollars for operations, and twelve-month headcount change. Sortable. Government-wide totals and the headcount, accessions, and separations series above it.
 - `/agency/{group}` — agency overview: the same measures as a card set with rolling-four-quarter money and monthly people, the object class split as a bar, the FTE series from OMB beside the FWD headcount series, and the agency's org chart collapsed below. Leads into the tree.
 - `/org` — the org chart, full screen, with search. Selecting a node routes to `/org/{code}`.
-- `/org/{code}` — the node page, personnel only: trend lines, separations by category, grade and step mix, age mix, map, leadership box, and a download link for the filtered rows. No money below agency level, because USAspending has no payroll below toptier.
+- `/org/{code}` — the node page, personnel only, four configurable panels (v0.2): **Trend** (metric × breakdown × comparison × range), **Flows** (one bar per month, accessions up in blue, separations down in red, hover for a category pie), **Composition** (one dimension for the latest month), **Map** (county choropleth with the disclosure share in words). Plus download and in-browser query. No money below agency level, because USAspending has no payroll below toptier.
+- Navigation below agency uses a **spine and shelf** navigator (v0.2): the path to the selected node as a vertical spine, its children as a wrapping grid, sticky beside the detail on desktop.
 - `/map` — county choropleth for the current selection with the disclosure indicator.
 - `/executives` — PLUM directory: search by name, title, agency, appointment type; person timeline pages.
 - `/data` — every release, schema, data dictionary, methodology, caveats.
@@ -382,12 +383,11 @@ Each phase ships something usable on its own.
 - Monthly cron with discovery, rebuild, publish, and failure issue.
 - **Deliverable:** live site covering every month since January 2026 and the last rolling four quarters of money, government to agency to node.
 
-### Phase 2 — Geography and FEVS
+### Phase 2 — v0.2 enhancements and FEVS
 
-- County choropleth from TIGER TopoJSON; disclosure indicator everywhere geography appears.
-- Duty station lookup with FIPS; CBSA view.
-- FEVS agency-level indices and intent-to-leave (5.9) on the agency page and landing table.
-- **Deliverable:** map view for any node with honest coverage; survey baseline beside separations.
+- v0.2 (docs/ENHANCEMENT-PLAN.md): trend breakdown slices, county choropleth (precomputed for agencies, DuckDB-WASM for sub-elements), flows chart with hover pie, configurable Trend and Composition panels, spine-and-shelf navigator.
+- FEVS agency-level indices and intent-to-leave (5.9) on the agency page and landing table, informed by docs/FEVS-EXPLORATION.md.
+- **Deliverable:** map view for any node with honest coverage; one configurable trend instead of many charts; survey baseline beside separations.
 
 ### Phase 3 — PLUM
 
