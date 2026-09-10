@@ -14,11 +14,12 @@ export function figure(caption, plotNode, alt) {
 }
 
 function width() {
-  return Math.min(1100, Math.max(320, (document.querySelector("main")?.clientWidth || 800) - 40));
+  const host = document.querySelector("#composition") || document.querySelector("#charts") || document.querySelector("main");
+  return Math.min(1100, Math.max(300, (host?.clientWidth || 800) - 40));
 }
 
 // Monthly headcount line. series: {months:[yyyymm], headcount:{yyyymm:n}}
-export function headcountChart(series, { title = "Headcount by month", compare } = {}) {
+export function headcountChart(series, { title = "Headcount by month", compare, width: w } = {}) {
   const data = series.months.filter((m) => series.headcount[m] != null).map((m) => ({ date: fmt.monthDate(m), n: series.headcount[m], month: m }));
   if (!data.length) return el("p", { class: "muted" }, "No headcount series yet.");
   const marks = [
@@ -30,7 +31,7 @@ export function headcountChart(series, { title = "Headcount by month", compare }
     marks.push(Plot.lineY(compare, { x: "date", y: "n", stroke: PALETTE[1], strokeDasharray: "4 3", strokeWidth: 2 }));
     marks.push(Plot.dot(compare, { x: "date", y: "n", stroke: PALETTE[1], fill: (d) => (d.kind === "estimate" ? "white" : PALETTE[1]), r: 4, title: (d) => `${d.label}: ${fmt.int(d.n)} (${d.kind})` }));
   }
-  const plot = Plot.plot({ width: width(), height: 260, marginLeft: 60, x: { type: "utc", label: null, ticks: d3.utcMonth.every(data.length > 18 ? 3 : 1), tickFormat: d3.utcFormat("%b %y") }, y: { grid: true, label: "Employees", tickFormat: "~s", domain: [0, d3.max(data, (d) => d.n) * 1.08] }, marks });
+  const plot = Plot.plot({ width: w || width(), height: 260, marginLeft: 60, x: { type: "utc", label: null, ticks: d3.utcMonth.every(data.length > 18 ? 3 : 1), tickFormat: d3.utcFormat("%b %y") }, y: { grid: true, label: "Employees", tickFormat: "~s", domain: [0, d3.max(data, (d) => d.n) * 1.08] }, marks });
   const alt = altTable(["Month", "Headcount"], data.map((d) => [fmt.month(d.month), fmt.int(d.n)]));
   return figure(title, plot, alt);
 }

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agency · Fed Pulse</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23005ea2%27/%3E%3Cpath d=%27M4 18h6l3-8 5 14 4-9 2 3h4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/site.css">
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
@@ -21,13 +22,14 @@
   </div>
   <h2>Organization</h2>
   <p class="muted">Click a box to open its personnel detail. Money stops here; OPM's org tree continues below.</p>
-  <div class="orgchart-wrap" id="orgchart"></div>
+  <div id="orgchart"></div>
 </main>
 <footer></footer>
 <script type="module">
 import { loadJSON, fmt, el, qs, renderChrome } from "./js/common.js";
-import { headcountChart, splitBar, figure, actionsChart } from "./js/charts.js";
-import { renderOrgChart } from "./js/orgchart.js";
+import { headcountChart, splitBar } from "./js/charts.js";
+import { flowsChart } from "./js/flows.js";
+import { renderOrgNav } from "./js/orgnav.js";
 
 renderChrome("index.html");
 const g = qs("g");
@@ -86,14 +88,15 @@ if (!row || !spec) {
   }
   const fte = Object.entries(row.fte_series || {}).map(([fy, v]) => ({ date: new Date(+fy, 8, 30), n: v.fte, kind: v.kind, label: `OMB FTE FY${fy}` }));
   people.append(el("h2", {}, "People"));
-  people.append(headcountChart(series, { title: "OPM headcount by month (solid) and OMB FTE by fiscal year (dashed; hollow = estimate)", compare: fte }));
+  const colWidth = window.innerWidth >= 900 ? Math.max(360, ((document.querySelector("main")?.clientWidth || 900) - 56) / 2) : Math.max(320, (document.querySelector("main")?.clientWidth || 400) - 40);
+  people.append(headcountChart(series, { title: "OPM headcount by month (solid) and OMB FTE by fiscal year (dashed; hollow = estimate)", compare: fte, width: colWidth }));
   if (fwdCodes.length === 1) {
     const s = await loadJSON(`data/slices/series/${fwdCodes[0]}.json`);
-    people.append(actionsChart(s, codes, { months: months.datasets.employment }));
+    people.append(flowsChart(s, codes, { months: months.datasets.employment, title: "Hires and separations", width: colWidth }));
   }
 
   const selected = fwdCodes.length === 1 ? fwdCodes[0] : (orgCodes[0] || fwdCodes[0] || "gov");
-  renderOrgChart(document.getElementById("orgchart"), tree, selected, (code) => { location.href = `org.html?code=${encodeURIComponent(code)}`; });
+  renderOrgNav(document.getElementById("orgchart"), tree, selected, (code) => { location.href = `org.html?code=${encodeURIComponent(code)}`; });
 }
 </script>
 </body>

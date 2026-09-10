@@ -49,6 +49,18 @@ function labelFor(dim, lookups, value) {
   return t.name || value;
 }
 
+// Run one SQL statement against the published parquet and return plain rows.
+export async function runQuery(sql) {
+  const db = await getDb();
+  const conn = await db.connect();
+  try {
+    const res = await conn.query(sql);
+    return res.toArray().map((r) => Object.fromEntries(Object.entries(r.toJSON()).map(([k, v]) => [k, typeof v === "bigint" ? Number(v) : v])));
+  } finally {
+    await conn.close();
+  }
+}
+
 // Build the filter panel for one org node. fileUrl is the Release URL of the fact parquet for the latest month.
 export function filterPanel(container, { fileUrl, month, orgCode, lookups }) {
   container.innerHTML = "";

@@ -4,82 +4,79 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Org chart · Fed Pulse</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23005ea2%27/%3E%3Cpath d=%27M4 18h6l3-8 5 14 4-9 2 3h4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/site.css">
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 </head>
 <body>
 <header class="top"></header>
 <main id="main">
-  <h1>Organization chart</h1>
-  <p class="muted">Every box is a unit OPM reports. Click to select; the branch expands and the detail below re-scopes. Boxes show the latest headcount, the change since the first month shown, and a sparkline.</p>
-  <div class="controls">
-    <label>Find a unit <input type="search" id="search" list="units" placeholder="e.g. Bureau of Labor Statistics" size="40"></label>
-    <datalist id="units"></datalist>
-    <button type="button" id="go">Go</button>
-    <span class="muted" id="selected-note"></span>
+  <div class="stage">
+    <div class="nav-col">
+      <details class="navfold" open>
+        <summary>Organization navigator</summary>
+        <div id="orgnav"></div>
+      </details>
+    </div>
+    <section id="detail" aria-live="polite">
+      <div class="crumbs" id="crumbs"></div>
+      <h1 id="node-title" style="margin-top:0"></h1>
+      <div id="badges"></div>
+      <div class="cards" id="cards"></div>
+      <div id="trend"></div>
+      <div id="flows"></div>
+      <div id="composition"></div>
+      <div id="map"></div>
+      <div class="panel">
+        <h2>Download and query</h2>
+        <p class="muted" id="download-note"></p>
+        <div id="query"></div>
+      </div>
+    </section>
   </div>
-  <div class="orgchart-wrap" id="orgchart"></div>
-  <section id="detail" aria-live="polite">
-    <div class="crumbs" id="crumbs"></div>
-    <h2 id="node-title"></h2>
-    <div id="badges"></div>
-    <div class="cards" id="cards"></div>
-    <div id="charts"></div>
-    <div class="split" id="mixes"></div>
-    <h2>Download and query</h2>
-    <p class="muted" id="download-note"></p>
-    <div id="query"></div>
-  </section>
 </main>
 <footer></footer>
 <script type="module">
 import { loadJSON, fmt, el, qs, setQs, renderChrome, disclosureBadge } from "./js/common.js";
-import { headcountChart, actionsChart, separationsByCategory, mixChart } from "./js/charts.js";
-import { renderOrgChart, pathTo, searchIndex } from "./js/orgchart.js";
+import { renderOrgNav } from "./js/orgnav.js";
+import { pathTo } from "./js/orgchart.js";
+import { trendPanel } from "./js/trend.js";
+import { flowsChart } from "./js/flows.js";
+import { compositionPanel } from "./js/composition.js";
+import { mapPanel, geoFromRows } from "./js/map.js";
 
 renderChrome("org.html");
-const [tree, codes, months, manifest, series_lk, payplan_lk, step_lk] = await Promise.all([
+const [tree, codes, months, manifest, series_lk, step_lk] = await Promise.all([
   loadJSON("data/slices/orgtree.json"), loadJSON("data/lookups/codes.json"), loadJSON("data/slices/months.json"), loadJSON("data/manifest.json"),
-  loadJSON("data/lookups/series.json"), loadJSON("data/lookups/pay_plan.json"), loadJSON("data/lookups/step.json"),
+  loadJSON("data/lookups/series.json"), loadJSON("data/lookups/step.json"),
 ]);
+const lookups = { series: series_lk, step: step_lk };
 let selected = qs("code", "gov");
 if (!tree.nodes[selected]) selected = "gov";
-
-const index = searchIndex(tree);
-const datalist = document.getElementById("units");
-for (const n of index.sort((a, b) => b.latest - a.latest).slice(0, 700)) datalist.append(el("option", { value: `${n.name} (${n.code})` }));
-function resolveSearch(text) {
-  const m = text.match(/\(([A-Z0-9:]+)\)\s*$/);
-  if (m && tree.nodes[m[1]]) return m[1];
-  const q = text.trim().toLowerCase();
-  if (!q) return null;
-  const hit = index.find((n) => n.name.toLowerCase() === q) || index.find((n) => n.name.toLowerCase().includes(q));
-  return hit?.code || null;
-}
-document.getElementById("go").addEventListener("click", () => { const c = resolveSearch(document.getElementById("search").value); if (c) select(c, true); });
-document.getElementById("search").addEventListener("change", () => { const c = resolveSearch(document.getElementById("search").value); if (c) select(c, true); });
+const geoCache = new Map();
 
 function select(code, push = false) {
   selected = code;
   setQs({ code }, !push);
-  renderOrgChart(document.getElementById("orgchart"), tree, selected, (c) => select(c, true));
+  renderOrgNav(document.getElementById("orgnav"), tree, selected, (c) => select(c, true));
   renderDetail(code);
+  if (push && window.innerWidth < 1000) document.getElementById("detail").scrollIntoView({ behavior: "smooth", block: "start" });
 }
-window.addEventListener("popstate", () => { const c = qs("code", "gov"); if (tree.nodes[c]) { selected = c; renderOrgChart(document.getElementById("orgchart"), tree, selected, (x) => select(x, true)); renderDetail(c); } });
+if (window.innerWidth < 1000) document.querySelector("details.navfold")?.removeAttribute("open");
+window.addEventListener("popstate", () => { const c = qs("code", "gov"); if (tree.nodes[c]) { selected = c; renderOrgNav(document.getElementById("orgnav"), tree, selected, (x) => select(x, true)); renderDetail(c); } });
 
 async function renderDetail(code) {
   const node = tree.nodes[code];
   const crumbs = document.getElementById("crumbs");
   crumbs.innerHTML = "";
-  const path = pathTo(tree, code);
-  path.forEach((c, i) => {
-    const n = tree.nodes[c];
-    const a = el("a", { href: `org.html?code=${encodeURIComponent(c)}`, onclick: (e) => { e.preventDefault(); select(c, true); } }, n.name);
+  pathTo(tree, code).forEach((c, i) => {
+    const a = el("a", { href: `org.html?code=${encodeURIComponent(c)}`, onclick: (e) => { e.preventDefault(); select(c, true); } }, tree.nodes[c].name);
     crumbs.append(i ? el("span", {}, a) : a);
   });
   document.getElementById("node-title").textContent = node.name;
-  document.getElementById("selected-note").textContent = `Selected: ${node.name}`;
+  document.title = `${node.name} · Fed Pulse`;
   const badges = document.getElementById("badges");
   badges.innerHTML = "";
   badges.append(el("span", { class: "badge" }, node.level === "subelement" ? "sub-element" : node.level));
@@ -87,12 +84,13 @@ async function renderDetail(code) {
   if (node.last_seen && tree.latest && node.last_seen < tree.latest) badges.append(" ", el("span", { class: "badge warn" }, `not in OPM data since ${fmt.month(node.last_seen)}`));
   if (node.first_seen && months.datasets.employment[0] && node.first_seen > months.datasets.employment[0]) badges.append(" ", el("span", { class: "badge" }, `first seen ${fmt.month(node.first_seen)}`));
 
-  const [series, mix] = await Promise.all([
+  const [series, mix, trend, geo] = await Promise.all([
     loadJSON(`data/slices/series/${code}.json`).catch(() => ({ months: months.datasets.employment, headcount: {}, accessions: {}, separations: {} })),
     loadJSON(`data/slices/mix/${code}.json`).catch(() => null),
+    loadJSON(`data/slices/trend/${code}.json`).catch(() => null),
+    loadJSON(`data/slices/geo/${code}.json`).catch(() => null),
   ]);
-  const summary = mix?._summary;
-  if (summary?.disclosed_location_share != null) badges.append(" ", disclosureBadge(summary.disclosed_location_share));
+  if (mix?._summary?.disclosed_location_share != null) badges.append(" ", disclosureBadge(mix._summary.disclosed_location_share));
 
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
@@ -104,43 +102,40 @@ async function renderDetail(code) {
   const sumCats = (obj, skip) => Object.entries(obj || {}).filter(([m]) => m >= first).reduce((s, [, cats]) => s + Object.entries(cats).filter(([c]) => c !== skip).reduce((a, [, n]) => a + n, 0), 0);
   card("Accessions", fmt.int(sumCats(series.accessions)), `effective ${fmt.month(first)}+`);
   card("Separations", fmt.int(sumCats(series.separations, "DRP")), `effective ${fmt.month(first)}+`);
-  if (summary?.avg_pay) card("Average pay", "$" + fmt.int(summary.avg_pay), `${fmt.pct(summary.pay_disclosed_share)} disclosed`);
-  if (summary?.avg_los) card("Avg service", summary.avg_los + " yrs", fmt.month(summary.month));
 
-  const charts = document.getElementById("charts");
-  charts.innerHTML = "";
-  charts.append(headcountChart(series, { title: `${node.name}: headcount by month` }));
-  charts.append(actionsChart(series, codes, { months: months.datasets.employment }));
-  charts.append(separationsByCategory(series, codes, { months: months.datasets.employment }));
+  const st = { metric: qs("metric", "headcount"), by: qs("by", "none"), mode: qs("mode", "count"), cmp: qs("cmp", ""), range: qs("range", "all") };
+  trendPanel(document.getElementById("trend"), { code, name: node.name, tree, series, trend, codes, lookups, state: st, onState: (s) => setQs({ metric: s.metric === "headcount" ? null : s.metric, by: s.by === "none" ? null : s.by, mode: s.mode === "count" ? null : s.mode, cmp: s.cmp || null, range: s.range === "all" ? null : s.range }) });
 
-  const mixes = document.getElementById("mixes");
-  mixes.innerHTML = "";
-  if (mix) {
-    const gradeOrder = (k) => (/^\d+$/.test(k) ? +k : 100 + k.charCodeAt(0));
-    const pieces = [
-      mixChart(mix.grade, { title: "Grade", order: gradeOrder }),
-      mixChart(mix.step_code, { title: "Step or rate", labels: step_lk, order: (k) => (/^\d+$/.test(k) ? +k : 100) }),
-      mixChart(mix.age_bracket, { title: "Age bracket", order: (k) => parseInt(k) || 0 }),
-      mixChart(mix.pay_band, { title: "Pay band ($ thousands)", order: (k) => (k === "R" ? 999 : +k), labels: { R: "Redacted" } }),
-      mixChart(mix.series_code, { title: "Occupational series", labels: series_lk, top: 15 }),
-      mixChart(mix.appointment_type_code, { title: "Appointment type", labels: codes.appointment_type, top: 10 }),
-      mixChart(mix.supervisory_code, { title: "Supervisory status", labels: codes.supervisory_status }),
-      mixChart(mix.work_schedule_code, { title: "Work schedule", labels: codes.work_schedule }),
-    ].filter(Boolean);
-    for (const p of pieces) mixes.append(p);
-  }
+  const flows = document.getElementById("flows");
+  flows.innerHTML = "";
+  flows.append(el("div", { class: "panel" }, el("h2", {}, "Hires and separations"), flowsChart(series, codes, { months: months.datasets.employment, title: `${node.name}` })));
+
+  compositionPanel(document.getElementById("composition"), { mix, codes, lookups, state: { dim: qs("dim", "grade") }, onState: (s) => setQs({ dim: s.dim === "grade" ? null : s.dim }) });
 
   const emp = manifest.datasets?.employment?.[latest];
+  const fileUrl = emp?.site_url || emp?.release_url;
+  const orgPrefix = code === "gov" ? "" : code.startsWith("D:") ? null : code;
+  mapPanel(document.getElementById("map"), {
+    code, name: node.name, geo,
+    loadGeo: async () => {
+      if (geoCache.has(code)) return geoCache.get(code);
+      if (!fileUrl || orgPrefix == null) throw new Error("no parquet available for this unit");
+      const { runQuery } = await import("./js/query.js");
+      const duty = await loadJSON("data/lookups/duty_station.json");
+      const rows = await runQuery(`SELECT duty_station_code AS code, sum(n)::BIGINT AS n FROM read_parquet('${new URL(fileUrl, location.href).href}') WHERE org_code LIKE '${orgPrefix}%' GROUP BY 1`);
+      const g = geoFromRows(rows.map((r) => [r.code, r.n]), duty, latest);
+      geoCache.set(code, g);
+      return g;
+    },
+    state: { level: qs("map", "county") }, onState: (s) => setQs({ map: s.level === "county" ? null : s.level }),
+  });
+
   const note = document.getElementById("download-note");
   note.innerHTML = "";
-  const fileUrl = emp?.site_url || emp?.release_url;
-  if (fileUrl) {
-    note.append(`Fact table for ${fmt.month(latest)}: `, el("a", { href: fileUrl }, emp.file), ` (${fmt.money(emp.parquet_bytes)}B parquet, ${fmt.int(emp.rows_fact)} rows). Filter on org_code starting with "${code === "gov" ? "" : code.replace("D:", "")}". `, el("a", { href: "data.html" }, "All months and the data dictionary."));
-  } else {
-    note.append(`Fact tables are published once a month. `, el("a", { href: "data.html" }, "See the data page."));
-  }
+  if (fileUrl) note.append(`Fact table for ${fmt.month(latest)}: `, el("a", { href: fileUrl }, emp.file), ` (${fmt.money(emp.parquet_bytes)}B parquet, ${fmt.int(emp.rows_fact)} rows). Filter on org_code starting with "${orgPrefix ?? ""}". `, el("a", { href: "data.html" }, "All months and the data dictionary."));
+  else note.append(`Fact tables are published once a month. `, el("a", { href: "data.html" }, "See the data page."));
   const { filterPanel } = await import("./js/query.js");
-  filterPanel(document.getElementById("query"), { fileUrl: fileUrl ? new URL(fileUrl, location.href).href : null, month: latest, orgCode: code === "gov" ? "" : code.replace("D:", ""), lookups: { codes, series: series_lk, pay_plan: payplan_lk, step: step_lk, duty_station: await loadJSON("data/lookups/duty_station.json").catch(() => ({})) } });
+  filterPanel(document.getElementById("query"), { fileUrl: fileUrl ? new URL(fileUrl, location.href).href : null, month: latest, orgCode: orgPrefix ?? "", lookups: { codes, series: series_lk, step: step_lk, duty_station: await loadJSON("data/lookups/duty_station.json").catch(() => ({})) } });
 }
 
 select(selected);

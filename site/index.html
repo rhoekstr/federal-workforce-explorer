@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fed Pulse</title>
 <meta name="description" content="Fed Pulse: headcount, hires, separations, and spending for every federal agency, from OPM, USAspending, and OMB. No tracking. An Awry Labs project.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23005ea2%27/%3E%3Cpath d=%27M4 18h6l3-8 5 14 4-9 2 3h4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/site.css">
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
@@ -23,7 +24,8 @@
 <footer></footer>
 <script type="module">
 import { loadJSON, fmt, el, renderChrome, sortableTable } from "./js/common.js";
-import { headcountChart, actionsChart, separationsByCategory } from "./js/charts.js";
+import { headcountChart } from "./js/charts.js";
+import { flowsChart } from "./js/flows.js";
 
 renderChrome("index.html");
 const [overview, gov, codes, months] = await Promise.all([
@@ -47,8 +49,7 @@ card("Money period", overview.period, "rolling four quarters, direct obligations
 
 const charts = document.getElementById("charts");
 charts.append(headcountChart(gov, { title: "Government-wide headcount by month" }));
-charts.append(actionsChart(gov, codes, { months: months.datasets.employment }));
-charts.append(separationsByCategory(gov, codes, { months: months.datasets.employment }));
+charts.append(flowsChart(gov, codes, { months: months.datasets.employment, title: "Government-wide hires and separations by effective month" }));
 
 document.getElementById("table-note").textContent = `Headcount is OPM's ${fmt.month(latest)} snapshot. FTE is OMB's Analytical Perspectives Table 5-1 (hollow means estimate). Money is USAspending direct obligations, ${overview.period} rolling four quarters. In-sourcing = personnel ÷ (personnel + contracted services 25.1 and 25.2). Click a row for the agency page.`;
 const rows = overview.rows.filter((r) => (r.headcount_latest ?? 0) > 0 || r.personnel != null);
