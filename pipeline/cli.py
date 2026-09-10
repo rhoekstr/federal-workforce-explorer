@@ -84,10 +84,12 @@ def cmd_slices(args) -> int:
     from pipeline.orgtree import build_orgtree
     from pipeline.slices import build_slices
     from pipeline.trends import build_trends
+    from pipeline.geo import build_geo
 
     build_slices()
     build_orgtree()
     build_trends()
+    build_geo()
     return 0
 
 

@@ -20,6 +20,7 @@ def assemble() -> None:
     data = SITE_OUT / "data"
     shutil.copytree(SLICES, data / "slices")
     shutil.copytree(LOOKUPS, data / "lookups")
+    shutil.copytree(ROOT / "data" / "geo", data / "geo")
     (data / "crosswalk").mkdir(parents=True, exist_ok=True)
     for name in ("agency_groups.json", "review.json"):
         src = CROSSWALK / name
