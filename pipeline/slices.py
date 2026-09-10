@@ -55,10 +55,11 @@ def build_series(con: duckdb.DuckDBPyConnection, months: dict[str, list[str]], o
     # department nodes: sum of agencies that belong to them (Defense is the only multi-agency department)
     agency_lookup = load_lookup("agency")
     dept_of = {code: v["department_code"] for code, v in agency_lookup.items()}
+    # Department nodes are keyed "D:<dept>" to match the org tree.
     for code in list(headcount):
         if code and len(code) == 2 and code in dept_of and dept_of[code] != code:
             for m, n in headcount[code].items():
-                headcount[dept_of[code]][m] = headcount[dept_of[code]].get(m, 0) + n
+                headcount[f"D:{dept_of[code]}"][m] = headcount[f"D:{dept_of[code]}"].get(m, 0) + n
 
     actions: dict[str, dict[str, dict[str, dict[str, int]]]] = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
     for dataset, cat in (("accessions", "accession_category_code"), ("separations", "separation_category_code")):
@@ -82,7 +83,7 @@ def build_series(con: duckdb.DuckDBPyConnection, months: dict[str, list[str]], o
         if code and len(code) == 2 and code in dept_of and dept_of[code] != code:
             for dataset, by_eff in actions[code].items():
                 for eff, cats in by_eff.items():
-                    tgt = actions[dept_of[code]][dataset][eff]
+                    tgt = actions[f"D:{dept_of[code]}"][dataset][eff]
                     for c, n in cats.items():
                         tgt[c] = tgt.get(c, 0) + n
 
@@ -101,13 +102,18 @@ def build_series(con: duckdb.DuckDBPyConnection, months: dict[str, list[str]], o
 def build_mix(con: duckdb.DuckDBPyConnection, latest: str) -> int:
     fact = fact_path("employment", latest)
     con.execute(f"CREATE OR REPLACE VIEW f AS SELECT * FROM read_parquet('{fact}')")
+    agency_lookup = load_lookup("agency")
+    multi = {code: v["department_code"] for code, v in agency_lookup.items() if v["department_code"] != code}
+    dept_expr = "CASE " + " ".join(f"WHEN substr(org_code, 1, 2) = '{a}' THEN 'D:{d}'" for a, d in multi.items()) + " ELSE NULL END" if multi else "NULL"
     nodes = 0
-    for level, expr in _node_exprs() + [("gov", "'gov'")]:
+    for level, expr in _node_exprs() + [("department", dept_expr), ("gov", "'gov'")]:
         mixes: dict[str, dict] = defaultdict(dict)
         for dim in MIX_DIMS:
             rows = con.execute(f"SELECT {expr} AS node, {dim}, sum(n) AS n FROM f GROUP BY 1, 2").fetchall()
             per_node: dict[str, list] = defaultdict(list)
             for node, value, n in rows:
+                if node is None:
+                    continue
                 per_node[node].append((value, int(n)))
             for node, items in per_node.items():
                 items.sort(key=lambda t: -t[1])
@@ -116,6 +122,8 @@ def build_mix(con: duckdb.DuckDBPyConnection, latest: str) -> int:
             f"SELECT {expr}, sum(n), sum(CASE WHEN duty_station_code <> '{NOT_DISCLOSED}' THEN n ELSE 0 END), sum(pay_sum), sum(pay_n), sum(los_sum) FROM f GROUP BY 1"
         ).fetchall()
         for node, n, disc, pay_sum, pay_n, los_sum in disclosed:
+            if node is None:
+                continue
             mixes[node]["_summary"] = {
                 "month": latest,
                 "n": int(n),
