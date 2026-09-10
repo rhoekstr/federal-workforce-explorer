@@ -63,7 +63,7 @@ Nineteen months per dataset, January 2025 through July 2026. All sums of `n` equ
 - Repo: https://github.com/rhoekstr/federal-workforce-explorer (private)
 - Releases: `data-YYYYMM` tags, one per month, fact parquet plus raw parquet.
 - Pages: not enabled (free plan, private repo). To publish: make the repo public, enable Pages with source "GitHub Actions", set repository variable `PAGES_ENABLED=true`, dispatch the workflow. Expected URL: https://rhoekstr.github.io/federal-workforce-explorer/
-- Workflow: FILL_RUN
+- Workflow: green run https://github.com/rhoekstr/federal-workforce-explorer/actions/runs/34420881208 (dispatch with since=202608: restored 57 fact files from Releases, found nothing new at OPM, rebuilt money and slices, assembled the site, committed the refreshed data). Two earlier dispatches failed in the restore step (anonymous 404 on private Release assets, then a transient GitHub 500); both fixed in `pipeline/restore.py`. The failure-issue step could not create issues because the `pipeline` and `crosswalk` labels do not exist yet; create them or drop the `--label` flags.
 
 ## 6. What the PRD got wrong or did not know about the sources
 
