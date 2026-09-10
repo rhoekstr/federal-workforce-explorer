@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import logging
 import subprocess
+import time
 
 from pipeline import manifest as mf
 from pipeline.config import DATASETS, RAW, ROOT, WORK
@@ -19,7 +20,15 @@ def _download(url: str, dest) -> None:
     """Fetch a Release asset. Uses `gh` (authenticated) because assets on a private repo 404 anonymously."""
     tag, name = url.rstrip("/").split("/")[-2], url.rstrip("/").split("/")[-1]
     repo = "/".join(url.split("/")[3:5])
-    subprocess.run(["gh", "release", "download", tag, "--repo", repo, "--pattern", name, "--dir", str(dest.parent), "--clobber"], check=True, cwd=ROOT)
+    cmd = ["gh", "release", "download", tag, "--repo", repo, "--pattern", name, "--dir", str(dest.parent), "--clobber"]
+    for attempt in range(1, 5):
+        result = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        if result.returncode == 0:
+            break
+        log.warning("attempt %d failed for %s: %s", attempt, name, result.stderr.strip()[-200:])
+        if attempt == 4:
+            raise RuntimeError(f"could not download {name} from {tag}")
+        time.sleep(10 * attempt)
     downloaded = dest.parent / name
     if downloaded != dest:
         downloaded.replace(dest)
