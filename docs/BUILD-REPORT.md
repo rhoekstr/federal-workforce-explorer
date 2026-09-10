@@ -9,9 +9,9 @@ Run executed against `RUNBOOK.md` in one Claude Code session on Robert's Mac, st
 | M0 scaffold | passed | |
 | M1 employment aggregation + lookups | passed | 13 golden tests. Lookups restructured (codes-only duty station, separate county/CBSA/locality/country tables) to meet the 5 MB budget: 3.1 MB. |
 | M2 actions | passed | |
-| M3 discovery + all 2026 months | passed | Employment, accessions, separations for January through July 2026. See §3 for counts. |
+| M3 discovery + all months | passed | Employment, accessions, separations for January 2025 through July 2026 (19 months, 57 files, 0 failures). See §3 for counts. |
 | M4 money overview | passed | 118 groups, 95 with money. Labor: personnel $2.1B, contracted $1.7B, ratio 0.56, within the acceptance band. |
-| M5 slices + org tree | passed | 653 nodes; slices 5.4 MB total. |
+| M5 slices + org tree | passed | 674 nodes; slices 5.6 MB total. |
 | M6 site | passed | Three-click path verified in the in-app browser: landing → Labor row → BLS box → download link and working DuckDB-WASM query. Screenshots in `docs/screenshots/`. |
 | M7 publish + automate | **partial** | Repo created (private), pushed, Releases published. **Pages could not be enabled: the account is on the free plan and Pages requires a public repo.** The deploy job is gated on repository variable `PAGES_ENABLED`; the refresh job runs green. See §5. |
 
@@ -78,4 +78,4 @@ Nineteen months per dataset, January 2025 through July 2026. All sums of `n` equ
 
 ## 7. Tests
 
-`pytest`: FILL_TESTS
+`pytest`: 20 passed (13 golden checks on the July 2026 files, 7 money checks). The final run took 7.5 minutes instead of seconds because Release uploads were saturating the disk at the same time; earlier runs were 2 to 4 seconds.

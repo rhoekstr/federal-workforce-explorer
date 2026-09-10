@@ -8,8 +8,6 @@ import argparse
 import logging
 import subprocess
 
-import requests
-
 from pipeline import manifest as mf
 from pipeline.config import DATASETS, RAW, ROOT, WORK
 from pipeline.fwd.facts import fact_path
@@ -18,11 +16,13 @@ log = logging.getLogger("pipeline.restore")
 
 
 def _download(url: str, dest) -> None:
-    with requests.get(url, stream=True, timeout=(30, 600)) as r:
-        r.raise_for_status()
-        with open(dest, "wb") as fh:
-            for chunk in r.iter_content(1 << 20):
-                fh.write(chunk)
+    """Fetch a Release asset. Uses `gh` (authenticated) because assets on a private repo 404 anonymously."""
+    tag, name = url.rstrip("/").split("/")[-2], url.rstrip("/").split("/")[-1]
+    repo = "/".join(url.split("/")[3:5])
+    subprocess.run(["gh", "release", "download", tag, "--repo", repo, "--pattern", name, "--dir", str(dest.parent), "--clobber"], check=True, cwd=ROOT)
+    downloaded = dest.parent / name
+    if downloaded != dest:
+        downloaded.replace(dest)
 
 
 def restore(since: str, include_raw: bool = False) -> int:
