@@ -13,7 +13,7 @@ Run executed against `RUNBOOK.md` in one Claude Code session on Robert's Mac, st
 | M4 money overview | passed | 118 groups, 95 with money. Labor: personnel $2.1B, contracted $1.7B, ratio 0.56, within the acceptance band. |
 | M5 slices + org tree | passed | 674 nodes; slices 5.6 MB total. |
 | M6 site | passed | Three-click path verified in the in-app browser: landing → Labor row → BLS box → download link and working DuckDB-WASM query. Screenshots in `docs/screenshots/`. |
-| M7 publish + automate | **partial** | Repo created (private), pushed, Releases published. **Pages could not be enabled: the account is on the free plan and Pages requires a public repo.** The deploy job is gated on repository variable `PAGES_ENABLED`; the refresh job runs green. See §5. |
+| M7 publish + automate | passed (after a follow-up instruction) | Repo created private, Releases published, refresh job green. Pages needed a public repo on the free plan; Robert instructed the flip on 2026-09-10 and the deploy job went green. See §5. |
 
 ## 2. Deviations from PRD and RUNBOOK, and why
 
@@ -60,9 +60,9 @@ Nineteen months per dataset, January 2025 through July 2026. All sums of `n` equ
 
 ## 5. URLs
 
-- Repo: https://github.com/rhoekstr/federal-workforce-explorer (private)
+- Repo: https://github.com/rhoekstr/federal-workforce-explorer (public as of 2026-09-10, on Robert's instruction)
 - Releases: `data-YYYYMM` tags, one per month, fact parquet plus raw parquet.
-- Pages: not enabled (free plan, private repo). To publish: make the repo public, enable Pages with source "GitHub Actions", set repository variable `PAGES_ENABLED=true`, dispatch the workflow. Expected URL: https://rhoekstr.github.io/federal-workforce-explorer/
+- Pages: live at https://rhoekstr.github.io/federal-workforce-explorer/ (enabled 2026-09-10 after the repo went public; deploy job green in run 34424011626; Range requests on parquet confirmed with HTTP 206).
 - Workflow: green run https://github.com/rhoekstr/federal-workforce-explorer/actions/runs/34420881208 (dispatch with since=202608: restored 57 fact files from Releases, found nothing new at OPM, rebuilt money and slices, assembled the site, committed the refreshed data). Two earlier dispatches failed in the restore step (anonymous 404 on private Release assets, then a transient GitHub 500); both fixed in `pipeline/restore.py`. The failure-issue step could not create issues because the `pipeline` and `crosswalk` labels do not exist yet; create them or drop the `--label` flags.
 
 ## 6. What the PRD got wrong or did not know about the sources

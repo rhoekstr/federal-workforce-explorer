@@ -1,5 +1,7 @@
 # Federal Workforce Explorer
 
+Live: https://rhoekstr.github.io/federal-workforce-explorer/
+
 Static, privacy-first dashboard over OPM Federal Workforce Data, PLUM, USAspending, and OMB FTE. Requirements and data model in [PRD.md](PRD.md); build plan in [RUNBOOK.md](RUNBOOK.md); repo rules in [CLAUDE.md](CLAUDE.md).
 
 ```bash
