@@ -69,3 +69,5 @@ manifest.json    what is published, versions, checksums
 - **Do not build tables with pyarrow's `from_pylist`.** It imports pandas, which hung indefinitely in this environment. Write parquet through DuckDB.
 - **Early 2025 files have blank sub-element codes** on a few hundred rows. They map to `<agency>__` ("Unspecified sub-element") so the prefix rule holds.
 - **OPM re-publishes months** with a version suffix (2025 months are at v3 and v4). The manifest keys on version.
+- **`.venv` files can be iCloud-evicted ("dataless") on this Mac**, which is why `import pandas` and `import openpyxl` hung. If an import stalls, check `ls -lO .venv/lib/...` for the dataless flag, or recreate the venv outside iCloud. Read xlsx/docx with the stdlib zip+XML approach used in `data/reference/fevs/fevs_agency_year_compute.py` when in doubt.
+- **FEVS agency codes are FWD codes, but FEVS `LEVEL1` sub-agency codes are not FWD sub-element codes** outside DoD, Treasury, and DOT. Never join on code; use the curated crosswalk described in `docs/FEVS-EXPLORATION.md` §10.
