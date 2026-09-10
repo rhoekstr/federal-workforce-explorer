@@ -6,7 +6,7 @@ Executed against `docs/ENHANCEMENT-PLAN.md` in the same session that built the M
 
 | Milestone | Result | Notes |
 |---|---|---|
-| E0 housekeeping | passed | Labels `pipeline` and `crosswalk` created. PRD 1.3. HTTPS certificate for fedpulse.awrylabs.com still not issued by GitHub at the time of writing (see §4). |
+| E0 housekeeping | passed | Labels `pipeline` and `crosswalk` created. PRD 1.3. HTTPS certificate for fedpulse.awrylabs.com issued after re-adding the domain; HTTPS enforced (see §4). |
 | E1 trend data | passed | 378 nodes (gov, departments, agencies, 245 sub-elements ≥ 500), 4.1 MB total, largest file 21 KB. Sum-to-headcount test passes for every dimension and month. Surfaced and fixed a latent MVP bug: department nodes (`D:DOD`) had no series or mix files. |
 | E2 geography data | passed | 130 precomputed geo slices, 0.3 MB. US Atlas counties-10m TopoJSON (842 KB, ISC) committed. Territories (PR, Guam) are disclosed but have no county FIPS; counted separately. Labor: 91% disclosed, 652 counties, DC first. |
 | E3 flows chart | passed | Hand-rolled SVG, hover and keyboard, pies per side, DRP hatched. Verified on Labor, September 2025: 1,186 separations, 875 quits, 1,045 DRP. |
@@ -30,7 +30,7 @@ Executed against `docs/ENHANCEMENT-PLAN.md` in the same session that built the M
 
 ## 4. Open items
 
-- **HTTPS on the custom domain.** DNS resolves and HTTP serves. GitHub has not issued the certificate. If it is still missing, remove and re-add the custom domain in Pages settings, then enforce HTTPS.
+- **HTTPS on the custom domain.** Resolved: removing and re-adding the custom domain through the API triggered certificate issuance within a minute; HTTPS is enforced.
 - **Favicon** added as an inline SVG data URI; the earlier console 404 was the missing favicon.
 - **Screenshots** for v0.2 are in `docs/screenshots/v0.2/` (desktop and mobile).
 
