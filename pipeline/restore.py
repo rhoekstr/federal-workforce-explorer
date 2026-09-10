@@ -26,18 +26,19 @@ def _download(url: str, dest) -> None:
 
 
 def restore(since: str, include_raw: bool = False) -> int:
+    """Facts are always restored for every published month (the site needs all of them); `since` bounds raw parquet."""
     manifest = mf.load()
     RAW.mkdir(parents=True, exist_ok=True)
     WORK.mkdir(parents=True, exist_ok=True)
     n = 0
     for dataset in DATASETS:
         for yyyymm, entry in sorted(manifest["datasets"].get(dataset, {}).items()):
-            if yyyymm < since:
-                continue
             fact = fact_path(dataset, yyyymm)
             if entry.get("release_url") and not fact.exists():
                 _download(entry["release_url"], fact)
                 n += 1
+            if yyyymm < since:
+                continue
             raw = RAW / f"{dataset}_{yyyymm}_{entry['version']}.parquet"
             if include_raw and entry.get("raw_release_url") and not raw.exists():
                 _download(entry["raw_release_url"], raw)

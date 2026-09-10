@@ -11,14 +11,15 @@ from pathlib import Path
 import duckdb
 
 from pipeline.config import CODE_TABLES, LOOKUPS, NOT_DISCLOSED, REDACTED
+from pipeline.fwd.facts import ORG_CODE_SQL
 from pipeline.fwd.raw import parse_filename, raw_source_sql
 
 # lookup name -> (key expression, {field: source column}, name column, keep name history)
 LOOKUP_SPECS = {
     "org": (
-        "agency_subelement_code",
+        ORG_CODE_SQL,
         {"agency_code": "agency_code", "department_code": "department_code", "cfo_act": "cfo_act_agency_indicator"},
-        "agency_subelement",
+        "CASE WHEN agency_subelement IS NULL OR agency_subelement IN ('', 'NO DATA REPORTED') THEN 'UNSPECIFIED SUB-ELEMENT' ELSE agency_subelement END",
         True,
     ),
     "agency": ("agency_code", {"department_code": "department_code"}, "agency", True),
@@ -143,7 +144,7 @@ def update_lookups(raw: Path, con: duckdb.DuckDBPyConnection | None = None) -> d
 
 
 def _add_headcount(con: duckdb.DuckDBPyConnection, raw: Path, table: dict, key: str, yyyymm: str) -> None:
-    rows = con.execute(f"SELECT {key}, sum(CAST(count AS INTEGER)) FROM {raw_source_sql(raw)} GROUP BY 1").fetchall()
+    rows = con.execute(f"SELECT {key} AS k, sum(CAST(count AS INTEGER)) FROM {raw_source_sql(raw)} GROUP BY 1").fetchall()
     for code, n in rows:
         if code in table:
             table[code].setdefault("headcount", {})[yyyymm] = int(n)

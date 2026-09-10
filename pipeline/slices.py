@@ -56,7 +56,7 @@ def build_series(con: duckdb.DuckDBPyConnection, months: dict[str, list[str]], o
     agency_lookup = load_lookup("agency")
     dept_of = {code: v["department_code"] for code, v in agency_lookup.items()}
     for code in list(headcount):
-        if len(code) == 2 and code in dept_of and dept_of[code] != code:
+        if code and len(code) == 2 and code in dept_of and dept_of[code] != code:
             for m, n in headcount[code].items():
                 headcount[dept_of[code]][m] = headcount[dept_of[code]].get(m, 0) + n
 
@@ -79,7 +79,7 @@ def build_series(con: duckdb.DuckDBPyConnection, months: dict[str, list[str]], o
                         node = actions[code]["separations"]
                         node[eff]["DRP"] = node[eff].get("DRP", 0) + int(n)
     for code in list(actions):
-        if len(code) == 2 and code in dept_of and dept_of[code] != code:
+        if code and len(code) == 2 and code in dept_of and dept_of[code] != code:
             for dataset, by_eff in actions[code].items():
                 for eff, cats in by_eff.items():
                     tgt = actions[dept_of[code]][dataset][eff]

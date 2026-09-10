@@ -62,3 +62,10 @@ manifest.json    what is published, versions, checksums
 - Administered vs operations: PRD 5.8.
 - Rolling four quarters: `YTD(Y,P) + YTD(Y-1,12) − YTD(Y-1,P)`. Direct obligations only (`direct_or_reimbursable_funding_source = 'D'`); reimbursable double counts across government.
 - Action attribution: charts use effective month; file month is kept in the fact table.
+
+## Operational gotchas (learned 2026-09-09)
+
+- **Never run `sync` and `publish` at the same time.** Both load, modify, and save `manifest.json`; the later save wins and drops the other's months. The monthly workflow runs them in sequence.
+- **Do not build tables with pyarrow's `from_pylist`.** It imports pandas, which hung indefinitely in this environment. Write parquet through DuckDB.
+- **Early 2025 files have blank sub-element codes** on a few hundred rows. They map to `<agency>__` ("Unspecified sub-element") so the prefix rule holds.
+- **OPM re-publishes months** with a version suffix (2025 months are at v3 and v4). The manifest keys on version.

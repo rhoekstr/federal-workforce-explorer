@@ -13,6 +13,8 @@ PAY_BAND_SQL = (
     "ELSE CAST(CAST(floor(TRY_CAST(annualized_adjusted_basic_pay AS DOUBLE) / 10000) * 10 AS INTEGER) AS VARCHAR) END"
 )
 DUTY_STATION_SQL = f"CASE WHEN duty_station_code = '{REDACTED}' THEN '{NOT_DISCLOSED}' ELSE duty_station_code END"
+# A blank sub-element becomes '<agency>__' so the agency-prefix rule still holds.
+ORG_CODE_SQL = "CASE WHEN agency_subelement_code IS NULL OR agency_subelement_code = '' THEN coalesce(nullif(agency_code, ''), 'UN') || '__' ELSE agency_subelement_code END"
 
 MEASURES_SQL = """
     sum(CAST(count AS INTEGER)) AS n,
@@ -40,6 +42,8 @@ def _select_dims_sql(dataset: str, file_yyyymm: str) -> str:
     for src, dst in COMMON_DIMS.items():
         if src == "duty_station_code":
             parts.append(f"{DUTY_STATION_SQL} AS {dst}")
+        elif src == "agency_subelement_code":
+            parts.append(f"{ORG_CODE_SQL} AS {dst}")
         else:
             parts.append(f"{src} AS {dst}")
     parts.append(f"{PAY_BAND_SQL} AS pay_band")

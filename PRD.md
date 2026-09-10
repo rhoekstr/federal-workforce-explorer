@@ -289,6 +289,8 @@ About 60 groups cover every agency OMB lists; the remaining small FWD agencies m
 | other | everything else (91, 99, and any code not classified) |
 | personnel_per_head | personnel ÷ headcount |
 
+**Direct obligations only.** File B carries both direct and reimbursable obligations; reimbursable obligations are funded by other agencies' orders and double count across government (22% of Defense, 8% of Labor in FY2026). All money figures use `direct_or_reimbursable_funding_source = 'D'`. Personnel paid from reimbursable orders is therefore excluded, and the data page says so.
+
 **Rolling four quarters.** File B obligations are cumulative fiscal-year-to-date. For a quarter ending at period P of fiscal year Y:
 
 ```
