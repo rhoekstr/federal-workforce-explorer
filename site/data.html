@@ -17,6 +17,22 @@
   <p class="muted" id="gen"></p>
   <div class="table-wrap"><table id="months"></table></div>
 
+  <h2>Measures table</h2>
+  <p>The primary product since v0.3: one row per measure, organizational unit, period, and optional dimension value, back to 2005 for the workforce measures. Published as <code>measures.parquet</code> on the rolling <a href="https://github.com/rhoekstr/federal-workforce-explorer/releases/tag/measures">measures Release</a> and rebuilt every refresh. Every <code>measure</code> resolves to an entry in the <a href="catalog.html">catalog</a>.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>measure</td><td>Catalog code, e.g. <code>quit_rate</code></td></tr>
+      <tr><td>node</td><td><code>gov</code>, a department (<code>D:DOD</code>), an agency (<code>DL</code>), a sub-element (<code>DLLS</code>), or an overview group (<code>dol</code>) for money and OMB measures</td></tr>
+      <tr><td>period_type, period_start</td><td><code>month</code>, <code>quarter</code> (federal fiscal), <code>fiscal_year</code>, or <code>survey_year</code>, with the ISO start date of the period the value describes</td></tr>
+      <tr><td>dim, dim_value</td><td>Null for flat values; a dimension code and value for dimensioned ones (headcount by grade, separations by category)</td></tr>
+      <tr><td>value</td><td>The measure's value in its unit; percentages are 0 to 100</td></tr>
+      <tr><td>n</td><td>The count behind the value where it has one: the denominator of a share, the respondents of a survey</td></tr>
+      <tr><td>notation</td><td>Null, or <code>estimate</code>, <code>incomplete</code>, <code>suppressed</code>, <code>not_available</code></td></tr>
+      <tr><td>source_ref</td><td>The source file and version the value came from, or <code>derived</code></td></tr>
+    </tbody>
+  </table></div>
+
   <h2>Fact table schema</h2>
   <p>One row per distinct combination of the dimensions below within a month, with four measures. Labels are in the lookups; fact tables carry codes only.</p>
   <div class="table-wrap"><table>
