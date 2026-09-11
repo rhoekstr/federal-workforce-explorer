@@ -39,12 +39,18 @@ jobs:
       - name: Sync new OPM months
         id: sync
         run: python -m pipeline.cli sync --since "$SINCE"
+      - name: Extract measures for any new months (skips months already extracted)
+        run: python -m pipeline.measures.backfill --from 2025 --to 2030
+      - name: Build measures table and slices
+        run: python -m pipeline.cli measures
       - name: Money overview
         run: python -m pipeline.cli money
       - name: Slices and org tree
         run: python -m pipeline.cli slices
       - name: Publish parquet to Releases
         run: python -m pipeline.cli publish
+      - name: Publish measures table
+        run: python -c "from pipeline.publish import publish_measures; publish_measures()"
       - name: Assemble site
         run: python -m pipeline.cli site
       - name: Commit data back to main
