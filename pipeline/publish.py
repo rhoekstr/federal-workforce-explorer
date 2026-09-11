@@ -109,8 +109,17 @@ def publish_measures(repo: str | None = None) -> str | None:
     if not release_exists(repo, MEASURES_TAG):
         _gh("release", "create", MEASURES_TAG, "--repo", repo, "--title", "Measures (rolling)", "--notes", "Fed Pulse measures table: every measure in the catalog for every organizational node and period. Replaced on each refresh. Schema: measure, node, period_type, period_start, dim, dim_value, value, n, notation, source_ref.")
     url = upload(repo, MEASURES_TAG, MEASURES_PARQUET)
+    # The per-file extracts let CI rebuild measures without re-reading 725 OPM files.
+    import subprocess, tarfile
+    from pipeline.measures.build import EXTRACT_DIR
+    tar_path = MEASURES_PARQUET.parent / "extracts.tar.gz"
+    with tarfile.open(tar_path, "w:gz") as tar:
+        for f in sorted(EXTRACT_DIR.glob("*.parquet")):
+            tar.add(f, arcname=f.name)
+    extracts_url = upload(repo, MEASURES_TAG, tar_path)
     manifest = mf.load()
     manifest.setdefault("measures", {})["release_url"] = url
+    manifest["measures"]["extracts_url"] = extracts_url
     mf.save(manifest)
     log.info("published measures.parquet -> %s", url)
     return url

@@ -92,8 +92,10 @@ def fevs_facts() -> list[tuple]:
     with open(path, newline="") as fh:
         for row in csv.DictReader(fh):
             agency = row["agency"]
-            if agency in ("ALL", "XX"):
+            if agency == "XX":
                 continue
+            if agency == "ALL":
+                agency = "gov"
             year = int(row["year"])
             n = int(float(row["n_resp"])) if row.get("n_resp") else None
             for measure, col in FEVS_COLUMNS.items():

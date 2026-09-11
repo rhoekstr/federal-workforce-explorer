@@ -34,6 +34,26 @@ def _download(url: str, dest) -> None:
         downloaded.replace(dest)
 
 
+def restore_extracts() -> int:
+    """Download the measure extracts archive from the rolling measures Release when the local extract dir is empty."""
+    import tarfile
+    from pipeline.measures.build import EXTRACT_DIR
+
+    manifest = mf.load()
+    url = manifest.get("measures", {}).get("extracts_url")
+    if not url or (EXTRACT_DIR.exists() and any(EXTRACT_DIR.glob("*.parquet"))):
+        return 0
+    EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+    archive = EXTRACT_DIR.parent / "extracts.tar.gz"
+    _download(url, archive)
+    with tarfile.open(archive) as tar:
+        tar.extractall(EXTRACT_DIR, filter="data")
+    archive.unlink()
+    n = len(list(EXTRACT_DIR.glob("*.parquet")))
+    log.info("restored %d measure extracts", n)
+    return n
+
+
 def restore(since: str, include_raw: bool = False) -> int:
     """Facts are always restored for every published month (the site needs all of them); `since` bounds raw parquet."""
     manifest = mf.load()
@@ -63,3 +83,4 @@ if __name__ == "__main__":
     p.add_argument("--raw", action="store_true", help="also restore raw parquet (needed only to rebuild lookups from scratch)")
     a = p.parse_args()
     restore(a.since, a.raw)
+    restore_extracts()

@@ -38,7 +38,9 @@ export async function vitalsStrip(container, { code, nodes }) {
   for (const [m, label] of VITALS) {
     const spec = catalog.measures[m];
     let node = null, v = null;
-    for (const c of chain) { if (current[c]?.[m]) { node = c; v = current[c][m]; break; } }
+    // Only survey measures inherit from ancestors; workforce measures must be the unit's own.
+    const inheritable = spec.cadence === "survey_year";
+    for (const c of inheritable ? chain : chain.slice(0, 1)) { if (current[c]?.[m]) { node = c; v = current[c][m]; break; } }
     const inherited = node && node !== code;
     const card = el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value" }, fmtValue(spec, v?.v)),
       el("div", { class: "sub" }, v ? `${periodLabel(v.t, v.p)}${v.note ? ` · ${v.note}` : ""}${inherited ? ` · ${nodes[node].name}` : ""}` : "no value"));
