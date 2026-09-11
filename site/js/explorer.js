@@ -42,7 +42,8 @@ async function loadSeries(node, measure, manifest) {
   let rows;
   try {
     const { runQuery } = await import("./query.js");
-    rows = await runQuery(`SELECT period_type, period_start, value, n, notation FROM read_parquet('${url}') WHERE node = '${node.replace(/'/g, "''")}' AND measure = '${measure}' AND dim IS NULL AND value IS NOT NULL ORDER BY period_start`);
+    const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error("timed out after 90 s")), 90000));
+    rows = await Promise.race([runQuery(`SELECT period_type, period_start, value, n, notation FROM read_parquet('${url}') WHERE node = '${node.replace(/'/g, "''")}' AND measure = '${measure}' AND dim IS NULL AND value IS NOT NULL ORDER BY period_start`), timeout]);
   } catch (err) {
     console.warn("measures query failed", err);
     return null;
