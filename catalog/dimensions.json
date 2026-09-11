@@ -1,0 +1,14 @@
+{
+  "dimensions": {
+    "grade": {"title": "Grade", "source": "grade", "labels": null, "order": "numeric_then_alpha"},
+    "age_bracket": {"title": "Age bracket", "source": "age_bracket", "labels": null, "order": "numeric"},
+    "supervisory": {"title": "Supervisory status", "source": "supervisory_status_code", "labels": "codes:supervisory_status", "order": "value"},
+    "appointment_type": {"title": "Appointment type", "source": "appointment_type_code", "labels": "codes:appointment_type", "order": "value"},
+    "pay_band": {"title": "Pay band ($10k)", "source": "pay_band", "labels": null, "order": "numeric"},
+    "work_schedule": {"title": "Work schedule", "source": "work_schedule_code", "labels": "codes:work_schedule", "order": "value"},
+    "series": {"title": "Occupational series", "source": "occupational_series_code", "labels": "series", "order": "value"},
+    "step": {"title": "Step or rate", "source": "step_or_rate_type_code", "labels": "step", "order": "numeric_then_alpha", "since": "2010-03-01"},
+    "separation_category": {"title": "Separation category", "source": "separation_category_code", "labels": "codes:separation_category", "order": "value"},
+    "accession_category": {"title": "Accession category", "source": "accession_category_code", "labels": "codes:accession_category", "order": "value"}
+  }
+}

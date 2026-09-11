@@ -24,6 +24,7 @@
       <div class="crumbs" id="crumbs"></div>
       <h1 id="node-title" style="margin-top:0"></h1>
       <div id="badges"></div>
+  <div id="vitals"></div>
       <div class="cards" id="cards"></div>
       <div id="trend"></div>
       <div id="flows"></div>
@@ -41,6 +42,7 @@
 <script type="module">
 import { loadJSON, fmt, el, qs, setQs, renderChrome, disclosureBadge } from "./js/common.js";
 import { renderOrgNav } from "./js/orgnav.js";
+import { vitalsStrip } from "./js/vitals.js";
 import { pathTo } from "./js/orgchart.js";
 import { trendPanel } from "./js/trend.js";
 import { flowsChart } from "./js/flows.js";
@@ -92,6 +94,7 @@ async function renderDetail(code) {
   ]);
   if (mix?._summary?.disclosed_location_share != null) badges.append(" ", disclosureBadge(mix._summary.disclosed_location_share));
 
+  vitalsStrip(document.getElementById("vitals"), { code, nodes: (await loadJSON("data/slices/measures/nodes.json")).nodes }).catch(() => {});
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
   const card = (label, value, sub, cls = "") => cards.append(el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value " + cls }, value), sub ? el("div", { class: "sub" }, sub) : null));

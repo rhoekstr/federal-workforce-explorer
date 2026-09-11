@@ -16,6 +16,7 @@
   <h1 id="title">Agency</h1>
   <p class="lede" id="lede"></p>
   <div class="cards" id="cards"></div>
+  <div id="vitals"></div>
   <div class="split">
     <div id="money"></div>
     <div id="people"></div>
@@ -30,6 +31,7 @@ import { loadJSON, fmt, el, qs, renderChrome } from "./js/common.js";
 import { headcountChart, splitBar } from "./js/charts.js";
 import { flowsChart } from "./js/flows.js";
 import { renderOrgNav } from "./js/orgnav.js";
+import { vitalsStrip } from "./js/vitals.js";
 
 renderChrome("index.html");
 const g = qs("g");
@@ -53,6 +55,7 @@ if (!row || !spec) {
   if (spec.note) lede.push(spec.note);
   document.getElementById("lede").textContent = lede.join(". ") + ".";
 
+  vitalsStrip(document.getElementById("vitals"), { code: g, nodes: (await loadJSON("data/slices/measures/nodes.json")).nodes }).catch(() => {});
   const cards = document.getElementById("cards");
   const card = (label, value, sub, cls = "") => cards.append(el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value " + cls }, value), sub ? el("div", { class: "sub" }, sub) : null));
   card("Headcount", fmt.int(row.headcount_latest), fmt.month(row.latest_yyyymm));

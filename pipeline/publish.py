@@ -93,3 +93,24 @@ def publish_releases(repo: str | None = None, include_raw: bool = False, only_mi
     manifest["releases"]["repo"] = repo
     mf.save(manifest)
     return published
+
+
+MEASURES_TAG = "measures"
+
+
+def publish_measures(repo: str | None = None) -> str | None:
+    """Upload measures.parquet to the rolling `measures` Release and record its URL in the manifest."""
+    from pipeline.measures.build import OUT as MEASURES_PARQUET
+
+    repo = current_repo(repo)
+    if not MEASURES_PARQUET.exists():
+        log.warning("no measures.parquet to publish")
+        return None
+    if not release_exists(repo, MEASURES_TAG):
+        _gh("release", "create", MEASURES_TAG, "--repo", repo, "--title", "Measures (rolling)", "--notes", "Fed Pulse measures table: every measure in the catalog for every organizational node and period. Replaced on each refresh. Schema: measure, node, period_type, period_start, dim, dim_value, value, n, notation, source_ref.")
+    url = upload(repo, MEASURES_TAG, MEASURES_PARQUET)
+    manifest = mf.load()
+    manifest.setdefault("measures", {})["release_url"] = url
+    mf.save(manifest)
+    log.info("published measures.parquet -> %s", url)
+    return url

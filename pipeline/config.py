@@ -3,10 +3,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import os
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
-RAW = DATA / "raw"
-WORK = DATA / "work"
+# Raw downloads and intermediate parquet live outside the repo when FEDPULSE_DATA is set, because the repo sits in
+# an iCloud-synced folder and iCloud evicts and re-uploads large files (see CLAUDE.md, operational gotchas).
+_DATA_ROOT = Path(os.environ["FEDPULSE_DATA"]).expanduser() if os.environ.get("FEDPULSE_DATA") else DATA
+RAW = _DATA_ROOT / "raw"
+WORK = _DATA_ROOT / "work"
 LOOKUPS = DATA / "lookups"
 SLICES = DATA / "slices"
 REFERENCE = DATA / "reference"

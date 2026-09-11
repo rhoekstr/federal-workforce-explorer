@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore · Fed Pulse</title>
+<link rel="stylesheet" href="css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23005ea2'/%3E%3Cpath d='M4 20h6l3-9 4 14 3-8h8' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <h1>Explore measures</h1>
+  <p class="lede">Any measure, any unit, any span, on one time axis. Monthly workforce measures back to 2005, money by fiscal quarter, surveys by year. Every measure has an operational definition in the <a href="catalog.html">catalog</a>.</p>
+  <div id="explorer"></div>
+</main>
+<footer></footer>
+<script type="module">
+import { loadJSON, qs, setQs, renderChrome } from "./js/common.js";
+import { explorer } from "./js/explorer.js";
+renderChrome("explore.html");
+const [catalog, nodesDoc, manifest] = await Promise.all([loadJSON("data/slices/measures/catalog.json"), loadJSON("data/slices/measures/nodes.json"), loadJSON("data/manifest.json")]);
+await explorer(document.getElementById("explorer"), {
+  catalog, nodes: nodesDoc.nodes, manifest,
+  state: { nodes: qs("nodes"), measures: qs("measures"), from: qs("from"), mode: qs("mode") },
+  onState: (st) => setQs(st),
+});
+</script>
+</body>
+</html>

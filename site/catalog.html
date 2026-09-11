@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalog · Fed Pulse</title>
+<link rel="stylesheet" href="css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23005ea2'/%3E%3Cpath d='M4 20h6l3-9 4 14 3-8h8' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+.measure { border-top: 1px solid var(--line); padding: .7rem 0; }
+.measure h3 { margin: 0 0 .2rem; }
+.measure .meta { font-size: .82rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin: .2rem 0; }
+.measure .calc { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .82rem; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: .3rem .5rem; display: inline-block; margin-top: .3rem; }
+.measure .components { font-size: .85rem; color: var(--muted); margin-top: .3rem; }
+.toc { columns: 2; font-size: .9rem; }
+@media (min-width: 900px) { .toc { columns: 3; } }
+</style>
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <h1>Measure catalog</h1>
+  <p class="lede">The data dictionary. Every number on this site resolves to one entry here: an operational definition precise enough that two people would compute the same value, the unit, how it aggregates over time, its cadence and lag, the earliest period the source supports, and, for derived measures, the calculation it is generated from.</p>
+  <div class="counters" id="summary"></div>
+  <div class="toc" id="toc"></div>
+  <div id="catalog"></div>
+</main>
+<footer></footer>
+<script type="module">
+import { loadJSON, el, renderChrome } from "./js/common.js";
+renderChrome("catalog.html");
+const cat = await loadJSON("data/slices/measures/catalog.json");
+const M = cat.measures;
+const CAT_HELP = { demand: "Demand: what the organization must respond to; context and denominators, never a target.", input: "Input: resources the organization is given; stewardship.", process: "Process: how the work is done; fully within the organization's control.", output: "Output: what the organization produced.", outcome: "Outcome: what changed as a result; attributed with lag.", contextual: "Contextual: conditions the organization does not control; overlay only." };
+const families = [["Workforce stock", (m) => m.cadence === "month" && m.aggregation === "latest" && !m.code.startsWith("fevs")], ["Workforce flows", (m) => m.cadence === "month" && m.aggregation === "sum"], ["Money", (m) => m.cadence === "quarter"], ["Annual and survey", (m) => m.cadence === "fiscal_year" || m.cadence === "survey_year"]];
+const all = Object.entries(M).map(([code, m]) => ({ code, ...m }));
+const dependents = {};
+for (const m of all) if (m.calculation) for (const c of componentsOf(m)) (dependents[c.measure] ||= []).push(m.code);
+function componentsOf(m) {
+  const c = m.calculation; if (!c) return [];
+  if (c.pattern === "additive") return c.terms.map((t) => ({ measure: t.measure, sign: t.sign ?? 1, offset: t.offset ?? 0 }));
+  if (c.pattern === "ratio") return [{ measure: c.numerator.measure, role: "numerator", offset: c.numerator.offset ?? 0 }, { measure: c.denominator.measure, role: "denominator", offset: c.denominator.offset ?? 0 }];
+  return [{ measure: c.source.measure, offset: c.source.offset ?? 0 }];
+}
+function calcText(m) {
+  const c = m.calculation; if (!c) return null;
+  const t = (x) => `${x.measure}${x.offset ? `@${x.offset}` : ""}`;
+  if (c.pattern === "ratio") return `ratio: ${t(componentsOf(m)[0])} / ${t(componentsOf(m)[1])}${m.unit === "percentage" ? " × 100" : ""}`;
+  if (c.pattern === "additive") return "additive: " + componentsOf(m).map((x) => (x.sign < 0 ? "− " : "+ ") + t(x)).join(" ").replace(/^\+ /, "");
+  return `time offset: ${t(componentsOf(m)[0])}`;
+}
+document.getElementById("summary").append(el("span", {}, el("b", {}, String(all.length)), " measures"), el("span", {}, el("b", {}, String(all.filter((m) => m.kind === "base").length)), " base"), el("span", {}, el("b", {}, String(all.filter((m) => m.kind === "derived").length)), " derived"), el("span", {}, el("b", {}, String(all.filter((m) => m.display !== false).length)), " shown on the site; the rest are components"));
+const toc = document.getElementById("toc");
+const root = document.getElementById("catalog");
+for (const [fam, test] of families) {
+  const members = all.filter(test);
+  if (!members.length) continue;
+  root.append(el("h2", { id: fam.toLowerCase().replace(/\W+/g, "-") }, fam));
+  toc.append(el("div", {}, el("b", {}, fam)));
+  for (const m of members.sort((a, b) => (a.display === false) - (b.display === false) || a.title.localeCompare(b.title))) {
+    toc.append(el("div", {}, el("a", { href: `#${m.code}` }, m.title)));
+    const sec = el("section", { class: "measure", id: m.code });
+    sec.append(el("h3", {}, m.title, " ", el("span", { class: "badge" }, m.kind), m.display === false ? el("span", { class: "badge", title: "A component; not charted on its own" }, " component") : null));
+    sec.append(el("p", {}, m.definition));
+    const meta = el("div", { class: "meta" });
+    meta.append(el("span", {}, `code ${m.code}`), el("span", {}, `unit ${m.unit}`), el("span", {}, `aggregation ${m.aggregation}`), el("span", {}, `${m.extensiveness}`), el("span", { title: CAT_HELP[m.category] }, `category ${m.category}`), el("span", {}, `cadence ${m.cadence.replace("_", " ")}`), el("span", {}, `since ${m.since.slice(0, 7)}`), el("span", {}, `levels ${m.levels.join(", ")}`), m.lag_days ? el("span", {}, `typical lag ${m.lag_days} days`) : null, m.dimensions?.length ? el("span", {}, `dimensions ${m.dimensions.join(", ")}`) : null);
+    sec.append(meta);
+    const ct = calcText(m);
+    if (ct) {
+      sec.append(el("div", { class: "calc" }, ct));
+      sec.append(el("div", { class: "components" }, "components: ", ...componentsOf(m).flatMap((c, i) => [i ? ", " : "", el("a", { href: `#${c.measure}` }, M[c.measure]?.title || c.measure)])));
+    }
+    if (dependents[m.code]?.length) sec.append(el("div", { class: "components" }, "used by: ", ...dependents[m.code].flatMap((d, i) => [i ? ", " : "", el("a", { href: `#${d}` }, M[d].title)])));
+    if (m.sources?.length) sec.append(el("div", { class: "components" }, "source: ", ...m.sources.flatMap((s, i) => [i ? "; " : "", el("a", { href: s.url }, s.name)])));
+    root.append(sec);
+  }
+}
+</script>
+</body>
+</html>

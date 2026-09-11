@@ -1,0 +1,1908 @@
+{
+ "measures": {
+  "headcount": {
+   "title": "Headcount",
+   "definition": "Employees on the rolls at the end of the month, counting every record in OPM's employment snapshot regardless of schedule or appointment type.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "year_type": "calendar",
+   "lag_days": 45,
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "dimensions": [
+    "grade",
+    "age_bracket",
+    "supervisory",
+    "appointment_type",
+    "pay_band",
+    "work_schedule",
+    "series",
+    "step"
+   ],
+   "sources": [
+    {
+     "name": "OPM Federal Workforce Data, employment",
+     "url": "https://data.opm.gov/get-data/api-access"
+    }
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "supervisors": {
+   "title": "Supervisors and managers",
+   "definition": "Employees whose supervisory status is supervisor or manager, CSRA supervisor, or CSRA management official (codes 2, 4, 5).",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "permanent_employees": {
+   "title": "Permanent appointments",
+   "definition": "Employees on career, career-conditional, or excepted-service permanent appointments, including SES career and noncareer (appointment type codes 10, 15, 30, 32, 35, 36, 38, 50, 55, 67).",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "temporary_employees": {
+   "title": "Temporary and term appointments",
+   "definition": "Employees on nonpermanent appointments in the competitive, excepted, or senior executive services (appointment type codes 20, 40, 42, 44, 45, 46, 48, 60, 65, 68).",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "fulltime_employees": {
+   "title": "Full-time employees",
+   "definition": "Employees on a full-time or full-time seasonal work schedule (codes F, G).",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "gs_employees": {
+   "title": "General Schedule employees",
+   "definition": "Employees on pay plan GS.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "gs13_plus_employees": {
+   "title": "GS-13 and above",
+   "definition": "General Schedule employees at grade 13, 14, or 15.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "under_30": {
+   "title": "Employees under 30",
+   "definition": "Employees in the age brackets under 20, 20 to 24, and 25 to 29.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "age_55_plus": {
+   "title": "Employees 55 and over",
+   "definition": "Employees in the age brackets 55 to 59, 60 to 64, and 65 or more.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "retirement_eligible": {
+   "title": "Estimated retirement-eligible employees",
+   "definition": "Employees meeting an approximation of the immediate-retirement rule from OPM's age brackets and length of service: age 62 or over with 5 or more years, 60 or over with 20 or more, or 55 or over with 30 or more, using the lower bound of each age bracket. Overstates slightly in the 55 to 59 bracket under FERS minimum retirement ages; labeled estimated.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "bachelors_plus": {
+   "title": "Bachelor's degree or higher",
+   "definition": "Employees whose education level code is 13 (bachelor's) or higher.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "service_years_total": {
+   "title": "Total years of federal service",
+   "definition": "Sum of length of service in years across employees.",
+   "kind": "base",
+   "unit": "years",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "pay_total": {
+   "title": "Total annualized basic pay, disclosed",
+   "definition": "Sum of annualized adjusted basic pay across employees whose pay OPM disclosed.",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "pay_disclosed_employees": {
+   "title": "Employees with pay disclosed",
+   "definition": "Employees whose annualized adjusted basic pay is not redacted by OPM.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "location_disclosed_employees": {
+   "title": "Employees with duty station disclosed",
+   "definition": "Employees whose duty station code is not redacted by OPM.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "veterans": {
+   "title": "Veterans",
+   "definition": "Employees with veteran indicator Y.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "stem_employees": {
+   "title": "STEM employees",
+   "definition": "Employees in occupations OPM classifies as STEM.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "bargaining_unit_employees": {
+   "title": "Employees in a bargaining unit",
+   "definition": "Employees whose bargaining unit status is eligible and in a unit. Redacted alongside location for about half the workforce, so the share is computed over disclosed records only.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "process",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "bargaining_disclosed_employees": {
+   "title": "Employees with bargaining status disclosed",
+   "definition": "Employees whose bargaining unit status is not redacted.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "display": false
+  },
+  "supervisor_share": {
+   "title": "Supervisor share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "process",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "supervisors"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Supervisors and managers divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "non_supervisors": {
+   "title": "Non-supervisory employees",
+   "kind": "derived",
+   "unit": "people",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "additive",
+    "terms": [
+     {
+      "measure": "headcount",
+      "sign": 1
+     },
+     {
+      "measure": "supervisors",
+      "sign": -1
+     }
+    ]
+   },
+   "display": false,
+   "extensiveness": "extensive",
+   "definition": "Sum of terms: Headcount − Supervisors and managers, per month.",
+   "definition_generated": true
+  },
+  "span_of_control": {
+   "title": "Span of control",
+   "definition": "Non-supervisory employees per supervisor or manager: headcount minus supervisors, divided by supervisors.",
+   "kind": "derived",
+   "unit": "ratio",
+   "aggregation": "latest",
+   "category": "process",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "non_supervisors"
+    },
+    "denominator": {
+     "measure": "supervisors"
+    }
+   },
+   "format": "number",
+   "digits": 1,
+   "extensiveness": "intensive"
+  },
+  "permanent_share": {
+   "title": "Permanent appointment share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "permanent_employees"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Permanent appointments divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "temp_share": {
+   "title": "Temporary and term share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "temporary_employees"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Temporary and term appointments divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "fulltime_share": {
+   "title": "Full-time share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "fulltime_employees"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Full-time employees divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "gs13_plus_share": {
+   "title": "GS-13 and above, share of GS",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "gs13_plus_employees"
+    },
+    "denominator": {
+     "measure": "gs_employees"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "GS-13 and above divided by General Schedule employees × 100, per month.",
+   "definition_generated": true
+  },
+  "under_30_share": {
+   "title": "Under 30 share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "under_30"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Employees under 30 divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "age_55_plus_share": {
+   "title": "Age 55 and over share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "age_55_plus"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Employees 55 and over divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "retirement_eligible_share": {
+   "title": "Retirement-eligible share (estimated)",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "retirement_eligible"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "extensiveness": "intensive",
+   "definition": "Estimated retirement-eligible employees divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "bachelors_plus_share": {
+   "title": "Bachelor's or higher share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "bachelors_plus"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Bachelor's degree or higher divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "avg_service_years": {
+   "title": "Average years of service",
+   "kind": "derived",
+   "unit": "years",
+   "aggregation": "latest",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "service_years_total"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "number",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Total years of federal service divided by Headcount, per month.",
+   "definition_generated": true
+  },
+  "avg_pay": {
+   "title": "Average basic pay (disclosed)",
+   "kind": "derived",
+   "unit": "currency",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "pay_total"
+    },
+    "denominator": {
+     "measure": "pay_disclosed_employees"
+    }
+   },
+   "format": "currency",
+   "digits": 0,
+   "extensiveness": "intensive",
+   "definition": "Total annualized basic pay, disclosed divided by Employees with pay disclosed, per month.",
+   "definition_generated": true
+  },
+  "pay_disclosed_share": {
+   "title": "Pay disclosed share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "pay_disclosed_employees"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 0,
+   "extensiveness": "intensive",
+   "definition": "Employees with pay disclosed divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "location_disclosed_share": {
+   "title": "Location disclosed share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "contextual",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "location_disclosed_employees"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 0,
+   "extensiveness": "intensive",
+   "definition": "Employees with duty station disclosed divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "veteran_share": {
+   "title": "Veteran share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "veterans"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Veterans divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "stem_share": {
+   "title": "STEM share",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "stem_employees"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "STEM employees divided by Headcount × 100, per month.",
+   "definition_generated": true
+  },
+  "bargaining_unit_share": {
+   "title": "Bargaining unit coverage (of disclosed)",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "process",
+   "cadence": "month",
+   "since": "2010-03-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "bargaining_unit_employees"
+    },
+    "denominator": {
+     "measure": "bargaining_disclosed_employees"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Employees in a bargaining unit divided by Employees with bargaining status disclosed × 100, per month.",
+   "definition_generated": true
+  },
+  "accessions": {
+   "title": "Accessions",
+   "definition": "Personnel actions bringing an employee onto an agency's rolls in the effective month: new hires and transfers in.",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "output",
+   "cadence": "month",
+   "lag_days": 45,
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "dimensions": [
+    "accession_category"
+   ],
+   "sources": [
+    {
+     "name": "OPM Federal Workforce Data, accessions",
+     "url": "https://data.opm.gov/get-data/api-access"
+    }
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "new_hires": {
+   "title": "New hires",
+   "definition": "Accessions that are new competitive, excepted, or SES appointments rather than transfers (accession categories AC, AD, AE).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "output",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "transfers_in": {
+   "title": "Transfers in",
+   "definition": "Accessions by individual or mass transfer from another agency (categories AA, AB).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "output",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "separations": {
+   "title": "Separations",
+   "definition": "Personnel actions removing an employee from an agency's rolls in the effective month, all categories.",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "lag_days": 45,
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "dimensions": [
+    "separation_category"
+   ],
+   "sources": [
+    {
+     "name": "OPM Federal Workforce Data, separations",
+     "url": "https://data.opm.gov/get-data/api-access"
+    }
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "quits": {
+   "title": "Quits",
+   "definition": "Voluntary separations other than retirement (separation category SC).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "retirements": {
+   "title": "Retirements",
+   "definition": "Voluntary, early-out, and other retirements (categories SD, SE, SG).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "rifs": {
+   "title": "Reductions in force",
+   "definition": "Separations by reduction in force (category SH).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "transfers_out": {
+   "title": "Transfers out",
+   "definition": "Separations by individual or mass transfer to another agency (categories SA, SB).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "terminations": {
+   "title": "Terminations and other separations",
+   "definition": "Terminations at appointment expiry or otherwise, and other separations (categories SJ, SL).",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "deferred_resignations": {
+   "title": "Deferred resignations",
+   "definition": "Separations OPM flags under the 2025 deferred resignation program, whatever their separation category.",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2025-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "first_year_separations": {
+   "title": "First-year separations",
+   "definition": "Separations of employees with less than one year of federal service at separation, all categories.",
+   "kind": "base",
+   "unit": "count",
+   "aggregation": "sum",
+   "extensiveness": "extensive",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "headcount_prior_month": {
+   "title": "Headcount, prior month",
+   "kind": "derived",
+   "unit": "people",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "time_offset",
+    "source": {
+     "measure": "headcount",
+     "offset": -1
+    }
+   },
+   "display": false,
+   "extensiveness": "extensive",
+   "definition": "Headcount 1 period earlier, shifted by -1 months.",
+   "definition_generated": true
+  },
+  "net_change": {
+   "title": "Net change",
+   "kind": "derived",
+   "unit": "count",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "additive",
+    "terms": [
+     {
+      "measure": "accessions",
+      "sign": 1
+     },
+     {
+      "measure": "separations",
+      "sign": -1
+     }
+    ]
+   },
+   "format": "number",
+   "digits": 0,
+   "extensiveness": "extensive",
+   "definition": "Sum of terms: Accessions − Separations, per month.",
+   "definition_generated": true
+  },
+  "quit_rate": {
+   "title": "Quit rate",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "quits"
+    },
+    "denominator": {
+     "measure": "headcount_prior_month"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive",
+   "definition": "Quits divided by Headcount, prior month × 100, per month.",
+   "definition_generated": true
+  },
+  "retirement_rate": {
+   "title": "Retirement rate",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "retirements"
+    },
+    "denominator": {
+     "measure": "headcount_prior_month"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive",
+   "definition": "Retirements divided by Headcount, prior month × 100, per month.",
+   "definition_generated": true
+  },
+  "separation_rate": {
+   "title": "Separation rate",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "separations"
+    },
+    "denominator": {
+     "measure": "headcount_prior_month"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive",
+   "definition": "Separations divided by Headcount, prior month × 100, per month.",
+   "definition_generated": true
+  },
+  "rif_rate": {
+   "title": "RIF rate",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "rifs"
+    },
+    "denominator": {
+     "measure": "headcount_prior_month"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive",
+   "definition": "Reductions in force divided by Headcount, prior month × 100, per month.",
+   "definition_generated": true
+  },
+  "accession_rate": {
+   "title": "Accession rate",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "output",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "accessions"
+    },
+    "denominator": {
+     "measure": "headcount_prior_month"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive",
+   "definition": "Accessions divided by Headcount, prior month × 100, per month.",
+   "definition_generated": true
+  },
+  "gross_moves": {
+   "title": "Accessions plus separations",
+   "kind": "derived",
+   "unit": "count",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "additive",
+    "terms": [
+     {
+      "measure": "accessions",
+      "sign": 1
+     },
+     {
+      "measure": "separations",
+      "sign": 1
+     }
+    ]
+   },
+   "display": false,
+   "extensiveness": "extensive",
+   "definition": "Sum of terms: Accessions + Separations, per month.",
+   "definition_generated": true
+  },
+  "churn_rate": {
+   "title": "Churn rate",
+   "definition": "Accessions plus separations in the month, divided by prior-month headcount. Total movement regardless of direction.",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2005-04-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "gross_moves"
+    },
+    "denominator": {
+     "measure": "headcount_prior_month"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive"
+  },
+  "accessions_trailing_12": {
+   "title": "Accessions, trailing twelve months",
+   "definition": "Sum of accessions over the twelve months ending with the prior month.",
+   "kind": "derived",
+   "unit": "count",
+   "aggregation": "sum",
+   "category": "output",
+   "cadence": "month",
+   "since": "2006-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "additive",
+    "terms": [
+     {
+      "measure": "accessions",
+      "offset": -1
+     },
+     {
+      "measure": "accessions",
+      "offset": -2
+     },
+     {
+      "measure": "accessions",
+      "offset": -3
+     },
+     {
+      "measure": "accessions",
+      "offset": -4
+     },
+     {
+      "measure": "accessions",
+      "offset": -5
+     },
+     {
+      "measure": "accessions",
+      "offset": -6
+     },
+     {
+      "measure": "accessions",
+      "offset": -7
+     },
+     {
+      "measure": "accessions",
+      "offset": -8
+     },
+     {
+      "measure": "accessions",
+      "offset": -9
+     },
+     {
+      "measure": "accessions",
+      "offset": -10
+     },
+     {
+      "measure": "accessions",
+      "offset": -11
+     },
+     {
+      "measure": "accessions",
+      "offset": -12
+     }
+    ]
+   },
+   "display": false,
+   "extensiveness": "extensive"
+  },
+  "first_year_attrition_rate": {
+   "title": "First-year attrition rate",
+   "definition": "First-year separations in the month as a share of accessions over the prior twelve months. An approximation: the denominator is the pool of recent arrivals, not a cohort.",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "sum",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2006-01-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "first_year_separations"
+    },
+    "denominator": {
+     "measure": "accessions_trailing_12"
+    }
+   },
+   "format": "percentage",
+   "digits": 2,
+   "extensiveness": "intensive"
+  },
+  "personnel_obligations": {
+   "title": "Personnel compensation and benefits",
+   "definition": "Direct obligations in object classes 11 (compensation), 12 (benefits), and 13 (benefits for former personnel), rolling four fiscal quarters, from USAspending File B.",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "input",
+   "cadence": "quarter",
+   "year_type": "federal_fiscal",
+   "lag_days": 75,
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "sources": [
+    {
+     "name": "USAspending account breakdown by object class",
+     "url": "https://api.usaspending.gov/api/v2/download/accounts/"
+    }
+   ],
+   "format": "currency",
+   "digits": 0
+  },
+  "contracted_services_obligations": {
+   "title": "Contracted services",
+   "definition": "Direct obligations for advisory and assistance services (25.1) and other services from non-federal sources (25.2), rolling four fiscal quarters.",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "input",
+   "cadence": "quarter",
+   "year_type": "federal_fiscal",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "format": "currency",
+   "digits": 0
+  },
+  "federal_services_obligations": {
+   "title": "Services from other federal agencies",
+   "definition": "Direct obligations in object class 25.3, rolling four fiscal quarters. Shown, never in the in-sourcing ratio.",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "input",
+   "cadence": "quarter",
+   "year_type": "federal_fiscal",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "format": "currency",
+   "digits": 0
+  },
+  "administered_obligations": {
+   "title": "Dollars administered",
+   "definition": "Direct obligations for grants (41), insurance claims and benefits (42), interest (43), refunds (44), investments and loans (33), and financial transfers (94), rolling four fiscal quarters.",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "demand",
+   "cadence": "quarter",
+   "year_type": "federal_fiscal",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "format": "currency",
+   "digits": 0
+  },
+  "operations_obligations": {
+   "title": "Dollars for operations",
+   "definition": "Direct obligations in object classes 11 through 26, 31, and 32, rolling four fiscal quarters: what the staff runs on.",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "input",
+   "cadence": "quarter",
+   "year_type": "federal_fiscal",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "format": "currency",
+   "digits": 0
+  },
+  "labor_obligations": {
+   "title": "Personnel plus contracted services",
+   "kind": "derived",
+   "unit": "currency",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "quarter",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "calculation": {
+    "pattern": "additive",
+    "terms": [
+     {
+      "measure": "personnel_obligations",
+      "sign": 1
+     },
+     {
+      "measure": "contracted_services_obligations",
+      "sign": 1
+     }
+    ]
+   },
+   "display": false,
+   "extensiveness": "intensive",
+   "definition": "Sum of terms: Personnel compensation and benefits + Contracted services, per quarter.",
+   "definition_generated": true
+  },
+  "insourcing_ratio": {
+   "title": "In-sourcing ratio",
+   "definition": "Personnel compensation and benefits divided by personnel plus contracted services (25.1 and 25.2). Labor substitution only; services from other federal agencies are excluded.",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "process",
+   "cadence": "quarter",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "personnel_obligations"
+    },
+    "denominator": {
+     "measure": "labor_obligations"
+    }
+   },
+   "format": "percentage",
+   "digits": 0,
+   "extensiveness": "intensive"
+  },
+  "personnel_per_head": {
+   "title": "Personnel spending per employee",
+   "kind": "derived",
+   "unit": "dollars_per_person",
+   "aggregation": "latest",
+   "category": "input",
+   "cadence": "quarter",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "personnel_obligations"
+    },
+    "denominator": {
+     "measure": "headcount"
+    }
+   },
+   "format": "currency",
+   "digits": 0,
+   "extensiveness": "intensive",
+   "definition": "Personnel compensation and benefits divided by Headcount, per quarter.",
+   "definition_generated": true
+  },
+  "omb_fte": {
+   "title": "Full-time equivalents (OMB)",
+   "definition": "Civilian full-time equivalent employment by agency from OMB's Analytical Perspectives Table 5-1, in persons. Actual for closed fiscal years; the current and budget years are OMB estimates and are notated.",
+   "kind": "base",
+   "unit": "people",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "input",
+   "cadence": "fiscal_year",
+   "year_type": "federal_fiscal",
+   "lag_days": 180,
+   "since": "2023-10-01",
+   "levels": [
+    "group"
+   ],
+   "sources": [
+    {
+     "name": "OMB Analytical Perspectives FY2027, Table 5-1",
+     "url": "https://www.whitehouse.gov/omb/information-resources/budget/analytical-perspectives/"
+    }
+   ],
+   "format": "number",
+   "digits": 0
+  },
+  "fevs_engagement": {
+   "title": "Employee Engagement Index (FEVS)",
+   "definition": "OPM's Employee Engagement Index: the mean of the Leaders Lead, Supervisors, and Intrinsic Work Experience subindices, each the mean of weighted percent-positive item scores with Do Not Know excluded. Computed from the public respondent file and validated against OPM's published agency values.",
+   "kind": "base",
+   "unit": "index",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 240,
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "sources": [
+    {
+     "name": "OPM FEVS Public Release Data Files",
+     "url": "https://www.opm.gov/fevs/public-data-file/"
+    }
+   ],
+   "format": "number",
+   "digits": 1
+  },
+  "fevs_global_satisfaction": {
+   "title": "Global Satisfaction Index (FEVS)",
+   "definition": "OPM's Global Satisfaction Index: mean weighted percent positive on job, pay, organization satisfaction and recommending the organization.",
+   "kind": "base",
+   "unit": "index",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "number",
+   "digits": 1
+  },
+  "fevs_performance_confidence": {
+   "title": "Performance Confidence Index (FEVS)",
+   "definition": "OPM's Performance Confidence Index, mean weighted percent positive.",
+   "kind": "base",
+   "unit": "index",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2021-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "number",
+   "digits": 1
+  },
+  "fevs_leave_any": {
+   "title": "Considering leaving, any reason (FEVS)",
+   "definition": "Weighted share of respondents answering yes to considering leaving their organization within the next year, any reason.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  },
+  "fevs_leave_outside": {
+   "title": "Considering leaving government (FEVS)",
+   "definition": "Weighted share answering yes, to take another job outside the federal government.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  },
+  "fevs_leave_within": {
+   "title": "Considering another federal job (FEVS)",
+   "definition": "Weighted share answering yes, to take another job within the federal government.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  },
+  "fevs_leave_other": {
+   "title": "Considering leaving, other including retirement (FEVS)",
+   "definition": "Weighted share answering yes, other. Retirement is merged into this option in every year.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  },
+  "fevs_pay_satisfaction": {
+   "title": "Satisfied with pay (FEVS)",
+   "definition": "Weighted percent positive on satisfaction with pay.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  },
+  "fevs_recommend": {
+   "title": "Would recommend organization (FEVS)",
+   "definition": "Weighted percent positive on recommending the organization as a good place to work.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  },
+  "fevs_workload_reasonable": {
+   "title": "Workload is reasonable (FEVS)",
+   "definition": "Weighted percent positive on my workload is reasonable.",
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "since": "2019-01-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "percentage",
+   "digits": 1
+  }
+ },
+ "dimensions": {
+  "grade": {
+   "title": "Grade",
+   "source": "grade",
+   "labels": null,
+   "order": "numeric_then_alpha"
+  },
+  "age_bracket": {
+   "title": "Age bracket",
+   "source": "age_bracket",
+   "labels": null,
+   "order": "numeric"
+  },
+  "supervisory": {
+   "title": "Supervisory status",
+   "source": "supervisory_status_code",
+   "labels": "codes:supervisory_status",
+   "order": "value"
+  },
+  "appointment_type": {
+   "title": "Appointment type",
+   "source": "appointment_type_code",
+   "labels": "codes:appointment_type",
+   "order": "value"
+  },
+  "pay_band": {
+   "title": "Pay band ($10k)",
+   "source": "pay_band",
+   "labels": null,
+   "order": "numeric"
+  },
+  "work_schedule": {
+   "title": "Work schedule",
+   "source": "work_schedule_code",
+   "labels": "codes:work_schedule",
+   "order": "value"
+  },
+  "series": {
+   "title": "Occupational series",
+   "source": "occupational_series_code",
+   "labels": "series",
+   "order": "value"
+  },
+  "step": {
+   "title": "Step or rate",
+   "source": "step_or_rate_type_code",
+   "labels": "step",
+   "order": "numeric_then_alpha",
+   "since": "2010-03-01"
+  },
+  "separation_category": {
+   "title": "Separation category",
+   "source": "separation_category_code",
+   "labels": "codes:separation_category",
+   "order": "value"
+  },
+  "accession_category": {
+   "title": "Accession category",
+   "source": "accession_category_code",
+   "labels": "codes:accession_category",
+   "order": "value"
+  }
+ }
+}

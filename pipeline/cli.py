@@ -4,6 +4,7 @@
   python -m pipeline.cli sync --year 2026        # discover, download, build every missing month
   python -m pipeline.cli money                   # USAspending + OMB -> overview
   python -m pipeline.cli slices                  # pre-computed JSON + org tree for the site
+  python -m pipeline.cli measures                # build measures.parquet + measure slices from extracts
   python -m pipeline.cli site                    # assemble _site/ for local preview or Pages
   python -m pipeline.cli publish                 # upload parquet to GitHub Releases, fill manifest URLs
 """
@@ -93,6 +94,13 @@ def cmd_slices(args) -> int:
     return 0
 
 
+def cmd_measures(args) -> int:
+    from pipeline.measures.build import build_measures
+
+    print(build_measures(fetch_money=args.fetch_money))
+    return 0
+
+
 def cmd_site(args) -> int:
     from pipeline.site import assemble
 
@@ -125,6 +133,9 @@ def main(argv=None) -> int:
     m.set_defaults(fn=cmd_money)
     sub.add_parser("slices").set_defaults(fn=cmd_slices)
     sub.add_parser("site").set_defaults(fn=cmd_site)
+    ms = sub.add_parser("measures")
+    ms.add_argument("--fetch-money", action="store_true")
+    ms.set_defaults(fn=cmd_measures)
     pub = sub.add_parser("publish")
     pub.add_argument("--repo", default=None)
     pub.add_argument("--raw", action="store_true", help="also upload raw parquet (off by default; Robert decided fact tables only)")

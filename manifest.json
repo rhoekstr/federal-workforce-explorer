@@ -805,7 +805,16 @@
    }
   }
  },
- "generated": "2026-09-10T01:55:44Z",
+ "generated": "2026-09-11T13:32:34Z",
+ "measures": {
+  "extracts": 36937,
+  "first_period": "2019-01-01",
+  "last_period": "2026-10-01",
+  "measures": 77,
+  "nodes": 767,
+  "parquet_bytes": 265591,
+  "rows": 76979
+ },
  "money": {
   "fileb_periods": [
    "FY2026Q3",
