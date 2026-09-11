@@ -112,6 +112,16 @@ def _base_facts(con: duckdb.DuckDBPyConnection, catalog: Catalog) -> None:
     )
     SELECT * FROM sub UNION ALL SELECT * FROM orphan UNION ALL SELECT * FROM agency_all UNION ALL SELECT * FROM dept UNION ALL SELECT * FROM gov
     """)
+    # A unit that exists (has a headcount) but recorded no actions of a kind that month had zero of them, not an unknown number.
+    flows = [(c, m["since"]) for c, m in catalog.measures.items() if m["kind"] == "base" and m["aggregation"] == "sum" and m["cadence"] == "month"]
+    for code, since in flows:
+        con.execute(f"""
+        INSERT INTO facts
+        SELECT '{code}', h.node, 'month', h.period_start, NULL, NULL, 0.0, NULL, NULL, 'zero-fill'
+        FROM (SELECT DISTINCT node, period_start FROM facts WHERE measure = 'headcount' AND dim IS NULL AND period_type = 'month' AND period_start >= '{since}'
+              AND period_start <= (SELECT max(period_start) FROM facts WHERE measure = '{code}' AND dim IS NULL)) h
+        WHERE NOT EXISTS (SELECT 1 FROM facts f WHERE f.measure = '{code}' AND f.node = h.node AND f.period_start = h.period_start AND f.dim IS NULL)
+        """)
     # Group headcount for money ratios: members' agencies plus/minus org codes.
     con.execute("""
     INSERT INTO facts
@@ -134,21 +144,25 @@ def _write_slices(con: duckdb.DuckDBPyConnection, catalog: Catalog, nodes: dict)
     write_public_catalog(catalog, SLICE_DIR / "catalog.json")
     (SLICE_DIR / "nodes.json").write_text(json.dumps({"nodes": nodes}, separators=(",", ":"), ensure_ascii=False))
     # Government-wide series for every flat measure, plus per-node series for departments, agencies, and groups.
+    shown = [c for c, m in catalog.measures.items() if m.get("display", True)]
+    con.execute("CREATE OR REPLACE TABLE shown_measures AS SELECT unnest(?) AS measure", [shown])
     rows = con.execute("""
         SELECT f.node, f.measure, f.period_type, f.period_start, f.value, f.n, f.notation
-        FROM facts f JOIN nodes k ON k.code = f.node WHERE f.dim IS NULL AND k.kind IN ('gov', 'department', 'agency', 'group')
+        FROM facts f JOIN nodes k ON k.code = f.node JOIN shown_measures s ON s.measure = f.measure
+        WHERE f.dim IS NULL AND k.kind IN ('gov', 'department', 'agency', 'group') AND f.value IS NOT NULL
         ORDER BY f.node, f.measure, f.period_start
     """).fetchall()
     per_node: dict[str, dict] = {}
     for node, measure, pt, ps, value, n, notation in rows:
         entry = per_node.setdefault(node, {}).setdefault(measure, {"period_type": pt, "values": {}})
-        entry["values"][ps] = [None if value is None else round(value, 4), n, notation] if (n is not None or notation) else [None if value is None else round(value, 4)]
+        v = round(value, 2 if abs(value) >= 100 else 4)
+        entry["values"][ps] = [v, n, notation] if notation else ([v, n] if n is not None else [v])
     for node, measures in per_node.items():
         (SLICE_DIR / f"{node}.json").write_text(json.dumps({"node": node, "measures": measures}, separators=(",", ":")))
     # Latest current snapshot for every node and measure (all levels), for vitals strips.
     current = con.execute("""
         SELECT node, measure, period_type, period_start, value, n, notation FROM (
-          SELECT *, row_number() OVER (PARTITION BY node, measure ORDER BY period_start DESC) AS rn FROM facts WHERE dim IS NULL AND value IS NOT NULL
+          SELECT *, row_number() OVER (PARTITION BY node, measure ORDER BY period_start DESC) AS rn FROM facts WHERE dim IS NULL AND value IS NOT NULL AND measure IN (SELECT measure FROM shown_measures)
         ) WHERE rn = 1
     """).fetchall()
     snap: dict[str, dict] = {}
@@ -159,11 +173,36 @@ def _write_slices(con: duckdb.DuckDBPyConnection, catalog: Catalog, nodes: dict)
     log.info("measure slices: %d node files, %.1f MB", len(per_node), total / 1e6)
 
 
+def _add_historical_nodes(con: duckdb.DuckDBPyConnection, nodes: dict[str, dict]) -> int:
+    """Agencies and sub-elements that appear in the history but not in the current OPM lookups get code-named nodes."""
+    rows = con.execute("""
+        SELECT node, min(period_start), max(period_start) FROM raw_facts
+        WHERE measure = 'headcount' AND dim IS NULL AND (length(node) = 4 OR (length(node) = 2 AND node = upper(node)))
+        GROUP BY node
+    """).fetchall()
+    added = 0
+    for code, first, last in rows:
+        if code in nodes:
+            continue
+        if len(code) == 2:
+            nodes[code] = {"code": code, "kind": "agency", "name": f"Agency {code} (historical; not in current OPM files)", "parent": "gov", "first_seen": first[:7].replace("-", ""), "last_seen": last[:7].replace("-", ""), "historical": True}
+        else:
+            parent = code[:2]
+            if parent not in nodes:
+                nodes[parent] = {"code": parent, "kind": "agency", "name": f"Agency {parent} (historical; not in current OPM files)", "parent": "gov", "first_seen": first[:7].replace("-", ""), "last_seen": last[:7].replace("-", ""), "historical": True}
+            nodes[code] = {"code": code, "kind": "subelement", "name": f"{code} (historical sub-element; name not in current OPM files)", "parent": parent, "first_seen": first[:7].replace("-", ""), "last_seen": last[:7].replace("-", ""), "historical": True}
+        added += 1
+    NODES_PATH.write_text(json.dumps({"nodes": nodes}, indent=0, ensure_ascii=False))
+    log.info("added %d historical nodes", added)
+    return added
+
+
 def build_measures(fetch_money: bool = False) -> dict:
     catalog = Catalog.load()
     nodes = build_nodes()
     con = duckdb.connect()
     n_raw = _load_extracts(con)
+    _add_historical_nodes(con, nodes)
     _register_nodes(con, nodes)
     _base_facts(con, catalog)
     _insert(con, money_facts(fetch=fetch_money))

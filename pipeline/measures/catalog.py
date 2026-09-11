@@ -92,7 +92,7 @@ class Catalog:
                 {"measure": calc["numerator"]["measure"], "role": "numerator", "offset": calc["numerator"].get("offset", 0)},
                 {"measure": calc["denominator"]["measure"], "role": "denominator", "offset": calc["denominator"].get("offset", 0)},
             ]
-        return [{"measure": calc["source"]["measure"], "offset": calc["source"].get("offset", 0)}]
+        return [{"measure": calc["source"]["measure"], "offset": calc["source"].get("offset", 0), "carry_forward": calc["source"].get("carry_forward", 0)}]
 
     # ----- derived properties (Evince A16/A17) -----
     def derive_properties(self) -> None:

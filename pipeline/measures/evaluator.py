@@ -57,7 +57,18 @@ class Evaluator:
         m = self.catalog.measures[comp["measure"]]
         src_cadence = m["cadence"]
         offset = comp.get("offset", 0)
-        if ORDER[src_cadence] == ORDER[target_cadence] and src_cadence == target_cadence or (ORDER[src_cadence] == ORDER[target_cadence]):
+        carry = comp.get("carry_forward", 0)
+        if ORDER[src_cadence] == ORDER[target_cadence] and carry:
+            # Carry the last observed value forward up to `carry` periods (quarterly snapshots serving monthly rates).
+            step = {"month": 1, "quarter": 3, "fiscal_year": 12, "survey_year": 12}[src_cadence]
+            base = f"""
+            WITH obs AS (SELECT node, CAST(period_start AS DATE) AS d, value, notation FROM facts WHERE measure = '{comp['measure']}' AND dim IS NULL AND period_type = '{src_cadence}'),
+            spans AS (SELECT node, min(d) AS lo, max(d) AS hi FROM obs GROUP BY node),
+            grid AS (SELECT node, unnest(generate_series(lo, hi, INTERVAL {step} MONTH)) AS d FROM spans),
+            filled AS (SELECT g.node, g.d, o.value, o.notation, o.d AS od FROM grid g ASOF LEFT JOIN obs o ON g.node = o.node AND g.d >= o.d)
+            SELECT node, strftime(d, '%Y-%m-%d') AS period_start, value, notation FROM filled WHERE od IS NOT NULL AND d <= od + INTERVAL {carry * step} MONTH
+            """
+        elif ORDER[src_cadence] == ORDER[target_cadence]:
             base = f"SELECT node, period_start, value, notation FROM facts WHERE measure = '{comp['measure']}' AND dim IS NULL AND period_type = '{src_cadence}'"
         elif ORDER[src_cadence] < ORDER[target_cadence]:
             agg = m["aggregation"]

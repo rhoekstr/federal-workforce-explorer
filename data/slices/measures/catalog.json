@@ -1117,6 +1117,7 @@
   },
   "headcount_prior_month": {
    "title": "Headcount, prior month",
+   "definition": "Headcount at the previous month's snapshot. Where OPM published only quarterly snapshots (2005 through mid-2011), the most recent snapshot within the prior two months stands in, so monthly rates exist in every month; a stock carried forward is a stated approximation, not an observation.",
    "kind": "derived",
    "unit": "people",
    "aggregation": "latest",
@@ -1133,13 +1134,12 @@
     "pattern": "time_offset",
     "source": {
      "measure": "headcount",
-     "offset": -1
+     "offset": -1,
+     "carry_forward": 2
     }
    },
    "display": false,
-   "extensiveness": "extensive",
-   "definition": "Headcount 1 period earlier, shifted by -1 months.",
-   "definition_generated": true
+   "extensiveness": "extensive"
   },
   "net_change": {
    "title": "Net change",
@@ -1686,6 +1686,7 @@
    "lag_days": 240,
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "sources": [
@@ -1708,6 +1709,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "number",
@@ -1724,6 +1726,7 @@
    "cadence": "survey_year",
    "since": "2021-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "number",
@@ -1740,6 +1743,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
@@ -1756,6 +1760,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
@@ -1772,6 +1777,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
@@ -1788,6 +1794,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
@@ -1804,6 +1811,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
@@ -1820,6 +1828,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
@@ -1836,6 +1845,7 @@
    "cadence": "survey_year",
    "since": "2019-01-01",
    "levels": [
+    "gov",
     "agency"
    ],
    "format": "percentage",
