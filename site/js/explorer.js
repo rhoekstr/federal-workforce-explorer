@@ -37,11 +37,16 @@ function formatValue(m, v) {
 async function loadSeries(node, measure, manifest) {
   const slice = await loadJSON(`data/slices/measures/${node}.json`).catch(() => null);
   if (slice) return slice.measures[measure] || null;
-  // Fallback: DuckDB over the published parquet (sub-elements).
-  const url = manifest?.measures?.release_url;
-  if (!url) return null;
-  const { runQuery } = await import("./query.js");
-  const rows = await runQuery(`SELECT period_type, period_start, value, n, notation FROM read_parquet('${url}') WHERE node = '${node.replace(/'/g, "''")}' AND measure = '${measure}' AND dim IS NULL ORDER BY period_start`);
+  // Fallback: DuckDB over the same-origin copy of the measures table (sub-elements and historical nodes).
+  const url = new URL("data/measures.parquet", location.href).href;
+  let rows;
+  try {
+    const { runQuery } = await import("./query.js");
+    rows = await runQuery(`SELECT period_type, period_start, value, n, notation FROM read_parquet('${url}') WHERE node = '${node.replace(/'/g, "''")}' AND measure = '${measure}' AND dim IS NULL AND value IS NOT NULL ORDER BY period_start`);
+  } catch (err) {
+    console.warn("measures query failed", err);
+    return null;
+  }
   if (!rows.length) return null;
   const values = {};
   for (const r of rows) values[r.period_start] = [r.value == null ? null : Number(r.value), r.n == null ? null : Number(r.n), r.notation];

@@ -12,7 +12,7 @@
 | V2 extractors | passed | Era-aware FWD employment and actions (31-, 62-, 64-column eras), USAspending rolling four quarters (36 fiscal quarters, FY2018 Q2 to FY2026 Q3), OMB FTE, FEVS 2019 to 2023 including government-wide. July 2026 reconciles exactly: 2,020,230 employees, 16,681 separations, 19,024 accessions. |
 | V3 backfill | passed | 725 OPM files, 2005 to 2026, 722 extracted and 3 already present, 0 era errors, 0 failures, 8 h 49 min wall clock, run locally outside iCloud. Extracts 27 MB. |
 | V4 site | passed | Explorer (any measures, any units, any span, native or indexed), catalog page rendered from the dictionary, vitals strip on org and agency pages. Verified locally: 21-year government headcount and quit-rate series draw; September 2025 spike visible. |
-| V5 cron | passed with a caveat | Workflow gained extract, build, and publish steps; the extract archive restores from the rolling Release so CI never re-reads history. Deploy run: FILL_RUN. |
+| V5 cron | passed with a caveat | Workflow gained extract, build, and publish steps; the extract archive restores from the rolling Release so CI never re-reads history. Deploy run https://github.com/rhoekstr/federal-workforce-explorer/actions/runs/34654373912 green (refresh and deploy). Live slices verified: government headcount series has 207 snapshots, March 2005 to July 2026. |
 
 ## 2. The table
 
