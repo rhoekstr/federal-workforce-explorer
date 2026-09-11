@@ -36,6 +36,11 @@ def assemble() -> None:
             if src.exists():
                 shutil.copy(src, facts / entry["file"])
                 entry["site_url"] = f"data/facts/{entry['file']}"
+    # GitHub Release assets send no CORS header, so the browser reads the measures table from the site's own origin.
+    from pipeline.measures.build import OUT as MEASURES_PARQUET
+    if MEASURES_PARQUET.exists():
+        shutil.copy(MEASURES_PARQUET, data / "measures.parquet")
+        manifest.setdefault("measures", {})["site_url"] = "data/measures.parquet"
     (data / "manifest.json").write_text(json.dumps(manifest, indent=1, sort_keys=True))
     (SITE_OUT / ".nojekyll").write_text("")
     size = sum(p.stat().st_size for p in SITE_OUT.rglob("*") if p.is_file())
