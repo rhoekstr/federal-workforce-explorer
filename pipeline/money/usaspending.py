@@ -14,15 +14,38 @@ from pathlib import Path
 import duckdb
 import requests
 
-from pipeline.config import RAW, USASPENDING_API, WORK, classify_object_class
+from pipeline.config import RAW, REFERENCE, USASPENDING_API, WORK, classify_object_class
 
 log = logging.getLogger(__name__)
 HEADERS = {"User-Agent": "federal-workforce-explorer (github.com/rhoekstr)", "Content-Type": "application/json"}
 QUARTER_LAST_PERIOD = {1: 3, 2: 6, 3: 9, 4: 12}
 
 
+FILEB_DIR = REFERENCE / "fileb"
+
+
 def fileb_path(fy: int, quarter: int) -> Path:
-    return WORK / f"fileb_FY{fy}Q{quarter}.parquet"
+    """Aggregated File B (agency × object class × funding source), ~30 KB per quarter, committed under data/reference."""
+    FILEB_DIR.mkdir(parents=True, exist_ok=True)
+    return FILEB_DIR / f"fileb_FY{fy}Q{quarter}.parquet"
+
+
+def _post_with_retry(url: str, body: dict, attempts: int = 4) -> dict:
+    """USAspending's download endpoint returns 500s and drops connections under load; back off and retry."""
+    delay = 30
+    for attempt in range(1, attempts + 1):
+        try:
+            r = requests.post(url, json=body, headers=HEADERS, timeout=120)
+            if r.status_code >= 500:
+                raise requests.HTTPError(f"{r.status_code} from {url}")
+            r.raise_for_status()
+            return r.json()
+        except (requests.RequestException, ConnectionError) as exc:
+            log.warning("download request attempt %d failed: %s", attempt, exc)
+            if attempt == attempts:
+                raise
+            time.sleep(delay)
+            delay = min(delay * 2, 240)
 
 
 def request_download(fy: int, quarter: int) -> dict:
@@ -31,9 +54,7 @@ def request_download(fy: int, quarter: int) -> dict:
         "filters": {"fy": str(fy), "quarter": str(quarter), "submission_types": ["object_class_program_activity"], "agency": "all"},
         "file_format": "csv",
     }
-    r = requests.post(f"{USASPENDING_API}/download/accounts/", json=body, headers=HEADERS, timeout=120)
-    r.raise_for_status()
-    return r.json()
+    return _post_with_retry(f"{USASPENDING_API}/download/accounts/", body)
 
 
 def wait_for(status_url: str, timeout_s: int = 900) -> str:
@@ -79,6 +100,7 @@ def fetch_fileb(fy: int, quarter: int, force: bool = False) -> Path:
         _aggregate_csv(sample, out, fy, quarter)
         return out
     log.info("requesting File B FY%d Q%d", fy, quarter)
+    time.sleep(20)  # pace requests; the download queue is shared
     file_url = wait_for(request_download(fy, quarter)["status_url"])
     log.info("downloading %s", file_url)
     r = requests.get(file_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=600)

@@ -158,7 +158,8 @@ def _write_slices(con: duckdb.DuckDBPyConnection, catalog: Catalog, nodes: dict)
         v = round(value, 2 if abs(value) >= 100 else 4)
         entry["values"][ps] = [v, n, notation] if notation else ([v, n] if n is not None else [v])
     for node, measures in per_node.items():
-        (SLICE_DIR / f"{node}.json").write_text(json.dumps({"node": node, "measures": measures}, separators=(",", ":")))
+        fname = f"group-{node}.json" if nodes.get(node, {}).get("kind") == "group" else f"{node}.json"
+        (SLICE_DIR / fname).write_text(json.dumps({"node": node, "measures": measures}, separators=(",", ":")))
     # Latest current snapshot for every node and measure (all levels), for vitals strips.
     current = con.execute("""
         SELECT node, measure, period_type, period_start, value, n, notation FROM (

@@ -34,8 +34,9 @@ function formatValue(m, v) {
   return fmt.int(v);
 }
 
-async function loadSeries(node, measure, manifest) {
-  const slice = await loadJSON(`data/slices/measures/${node}.json`).catch(() => null);
+async function loadSeries(node, measure, manifest, kind) {
+  const file = kind === "group" ? `group-${node}.json` : `${node}.json`;
+  const slice = await loadJSON(`data/slices/measures/${file}`).catch(() => null);
   if (slice) return slice.measures[measure] || null;
   // Fallback: DuckDB over the same-origin copy of the measures table (sub-elements and historical nodes).
   const url = new URL("data/measures.parquet", location.href).href;
@@ -95,7 +96,7 @@ export async function explorer(container, { catalog, nodes, manifest, state, onS
     body.append(el("p", { class: "muted" }, "Loading…"));
     const series = [];
     for (const node of selNodes) for (const code of selMeasures) {
-      const s = await loadSeries(node, code, manifest);
+      const s = await loadSeries(node, code, manifest, nodes[node]?.kind);
       const m = measures[code];
       if (!s) { series.push({ node, code, m, empty: true }); continue; }
       const pts = Object.entries(s.values).filter(([p]) => p >= st.from).map(([p, v]) => ({ period: p, date: periodDate(s.period_type, p), value: Array.isArray(v) ? v[0] : v, n: Array.isArray(v) ? v[1] : null, note: Array.isArray(v) ? v[2] : null, label: periodLabel(s.period_type, p) })).filter((d) => d.value != null);

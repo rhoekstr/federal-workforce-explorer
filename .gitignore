@@ -19,3 +19,4 @@ _site/
 # iCloud conflict duplicates
 * [0-9].json
 * [0-9][0-9].json
+!data/reference/fileb/*.parquet
