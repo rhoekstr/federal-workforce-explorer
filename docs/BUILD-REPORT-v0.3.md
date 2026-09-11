@@ -12,7 +12,7 @@
 | V2 extractors | passed | Era-aware FWD employment and actions (31-, 62-, 64-column eras), USAspending rolling four quarters (36 fiscal quarters, FY2018 Q2 to FY2026 Q3), OMB FTE, FEVS 2019 to 2023 including government-wide. July 2026 reconciles exactly: 2,020,230 employees, 16,681 separations, 19,024 accessions. |
 | V3 backfill | passed | 725 OPM files, 2005 to 2026, 722 extracted and 3 already present, 0 era errors, 0 failures, 8 h 49 min wall clock, run locally outside iCloud. Extracts 27 MB. |
 | V4 site | passed | Explorer (any measures, any units, any span, native or indexed), catalog page rendered from the dictionary, vitals strip on org and agency pages. Verified locally: 21-year government headcount and quit-rate series draw; September 2025 spike visible. |
-| V5 cron | passed with a caveat | Workflow gained extract, build, and publish steps; the extract archive restores from the rolling Release so CI never re-reads history. Deploy run https://github.com/rhoekstr/federal-workforce-explorer/actions/runs/34654373912 green (refresh and deploy). Live slices verified: government headcount series has 207 snapshots, March 2005 to July 2026. |
+| V5 cron | passed | Workflow gained extract, build, and publish steps; the extract archive (725 files, 25 MB) restores from the rolling Release so CI never re-reads history. Final deploy run https://github.com/rhoekstr/federal-workforce-explorer/actions/runs/34655373229 green: CI restored the extracts, rebuilt the table in seconds, published it, and shipped it with the site. Live checks: government headcount series has 207 snapshots (March 2005 to July 2026); the Bureau of Labor Statistics explorer view, which reads the parquet in the browser, draws quit rate and retirement-eligible share 2010 to 2026. |
 
 ## 2. The table
 
@@ -46,6 +46,9 @@ Reconciliation: government headcount equals the sum of every agency code in ever
 Government-wide, July 2026: quit rate 0.29% per month, separation rate 0.64%, span of control 5.9, temp and term 5.6%, bargaining unit coverage 45% of disclosed, average disclosed pay $117,422.
 
 ## 5. Operational findings
+
+- **Two deploys went green while quietly missing the measures table.** The first workflow patch anchored on step names that did not exist, so it silently did nothing; a green run is not proof a step ran. The fix is in, and the live probe of `data/measures.parquet` (HTTP 206 on a range request) is now the check that matters.
+- **Release assets have no CORS header.** The browser cannot read `measures.parquet` from the Release, so the site ships its own copy (32 MB) under `data/`, the same approach v0.2 took for the fact tables. The Release remains the download for humans and tools.
 
 - **iCloud.** The repo sits in the synced Desktop; large files under `data/` were evicted and re-fetched, turning a ten-second extraction into seven minutes. Raw and intermediate data now live under `~/.fedpulse`, selected by `FEDPULSE_DATA`. Recorded in CLAUDE.md.
 - **OPM throughput.** One 1.7 GB employment file every 2.7 minutes, sequential, no throttling seen across 725 files.
