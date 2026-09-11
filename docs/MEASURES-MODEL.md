@@ -1,11 +1,11 @@
 # Fed Pulse measures model
 
-**Status:** design, 2026-09-10. Supersedes the fact-table-first architecture in PRD 5.2 through 5.8 as the primary product; the fact tables remain a secondary product for 2025 onward.
+**Status:** design, 2026-09-11 (revised: no append-only ledger; values are recomputed and replaced each run). Supersedes the fact-table-first architecture in PRD 5.2 through 5.8 as the primary product; the fact tables remain a secondary product for 2025 onward.
 **Lineage:** a simplification of the Evince manifest and measurement model (`~/Desktop/Code/Evince/evince-prd.md` §1.7–1.8, `docs/architecture.md` A3, A4, A9, A16, A17, A19; `src/Evince.Domain/Measurement/*`). What was kept, what was dropped, and why, is in §7.
 
 ## 1. The idea in one paragraph
 
-Fed Pulse stops being a warehouse of row-level cuts and becomes a **registry of measures with append-only value series at every organizational level the source supports, over the longest history the source offers**. Raw files are read once and discarded. Each measure is described once in a catalog (its operational definition, unit, cadence, category, lag, since-date, and, for derived measures, its calculation). Values are facts: measure, node, period, value, count, notation, and the moment the value became known. The site is an explorer over that registry: any measure, any node, any span, trended against any other. Twenty-one years of workforce data, fifteen of money, and every survey we can join, on one time axis.
+Fed Pulse stops being a warehouse of row-level cuts and becomes a **registry of measures with value series at every organizational level the source supports, over the longest history the source offers**. Raw files are read once and discarded. Each measure is described once in a catalog (its operational definition, unit, cadence, category, lag, since-date, and, for derived measures, its calculation). Values are facts: measure, node, period, value, count, notation, and which source file produced them. The site is an explorer over that registry: any measure, any node, any span, trended against any other. Twenty-one years of workforce data, fifteen of money, and every survey we can join, on one time axis.
 
 ## 2. Objects
 
@@ -53,7 +53,7 @@ Lineage across reorganizations is not stitched. A code that disappears ends its 
 
 ### 2.3 Value (the fact)
 
-`values.parquet`, append-only. One row per observation of one measure for one node and one period, at one knowledge time.
+`measures.parquet`, rebuilt every run. One row per measure, node, period, and dimension value.
 
 | Column | Meaning |
 |---|---|
@@ -64,17 +64,14 @@ Lineage across reorganizations is not stitched. A code that disappears ends its 
 | value | decimal, null when notated |
 | n | the count behind the value (respondents, employees, records); the denominator for shares |
 | notation | null \| estimate \| incomplete \| suppressed \| not_available (Evince `ValueNotation` plus 143) |
-| as_of | knowledge time: the publish date of the source file or the run time for derived values (Evince A3) |
-| source_ref | e.g. `fwd:separations_202507_4`, `fileb:FY2026Q3`, `omb:AP-FY2027-T5-1`, `fevs:2023-prdf` |
-| run_id | pipeline run that wrote the row |
+| source_ref | e.g. `fwd:separations_202507_4`, `fileb:FY2026Q3`, `omb:AP-FY2027-T5-1`, `fevs:2023-prdf`; carries the OPM version suffix so a restated month is visible in the record |
 
-Rules, all inherited from Evince A3 and decisions 64, 70, 143:
+Rules, from Evince decisions 64 and 143 (the append-only ledger of A3 is deliberately not adopted; this is a dashboard, not a system of record):
 
-- **Never update.** A re-published OPM month, a later File B, or a late-arriving personnel action appends a new row with a later `as_of`.
-- **Current** is the greatest `as_of` per (measure, node, period, dim, dim_value). Materialized as `current.parquet`, sorted by node then measure then period, so a browser can range-request one node's block.
-- **As-of reconstruction** is a query, not a feature to build: "what did the September 2025 separation count look like in November" is `as_of <= date`.
-- **A lagged result is dated to the period it describes.** Separations by effective month, FEVS by field year, File B by fiscal quarter. Charts show the period; the tooltip shows when it became known.
+- **Every run recomputes everything and replaces the table.** A re-published OPM month, a later File B, or a late-arriving personnel action simply produces new numbers. `source_ref` records which version produced the current value; no history of prior values is kept.
+- **A lagged result is dated to the period it describes.** Separations by effective month, FEVS by field year, File B by fiscal quarter. Charts show the period; the catalog states the typical lag.
 - **Incomplete periods are flagged, not silently summed.** A fiscal year with ten of twelve months carries `notation = incomplete`. Months OPM marks as missing Department of War submissions carry it too.
+- **Sorted by node, then measure, then period**, so a browser can range-request one node's block.
 
 ### 2.4 Calculation (derived measures)
 
@@ -168,14 +165,14 @@ Categorical sources (audit opinions) wait for a categorical value type; they are
 ## 4. Storage and delivery
 
 - **Catalog:** `catalog/measures.json`, `catalog/nodes.json`, `catalog/dimensions.json` in the repo. Small, human-readable, reviewed like code.
-- **Facts:** `values.parquet` (append-only) and `current.parquet` (projection) on a rolling `measures` Release, replaced each run, plus a dated copy per run for reconstruction. Estimated size: 60 measures × 700 nodes × 260 periods ≈ 11M flat rows plus dimensioned rows, well under 200 MB, sorted by node.
-- **Slices for first paint:** government-wide series for every measure, and per-node current snapshots for government, departments, agencies. Everything below that is a browser range-request into `current.parquet` by node.
+- **Facts:** `measures.parquet` on a rolling `measures` Release, replaced each run. Estimated size: 60 measures × 700 nodes × 260 periods ≈ 11M flat rows plus dimensioned rows, well under 200 MB, sorted by node.
+- **Slices for first paint:** government-wide series for every measure, and per-node current snapshots for government, departments, agencies. Everything below that is a browser range-request into `measures.parquet` by node.
 - **Fact tables:** the 18-dimension monthly parquet continues for 2025 onward as the researcher download and the engine for the map and query panel. Not built for history.
 - **Raw:** read once, deleted. The backfill runs locally in year chunks with a resumable manifest.
 
 ## 5. The site
 
-The node page becomes a **measures explorer**: pick any measures, any nodes, any span; overlay on one time axis; native cadence respected (monthly lines, quarterly steps, annual points); every point's tooltip shows value, n, period, and when it became known; a "revised" glyph where an earlier as-of differs. The four v0.2 panels survive as saved views of the explorer: Trend is the explorer with one node; Composition is a dimensioned measure at the latest period; Flows is two flow measures; Map stays on the fact tables. The vitals strip is the explorer's default selection per node kind, with agency-level values inheriting downward and labeled as such.
+The node page becomes a **measures explorer**: pick any measures, any nodes, any span; overlay on one time axis; native cadence respected (monthly lines, quarterly steps, annual points); every point's tooltip shows value, n, period, and the source file behind it. The four v0.2 panels survive as saved views of the explorer: Trend is the explorer with one node; Composition is a dimensioned measure at the latest period; Flows is two flow measures; Map stays on the fact tables. The vitals strip is the explorer's default selection per node kind, with agency-level values inheriting downward and labeled as such.
 
 ## 6. Pipeline shape
 
@@ -183,7 +180,7 @@ The node page becomes a **measures explorer**: pick any measures, any nodes, any
 sources → extractors (one per source, emit base facts with as_of and source_ref)
         → catalog validation (every fact resolves; every period is a valid period for its cadence)
         → derived evaluator (three patterns, cadence reconciliation, notation propagation)
-        → append to values.parquet → rebuild current.parquet → slices → publish
+        → write measures.parquet → slices → publish
 ```
 
 Extractors: `fwd_employment` (stock and dimensioned), `fwd_actions` (flows), `usaspending` (money), `omb`, `fevs`, `va_aes`, `osha` (manual table), `eeoc` (manual table), `fitara` (manual table). Each is a pure function from a source artifact to facts, testable against a golden file, and each declares the eras it supports so `since` is enforced rather than assumed.
@@ -194,7 +191,7 @@ Extractors: `fwd_employment` (stock and dimensioned), `fwd_actions` (flows), `us
 |---|---|---|
 | Manifest supertype with four subtypes | Measure only | No milestones, risks, or learning questions here. |
 | Base and derived tiers; dimensionality orthogonal | Kept | The core discipline. |
-| Append-only values, as-of, current projection | Kept exactly | Sources restate; late actions arrive; this is the honest record. |
+| Append-only values, as-of, current projection (A3) | Dropped | Provenance-grade history is for a system of record. Here every run recomputes and replaces; `source_ref` names the version behind each value. |
 | Lag dated to the period described (64) | Kept | Already our attribution rule. |
 | Incomplete-period notation (143) | Kept | DOW gap, partial fiscal years. |
 | Three derived patterns, layered (A17) | Kept | Makes rates decidable and definitions generatable. |
@@ -217,10 +214,10 @@ Extractors: `fwd_employment` (stock and dimensioned), `fwd_actions` (flows), `us
 
 ## 9. Build plan (v0.3)
 
-- **V1 catalog and evaluator.** `catalog/*.json`, the fact schema, the derived evaluator with tests on synthetic series (each pattern, missing components, incomplete periods, as-of reconstruction).
+- **V1 catalog and evaluator.** `catalog/*.json`, the fact schema, the derived evaluator with tests on synthetic series (each pattern, missing components, incomplete periods, cadence reconciliation).
 - **V2 extractors.** FWD stock and flows era-aware; money, OMB, FEVS, VA AES from what exists; OSHA, EEOC, FITARA as committed tables with loaders.
 - **V3 backfill.** 2005 to 2024 workforce files, local, year chunks, resumable; publish `values.parquet` and `current.parquet`.
 - **V4 site.** Measures explorer, saved views, vitals strip with inheritance, catalog page rendered from the dictionary.
-- **V5 cron.** Monthly run appends, rebuilds the projection, republishes; reports revisions.
+- **V5 cron.** Monthly run recomputes, republishes, and reports which source versions changed.
 
 Each milestone carries acceptance checks in the RUNBOOK style. V3 is the long pole: about 350 GB of downloads and ten hours of processing, run locally, and it needs an explicit go.
