@@ -6935,6 +6935,1680 @@
 "orgs": [],
 "exclude_orgs": []
 }
+},
+"HF**": {
+"code": "HF**",
+"kind": "subelement",
+"name": "HF** (historical sub-element; name not in current OPM files)",
+"parent": "HF",
+"first_seen": "201110",
+"last_seen": "201202",
+"historical": true
+},
+"ARXR": {
+"code": "ARXR",
+"kind": "subelement",
+"name": "ARXR (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "202412",
+"historical": true
+},
+"EDEM": {
+"code": "EDEM",
+"kind": "subelement",
+"name": "EDEM (historical sub-element; name not in current OPM files)",
+"parent": "ED",
+"first_seen": "200503",
+"last_seen": "201904",
+"historical": true
+},
+"EDEU": {
+"code": "EDEU",
+"kind": "subelement",
+"name": "EDEU (historical sub-element; name not in current OPM files)",
+"parent": "ED",
+"first_seen": "200503",
+"last_seen": "201905",
+"historical": true
+},
+"ARSF": {
+"code": "ARSF",
+"kind": "subelement",
+"name": "ARSF (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "201611",
+"historical": true
+},
+"VAAC": {
+"code": "VAAC",
+"kind": "subelement",
+"name": "VAAC (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "200503",
+"last_seen": "200612",
+"historical": true
+},
+"ARMT": {
+"code": "ARMT",
+"kind": "subelement",
+"name": "ARMT (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200709",
+"historical": true
+},
+"HSDB": {
+"code": "HSDB",
+"kind": "subelement",
+"name": "HSDB (historical sub-element; name not in current OPM files)",
+"parent": "HS",
+"first_seen": "200512",
+"last_seen": "200512",
+"historical": true
+},
+"AF14": {
+"code": "AF14",
+"kind": "subelement",
+"name": "AF14 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "201310",
+"last_seen": "201504",
+"historical": true
+},
+"AF08": {
+"code": "AF08",
+"kind": "subelement",
+"name": "AF08 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201408",
+"historical": true
+},
+"HB00": {
+"code": "HB00",
+"kind": "subelement",
+"name": "HB00 (historical sub-element; name not in current OPM files)",
+"parent": "HB",
+"first_seen": "200503",
+"last_seen": "201607",
+"historical": true
+},
+"AF2U": {
+"code": "AF2U",
+"kind": "subelement",
+"name": "AF2U (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201403",
+"historical": true
+},
+"VAHC": {
+"code": "VAHC",
+"kind": "subelement",
+"name": "VAHC (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "200503",
+"last_seen": "202104",
+"historical": true
+},
+"VABJ": {
+"code": "VABJ",
+"kind": "subelement",
+"name": "VABJ (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "201107",
+"last_seen": "202308",
+"historical": true
+},
+"AF4C": {
+"code": "AF4C",
+"kind": "subelement",
+"name": "AF4C (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "201902",
+"last_seen": "202405",
+"historical": true
+},
+"VAGE": {
+"code": "VAGE",
+"kind": "subelement",
+"name": "VAGE (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "201710",
+"last_seen": "202109",
+"historical": true
+},
+"AF27": {
+"code": "AF27",
+"kind": "subelement",
+"name": "AF27 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "200906",
+"historical": true
+},
+"ARPC": {
+"code": "ARPC",
+"kind": "subelement",
+"name": "ARPC (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200512",
+"historical": true
+},
+"ARSU": {
+"code": "ARSU",
+"kind": "subelement",
+"name": "ARSU (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200509",
+"historical": true
+},
+"OY": {
+"code": "OY",
+"kind": "agency",
+"name": "Agency OY (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "202301",
+"last_seen": "202309",
+"historical": true
+},
+"OY00": {
+"code": "OY00",
+"kind": "subelement",
+"name": "OY00 (historical sub-element; name not in current OPM files)",
+"parent": "OY",
+"first_seen": "202301",
+"last_seen": "202309",
+"historical": true
+},
+"GS19": {
+"code": "GS19",
+"kind": "subelement",
+"name": "GS19 (historical sub-element; name not in current OPM files)",
+"parent": "GS",
+"first_seen": "200503",
+"last_seen": "201701",
+"historical": true
+},
+"GO": {
+"code": "GO",
+"kind": "agency",
+"name": "Agency GO (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "201812",
+"historical": true
+},
+"GO00": {
+"code": "GO00",
+"kind": "subelement",
+"name": "GO00 (historical sub-element; name not in current OPM files)",
+"parent": "GO",
+"first_seen": "200503",
+"last_seen": "201812",
+"historical": true
+},
+"AF1W": {
+"code": "AF1W",
+"kind": "subelement",
+"name": "AF1W (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201303",
+"historical": true
+},
+"VABI": {
+"code": "VABI",
+"kind": "subelement",
+"name": "VABI (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "201012",
+"last_seen": "201709",
+"historical": true
+},
+"HU02": {
+"code": "HU02",
+"kind": "subelement",
+"name": "HU02 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202410",
+"historical": true
+},
+"CM65": {
+"code": "CM65",
+"kind": "subelement",
+"name": "CM65 (historical sub-element; name not in current OPM files)",
+"parent": "CM",
+"first_seen": "200503",
+"last_seen": "201809",
+"historical": true
+},
+"AF34": {
+"code": "AF34",
+"kind": "subelement",
+"name": "AF34 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "202309",
+"historical": true
+},
+"WX": {
+"code": "WX",
+"kind": "agency",
+"name": "Agency WX (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "201502",
+"last_seen": "202409",
+"historical": true
+},
+"WX00": {
+"code": "WX00",
+"kind": "subelement",
+"name": "WX00 (historical sub-element; name not in current OPM files)",
+"parent": "WX",
+"first_seen": "201502",
+"last_seen": "202409",
+"historical": true
+},
+"ARFB": {
+"code": "ARFB",
+"kind": "subelement",
+"name": "ARFB (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "201710",
+"last_seen": "202011",
+"historical": true
+},
+"ARAU": {
+"code": "ARAU",
+"kind": "subelement",
+"name": "ARAU (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200709",
+"historical": true
+},
+"VB": {
+"code": "VB",
+"kind": "agency",
+"name": "Agency VB (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "201402",
+"last_seen": "201602",
+"historical": true
+},
+"VB00": {
+"code": "VB00",
+"kind": "subelement",
+"name": "VB00 (historical sub-element; name not in current OPM files)",
+"parent": "VB",
+"first_seen": "201402",
+"last_seen": "201602",
+"historical": true
+},
+"AF0N": {
+"code": "AF0N",
+"kind": "subelement",
+"name": "AF0N (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201405",
+"historical": true
+},
+"DD58": {
+"code": "DD58",
+"kind": "subelement",
+"name": "DD58 (historical sub-element; name not in current OPM files)",
+"parent": "DD",
+"first_seen": "200503",
+"last_seen": "201601",
+"historical": true
+},
+"AF1P": {
+"code": "AF1P",
+"kind": "subelement",
+"name": "AF1P (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201306",
+"historical": true
+},
+"HU04": {
+"code": "HU04",
+"kind": "subelement",
+"name": "HU04 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"HURR": {
+"code": "HURR",
+"kind": "subelement",
+"name": "HURR (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"AF3W": {
+"code": "AF3W",
+"kind": "subelement",
+"name": "AF3W (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201403",
+"historical": true
+},
+"LT": {
+"code": "LT",
+"kind": "agency",
+"name": "Agency LT (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "201308",
+"historical": true
+},
+"LT00": {
+"code": "LT00",
+"kind": "subelement",
+"name": "LT00 (historical sub-element; name not in current OPM files)",
+"parent": "LT",
+"first_seen": "200503",
+"last_seen": "201308",
+"historical": true
+},
+"ARX1": {
+"code": "ARX1",
+"kind": "subelement",
+"name": "ARX1 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "201211",
+"last_seen": "202302",
+"historical": true
+},
+"DD09": {
+"code": "DD09",
+"kind": "subelement",
+"name": "DD09 (historical sub-element; name not in current OPM files)",
+"parent": "DD",
+"first_seen": "200503",
+"last_seen": "201003",
+"historical": true
+},
+"AF29": {
+"code": "AF29",
+"kind": "subelement",
+"name": "AF29 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "200712",
+"historical": true
+},
+"AF15": {
+"code": "AF15",
+"kind": "subelement",
+"name": "AF15 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "201301",
+"last_seen": "201504",
+"historical": true
+},
+"AF3N": {
+"code": "AF3N",
+"kind": "subelement",
+"name": "AF3N (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201309",
+"historical": true
+},
+"ARG6": {
+"code": "ARG6",
+"kind": "subelement",
+"name": "ARG6 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "202006",
+"historical": true
+},
+"AF11": {
+"code": "AF11",
+"kind": "subelement",
+"name": "AF11 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201304",
+"historical": true
+},
+"RZ": {
+"code": "RZ",
+"kind": "agency",
+"name": "Agency RZ (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200906",
+"last_seen": "201509",
+"historical": true
+},
+"RZ00": {
+"code": "RZ00",
+"kind": "subelement",
+"name": "RZ00 (historical sub-element; name not in current OPM files)",
+"parent": "RZ",
+"first_seen": "200906",
+"last_seen": "201509",
+"historical": true
+},
+"FY": {
+"code": "FY",
+"kind": "agency",
+"name": "Agency FY (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "200906",
+"historical": true
+},
+"FY00": {
+"code": "FY00",
+"kind": "subelement",
+"name": "FY00 (historical sub-element; name not in current OPM files)",
+"parent": "FY",
+"first_seen": "200503",
+"last_seen": "200906",
+"historical": true
+},
+"ARTM": {
+"code": "ARTM",
+"kind": "subelement",
+"name": "ARTM (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200509",
+"last_seen": "201111",
+"historical": true
+},
+"NV10": {
+"code": "NV10",
+"kind": "subelement",
+"name": "NV10 (historical sub-element; name not in current OPM files)",
+"parent": "NV",
+"first_seen": "200606",
+"last_seen": "200606",
+"historical": true
+},
+"DL**": {
+"code": "DL**",
+"kind": "subelement",
+"name": "DL** (historical sub-element; name not in current OPM files)",
+"parent": "DL",
+"first_seen": "200806",
+"last_seen": "200806",
+"historical": true
+},
+"ARX4": {
+"code": "ARX4",
+"kind": "subelement",
+"name": "ARX4 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "201309",
+"historical": true
+},
+"AGES": {
+"code": "AGES",
+"kind": "subelement",
+"name": "AGES (historical sub-element; name not in current OPM files)",
+"parent": "AG",
+"first_seen": "200503",
+"last_seen": "202007",
+"historical": true
+},
+"AF17": {
+"code": "AF17",
+"kind": "subelement",
+"name": "AF17 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "201409",
+"last_seen": "202204",
+"historical": true
+},
+"AF2G": {
+"code": "AF2G",
+"kind": "subelement",
+"name": "AF2G (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201109",
+"historical": true
+},
+"HSBA": {
+"code": "HSBA",
+"kind": "subelement",
+"name": "HSBA (historical sub-element; name not in current OPM files)",
+"parent": "HS",
+"first_seen": "200503",
+"last_seen": "200703",
+"historical": true
+},
+"NV61": {
+"code": "NV61",
+"kind": "subelement",
+"name": "NV61 (historical sub-element; name not in current OPM files)",
+"parent": "NV",
+"first_seen": "200503",
+"last_seen": "200609",
+"historical": true
+},
+"ARAC": {
+"code": "ARAC",
+"kind": "subelement",
+"name": "ARAC (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200912",
+"historical": true
+},
+"AI": {
+"code": "AI",
+"kind": "agency",
+"name": "Agency AI (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "200612",
+"historical": true
+},
+"AI00": {
+"code": "AI00",
+"kind": "subelement",
+"name": "AI00 (historical sub-element; name not in current OPM files)",
+"parent": "AI",
+"first_seen": "200503",
+"last_seen": "200612",
+"historical": true
+},
+"AM**": {
+"code": "AM**",
+"kind": "subelement",
+"name": "AM** (historical sub-element; name not in current OPM files)",
+"parent": "AM",
+"first_seen": "202007",
+"last_seen": "202102",
+"historical": true
+},
+"DD**": {
+"code": "DD**",
+"kind": "subelement",
+"name": "DD** (historical sub-element; name not in current OPM files)",
+"parent": "DD",
+"first_seen": "201003",
+"last_seen": "202203",
+"historical": true
+},
+"HB**": {
+"code": "HB**",
+"kind": "subelement",
+"name": "HB** (historical sub-element; name not in current OPM files)",
+"parent": "HB",
+"first_seen": "201608",
+"last_seen": "201702",
+"historical": true
+},
+"AG36": {
+"code": "AG36",
+"kind": "subelement",
+"name": "AG36 (historical sub-element; name not in current OPM files)",
+"parent": "AG",
+"first_seen": "200503",
+"last_seen": "201808",
+"historical": true
+},
+"AF3Y": {
+"code": "AF3Y",
+"kind": "subelement",
+"name": "AF3Y (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201204",
+"historical": true
+},
+"TRAB": {
+"code": "TRAB",
+"kind": "subelement",
+"name": "TRAB (historical sub-element; name not in current OPM files)",
+"parent": "TR",
+"first_seen": "200503",
+"last_seen": "201310",
+"historical": true
+},
+"ARFL": {
+"code": "ARFL",
+"kind": "subelement",
+"name": "ARFL (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200709",
+"historical": true
+},
+"AGSC": {
+"code": "AGSC",
+"kind": "subelement",
+"name": "AGSC (historical sub-element; name not in current OPM files)",
+"parent": "AG",
+"first_seen": "200503",
+"last_seen": "200609",
+"historical": true
+},
+"AF01": {
+"code": "AF01",
+"kind": "subelement",
+"name": "AF01 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201106",
+"historical": true
+},
+"IW": {
+"code": "IW",
+"kind": "agency",
+"name": "Agency IW (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "200503",
+"historical": true
+},
+"IW00": {
+"code": "IW00",
+"kind": "subelement",
+"name": "IW00 (historical sub-element; name not in current OPM files)",
+"parent": "IW",
+"first_seen": "200503",
+"last_seen": "200503",
+"historical": true
+},
+"ARAA": {
+"code": "ARAA",
+"kind": "subelement",
+"name": "ARAA (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200912",
+"last_seen": "201511",
+"historical": true
+},
+"TR35": {
+"code": "TR35",
+"kind": "subelement",
+"name": "TR35 (historical sub-element; name not in current OPM files)",
+"parent": "TR",
+"first_seen": "200503",
+"last_seen": "201109",
+"historical": true
+},
+"GS27": {
+"code": "GS27",
+"kind": "subelement",
+"name": "GS27 (historical sub-element; name not in current OPM files)",
+"parent": "GS",
+"first_seen": "200503",
+"last_seen": "200806",
+"historical": true
+},
+"GS24": {
+"code": "GS24",
+"kind": "subelement",
+"name": "GS24 (historical sub-element; name not in current OPM files)",
+"parent": "GS",
+"first_seen": "200503",
+"last_seen": "200806",
+"historical": true
+},
+"NV69": {
+"code": "NV69",
+"kind": "subelement",
+"name": "NV69 (historical sub-element; name not in current OPM files)",
+"parent": "NV",
+"first_seen": "200503",
+"last_seen": "200612",
+"historical": true
+},
+"AF1R": {
+"code": "AF1R",
+"kind": "subelement",
+"name": "AF1R (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200809",
+"last_seen": "201006",
+"historical": true
+},
+"ZL": {
+"code": "ZL",
+"kind": "agency",
+"name": "Agency ZL (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "201611",
+"last_seen": "201704",
+"historical": true
+},
+"ZL**": {
+"code": "ZL**",
+"kind": "subelement",
+"name": "ZL** (historical sub-element; name not in current OPM files)",
+"parent": "ZL",
+"first_seen": "201611",
+"last_seen": "201704",
+"historical": true
+},
+"YG": {
+"code": "YG",
+"kind": "agency",
+"name": "Agency YG (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "201012",
+"last_seen": "201112",
+"historical": true
+},
+"YG00": {
+"code": "YG00",
+"kind": "subelement",
+"name": "YG00 (historical sub-element; name not in current OPM files)",
+"parent": "YG",
+"first_seen": "201012",
+"last_seen": "201112",
+"historical": true
+},
+"GM": {
+"code": "GM",
+"kind": "agency",
+"name": "Agency GM (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "201708",
+"historical": true
+},
+"GM00": {
+"code": "GM00",
+"kind": "subelement",
+"name": "GM00 (historical sub-element; name not in current OPM files)",
+"parent": "GM",
+"first_seen": "200503",
+"last_seen": "201708",
+"historical": true
+},
+"AF1A": {
+"code": "AF1A",
+"kind": "subelement",
+"name": "AF1A (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201403",
+"historical": true
+},
+"AF2D": {
+"code": "AF2D",
+"kind": "subelement",
+"name": "AF2D (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201504",
+"historical": true
+},
+"HUUU": {
+"code": "HUUU",
+"kind": "subelement",
+"name": "HUUU (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"HUXX": {
+"code": "HUXX",
+"kind": "subelement",
+"name": "HUXX (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "201110",
+"last_seen": "202301",
+"historical": true
+},
+"AB**": {
+"code": "AB**",
+"kind": "subelement",
+"name": "AB** (historical sub-element; name not in current OPM files)",
+"parent": "AB",
+"first_seen": "201012",
+"last_seen": "201709",
+"historical": true
+},
+"VA**": {
+"code": "VA**",
+"kind": "subelement",
+"name": "VA** (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "200503",
+"last_seen": "202302",
+"historical": true
+},
+"YA": {
+"code": "YA",
+"kind": "agency",
+"name": "Agency YA (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "200509",
+"historical": true
+},
+"YA00": {
+"code": "YA00",
+"kind": "subelement",
+"name": "YA00 (historical sub-element; name not in current OPM files)",
+"parent": "YA",
+"first_seen": "200503",
+"last_seen": "200509",
+"historical": true
+},
+"AF2B": {
+"code": "AF2B",
+"kind": "subelement",
+"name": "AF2B (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "200706",
+"historical": true
+},
+"NV65": {
+"code": "NV65",
+"kind": "subelement",
+"name": "NV65 (historical sub-element; name not in current OPM files)",
+"parent": "NV",
+"first_seen": "200606",
+"last_seen": "200606",
+"historical": true
+},
+"AF3G": {
+"code": "AF3G",
+"kind": "subelement",
+"name": "AF3G (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "202406",
+"historical": true
+},
+"HF00": {
+"code": "HF00",
+"kind": "subelement",
+"name": "HF00 (historical sub-element; name not in current OPM files)",
+"parent": "HF",
+"first_seen": "200909",
+"last_seen": "201109",
+"historical": true
+},
+"EDEL": {
+"code": "EDEL",
+"kind": "subelement",
+"name": "EDEL (historical sub-element; name not in current OPM files)",
+"parent": "ED",
+"first_seen": "200503",
+"last_seen": "201905",
+"historical": true
+},
+"TD11": {
+"code": "TD11",
+"kind": "subelement",
+"name": "TD11 (historical sub-element; name not in current OPM files)",
+"parent": "TD",
+"first_seen": "200503",
+"last_seen": "201501",
+"historical": true
+},
+"VAHB": {
+"code": "VAHB",
+"kind": "subelement",
+"name": "VAHB (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "200503",
+"last_seen": "201812",
+"historical": true
+},
+"VAHD": {
+"code": "VAHD",
+"kind": "subelement",
+"name": "VAHD (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "200503",
+"last_seen": "201702",
+"historical": true
+},
+"AF04": {
+"code": "AF04",
+"kind": "subelement",
+"name": "AF04 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201303",
+"historical": true
+},
+"EDEQ": {
+"code": "EDEQ",
+"kind": "subelement",
+"name": "EDEQ (historical sub-element; name not in current OPM files)",
+"parent": "ED",
+"first_seen": "200503",
+"last_seen": "201205",
+"historical": true
+},
+"HUPP": {
+"code": "HUPP",
+"kind": "subelement",
+"name": "HUPP (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202410",
+"historical": true
+},
+"EDEY": {
+"code": "EDEY",
+"kind": "subelement",
+"name": "EDEY (historical sub-element; name not in current OPM files)",
+"parent": "ED",
+"first_seen": "200503",
+"last_seen": "201803",
+"historical": true
+},
+"HU08": {
+"code": "HU08",
+"kind": "subelement",
+"name": "HU08 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"ZU": {
+"code": "ZU",
+"kind": "agency",
+"name": "Agency ZU (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200809",
+"last_seen": "202110",
+"historical": true
+},
+"ZU00": {
+"code": "ZU00",
+"kind": "subelement",
+"name": "ZU00 (historical sub-element; name not in current OPM files)",
+"parent": "ZU",
+"first_seen": "200809",
+"last_seen": "202110",
+"historical": true
+},
+"AF2V": {
+"code": "AF2V",
+"kind": "subelement",
+"name": "AF2V (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "200509",
+"historical": true
+},
+"AREB": {
+"code": "AREB",
+"kind": "subelement",
+"name": "AREB (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200812",
+"historical": true
+},
+"VAAH": {
+"code": "VAAH",
+"kind": "subelement",
+"name": "VAAH (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "200503",
+"last_seen": "200606",
+"historical": true
+},
+"HS**": {
+"code": "HS**",
+"kind": "subelement",
+"name": "HS** (historical sub-element; name not in current OPM files)",
+"parent": "HS",
+"first_seen": "200603",
+"last_seen": "200806",
+"historical": true
+},
+"YF": {
+"code": "YF",
+"kind": "agency",
+"name": "Agency YF (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200909",
+"last_seen": "201012",
+"historical": true
+},
+"YF00": {
+"code": "YF00",
+"kind": "subelement",
+"name": "YF00 (historical sub-element; name not in current OPM files)",
+"parent": "YF",
+"first_seen": "200909",
+"last_seen": "201012",
+"historical": true
+},
+"HU07": {
+"code": "HU07",
+"kind": "subelement",
+"name": "HU07 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"HUWW": {
+"code": "HUWW",
+"kind": "subelement",
+"name": "HUWW (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"HUFH": {
+"code": "HUFH",
+"kind": "subelement",
+"name": "HUFH (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "200906",
+"historical": true
+},
+"ARX3": {
+"code": "ARX3",
+"kind": "subelement",
+"name": "ARX3 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200909",
+"historical": true
+},
+"ARXL": {
+"code": "ARXL",
+"kind": "subelement",
+"name": "ARXL (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200812",
+"historical": true
+},
+"TR**": {
+"code": "TR**",
+"kind": "subelement",
+"name": "TR** (historical sub-element; name not in current OPM files)",
+"parent": "TR",
+"first_seen": "200712",
+"last_seen": "200909",
+"historical": true
+},
+"AF5J": {
+"code": "AF5J",
+"kind": "subelement",
+"name": "AF5J (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200706",
+"last_seen": "201412",
+"historical": true
+},
+"HU01": {
+"code": "HU01",
+"kind": "subelement",
+"name": "HU01 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"TD15": {
+"code": "TD15",
+"kind": "subelement",
+"name": "TD15 (historical sub-element; name not in current OPM files)",
+"parent": "TD",
+"first_seen": "200503",
+"last_seen": "201907",
+"historical": true
+},
+"BZ": {
+"code": "BZ",
+"kind": "agency",
+"name": "Agency BZ (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "201612",
+"historical": true
+},
+"BZ00": {
+"code": "BZ00",
+"kind": "subelement",
+"name": "BZ00 (historical sub-element; name not in current OPM files)",
+"parent": "BZ",
+"first_seen": "200503",
+"last_seen": "201612",
+"historical": true
+},
+"ARMP": {
+"code": "ARMP",
+"kind": "subelement",
+"name": "ARMP (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200709",
+"historical": true
+},
+"AF10": {
+"code": "AF10",
+"kind": "subelement",
+"name": "AF10 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "200703",
+"historical": true
+},
+"HSEA": {
+"code": "HSEA",
+"kind": "subelement",
+"name": "HSEA (historical sub-element; name not in current OPM files)",
+"parent": "HS",
+"first_seen": "200503",
+"last_seen": "200512",
+"historical": true
+},
+"AF05": {
+"code": "AF05",
+"kind": "subelement",
+"name": "AF05 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201504",
+"historical": true
+},
+"AF1G": {
+"code": "AF1G",
+"kind": "subelement",
+"name": "AF1G (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201307",
+"historical": true
+},
+"ZL00": {
+"code": "ZL00",
+"kind": "subelement",
+"name": "ZL00 (historical sub-element; name not in current OPM files)",
+"parent": "ZL",
+"first_seen": "200503",
+"last_seen": "202109",
+"historical": true
+},
+"GS16": {
+"code": "GS16",
+"kind": "subelement",
+"name": "GS16 (historical sub-element; name not in current OPM files)",
+"parent": "GS",
+"first_seen": "200503",
+"last_seen": "201205",
+"historical": true
+},
+"AF2W": {
+"code": "AF2W",
+"kind": "subelement",
+"name": "AF2W (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201201",
+"historical": true
+},
+"AF2N": {
+"code": "AF2N",
+"kind": "subelement",
+"name": "AF2N (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201205",
+"historical": true
+},
+"AG15": {
+"code": "AG15",
+"kind": "subelement",
+"name": "AG15 (historical sub-element; name not in current OPM files)",
+"parent": "AG",
+"first_seen": "200503",
+"last_seen": "202404",
+"historical": true
+},
+"HUYY": {
+"code": "HUYY",
+"kind": "subelement",
+"name": "HUYY (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "201110",
+"last_seen": "201405",
+"historical": true
+},
+"HU10": {
+"code": "HU10",
+"kind": "subelement",
+"name": "HU10 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"DLES": {
+"code": "DLES",
+"kind": "subelement",
+"name": "DLES (historical sub-element; name not in current OPM files)",
+"parent": "DL",
+"first_seen": "200503",
+"last_seen": "201205",
+"historical": true
+},
+"YD": {
+"code": "YD",
+"kind": "agency",
+"name": "Agency YD (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200506",
+"last_seen": "200712",
+"historical": true
+},
+"YD00": {
+"code": "YD00",
+"kind": "subelement",
+"name": "YD00 (historical sub-element; name not in current OPM files)",
+"parent": "YD",
+"first_seen": "200506",
+"last_seen": "200712",
+"historical": true
+},
+"ARSS": {
+"code": "ARSS",
+"kind": "subelement",
+"name": "ARSS (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200603",
+"historical": true
+},
+"YB": {
+"code": "YB",
+"kind": "agency",
+"name": "Agency YB (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200503",
+"last_seen": "200703",
+"historical": true
+},
+"YB00": {
+"code": "YB00",
+"kind": "subelement",
+"name": "YB00 (historical sub-element; name not in current OPM files)",
+"parent": "YB",
+"first_seen": "200503",
+"last_seen": "200703",
+"historical": true
+},
+"DD77": {
+"code": "DD77",
+"kind": "subelement",
+"name": "DD77 (historical sub-element; name not in current OPM files)",
+"parent": "DD",
+"first_seen": "200603",
+"last_seen": "201111",
+"historical": true
+},
+"HUVV": {
+"code": "HUVV",
+"kind": "subelement",
+"name": "HUVV (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "201405",
+"last_seen": "202409",
+"historical": true
+},
+"GB**": {
+"code": "GB**",
+"kind": "subelement",
+"name": "GB** (historical sub-element; name not in current OPM files)",
+"parent": "GB",
+"first_seen": "202304",
+"last_seen": "202311",
+"historical": true
+},
+"RO**": {
+"code": "RO**",
+"kind": "subelement",
+"name": "RO** (historical sub-element; name not in current OPM files)",
+"parent": "RO",
+"first_seen": "201107",
+"last_seen": "201108",
+"historical": true
+},
+"AF25": {
+"code": "AF25",
+"kind": "subelement",
+"name": "AF25 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201204",
+"historical": true
+},
+"HU09": {
+"code": "HU09",
+"kind": "subelement",
+"name": "HU09 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"HUQQ": {
+"code": "HUQQ",
+"kind": "subelement",
+"name": "HUQQ (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200512",
+"last_seen": "202409",
+"historical": true
+},
+"NV33": {
+"code": "NV33",
+"kind": "subelement",
+"name": "NV33 (historical sub-element; name not in current OPM files)",
+"parent": "NV",
+"first_seen": "200503",
+"last_seen": "202412",
+"historical": true
+},
+"AF**": {
+"code": "AF**",
+"kind": "subelement",
+"name": "AF** (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200506",
+"last_seen": "202105",
+"historical": true
+},
+"AF21": {
+"code": "AF21",
+"kind": "subelement",
+"name": "AF21 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201106",
+"historical": true
+},
+"CM33": {
+"code": "CM33",
+"kind": "subelement",
+"name": "CM33 (historical sub-element; name not in current OPM files)",
+"parent": "CM",
+"first_seen": "200503",
+"last_seen": "200712",
+"historical": true
+},
+"DJ**": {
+"code": "DJ**",
+"kind": "subelement",
+"name": "DJ** (historical sub-element; name not in current OPM files)",
+"parent": "DJ",
+"first_seen": "200503",
+"last_seen": "201103",
+"historical": true
+},
+"IN23": {
+"code": "IN23",
+"kind": "subelement",
+"name": "IN23 (historical sub-element; name not in current OPM files)",
+"parent": "IN",
+"first_seen": "200503",
+"last_seen": "201109",
+"historical": true
+},
+"DD84": {
+"code": "DD84",
+"kind": "subelement",
+"name": "DD84 (historical sub-element; name not in current OPM files)",
+"parent": "DD",
+"first_seen": "202007",
+"last_seen": "202301",
+"historical": true
+},
+"DLEB": {
+"code": "DLEB",
+"kind": "subelement",
+"name": "DLEB (historical sub-element; name not in current OPM files)",
+"parent": "DL",
+"first_seen": "200809",
+"last_seen": "200812",
+"historical": true
+},
+"ARX5": {
+"code": "ARX5",
+"kind": "subelement",
+"name": "ARX5 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200503",
+"historical": true
+},
+"EDEX": {
+"code": "EDEX",
+"kind": "subelement",
+"name": "EDEX (historical sub-element; name not in current OPM files)",
+"parent": "ED",
+"first_seen": "200503",
+"last_seen": "202001",
+"historical": true
+},
+"AF5K": {
+"code": "AF5K",
+"kind": "subelement",
+"name": "AF5K (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200709",
+"last_seen": "201709",
+"historical": true
+},
+"AF2Q": {
+"code": "AF2Q",
+"kind": "subelement",
+"name": "AF2Q (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201704",
+"historical": true
+},
+"HUKA": {
+"code": "HUKA",
+"kind": "subelement",
+"name": "HUKA (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"ARP8": {
+"code": "ARP8",
+"kind": "subelement",
+"name": "ARP8 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "201201",
+"historical": true
+},
+"AG**": {
+"code": "AG**",
+"kind": "subelement",
+"name": "AG** (historical sub-element; name not in current OPM files)",
+"parent": "AG",
+"first_seen": "200503",
+"last_seen": "201304",
+"historical": true
+},
+"TRAA": {
+"code": "TRAA",
+"kind": "subelement",
+"name": "TRAA (historical sub-element; name not in current OPM files)",
+"parent": "TR",
+"first_seen": "200503",
+"last_seen": "201404",
+"historical": true
+},
+"GZ": {
+"code": "GZ",
+"kind": "agency",
+"name": "Agency GZ (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "201901",
+"last_seen": "202312",
+"historical": true
+},
+"GZ00": {
+"code": "GZ00",
+"kind": "subelement",
+"name": "GZ00 (historical sub-element; name not in current OPM files)",
+"parent": "GZ",
+"first_seen": "201901",
+"last_seen": "202312",
+"historical": true
+},
+"AF24": {
+"code": "AF24",
+"kind": "subelement",
+"name": "AF24 (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "201207",
+"historical": true
+},
+"NV62": {
+"code": "NV62",
+"kind": "subelement",
+"name": "NV62 (historical sub-element; name not in current OPM files)",
+"parent": "NV",
+"first_seen": "200512",
+"last_seen": "200603",
+"historical": true
+},
+"DF": {
+"code": "DF",
+"kind": "agency",
+"name": "Agency DF (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200703",
+"last_seen": "201502",
+"historical": true
+},
+"DF00": {
+"code": "DF00",
+"kind": "subelement",
+"name": "DF00 (historical sub-element; name not in current OPM files)",
+"parent": "DF",
+"first_seen": "200703",
+"last_seen": "201502",
+"historical": true
+},
+"TR36": {
+"code": "TR36",
+"kind": "subelement",
+"name": "TR36 (historical sub-element; name not in current OPM files)",
+"parent": "TR",
+"first_seen": "200912",
+"last_seen": "202403",
+"historical": true
+},
+"HU03": {
+"code": "HU03",
+"kind": "subelement",
+"name": "HU03 (historical sub-element; name not in current OPM files)",
+"parent": "HU",
+"first_seen": "200503",
+"last_seen": "202409",
+"historical": true
+},
+"ARA1": {
+"code": "ARA1",
+"kind": "subelement",
+"name": "ARA1 (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "201206",
+"last_seen": "202211",
+"historical": true
+},
+"VAAG": {
+"code": "VAAG",
+"kind": "subelement",
+"name": "VAAG (historical sub-element; name not in current OPM files)",
+"parent": "VA",
+"first_seen": "201511",
+"last_seen": "201903",
+"historical": true
+},
+"AGHS": {
+"code": "AGHS",
+"kind": "subelement",
+"name": "AGHS (historical sub-element; name not in current OPM files)",
+"parent": "AG",
+"first_seen": "200503",
+"last_seen": "200803",
+"historical": true
+},
+"AF2Y": {
+"code": "AF2Y",
+"kind": "subelement",
+"name": "AF2Y (historical sub-element; name not in current OPM files)",
+"parent": "AF",
+"first_seen": "200503",
+"last_seen": "200709",
+"historical": true
+},
+"ARRC": {
+"code": "ARRC",
+"kind": "subelement",
+"name": "ARRC (historical sub-element; name not in current OPM files)",
+"parent": "AR",
+"first_seen": "200503",
+"last_seen": "200512",
+"historical": true
+},
+"YE": {
+"code": "YE",
+"kind": "agency",
+"name": "Agency YE (historical; not in current OPM files)",
+"parent": "gov",
+"first_seen": "200809",
+"last_seen": "200912",
+"historical": true
+},
+"YE00": {
+"code": "YE00",
+"kind": "subelement",
+"name": "YE00 (historical sub-element; name not in current OPM files)",
+"parent": "YE",
+"first_seen": "200809",
+"last_seen": "200912",
+"historical": true
+},
+"GS18": {
+"code": "GS18",
+"kind": "subelement",
+"name": "GS18 (historical sub-element; name not in current OPM files)",
+"parent": "GS",
+"first_seen": "201608",
+"last_seen": "201712",
+"historical": true
 }
 }
 }

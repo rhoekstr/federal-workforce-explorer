@@ -805,20 +805,7 @@
    }
   }
  },
-<<<<<<< HEAD
- "generated": "2026-09-12T16:24:51Z",
- "measures": {
-  "extracts": 637803,
-  "extracts_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/extracts.tar.gz",
-  "first_period": "2018-01-01",
-  "last_period": "2026-10-01",
-  "measures": 78,
-  "nodes": 794,
-  "parquet_bytes": 3398756,
-  "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/measures.parquet",
-  "rows": 1165080
-=======
- "generated": "2026-09-12T16:33:51Z",
+ "generated": "2026-09-12T16:35:56Z",
  "measures": {
   "extract_files": 725,
   "extracts": 6983053,
@@ -827,10 +814,9 @@
   "last_period": "2026-10-01",
   "measures": 78,
   "nodes": 984,
-  "parquet_bytes": 32819816,
+  "parquet_bytes": 32820069,
   "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/measures.parquet",
   "rows": 12213751
->>>>>>> 423e1cee (Stop rebuilds from wiping the measures publish URLs, and refuse to publish a partial history)
  },
  "money": {
   "fileb_periods": [
