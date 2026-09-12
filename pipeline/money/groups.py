@@ -181,7 +181,15 @@ def seed_groups() -> tuple[dict, dict]:
         used["omb"].update(g["omb_labels"])
         used["fevs"].update(g["fevs_labels"])
 
+    no_money = json.loads((CROSSWALK / "no_money.json").read_text())["agencies"] if (CROSSWALK / "no_money.json").exists() else {}
     review = {
+        "_about": (
+            "Seeding leftovers, not a defect list. Agencies under fwd_agencies_unmapped_to_usaspending that appear "
+            "in no_money.json are funded outside annual appropriations or sit outside the executive branch, and the "
+            "unit page explains each one. FEVS labels are informational: survey measures attach by FWD agency code "
+            "directly, not through these groups, so an unmatched label here does not mean missing survey data."
+        ),
+        "fwd_agencies_unmapped_to_usaspending_explained": sorted(no_money),
         "fwd_agencies_unmapped_to_usaspending": [
             {"code": r["agency_code"], "name": r["agency"], "headcount": r["headcount_202607"]}
             for r in fwd if not any(r["agency_code"] in g["fwd_agency_codes"] and g["usaspending_names"] for g in groups.values())

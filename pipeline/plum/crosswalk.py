@@ -67,7 +67,6 @@ AGENCY_ALIASES = {
     "ARMED FORCES RETIREMENT HOME": "RH",
     "DEFENSE NUCLEAR FACILITIES SAFETY BOARD": "BF",
     "FARM CREDIT ADMINISTRATION": "FL",
-    "OFFICE OF NAVAJO AND HOPI INDIAN RELOCATION": "GG",
 }
 # PLUM's department-level names for agencies the workforce files split (Defense) or name differently.
 DEPARTMENT_HINT = {"DEFENSE": "DD", "ARMY": "AR", "NAVY": "NV", "AIR FORCE": "AF", "WAR": "DD"}

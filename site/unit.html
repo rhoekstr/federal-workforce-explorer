@@ -92,7 +92,18 @@ window.addEventListener("popstate", () => { const c = qs("code", "gov"); if (tre
 async function moneyPanel(container, code) {
   container.innerHTML = "";
   const gid = groupFor(code);
-  if (!gid) return;
+  // An agency with headcount but no obligations is usually funded outside annual appropriations rather than
+  // missing from the crosswalk. Say which, instead of leaving the reader with a silent gap.
+  const agencyCode = nodes[code]?.kind === "agency" ? code : nodes[code]?.parent && nodes[nodes[code].parent]?.kind === "agency" ? nodes[code].parent : code.slice(0, 2);
+  const noMoney = await loadJSON("data/crosswalk/no_money.json").then((d) => d.agencies).catch(() => ({}));
+  if (!gid) {
+    const reason = noMoney[agencyCode];
+    if (reason && nodes[code]?.kind === "agency") {
+      container.append(el("div", { class: "panel" }, el("h2", {}, "Money"),
+        el("p", { class: "muted" }, reason, " Headcount and the workforce measures are unaffected.")));
+    }
+    return;
+  }
   const spec = nodes[gid];
   const snap = await M.current(gid);
   const keys = ["personnel_obligations", "contracted_services_obligations", "federal_services_obligations", "administered_obligations", "operations_obligations", "insourcing_ratio", "personnel_per_head"];

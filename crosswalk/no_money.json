@@ -1,0 +1,24 @@
+{
+  "_about": "FWD agencies that carry headcount but no USAspending obligations, with the reason. These are not crosswalk failures: the agency is funded outside annual appropriations, sits outside the executive branch, or is funded through a parent's account. The unit page says so rather than showing an unexplained blank.",
+  "agencies": {
+    "SM": "The Smithsonian is a trust instrumentality; its federal appropriation is not reported as a separate USAspending agency.",
+    "LP": "The Government Publishing Office is in the legislative branch, outside USAspending's executive-branch account reporting.",
+    "FR": "The Federal Reserve System funds itself from its own operations and receives no appropriation.",
+    "HF": "The Federal Housing Finance Agency funds itself from assessments on the entities it regulates.",
+    "FL": "The Farm Credit Administration funds itself from assessments on Farm Credit System institutions.",
+    "RF": "The Federal Retirement Thrift Investment Board funds itself from Thrift Savings Plan assets.",
+    "JL": "The judicial branch is outside USAspending's executive-branch account reporting.",
+    "GW": "The U.S. Section of the International Boundary and Water Commission is funded through the Department of State's accounts.",
+    "GX": "The U.S. Section of the International Boundary Commission is funded through the Department of State's accounts.",
+    "GY": "The U.S. Section of the International Joint Commission is funded through the Department of State's accounts.",
+    "HD": "The Holocaust Memorial Museum's appropriation is not reported as a separate USAspending agency.",
+    "RO": "MACPAC is funded through a Department of Health and Human Services account.",
+    "ZP": "The Commission on International Religious Freedom is funded through a Department of State account.",
+    "CX": "The National Commission on Libraries and Information Science is funded through a parent account.",
+    "RJ": "The Civil Rights Cold Case Records Review Board is funded through a parent account.",
+    "UT": "The Utah Reclamation Mitigation and Conservation Commission is funded through a Department of the Interior account.",
+    "DB": "The Public Interest Declassification Board is funded through a National Archives account.",
+    "GU": "The Semiquincentennial Commission is funded through a parent account.",
+    "AW": "The Arctic Research Commission is funded through a National Science Foundation account."
+  }
+}
