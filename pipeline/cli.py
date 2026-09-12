@@ -113,7 +113,10 @@ def cmd_plum(args) -> int:
     from pipeline.plum.load import build_positions, fetch
 
     if not args.no_fetch:
-        fetch()
+        try:
+            fetch()
+        except Exception as exc:  # noqa: BLE001 - a refused download must not discard the committed history
+            log.error("PLUM fetch failed (%s); rebuilding from the committed snapshot history", exc)
     build_positions()
     build_crosswalk()
     build_slices()

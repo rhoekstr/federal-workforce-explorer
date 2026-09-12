@@ -41,6 +41,10 @@ jobs:
         run: python -m pipeline.cli sync --since "$SINCE"
       - name: Extract measures for any new months (skips months already extracted)
         run: python -m pipeline.measures.backfill --from 2025 --to 2030
+      # A refused PLUM download is tolerated inside the command: it rebuilds from the committed
+      # snapshot history in data/reference/plum rather than dropping the leadership layer.
+      - name: Refresh PLUM (leadership directory and rosters)
+        run: python -m pipeline.cli plum
       - name: Build measures table and slices
         run: python -m pipeline.cli measures
       - name: Money overview

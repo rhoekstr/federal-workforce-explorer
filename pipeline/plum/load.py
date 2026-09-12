@@ -18,7 +18,7 @@ from pathlib import Path
 import duckdb
 import requests
 
-from pipeline.config import PLUM_DOWNLOAD, RAW, WORK
+from pipeline.config import PLUM_DOWNLOAD, RAW, REFERENCE
 
 log = logging.getLogger(__name__)
 HEADERS = {
@@ -27,7 +27,10 @@ HEADERS = {
     "Referer": "https://www.opm.gov/",
     "Origin": "https://www.opm.gov",
 }
-PLUM_DIR = WORK / "plum"
+# The accumulated position history is committed (about 350 KB), not derived: PLUM publishes only a current
+# snapshot, so the record of what it said last time exists nowhere else. CI fetches today's snapshot, merges
+# it into this file, and commits it back.
+PLUM_DIR = REFERENCE / "plum"
 POSITIONS = PLUM_DIR / "positions.parquet"
 
 # Appointment types, as PLUM codes them. "Political" is the set a new administration replaces.
@@ -83,10 +86,21 @@ def build_positions(snapshots: list[Path] | None = None, con: duckdb.DuckDBPyCon
     """
     con = con or duckdb.connect()
     files = snapshots or sorted(RAW.glob("plum_*.csv"))
-    if not files:
-        raise RuntimeError(f"no PLUM snapshots in {RAW}")
+    if not files and not POSITIONS.exists():
+        raise RuntimeError(f"no PLUM snapshots in {RAW} and no committed history")
     PLUM_DIR.mkdir(parents=True, exist_ok=True)
     parts = []
+    carried = ""
+    if POSITIONS.exists():
+        # Carry the committed history forward. Its span is already collapsed, so contribute both endpoints and
+        # let the min/max below re-derive the same span when no new snapshot touches the row.
+        cols = "agency_name, org_name, title, status, appointment_type, pay_plan, level_grade_pay, duty_location, first_name, last_name, individual_id, begin_date, vacate_date, expiration_date, tenure"
+        carried = f"""
+        SELECT first_snapshot AS snapshot, {cols} FROM read_parquet('{POSITIONS}')
+        UNION ALL
+        SELECT last_snapshot AS snapshot, {cols} FROM read_parquet('{POSITIONS}')
+        UNION ALL
+        """
     for f in files:
         snap = re.search(r"plum_(\d{4}-\d{2}-\d{2})", f.name).group(1)
         parts.append(f"""
@@ -104,7 +118,7 @@ def build_positions(snapshots: list[Path] | None = None, con: duckdb.DuckDBPyCon
     labels_sql = " ".join(f"WHEN '{c}' THEN '{label}'" for c, (label, _) in APPOINTMENT_TYPES.items())
     con.execute(f"""
     CREATE OR REPLACE TABLE plum AS
-    WITH raw AS ({" UNION ALL ".join(parts)})
+    WITH raw AS ({carried}{" UNION ALL ".join(parts)})
     SELECT agency_name, org_name, title, status, appointment_type,
            CASE appointment_type {labels_sql} ELSE appointment_type END AS appointment_label,
            CASE appointment_type {types_sql} ELSE 'career' END AS appointment_class,
