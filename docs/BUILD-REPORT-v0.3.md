@@ -22,7 +22,7 @@
 | Nodes | 978: government, 4 departments, 132 agencies, 731 sub-elements (186 historical, code-named), and 118 overview groups |
 | Measures | 78 |
 | Months | 259, January 2005 to July 2026 |
-| Quarters (money) | 34, FY2018 Q2 to FY2026 Q3 |
+| Quarters (money) | 32, FY2018 Q2 to FY2026 Q3 (37 File B quarters pulled from USAspending; the server returned 500s and dropped connections under load, resolved with backoff and 20-second pacing) |
 | Parquet | 32 MB, rolling `measures` Release |
 | Site slices | 26 MB (per-node series for government, departments, agencies, groups; current snapshot for every node; catalog) |
 
@@ -35,7 +35,7 @@ Reconciliation: government headcount equals the sum of every agency code in ever
 - **Zero-fill for flows.** A unit with a headcount but no quits in a month has zero quits, not an unknown number. Without this, trailing sums and first-year attrition went missing for small units. 395k zero rows, tagged `zero-fill` in `source_ref`.
 - **Historical nodes are code-named.** 21 agencies and 165 sub-elements appear in the history but not in the current OPM files, so the lookups have no names for them. They exist as nodes with their code and first and last seen. None of the agencies exceeded 233 employees. A names side-file from the next extraction pass will fill them in.
 - **Dimensioned values stop at agency level.** Headcount by grade, age, and so on is stored for government, departments, and agencies. Sub-elements keep the v0.2 trend slices for 2025 onward.
-- **Money begins FY2018 Q2**, the first quarter with four trailing quarters of File B behind it.
+- **Money begins FY2018 Q2**, the first quarter with four trailing quarters of File B behind it. The aggregated File B tables (about 30 KB per quarter) are committed under `data/reference/fileb/` so CI computes money without touching USAspending.
 
 ## 4. What the history shows at a glance
 
