@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executives · Fed Pulse</title>
+<meta name="description" content="Every policy and supporting position the executive branch reports under the PLUM Act: who holds it, how they were appointed, and since when.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23005ea2%27/%3E%3Cpath d=%27M4 18h6l3-8 5 14 4-9 2 3h4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="top"></header>
+<main id="main">
+  <div id="person"></div>
+  <div id="browse">
+    <h1>Executives and appointees</h1>
+    <p class="lede" id="lede">Loading…</p>
+    <div class="controls">
+      <label>Search <input type="search" id="q" placeholder="name, title, or agency" size="30" autocomplete="off"></label>
+      <label>Agency <select id="agency"><option value="">all</option></select></label>
+      <label>Appointment <select id="appt"><option value="">all</option></select></label>
+      <label><input type="checkbox" id="polonly"> political appointees only</label>
+    </div>
+    <p class="muted" id="count"></p>
+    <div class="table-wrap"><table id="results"></table></div>
+    <p class="muted" id="more"></p>
+  </div>
+</main>
+<footer></footer>
+<script type="module">
+import { loadJSON, fmt, el, qs, setQs, renderChrome } from "./js/common.js";
+import { directory, personCard, personHref, properName } from "./js/leadership.js";
+
+renderChrome("executives.html");
+const personId = qs("id");
+if (personId) {
+  document.getElementById("browse").hidden = true;
+  await personCard(document.getElementById("person"), personId);
+  document.getElementById("person").append(el("p", {}, el("a", { href: "executives.html" }, "← all executives")));
+} else {
+  const dir = await directory();
+  const appts = dir.appointments || {};
+  const people = dir.people;
+  const nodes = await loadJSON("data/slices/measures/nodes.json").then((d) => d.nodes).catch(() => ({}));
+  document.getElementById("lede").textContent =
+    `${fmt.int(people.length)} filled positions across ${fmt.int(new Set(people.map((p) => p.a)).size)} agencies, as reported under the PLUM Act as of ${fmt.day(dir.snapshot)}. Vacant positions appear on each unit page.`;
+
+  const agencySel = document.getElementById("agency");
+  for (const a of [...new Set(people.map((p) => p.a))].sort()) agencySel.append(el("option", { value: a }, a));
+  const apptSel = document.getElementById("appt");
+  for (const [code, meta] of Object.entries(appts)) apptSel.append(el("option", { value: code }, meta.label));
+
+  const q = document.getElementById("q"), pol = document.getElementById("polonly");
+  const nodeFilter = qs("node");
+  if (nodeFilter && nodes[nodeFilter]) {
+    document.getElementById("lede").append(" ", el("span", {}, "Filtered to ", el("strong", {}, nodes[nodeFilter].name), " — ", el("a", { href: "executives.html" }, "clear")));
+  }
+  q.value = qs("q", "");
+  agencySel.value = qs("agency", "");
+  apptSel.value = qs("appt", "");
+  pol.checked = qs("political") === "1";
+
+  const LIMIT = 200;
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    const agency = agencySel.value, appt = apptSel.value, politicalOnly = pol.checked;
+    setQs({ q: term || null, agency: agency || null, appt: appt || null, political: politicalOnly ? "1" : null });
+    const hits = people.filter((p) => {
+      if (nodeFilter && p.node !== nodeFilter) return false;
+      if (agency && p.a !== agency) return false;
+      if (appt && p.at !== appt) return false;
+      if (politicalOnly && (appts[p.at] || {}).class !== "political") return false;
+      if (!term) return true;
+      return (p.n + " " + p.t + " " + p.a + " " + (p.o || "")).toLowerCase().includes(term);  // search the source text, display the tidied name
+    });
+    document.getElementById("count").textContent = `${fmt.int(hits.length)} matching position${hits.length === 1 ? "" : "s"}`;
+    const shown = hits.slice(0, LIMIT);
+    const t = document.getElementById("results");
+    t.innerHTML = "";
+    t.append(el("thead", {}, el("tr", {}, ["Name", "Position", "Agency", "Appointment", "In post since"].map((h) => el("th", { scope: "col" }, h)))));
+    t.append(el("tbody", {}, shown.map((p) => el("tr", {},
+      el("td", {}, p.id ? el("a", { href: personHref(p.id) }, properName(p.n)) : properName(p.n)),
+      el("td", {}, p.t),
+      el("td", {}, p.node && nodes[p.node] ? el("a", { href: `unit.html?code=${encodeURIComponent(p.node)}` }, p.a) : p.a),
+      el("td", {}, (appts[p.at] || {}).label || p.at),
+      el("td", {}, p.since ? fmt.day(p.since) : "—")))));
+    document.getElementById("more").textContent = hits.length > LIMIT ? `Showing the first ${LIMIT}. Narrow the search to see the rest.` : "";
+  }
+  for (const c of [q, agencySel, apptSel, pol]) c.addEventListener("input", render);
+  render();
+}
+</script>
+</body>
+</html>

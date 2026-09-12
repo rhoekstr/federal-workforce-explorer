@@ -5,6 +5,7 @@
   python -m pipeline.cli money                   # USAspending + OMB -> overview
   python -m pipeline.cli slices                  # pre-computed JSON + org tree for the site
   python -m pipeline.cli measures                # build measures.parquet + measure slices from extracts
+  python -m pipeline.cli plum                    # fetch PLUM, rebuild positions, crosswalk, and slices
   python -m pipeline.cli site                    # assemble _site/ for local preview or Pages
   python -m pipeline.cli publish                 # upload parquet to GitHub Releases, fill manifest URLs
 """
@@ -106,6 +107,19 @@ def cmd_site(args) -> int:
     return 0
 
 
+def cmd_plum(args) -> int:
+    from pipeline.plum.build import build_slices
+    from pipeline.plum.crosswalk import build_crosswalk
+    from pipeline.plum.load import build_positions, fetch
+
+    if not args.no_fetch:
+        fetch()
+    build_positions()
+    build_crosswalk()
+    build_slices()
+    return 0
+
+
 def cmd_publish(args) -> int:
     from pipeline.publish import publish_releases
 
@@ -115,6 +129,9 @@ def cmd_publish(args) -> int:
 
 def main(argv=None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    from pipeline.hygiene import sweep
+
+    sweep()  # the repo is in iCloud; clear conflict copies before anything reads or writes the tree
     p = argparse.ArgumentParser(prog="pipeline", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build")
@@ -131,6 +148,9 @@ def main(argv=None) -> int:
     m.set_defaults(fn=cmd_money)
     sub.add_parser("slices").set_defaults(fn=cmd_slices)
     sub.add_parser("site").set_defaults(fn=cmd_site)
+    pl = sub.add_parser("plum")
+    pl.add_argument("--no-fetch", action="store_true")
+    pl.set_defaults(fn=cmd_plum)
     ms = sub.add_parser("measures")
     ms.add_argument("--fetch-money", action="store_true")
     ms.set_defaults(fn=cmd_measures)

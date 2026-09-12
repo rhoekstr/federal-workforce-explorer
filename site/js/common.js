@@ -25,6 +25,11 @@ export const fmt = {
     return v.toFixed(0);
   },
   dollars: (v) => (v == null ? "—" : "$" + fmt.money(v)),
+  day: (iso) => {
+    if (!iso) return "—";
+    const [y, m, d] = iso.split("-").map(Number);
+    return `${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m - 1]} ${d}, ${y}`;
+  },
   month: (yyyymm) => {
     if (!yyyymm) return "—";
     const y = yyyymm.slice(0, 4), m = +yyyymm.slice(4, 6);
@@ -59,7 +64,7 @@ export function el(tag, attrs = {}, ...children) {
 }
 
 export function renderChrome(current) {
-  const links = [["index.html", "Pulse"], ["unit.html", "Units"], ["explore.html", "Explore"], ["catalog.html", "Catalog"], ["data.html", "Data"], ["about.html", "About"]];
+  const links = [["index.html", "Pulse"], ["unit.html", "Units"], ["executives.html", "Executives"], ["explore.html", "Explore"], ["catalog.html", "Catalog"], ["data.html", "Data"], ["about.html", "About"]];
   const header = document.querySelector("header.top");
   if (header) {
     header.innerHTML = "";

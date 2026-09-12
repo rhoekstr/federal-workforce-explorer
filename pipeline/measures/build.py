@@ -13,6 +13,7 @@ from pipeline.fwd.lookups import load_lookup
 from pipeline.measures.catalog import Catalog, write_public_catalog
 from pipeline.measures.evaluator import Evaluator
 from pipeline.measures.extract_other import fevs_facts, money_facts, omb_facts
+from pipeline.plum.build import plum_facts
 from pipeline.money.groups import load_groups
 
 log = logging.getLogger(__name__)
@@ -178,6 +179,16 @@ def _latest_subelement_dims(con: duckdb.DuckDBPyConnection) -> int:
     return added
 
 
+def _plum_or_none(con: duckdb.DuckDBPyConnection) -> list[tuple]:
+    """PLUM is optional: a clone without a snapshot still builds every other measure."""
+    from pipeline.plum.load import POSITIONS
+
+    if not POSITIONS.exists():
+        log.warning("no PLUM positions table; leadership measures will be absent")
+        return []
+    return plum_facts(con)
+
+
 def _insert(con: duckdb.DuckDBPyConnection, facts: list[tuple]) -> None:
     if facts:
         con.executemany("INSERT INTO facts VALUES (?,?,?,?,?,?,?,?,?,?)", facts)
@@ -242,9 +253,12 @@ def _write_slices(con: duckdb.DuckDBPyConnection, catalog: Catalog, nodes: dict)
         raw.setdefault(node, {}).setdefault(measure, []).append((pt, ps, value, n, notation))
     per_node = {node: {m: pack(pts) for m, pts in ms.items()} for node, ms in raw.items()}
 
+    # "Latest" is the newest month the workforce snapshot covers, not the newest month any source touches.
+    # PLUM publishes continuously and lands a month or two ahead of OPM; anchoring on headcount keeps the
+    # site's as-of date, its vitals, and its composition on the month that actually has a workforce behind it.
     months = axis["month"]
+    latest = con.execute("SELECT max(period_start) FROM facts WHERE measure = 'headcount' AND dim IS NULL AND period_type = 'month'").fetchone()[0] or (months[-1] if months else None)
     cutoff = months[max(0, len(months) - DIM_MONTHS)] if months else None
-    latest = months[-1] if months else None
     dim_rows = con.execute(f"""
         SELECT node, measure, dim, dim_value, period_start, value FROM facts
         WHERE dim IS NOT NULL AND value IS NOT NULL AND measure IN (SELECT measure FROM shown_measures)
@@ -319,7 +333,8 @@ def _write_movers(con: duckdb.DuckDBPyConnection, catalog: Catalog, nodes: dict,
     """
     MIN_HEADCOUNT = 250
     monthly = [c for c, m in catalog.measures.items() if m.get("display", True) and m["cadence"] == "month"]
-    latest = con.execute("SELECT max(period_start) FROM facts WHERE period_type = 'month' AND dim IS NULL").fetchone()[0]
+    # Anchored on headcount for the same reason the slices are: PLUM runs ahead of the workforce snapshot.
+    latest = con.execute("SELECT max(period_start) FROM facts WHERE measure = 'headcount' AND period_type = 'month' AND dim IS NULL").fetchone()[0]
     out: dict[str, dict] = {"latest": latest, "windows": {}}
     for label, months in MOVER_WINDOWS.items():
         start = con.execute(
@@ -427,6 +442,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     _insert(con, money_facts(fetch=fetch_money))
     _insert(con, omb_facts())
     _insert(con, fevs_facts())
+    _insert(con, _plum_or_none(con))
     _latest_subelement_dims(con)
     unknown = con.execute("SELECT DISTINCT measure FROM facts WHERE measure NOT IN (SELECT unnest(?))", [list(catalog.measures)]).fetchall()
     if unknown:

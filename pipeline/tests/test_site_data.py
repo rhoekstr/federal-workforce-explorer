@@ -23,14 +23,17 @@ def test_retired_slices_are_gone(built):
 
 
 def test_period_axis_and_packing(built):
+    """The axis spans every source. PLUM publishes ahead of OPM, so it can end later than the workforce data;
+    the site's as-of date comes from headcount, not from the end of the axis."""
     axis = json.loads((MEAS / "periods.json").read_text())
     assert axis["month"] == sorted(axis["month"]) and len(axis["month"]) > 200
     gov = json.loads((MEAS / "gov.json").read_text())
     hc = gov["measures"]["headcount"]
     assert hc["t"] == "month" and isinstance(hc["v"], list)
-    # positional encoding: the last non-null value lands on the last month OPM has published
-    last = axis["month"][hc["i"] + len(hc["v"]) - 1]
-    assert last == axis["month"][-1]
+    last_headcount = axis["month"][hc["i"] + len(hc["v"]) - 1]
+    table = json.loads((MEAS / "table.json").read_text())
+    assert last_headcount == table["latest"], "the site's as-of date must be the last month with a headcount"
+    assert last_headcount <= axis["month"][-1]
     assert sum(1 for v in hc["v"] if v is not None) > 200
 
 
@@ -44,7 +47,7 @@ def test_flows_components_sum_to_totals(built):
         k = axis.index(period) - s["i"]
         return s["v"][k] if 0 <= k < len(s["v"]) else None
 
-    period = axis[-1]
+    period = json.loads((MEAS / "table.json").read_text())["latest"]
     up = sum(at(m, period) or 0 for m in ("new_hires", "transfers_in"))
     down = sum(at(m, period) or 0 for m in ("quits", "retirements", "rifs", "transfers_out", "terminations"))
     assert abs(up - at("accessions", period)) < 0.5

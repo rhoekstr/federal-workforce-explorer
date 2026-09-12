@@ -30,6 +30,7 @@
       <div id="composition"></div>
       <div id="money"></div>
       <div id="survey"></div>
+      <div id="leadership"></div>
       <div id="map"></div>
       <div class="panel">
         <h2>Download and query</h2>
@@ -51,6 +52,7 @@ import { flowsPanel } from "./js/flows.js";
 import { compositionPanel } from "./js/composition.js";
 import { mapPanel, geoFromRows } from "./js/map.js";
 import { splitBar, figure } from "./js/charts.js";
+import { leadershipPanel } from "./js/leadership.js";
 
 renderChrome("unit.html");
 await M.init();
@@ -183,6 +185,7 @@ async function renderDetail(code) {
   compositionPanel(document.getElementById("composition"), { code, name: node.name, state: { dim: qs("dim", "grade") }, onState: (s) => setQs({ dim: s.dim === "grade" ? null : s.dim }) }).catch(() => {});
   moneyPanel(document.getElementById("money"), code).catch(() => {});
   surveyPanel(document.getElementById("survey"), code).catch(() => {});
+  leadershipPanel(document.getElementById("leadership"), { code, name: node.name }).catch(() => {});
 
   const latest = tree.latest;
   const emp = manifest.datasets?.employment?.[latest];

@@ -1850,6 +1850,174 @@
    ],
    "format": "percentage",
    "digits": 1
+  },
+  "plum_positions": {
+   "kind": "base",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "cadence": "month",
+   "lag_days": 0,
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0,
+   "title": "Leadership positions (PLUM)",
+   "unit": "count",
+   "category": "input",
+   "sources": [
+    {
+     "name": "OPM PLUM Reporting (5 U.S.C. 3330f)",
+     "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-data/"
+    }
+   ],
+   "definition": "Policy and supporting positions the agency reports under the PLUM Act, filled or vacant, as of the snapshot. Past incumbencies are excluded."
+  },
+  "plum_filled": {
+   "kind": "base",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "cadence": "month",
+   "lag_days": 0,
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0,
+   "title": "Leadership positions filled",
+   "unit": "count",
+   "category": "input",
+   "display": false,
+   "definition": "PLUM positions with a named incumbent at the snapshot."
+  },
+  "plum_vacant": {
+   "kind": "base",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "cadence": "month",
+   "lag_days": 0,
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0,
+   "title": "Leadership positions vacant",
+   "unit": "count",
+   "category": "outcome",
+   "display": false,
+   "definition": "PLUM positions the agency reports as vacant at the snapshot."
+  },
+  "plum_political": {
+   "kind": "base",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "cadence": "month",
+   "lag_days": 0,
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0,
+   "title": "Political appointees in post",
+   "unit": "count",
+   "category": "input",
+   "display": false,
+   "definition": "Filled PLUM positions whose appointment type is presidential with or without Senate confirmation, Schedule C, or noncareer or time-limited SES."
+  },
+  "plum_career": {
+   "kind": "base",
+   "aggregation": "latest",
+   "extensiveness": "extensive",
+   "cadence": "month",
+   "lag_days": 0,
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "format": "number",
+   "digits": 0,
+   "title": "Career leaders in post",
+   "unit": "count",
+   "category": "input",
+   "display": false,
+   "definition": "Filled PLUM positions whose appointment type is career, career SES, or excepted service."
+  },
+  "plum_vacancy_rate": {
+   "title": "Leadership vacancy rate",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "outcome",
+   "cadence": "month",
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "plum_vacant"
+    },
+    "denominator": {
+     "measure": "plum_positions"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Leadership positions vacant divided by Leadership positions (PLUM) × 100, per month.",
+   "definition_generated": true
+  },
+  "plum_political_share": {
+   "title": "Political share of leadership",
+   "kind": "derived",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "category": "process",
+   "cadence": "month",
+   "since": "2026-06-01",
+   "levels": [
+    "gov",
+    "department",
+    "agency",
+    "subelement"
+   ],
+   "calculation": {
+    "pattern": "ratio",
+    "numerator": {
+     "measure": "plum_political"
+    },
+    "denominator": {
+     "measure": "plum_filled"
+    }
+   },
+   "format": "percentage",
+   "digits": 1,
+   "extensiveness": "intensive",
+   "definition": "Political appointees in post divided by Leadership positions filled × 100, per month.",
+   "definition_generated": true
   }
  },
  "dimensions": {

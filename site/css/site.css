@@ -142,3 +142,12 @@ details.navfold summary { cursor: pointer; font-weight: 600; margin: .3rem 0; }
   .orgnav .spine li::before { width: .5rem; }
   .orgnav .spine .box { max-width: none; }
 }
+
+/* Leadership rosters and the executive directory */
+.lead-list { display: flex; flex-direction: column; gap: .3rem; margin: .5rem 0; }
+.lead-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; padding: .3rem 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+.lead-row:last-child { border-bottom: 0; }
+.lead-name { font-weight: 600; min-width: 11rem; }
+.lead-title { flex: 1 1 16rem; color: var(--fg); }
+.lead-since { white-space: nowrap; font-size: .8rem; }
+.badge.pol { border-color: var(--accent-2); color: var(--accent-2); }
