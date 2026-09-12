@@ -1,10 +1,10 @@
 # Fed Pulse — Product Requirements Document
 
 **Name:** Fed Pulse (chosen 2026-09-10). Repo `rhoekstr/federal-workforce-explorer`; live at fedpulse.awrylabs.com.
-**Version:** 1.4
+**Version:** 1.5
 **Status:** draft
 **Created:** 2026-09-09
-**Updated:** 2026-09-11 (v1.4: measures model per docs/MEASURES-MODEL.md is the primary product; v0.3 build). Earlier: 2026-09-10 (v1.3: named Fed Pulse at fedpulse.awrylabs.com; fact-only Releases; v0.2 enhancement plan in docs/ENHANCEMENT-PLAN.md covers the map, the configurable trend, the flows chart, and the spine-and-shelf navigator)
+**Updated:** 2026-09-12 (v1.5: dashboard rebuilt on the measures table per docs/DASHBOARD-DESIGN.md; Pulse landing page, merged unit page, pre-measures slices retired). Earlier: 2026-09-11 (v1.4: measures model per docs/MEASURES-MODEL.md is the primary product; v0.3 build). Earlier: 2026-09-10 (v1.3: named Fed Pulse at fedpulse.awrylabs.com; fact-only Releases; v0.2 enhancement plan in docs/ENHANCEMENT-PLAN.md covers the map, the configurable trend, the flows chart, and the spine-and-shelf navigator)
 **Author:** Robert Hoekstra, with Claude (workshop session 2026-09-09)
 
 Every number in this document was measured against the July 2026 OPM files on 2026-09-09 unless stated otherwise. Re-verify before relying on them in code.

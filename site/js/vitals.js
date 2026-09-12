@@ -1,6 +1,7 @@
 // Vitals strip: eight measures for a node from data/slices/measures/current.json, with agency-level survey values
 // inherited downward and labeled as such.
 import { el, fmt, loadJSON } from "./common.js";
+import * as M from "./measures.js";
 
 const VITALS = [
   ["headcount", "Headcount"],
@@ -45,6 +46,7 @@ export async function vitalsStrip(container, { code, nodes }) {
     const card = el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value" }, fmtValue(spec, v?.v)),
       el("div", { class: "sub" }, v ? `${periodLabel(v.t, v.p)}${v.note ? ` · ${v.note}` : ""}${inherited ? ` · ${nodes[node].name}` : ""}` : "no value"));
     card.title = spec.definition;
+    card.querySelector(".label").replaceChildren(M.defineLink(m, label));
     strip.append(card);
   }
   container.append(strip, el("p", { class: "muted" }, "Survey measures are agency-level and shown for the parent agency where a unit has none. ", el("a", { href: `explore.html?nodes=${encodeURIComponent(code)}&measures=quit_rate,retirement_eligible_share` }, "Explore this unit's measures"), " · ", el("a", { href: "catalog.html" }, "definitions")));

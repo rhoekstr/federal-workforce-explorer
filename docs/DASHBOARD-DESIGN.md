@@ -1,6 +1,6 @@
 # Dashboard design — v0.4
 
-**Status:** proposal, 2026-09-12. Supersedes the page layout in PRD 4.5 and the v0.2 panel arrangement.
+**Status:** built and deployed, 2026-09-12. Decisions 1–4 taken as recommended. Supersedes the page layout in PRD 4.5 and the v0.2 panel arrangement.
 **Why now:** the product became a measures registry in v0.3, and the two most prominent pages still predate it.
 
 ## 1. The mismatch
@@ -89,11 +89,14 @@ Net: about 10 MB less committed data per refresh, one fewer page, and no number 
 4. **Retire.** Drop the old slices and their builders; delete the stray files; update the data page.
 5. **Verify and deploy.** Tests, live checks, screenshots, report.
 
-## 7. Open decisions
+## 7. Decisions taken
 
-| # | Question | Recommendation |
-|---|---|---|
-| 1 | Merge the agency page into the unit page, or keep a distinct agency overview? | Merge. A reader thinks "Labor," not "Labor the group and Labor the agency." |
-| 2 | Is "what moved" the centerpiece of the landing page, above the agency table? | Yes. It answers the arriving question; the table answers the follow-up. |
-| 3 | Retire the pre-measures slices, or keep them for compatibility? | Retire. They are regenerable, nothing external links to them, and they are the second definition of several rates. |
-| 4 | Default landing measure and window | Headcount change over twelve months. |
+All four as recommended: the agency page merged into the unit page, "what moved" leads the landing page, the pre-measures slices retired, and the default is headcount change over twelve months.
+
+## 8. What changed during the build
+
+- **Slice encoding.** Adding dimension series pushed the slices to 56 MB. Series are now stored positionally against a shared period axis (`periods.json`) instead of keyed by date, because a date key costs more than the value it labels. Slices came back to 20 MB, and net of the retirements the repo carries about 16 MB less per refresh than before.
+- **Breakdowns split in two.** `dims` carries six dimensions over the last six years for the Trend panel, at agency level and above. `dims_now` carries every dimension at the latest month for every unit including sub-elements, built from the latest fact table. Composition therefore reaches sub-elements; the trend breakdown stops at agency, which the control says.
+- **Flows rebuilt from named measures.** The chart now sums `new_hires` and `transfers_in` above the line and `quits`, `retirements`, `rifs`, `transfers_out`, and `terminations` below it, rather than reading a category dimension. Those measures exist at every level, so the category pie works for sub-elements for the first time, and every slice of it has a definition. A test asserts the components still add to the totals.
+- **Movers gained a ranking control.** Ranking only by size of change put big agencies on one side and 250-person offices on the other. "Percent change" is now a second ranking.
+- **`table.json`.** The landing table needs a latest value plus twelve- and sixty-month change for any measure and every agency; loading 132 node slices to get it was wrong, so the pipeline precomputes one 600 KB file.

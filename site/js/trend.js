@@ -1,145 +1,141 @@
-// Trend panel: one chart, configurable (metric × breakdown × compare × range). State lives in the URL.
-import { el, fmt, loadJSON, altTable } from "./common.js";
+// Trend panel: one measure over time for one unit, optionally broken down by a dimension or compared
+// with other units. Every value comes from the measures table; the panel does no arithmetic of its own.
+import { el, fmt, altTable } from "./common.js";
 import { figure } from "./charts.js";
+import * as M from "./measures.js";
+
 
 const PALETTE = ["#005ea2", "#e07a3f", "#4c9a5b", "#8b5fbf", "#b3261e", "#6b7280", "#d4a017", "#2aa198", "#c2185b"];
-export const METRICS = {
-  headcount: { label: "Headcount", kind: "level" },
-  net: { label: "Net change (accessions − separations)", kind: "flow" },
-  accessions: { label: "Accessions", kind: "flow" },
-  separations: { label: "Separations", kind: "flow" },
-  sep_rate: { label: "Separation rate (% of prior-month headcount)", kind: "rate" },
-  acc_rate: { label: "Accession rate (% of prior-month headcount)", kind: "rate" },
-};
-export const BREAKDOWNS = {
-  none: "No breakdown",
-  grade: "Grade", age_bracket: "Age bracket", supervisory_code: "Supervisory status", appointment_type_code: "Appointment type",
-  pay_band: "Pay band", work_schedule_code: "Work schedule", series_code: "Occupational series", step_code: "Step",
-};
+const RANGES = [["all", "all history"], ["60", "last 5 years"], ["24", "last 2 years"], ["12", "last 12 months"]];
 
-function sumCats(cats, skip) { return Object.entries(cats || {}).filter(([c]) => c !== skip).reduce((s, [, n]) => s + n, 0); }
-
-// Metric series for a node: [{month, value}] from its series slice.
-export function metricSeries(series, metric, months) {
-  const out = [];
-  months.forEach((m, i) => {
-    const prev = i ? series.headcount[months[i - 1]] : null;
-    const acc = sumCats(series.accessions?.[m]), sep = sumCats(series.separations?.[m], "DRP");
-    let v = null;
-    if (metric === "headcount") v = series.headcount[m] ?? null;
-    else if (metric === "net") v = acc - sep;
-    else if (metric === "accessions") v = acc;
-    else if (metric === "separations") v = sep;
-    else if (metric === "sep_rate") v = prev ? (100 * sep) / prev : null;
-    else if (metric === "acc_rate") v = prev ? (100 * acc) / prev : null;
-    out.push({ month: m, date: fmt.monthDate(m), value: v });
-  });
-  return out;
+function cutoff(range, axis) {
+  if (range === "all" || !axis.length) return null;
+  const n = +range;
+  return axis[Math.max(0, axis.length - n - 1)];
 }
 
-function labelFor(dim, value, lookups, codes) {
-  if (value === "_other") return "All other";
-  if (value === "_blank") return "Not reported";
-  if (dim === "pay_band") return value === "R" ? "Redacted" : `$${value}k`;
-  if (dim === "series_code") return lookups.series?.[value]?.name || value;
-  if (dim === "step_code") return lookups.step?.[value]?.name || value;
-  const table = { supervisory_code: "supervisory_status", appointment_type_code: "appointment_type", work_schedule_code: "work_schedule" }[dim];
-  if (table) return codes[table]?.[value]?.name || value;
-  return value;
-}
-
-function rangeMonths(months, range) {
-  if (range === "12") return months.slice(-13);
-  if (/^\d{6}$/.test(range)) return months.filter((m) => m >= range);
-  return months;
-}
-
-export function trendPanel(container, { code, name, tree, series, trend, codes, lookups, state, onState }) {
-  const months = series.months;
+export async function trendPanel(container, { code, name, state, onState }) {
   container.innerHTML = "";
+  const nodes = M.nodes();
   const panel = el("div", { class: "panel" }, el("h2", {}, "Trend"));
   const controls = el("div", { class: "controls" });
-  const metricSel = el("select", { "aria-label": "Metric" });
-  for (const [k, v] of Object.entries(METRICS)) metricSel.append(el("option", { value: k, selected: k === state.metric ? "" : null }, v.label));
+
+  const measureSel = el("select", { "aria-label": "Measure" });
+  for (const [fam, test] of M.FAMILIES) {
+    const og = el("optgroup", { label: fam });
+    for (const m of M.shownMeasures(test)) og.append(el("option", { value: m.code, selected: m.code === state.measure ? "" : null }, m.title));
+    if (og.children.length) measureSel.append(og);
+  }
   const bySel = el("select", { "aria-label": "Breakdown" });
-  const available = trend ? Object.keys(trend.by) : [];
-  for (const [k, v] of Object.entries(BREAKDOWNS)) if (k === "none" || available.includes(k)) bySel.append(el("option", { value: k, selected: k === state.by ? "" : null }, v));
   const modeSel = el("select", { "aria-label": "Breakdown mode" }, el("option", { value: "count" }, "counts"), el("option", { value: "share", selected: state.mode === "share" ? "" : null }, "shares"));
-  const cmpInput = el("input", { type: "search", list: "cmp-units", placeholder: "compare with… (name)", "aria-label": "Compare with", size: 22 });
-  const cmpList = el("datalist", { id: "cmp-units" });
-  const idx = Object.values(tree.nodes).filter((n) => n.code !== code).sort((a, b) => (b.latest || 0) - (a.latest || 0)).slice(0, 600);
-  for (const n of idx) cmpList.append(el("option", { value: `${n.name} (${n.code})` }));
-  const rangeSel = el("select", { "aria-label": "Range" }, el("option", { value: "all" }, "all months"), el("option", { value: "12", selected: state.range === "12" ? "" : null }, "last 12 months"));
-  for (const m of months.slice(0, -1)) rangeSel.append(el("option", { value: m, selected: state.range === m ? "" : null }, `since ${fmt.month(m)}`));
+  const cmpInput = el("input", { type: "search", list: "trend-units", placeholder: "compare with…", "aria-label": "Compare with", size: 20 });
+  const cmpList = el("datalist", { id: "trend-units" });
+  const index = Object.values(nodes).filter((n) => n.code !== code).slice(0, 1200);
+  for (const n of index) cmpList.append(el("option", { value: `${n.name} (${n.code})` }));
   const cmpChips = el("span");
-  controls.append(el("label", {}, "Metric ", metricSel), el("label", {}, "Break down ", bySel), modeSel, el("label", {}, "Compare ", cmpInput), cmpList, cmpChips, el("label", {}, "Range ", rangeSel));
+  const rangeSel = el("select", { "aria-label": "Range" }, ...RANGES.map(([v, l]) => el("option", { value: v, selected: (state.range || "all") === v ? "" : null }, l)));
+  controls.append(el("label", {}, "Measure ", measureSel), el("label", {}, "Break down ", bySel), modeSel,
+    el("label", {}, "Compare ", cmpInput), cmpList, cmpChips, el("label", {}, "Range ", rangeSel));
   panel.append(controls);
   const body = el("div");
   panel.append(body);
-  if (!trend) panel.append(el("p", { class: "muted" }, "Breakdowns are precomputed for units with 500 or more employees; this unit shows totals only."));
   container.append(panel);
 
-  const cmp = new Set((state.cmp || "").split(",").filter((c) => c && tree.nodes[c]));
+  const cmp = new Set((state.cmp || "").split(",").filter((c) => c && nodes[c]));
+  const labels = await M.dimLabels();
 
-  function readState() {
-    return { metric: metricSel.value, by: bySel.value, mode: modeSel.value, cmp: [...cmp].join(","), range: rangeSel.value };
+  async function refreshBreakdowns() {
+    const measure = measureSel.value;
+    const slice = await M.loadNode(code);
+    const available = Object.keys(slice.dims?.[measure] || {});
+    bySel.innerHTML = "";
+    bySel.append(el("option", { value: "none" }, "no breakdown"));
+    for (const d of available) bySel.append(el("option", { value: d, selected: d === state.by ? "" : null }, M.dimensions()[d]?.title || d));
+    bySel.disabled = !available.length;
+    bySel.title = available.length ? "" : "Breakdowns over time are stored for agencies and above";
   }
 
   async function render() {
-    const st = readState();
+    const st = { measure: measureSel.value, by: bySel.value || "none", mode: modeSel.value, cmp: [...cmp].join(","), range: rangeSel.value };
     onState?.(st);
     modeSel.hidden = st.by === "none";
     cmpChips.innerHTML = "";
-    for (const c of cmp) cmpChips.append(el("button", { type: "button", class: "badge", title: "remove", onclick: () => { cmp.delete(c); render(); } }, `${tree.nodes[c].name} ×`), " ");
-    const ms = rangeMonths(months, st.range);
+    for (const c of cmp) cmpChips.append(el("button", { type: "button", class: "badge", title: "remove", onclick: () => { cmp.delete(c); render(); } }, `${nodes[c].name} ×`), " ");
     body.innerHTML = "";
-    const width = Math.min(1100, Math.max(300, (container.clientWidth || document.querySelector("main")?.clientWidth || 800) - 30));
-    const metric = METRICS[st.metric];
-    const yLabel = metric.kind === "rate" ? "%" : metric.label;
+    body.append(el("p", { class: "muted" }, "Loading…"));
 
-    if (st.by !== "none" && trend && st.metric === "headcount") {
+    const m = M.spec(st.measure);
+    const axis = M.periodAxis(m.cadence);
+    const from = cutoff(st.range, axis);
+    const width = Math.min(1100, Math.max(300, (container.clientWidth || 800) - 30));
+
+    if (st.by !== "none") {
+      const dims = await M.dimSeries(code, st.measure, st.by);
+      body.innerHTML = "";
+      if (!dims) { body.append(el("p", { class: "muted" }, "No breakdown for this unit.")); return; }
+      const order = M.dimOrder(st.by);
+      const keys = Object.keys(dims).sort(order ? (a, b) => order(a) - order(b) : (a, b) => (dims[b].at(-1)?.value || 0) - (dims[a].at(-1)?.value || 0));
       const rows = [];
-      const values = trend.by[st.by];
-      for (const [v, ser] of Object.entries(values)) for (const m of ms) if (ser[m] != null) rows.push({ month: m, date: fmt.monthDate(m), key: v, label: labelFor(st.by, v, lookups, codes), n: ser[m] });
-      const order = Object.keys(values).map((v) => labelFor(st.by, v, lookups, codes));
+      for (const k of keys) for (const d of dims[k]) {
+        if (from && d.period < from) continue;
+        rows.push({ ...d, key: k, series: M.dimValueLabel(st.by, k, labels) });
+      }
+      const domain = keys.map((k) => M.dimValueLabel(st.by, k, labels));
       const plot = Plot.plot({
-        width, height: 320, marginLeft: 56, x: { type: "utc", label: null, ticks: d3.utcMonth.every(ms.length > 14 ? 3 : 1), tickFormat: d3.utcFormat("%b %y") },
-        y: { grid: true, label: st.mode === "share" ? "Share of headcount" : "Employees", tickFormat: st.mode === "share" ? ".0%" : "~s", percent: false },
-        color: { domain: order, range: PALETTE, legend: true },
-        marks: [Plot.areaY(rows, Plot.stackY({ offset: st.mode === "share" ? "normalize" : null }, { x: "date", y: "n", fill: "label", order, title: (d) => `${fmt.month(d.month)} ${d.label}: ${fmt.int(d.n)}` })), Plot.ruleY([0])],
+        width, height: 320, marginLeft: 60,
+        x: { type: "utc", label: null },
+        y: { grid: true, label: st.mode === "share" ? "Share" : m.title, tickFormat: st.mode === "share" ? ".0%" : "~s" },
+        color: { domain, range: PALETTE, legend: true },
+        marks: [Plot.areaY(rows, Plot.stackY({ offset: st.mode === "share" ? "normalize" : null }, { x: "date", y: "value", fill: "series", order: domain, title: (d) => `${d.label} ${d.series}: ${fmt.int(d.value)}` })), Plot.ruleY([0])],
       });
-      const table = altTable(["Month", ...order], ms.map((m) => [fmt.month(m), ...Object.keys(values).map((v) => fmt.int(values[v][m] ?? 0))]));
-      body.append(figure(`${name}: headcount by ${BREAKDOWNS[st.by].toLowerCase()}${st.mode === "share" ? " (shares)" : ""}`, plot, table));
+      const periods = [...new Set(rows.map((r) => r.period))].sort();
+      const table = altTable(["Period", ...domain], periods.map((p) => [rows.find((r) => r.period === p)?.label || p, ...keys.map((k) => fmt.int(dims[k].find((d) => d.period === p)?.value ?? 0))]));
+      body.append(figure(el("span", {}, `${name}: `, M.defineLink(st.measure), ` by ${(M.dimensions()[st.by]?.title || st.by).toLowerCase()}`), plot, table));
       return;
     }
 
-    const lines = [{ code, name, series }];
-    for (const c of cmp) lines.push({ code: c, name: tree.nodes[c].name, series: await loadJSON(`data/slices/series/${c}.json`).catch(() => null) });
-    const indexed = cmp.size > 0 && metric.kind === "level";
+    const lines = [];
+    for (const node of [code, ...cmp]) {
+      const pts = (await M.series(node, st.measure)).filter((d) => !from || d.period >= from);
+      if (pts.length) lines.push({ node, name: nodes[node]?.name || node, pts });
+    }
+    body.innerHTML = "";
+    if (!lines.length) {
+      body.append(el("p", { class: "muted" }, "No values for this measure and unit. ", M.defineLink(st.measure, "What this measure covers")));
+      return;
+    }
+    const indexed = cmp.size > 0 && (m.unit === "people" || m.unit === "count" || m.unit === "currency");
     const rows = [];
     for (const L of lines) {
-      if (!L.series) continue;
-      const ser = metricSeries(L.series, st.metric, months).filter((d) => ms.includes(d.month) && d.value != null);
-      const base = indexed ? ser[0]?.value || 1 : 1;
-      for (const d of ser) rows.push({ ...d, node: L.name, value: indexed ? (100 * d.value) / base : d.value });
+      const base = indexed ? L.pts[0].value || 1 : 1;
+      for (const d of L.pts) rows.push({ ...d, series: L.name, value: indexed ? (100 * d.value) / base : d.value });
     }
-    if (!rows.length) { body.append(el("p", { class: "muted" }, "Nothing to plot for this range.")); return; }
+    const fine = m.cadence === "month" || m.cadence === "quarter";
+    const marks = [Plot.ruleY([0]), Plot.lineY(rows, { x: "date", y: "value", stroke: "series", strokeWidth: 2, strokeDasharray: fine ? null : "4 3" })];
+    marks.push(Plot.dot(rows, { x: "date", y: "value", fill: (d) => (d.note === "estimate" ? "var(--card)" : undefined), stroke: "series", r: fine && rows.length > 60 ? 0 : 3, title: (d) => `${d.series}\n${d.label}: ${indexed ? d.value.toFixed(1) : M.formatValue(m, d.value)}${d.n != null ? ` (n ${fmt.int(d.n)})` : ""}${d.note ? ` [${d.note}]` : ""}` }));
     const plot = Plot.plot({
-      width, height: 300, marginLeft: 56, x: { type: "utc", label: null, ticks: d3.utcMonth.every(ms.length > 14 ? 3 : 1), tickFormat: d3.utcFormat("%b %y") },
-      y: { grid: true, label: indexed ? `Index (100 = ${fmt.month(ms[0])})` : yLabel, tickFormat: metric.kind === "rate" || indexed ? ".1f" : "~s", domain: metric.kind === "level" && !indexed ? [0, d3.max(rows, (d) => d.value) * 1.08] : undefined },
+      width, height: 300, marginLeft: 64,
+      x: { type: "utc", label: null },
+      y: { grid: true, label: indexed ? `Index (100 = ${lines[0].pts[0].label})` : m.title, tickFormat: m.unit === "currency" || m.unit === "dollars_per_person" ? (v) => "$" + fmt.money(v) : "~s", domain: m.unit === "people" && !indexed ? [0, d3.max(rows, (d) => d.value) * 1.08] : undefined },
       color: { domain: lines.map((L) => L.name), range: PALETTE, legend: lines.length > 1 },
-      marks: [Plot.ruleY([0]), Plot.lineY(rows, { x: "date", y: "value", stroke: "node", strokeWidth: 2 }), Plot.dot(rows, { x: "date", y: "value", fill: "node", r: 2.5, title: (d) => `${d.node}, ${fmt.month(d.month)}: ${metric.kind === "rate" || indexed ? d.value.toFixed(1) : fmt.int(d.value)}` })],
+      marks,
     });
-    const table = altTable(["Month", ...lines.map((L) => L.name)], ms.map((m) => [fmt.month(m), ...lines.map((L) => { const r = rows.find((x) => x.month === m && x.node === L.name); return r ? (metric.kind === "rate" || indexed ? r.value.toFixed(1) : fmt.int(r.value)) : "—"; })]));
-    body.append(figure(`${name}: ${metric.label.toLowerCase()}${indexed ? ", indexed" : ""}`, plot, table));
+    const periods = [...new Set(rows.map((r) => r.period))].sort();
+    const table = altTable(["Period", ...lines.map((L) => L.name)], periods.map((p) => {
+      const any = rows.find((r) => r.period === p);
+      return [any?.label || p, ...lines.map((L) => { const d = L.pts.find((x) => x.period === p); return d ? M.formatValue(m, d.value) + (d.note ? ` [${d.note}]` : "") : "—"; })];
+    }));
+    body.append(figure(el("span", {}, `${name}: `, M.defineLink(st.measure), indexed ? ", indexed" : ""), plot, table));
   }
 
-  for (const c of [metricSel, bySel, modeSel, rangeSel]) c.addEventListener("change", render);
+  measureSel.addEventListener("change", async () => { await refreshBreakdowns(); render(); });
+  for (const c of [bySel, modeSel, rangeSel]) c.addEventListener("change", render);
   cmpInput.addEventListener("change", () => {
-    const m = cmpInput.value.match(/\(([A-Z0-9:_]+)\)\s*$/);
-    const hit = m && tree.nodes[m[1]] ? m[1] : idx.find((n) => n.name.toLowerCase() === cmpInput.value.trim().toLowerCase())?.code;
-    if (hit && cmp.size < 3) { cmp.add(hit); cmpInput.value = ""; render(); }
+    const mm = cmpInput.value.match(/\(([A-Za-z0-9:_]+)\)\s*$/);
+    const hit = (mm && nodes[mm[1]] && mm[1]) || index.find((n) => n.name.toLowerCase() === cmpInput.value.trim().toLowerCase())?.code;
+    if (hit && cmp.size < 4) { cmp.add(hit); cmpInput.value = ""; render(); }
   });
-  render();
-  return { render };
+  await refreshBreakdowns();
+  if (state.by && [...bySel.options].some((o) => o.value === state.by)) bySel.value = state.by;
+  await render();
 }

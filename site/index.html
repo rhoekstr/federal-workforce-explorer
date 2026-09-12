@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fed Pulse</title>
-<meta name="description" content="Fed Pulse: headcount, hires, separations, and spending for every federal agency, from OPM, USAspending, and OMB. No tracking. An Awry Labs project.">
+<meta name="description" content="Fed Pulse: the federal civilian workforce measured over twenty-one years. Headcount, quits, retirements, spending, and survey results for every agency, with a definition behind every number. No tracking. An Awry Labs project.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23005ea2%27/%3E%3Cpath d=%27M4 18h6l3-8 5 14 4-9 2 3h4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/site.css">
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
@@ -13,57 +13,172 @@
 <body>
 <header class="top"></header>
 <main id="main">
-  <h1>Federal civilian workforce</h1>
+  <h1>The federal civilian workforce</h1>
   <p class="lede" id="lede">Loading…</p>
-  <div class="cards" id="cards"></div>
-  <div id="charts"></div>
-  <h2>Agencies: people beside money</h2>
+  <div id="hero"></div>
+  <div class="cards" id="vitals"></div>
+
+  <h2>What moved</h2>
+  <p class="muted" id="movers-note"></p>
+  <div class="controls" id="movers-controls"></div>
+  <div class="split" id="movers"></div>
+
+  <h2>Agencies</h2>
   <p class="muted" id="table-note"></p>
-  <div class="table-wrap"><table id="overview" aria-describedby="table-note"></table></div>
+  <div class="controls" id="table-controls"></div>
+  <div class="table-wrap"><table id="agencies" aria-describedby="table-note"></table></div>
 </main>
 <footer></footer>
 <script type="module">
-import { loadJSON, fmt, el, renderChrome, sortableTable } from "./js/common.js";
-import { headcountChart } from "./js/charts.js";
-import { flowsChart } from "./js/flows.js";
+import { loadJSON, fmt, el, qs, setQs, renderChrome, sortableTable } from "./js/common.js";
+import * as M from "./js/measures.js";
+import { figure } from "./js/charts.js";
 
 renderChrome("index.html");
-const [overview, gov, codes, months] = await Promise.all([
-  loadJSON("data/slices/overview.json"), loadJSON("data/slices/series/gov.json"), loadJSON("data/lookups/codes.json"), loadJSON("data/slices/months.json"),
+await M.init();
+const nodes = M.nodes();
+const [movers, table] = await Promise.all([
+  loadJSON("data/slices/measures/movers.json"),
+  loadJSON("data/slices/measures/table.json"),
 ]);
-const latest = months.latest;
-const first = months.datasets.employment[0];
-const total = gov.headcount[latest];
-const totalFirst = gov.headcount[first];
-document.getElementById("lede").textContent = `${fmt.int(total)} executive-branch civilian employees as of ${fmt.month(latest)}, per OPM. Government-wide first, then any agency, then down the org chart.`;
+const latest = table.latest;
+const name = (code) => nodes[code]?.name || code;
 
-const totalSep = Object.entries(gov.separations).filter(([m]) => m >= first).reduce((s, [, cats]) => s + Object.entries(cats).filter(([c]) => c !== "DRP").reduce((a, [, n]) => a + n, 0), 0);
-const totalAcc = Object.entries(gov.accessions).filter(([m]) => m >= first).reduce((s, [, cats]) => s + Object.values(cats).reduce((a, n) => a + n, 0), 0);
-const cards = document.getElementById("cards");
-const card = (label, value, sub, cls = "") => cards.append(el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value " + cls }, value), sub ? el("div", { class: "sub" }, sub) : null));
-card("Headcount", fmt.int(total), fmt.month(latest));
-card("Change since " + fmt.month(first), fmt.signed(total - totalFirst), fmt.pct((total - totalFirst) / totalFirst, 1), total - totalFirst < 0 ? "neg" : "pos");
-card("Accessions", fmt.int(totalAcc), `effective ${fmt.month(first)} to ${fmt.month(latest)}`);
-card("Separations", fmt.int(totalSep), `effective ${fmt.month(first)} to ${fmt.month(latest)}`);
-card("Money period", overview.period, "rolling four quarters, direct obligations");
+// ---- hero: twenty-one years in one line ---------------------------------
+const hc = await M.series("gov", "headcount");
+const first = hc[0], now = hc.at(-1);
+const peak = hc.reduce((a, b) => (b.value > a.value ? b : a), hc[0]);
+document.getElementById("lede").textContent =
+  `${fmt.int(now.value)} people as of ${now.label}, down ${fmt.int(peak.value - now.value)} from the ${peak.label} peak. `
+  + `Twenty-one years of monthly measures, every one with a definition behind it.`;
 
-const charts = document.getElementById("charts");
-charts.append(headcountChart(gov, { title: "Government-wide headcount by month" }));
-charts.append(flowsChart(gov, codes, { months: months.datasets.employment, title: "Government-wide hires and separations by effective month" }));
+const width = Math.min(1100, Math.max(320, (document.querySelector("main")?.clientWidth || 900) - 40));
+const heroPlot = Plot.plot({
+  width, height: 280, marginLeft: 60,
+  x: { type: "utc", label: null },
+  y: { grid: true, label: "Employees", tickFormat: "~s", domain: [0, d3.max(hc, (d) => d.value) * 1.08] },
+  marks: [
+    Plot.areaY(hc, { x: "date", y: "value", fill: "#005ea2", fillOpacity: 0.12 }),
+    Plot.lineY(hc, { x: "date", y: "value", stroke: "#005ea2", strokeWidth: 2 }),
+    Plot.dot([peak, now], { x: "date", y: "value", fill: "#b3261e", r: 4 }),
+    Plot.text([peak], { x: "date", y: "value", text: (d) => `peak ${fmt.int(d.value)} · ${d.label}`, dy: -12, fontSize: 11, fill: "var(--muted)" }),
+    Plot.text([now], { x: "date", y: "value", text: (d) => `${fmt.int(d.value)} · ${d.label}`, dy: 16, dx: -30, fontSize: 11, fill: "var(--muted)" }),
+    Plot.tip(hc, Plot.pointerX({ x: "date", y: "value", title: (d) => `${d.label}: ${fmt.int(d.value)}` })),
+  ],
+});
+document.getElementById("hero").append(figure(el("span", {}, "Government-wide ", M.defineLink("headcount"), ", every month since ", first.label), heroPlot));
 
-document.getElementById("table-note").textContent = `Headcount is OPM's ${fmt.month(latest)} snapshot. FTE is OMB's Analytical Perspectives Table 5-1 (hollow means estimate). Money is USAspending direct obligations, ${overview.period} rolling four quarters. In-sourcing = personnel ÷ (personnel + contracted services 25.1 and 25.2). Click a row for the agency page.`;
-const rows = overview.rows.filter((r) => (r.headcount_latest ?? 0) > 0 || r.personnel != null);
-sortableTable(document.getElementById("overview"), rows, [
-  { key: "name", label: "Agency" },
-  { key: "headcount_latest", label: "Headcount", num: true, render: fmt.int },
-  { key: "headcount_change_12m", label: "12-mo change", num: true, render: (v) => v == null ? "—" : el("span", { class: v < 0 ? "neg" : "pos" }, fmt.signed(v)) },
-  { key: "fte_omb", label: "OMB FTE", num: true, title: "Analytical Perspectives Table 5-1", render: (v, r) => v == null ? "—" : el("span", { title: `FY${r.fte_omb_fy} ${r.fte_omb_kind}` }, fmt.int(v) + (r.fte_omb_kind === "estimate" ? "*" : "")) },
-  { key: "personnel", label: "Personnel $", num: true, render: fmt.dollars },
-  { key: "contracted_services", label: "Contracted $", num: true, title: "Object classes 25.1 and 25.2", render: fmt.dollars },
-  { key: "insourcing_ratio", label: "In-sourcing", num: true, render: (v) => fmt.pct(v) },
-  { key: "administered", label: "Administered $", num: true, title: "Grants, benefits, insurance, interest, transfers", render: fmt.dollars },
-  { key: "operations", label: "Operations $", num: true, title: "Personnel, services, travel, rent, equipment", render: fmt.dollars },
-], { initialSort: { key: "headcount_latest", dir: "desc" }, onRow: (r) => { location.href = `agency.html?g=${encodeURIComponent(r.group)}`; } });
+const VITALS = ["headcount", "quit_rate", "separation_rate", "retirement_eligible_share", "span_of_control", "fevs_engagement"];
+const govCells = table.nodes.gov || {};
+const vitalsEl = document.getElementById("vitals");
+for (const code of VITALS) {
+  const cell = govCells[code];
+  if (!cell) continue;
+  const spec = M.spec(code);
+  const d12 = cell.d12;
+  vitalsEl.append(el("div", { class: "card", title: spec.definition },
+    el("div", { class: "label" }, M.defineLink(code, spec.title)),
+    el("div", { class: "value" }, M.formatValue(spec, cell.v)),
+    el("div", { class: "sub" }, M.periodLabel(cell.t, cell.p),
+      d12 != null ? el("span", { class: d12 < 0 ? " neg" : " pos" }, ` ${M.formatDelta(spec, d12)} in 12 mo`) : null)));
+}
+
+// ---- what moved ----------------------------------------------------------
+const moverMeasures = Object.keys(movers.windows["12"]?.measures || {});
+const mState = { measure: qs("mm", "headcount"), window: qs("mw", "12") };
+if (!moverMeasures.includes(mState.measure)) mState.measure = "headcount";
+const mSel = el("select", { "aria-label": "Measure" });
+for (const [fam, test] of M.FAMILIES) {
+  const og = el("optgroup", { label: fam });
+  for (const m of M.shownMeasures((x) => test(x) && moverMeasures.includes(x.code))) og.append(el("option", { value: m.code, selected: m.code === mState.measure ? "" : null }, m.title));
+  if (og.children.length) mSel.append(og);
+}
+const rSel = el("select", { "aria-label": "Rank by" }, el("option", { value: "d" }, "size of the change"), el("option", { value: "p", selected: qs("mr") === "p" ? "" : null }, "percent change"));
+const wSel = el("select", { "aria-label": "Window" });
+for (const [k, label] of [["3", "3 months"], ["12", "12 months"], ["60", "5 years"], ["all", "since 2005"]]) {
+  if (movers.windows[k]) wSel.append(el("option", { value: k, selected: k === mState.window ? "" : null }, label));
+}
+document.getElementById("movers-controls").append(el("label", {}, "Measure ", mSel), el("label", {}, "Change over ", wSel), el("label", {}, "Rank by ", rSel));
+
+function renderMovers() {
+  const measure = mSel.value, win = wSel.value, rank = rSel.value;
+  setQs({ mm: measure === "headcount" ? null : measure, mw: win === "12" ? null : win, mr: rank === "d" ? null : rank });
+  const w = movers.windows[win];
+  const data = w?.measures?.[measure];
+  const spec = M.spec(measure);
+  const host = document.getElementById("movers");
+  host.innerHTML = "";
+  document.getElementById("movers-note").replaceChildren(
+    el("span", {}, "Agencies ranked by change in ", M.defineLink(measure), ` from ${M.periodLabel("month", w?.start || latest)} to ${M.periodLabel("month", latest)}. `),
+    el("span", {}, "Units under 250 people at the start are excluded so a small office cannot top the ranking."),
+    rSel.value === "p" ? el("span", {}, " Ranked by percent change within the twelve largest movers each way.") : null);
+  if (!data) { host.append(el("p", { class: "muted" }, "No ranking for this measure and window.")); return; }
+  const pool = [...data.down, ...data.up];
+  const byPct = [...pool].filter((r) => r.p != null).sort((a, b) => a.p - b.p);
+  for (const [dir, label] of [["down", "Fell most"], ["up", "Rose most"]]) {
+    const rows = rank === "p"
+      ? (dir === "down" ? byPct.slice(0, 12) : [...byPct].reverse().slice(0, 12))
+      : data[dir];
+    const panel = el("div", { class: "panel" }, el("h3", { style: "margin-top:0" }, label));
+    const t = el("table");
+    t.append(el("thead", {}, el("tr", {}, el("th", { scope: "col" }, "Agency"), el("th", { class: "num", scope: "col" }, "Now"), el("th", { class: "num", scope: "col" }, "Change"), el("th", { class: "num", scope: "col" }, "%"))));
+    t.append(el("tbody", {}, rows.map((r) => el("tr", { class: "clickable", tabindex: 0, role: "link", onclick: () => (location.href = `unit.html?code=${encodeURIComponent(r.node)}`), onkeydown: (e) => { if (e.key === "Enter") location.href = `unit.html?code=${encodeURIComponent(r.node)}`; } },
+      el("td", {}, name(r.node)),
+      el("td", { class: "num" }, M.formatValue(spec, r.v1)),
+      el("td", { class: "num " + (r.d < 0 ? "neg" : "pos") }, M.formatDelta(spec, r.d)),
+      el("td", { class: "num " + (r.d < 0 ? "neg" : "pos") }, r.p == null ? "—" : fmt.signed(r.p) + "%")))));
+    panel.append(el("div", { class: "table-wrap" }, t));
+    host.append(panel);
+  }
+}
+for (const c of [mSel, wSel, rSel]) c.addEventListener("change", renderMovers);
+renderMovers();
+
+// ---- agency table --------------------------------------------------------
+const DEFAULT_COLS = ["headcount", "quit_rate", "retirement_eligible_share", "temp_share", "fevs_engagement", "fevs_leave_outside", "personnel_obligations", "insourcing_ratio"];
+const cols = new Set((qs("cols") || DEFAULT_COLS.join(",")).split(",").filter((c) => M.spec(c)));
+const agencyRows = Object.entries(table.nodes)
+  .filter(([code]) => nodes[code]?.kind === "agency" && !nodes[code]?.historical)
+  .map(([code, cells]) => ({ code, name: name(code), cells }));
+
+const colSel = el("select", { "aria-label": "Add a column" }, el("option", { value: "" }, "add a column…"));
+for (const [fam, test] of M.FAMILIES) {
+  const og = el("optgroup", { label: fam });
+  for (const m of M.shownMeasures(test)) og.append(el("option", { value: m.code }, m.title));
+  if (og.children.length) colSel.append(og);
+}
+const chips = el("span");
+document.getElementById("table-controls").append(el("label", {}, "Columns ", colSel), chips);
+document.getElementById("table-note").replaceChildren(
+  el("span", {}, `One row per agency, latest value for each measure as of ${M.periodLabel("month", latest)} or that measure's most recent period. `),
+  el("span", {}, "Pick any of the 55 measures as a column. Money and survey measures are reported at agency level. Click a row for the unit."));
+
+function renderTable() {
+  setQs({ cols: [...cols].join(",") === DEFAULT_COLS.join(",") ? null : [...cols].join(",") });
+  chips.innerHTML = "";
+  for (const c of cols) chips.append(el("button", { type: "button", class: "badge", title: "remove column", onclick: () => { if (cols.size > 1) { cols.delete(c); renderTable(); } } }, `${M.spec(c).title} ×`), " ");
+  const columns = [{ key: "name", label: "Agency" }];
+  for (const c of cols) {
+    const spec = M.spec(c);
+    columns.push({
+      key: c, label: spec.title, num: true, title: spec.definition,
+      value: (r) => r.cells[c]?.v ?? null,
+      render: (v, r) => {
+        if (v == null) return "—";
+        const cell = r.cells[c];
+        const wrap = el("span", { title: `${M.periodLabel(cell.t, cell.p)}${cell.note ? " · " + cell.note : ""}` }, M.formatValue(spec, v));
+        if (cell.p12 != null && Math.abs(cell.p12) >= 0.5) wrap.append(el("span", { class: cell.p12 < 0 ? "neg" : "pos", style: "font-size:.8em" }, ` ${fmt.signed(Math.round(cell.p12))}%`));
+        return wrap;
+      },
+    });
+  }
+  sortableTable(document.getElementById("agencies"), agencyRows, columns, {
+    initialSort: { key: [...cols][0], dir: "desc" },
+    onRow: (r) => { location.href = `unit.html?code=${encodeURIComponent(r.code)}`; },
+  });
+}
+colSel.addEventListener("change", () => { if (colSel.value) { cols.add(colSel.value); colSel.value = ""; renderTable(); } });
+renderTable();
 </script>
 </body>
 </html>

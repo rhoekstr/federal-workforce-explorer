@@ -2,105 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agency · Fed Pulse</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23005ea2%27/%3E%3Cpath d=%27M4 18h6l3-8 5 14 4-9 2 3h4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="css/site.css">
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
-</head>
-<body>
-<header class="top"></header>
-<main id="main">
-  <div class="crumbs"><a href="index.html">All agencies</a><span id="crumb"></span></div>
-  <h1 id="title">Agency</h1>
-  <p class="lede" id="lede"></p>
-  <div class="cards" id="cards"></div>
-  <div id="vitals"></div>
-  <div class="split">
-    <div id="money"></div>
-    <div id="people"></div>
-  </div>
-  <h2>Organization</h2>
-  <p class="muted">Click a box to open its personnel detail. Money stops here; OPM's org tree continues below.</p>
-  <div id="orgchart"></div>
-</main>
-<footer></footer>
-<script type="module">
-import { loadJSON, fmt, el, qs, renderChrome } from "./js/common.js";
-import { headcountChart, splitBar } from "./js/charts.js";
-import { flowsChart } from "./js/flows.js";
-import { renderOrgNav } from "./js/orgnav.js";
-import { vitalsStrip } from "./js/vitals.js";
-
-renderChrome("index.html");
-const g = qs("g");
-const [overview, tree, groups, codes, months] = await Promise.all([
-  loadJSON("data/slices/overview.json"), loadJSON("data/slices/orgtree.json"), loadJSON("data/crosswalk/agency_groups.json"), loadJSON("data/lookups/codes.json"), loadJSON("data/slices/months.json"),
-]);
-const row = overview.rows.find((r) => r.group === g);
-const spec = groups[g];
-if (!row || !spec) {
-  document.getElementById("title").textContent = "Unknown agency";
-  document.getElementById("lede").textContent = "Pick an agency from the overview.";
-} else {
-  document.title = `${row.name} · Fed Pulse`;
-  document.getElementById("title").textContent = row.name;
-  document.getElementById("crumb").textContent = row.name;
-  const fwdCodes = spec.fwd_agency_codes.filter((c) => tree.nodes[c]);
-  const orgCodes = (spec.fwd_org_codes || []).filter((c) => tree.nodes[c]);
-  const lede = [];
-  if (row.headcount_latest != null) lede.push(`${fmt.int(row.headcount_latest)} employees as of ${fmt.month(row.latest_yyyymm)}`);
-  if (row.fte_omb != null) lede.push(`OMB counts ${fmt.int(row.fte_omb)} FTE for FY${row.fte_omb_fy} (${row.fte_omb_kind})`);
-  if (spec.note) lede.push(spec.note);
-  document.getElementById("lede").textContent = lede.join(". ") + ".";
-
-  vitalsStrip(document.getElementById("vitals"), { code: g, nodes: (await loadJSON("data/slices/measures/nodes.json")).nodes }).catch(() => {});
-  const cards = document.getElementById("cards");
-  const card = (label, value, sub, cls = "") => cards.append(el("div", { class: "card" }, el("div", { class: "label" }, label), el("div", { class: "value " + cls }, value), sub ? el("div", { class: "sub" }, sub) : null));
-  card("Headcount", fmt.int(row.headcount_latest), fmt.month(row.latest_yyyymm));
-  card("12-month change", fmt.signed(row.headcount_change_12m), row.headcount_change_12m == null ? "needs a year of data" : fmt.pct(row.headcount_change_12m / (row.headcount_latest - row.headcount_change_12m), 1), (row.headcount_change_12m ?? 0) < 0 ? "neg" : "pos");
-  card("OMB FTE", row.fte_omb == null ? "—" : fmt.int(row.fte_omb), row.fte_omb == null ? "not in Table 5-1" : `FY${row.fte_omb_fy} ${row.fte_omb_kind}`);
-  card("Personnel", fmt.dollars(row.personnel), row.personnel == null ? row.money_reason : `${overview.period} rolling 4Q`);
-  card("Contracted services", fmt.dollars(row.contracted_services), "object classes 25.1 + 25.2");
-  card("In-sourcing ratio", fmt.pct(row.insourcing_ratio), "personnel ÷ (personnel + contracted)");
-  card("Personnel per head", fmt.dollars(row.personnel_per_head), "comp and benefits ÷ headcount");
-  card("Administered", fmt.dollars(row.administered), "grants, benefits, insurance, interest");
-  card("Operations", fmt.dollars(row.operations), "what the staff runs on");
-
-  const money = document.getElementById("money");
-  if (row.personnel != null) {
-    money.append(el("h2", {}, "Where the money goes"));
-    money.append(el("figure", {}, el("figcaption", {}, `Direct obligations, ${overview.period} rolling four quarters, by object class group`),
-      splitBar([{ label: "Administered", value: row.administered }, { label: "Operations", value: row.operations }, { label: "Other", value: row.other }]),
-      el("p", { class: "muted", style: "margin:.6rem 0 0" }, "Operations detail:"),
-      splitBar([{ label: "Personnel", value: row.personnel }, { label: "Contracted services", value: row.contracted_services }, { label: "Services from federal sources", value: row.federal_services }, { label: "Other operations", value: row.operations - row.personnel - row.contracted_services - row.federal_services }])));
-  } else {
-    money.append(el("p", { class: "notice" }, `No USAspending money for this agency: ${row.money_reason}.`));
-  }
-
-  // People: FWD headcount series for the group beside OMB FTE points (fiscal-year end = September).
-  const people = document.getElementById("people");
-  const series = { months: months.datasets.employment, headcount: {} };
-  for (const m of series.months) {
-    let n = 0, any = false;
-    for (const c of fwdCodes) if (tree.nodes[c].headcount[m] != null) { n += tree.nodes[c].headcount[m]; any = true; }
-    for (const c of orgCodes) if (tree.nodes[c].headcount[m] != null) { n += tree.nodes[c].headcount[m]; any = true; }
-    for (const c of spec.fwd_exclude_org_codes || []) if (tree.nodes[c]?.headcount[m] != null) n -= tree.nodes[c].headcount[m];
-    if (any) series.headcount[m] = n;
-  }
-  const fte = Object.entries(row.fte_series || {}).map(([fy, v]) => ({ date: new Date(+fy, 8, 30), n: v.fte, kind: v.kind, label: `OMB FTE FY${fy}` }));
-  people.append(el("h2", {}, "People"));
-  const colWidth = window.innerWidth >= 900 ? Math.max(360, ((document.querySelector("main")?.clientWidth || 900) - 56) / 2) : Math.max(320, (document.querySelector("main")?.clientWidth || 400) - 40);
-  people.append(headcountChart(series, { title: "OPM headcount by month (solid) and OMB FTE by fiscal year (dashed; hollow = estimate)", compare: fte, width: colWidth }));
-  if (fwdCodes.length === 1) {
-    const s = await loadJSON(`data/slices/series/${fwdCodes[0]}.json`);
-    people.append(flowsChart(s, codes, { months: months.datasets.employment, title: "Hires and separations", width: colWidth }));
-  }
-
-  const selected = fwdCodes.length === 1 ? fwdCodes[0] : (orgCodes[0] || fwdCodes[0] || "gov");
-  renderOrgNav(document.getElementById("orgchart"), tree, selected, (code) => { location.href = `org.html?code=${encodeURIComponent(code)}`; });
-}
+<title>Moved · Fed Pulse</title>
+<link rel="canonical" href="unit.html">
+<script>
+  // The org chart and agency pages became one unit page in v0.4. Carry the selection across.
+  var p = new URLSearchParams(location.search);
+  var code = p.get("code") || p.get("g") || "gov";
+  location.replace("unit.html?code=" + encodeURIComponent(code) + location.hash);
 </script>
-</body>
+</head>
+<body><p>This page is now <a id="l" href="unit.html">the unit page</a>.</p></body>
 </html>

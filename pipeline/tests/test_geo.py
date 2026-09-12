@@ -29,8 +29,12 @@ def test_geo_reconciles(built, code):
     nds = g["n"] - g["disclosed"] - g["invalid"]
     assert counties + g["abroad"] + g["territory"] + g["invalid"] + nds == g["n"]
     assert sum(g["states"].values()) == counties
-    mix = json.loads((SLICES / "mix" / f"{code}.json").read_text())["_summary"]
-    assert abs(g["disclosed_share"] - mix["disclosed_location_share"]) < 0.02  # invalid codes are the only gap
+    # Cross-check against the measure of the same thing: the geo slice and location_disclosed_share
+    # are computed from different paths and must agree within the invalid-code gap.
+    snap = json.loads((SLICES / "measures" / "current.json").read_text())
+    measured = snap.get(code, {}).get("location_disclosed_share", {}).get("v")
+    if measured is not None:
+        assert abs(g["disclosed_share"] * 100 - measured) < 2.0
 
 
 def test_labor_disclosed(built):

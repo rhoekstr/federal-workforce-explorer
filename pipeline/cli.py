@@ -82,14 +82,12 @@ def cmd_money(args) -> int:
 
 
 def cmd_slices(args) -> int:
+    """Navigation and geography slices. The series/mix/trend slices retired in v0.4: every number the
+    site shows now comes from the measures table, so they were a second definition of the same rates."""
     from pipeline.orgtree import build_orgtree
-    from pipeline.slices import build_slices
-    from pipeline.trends import build_trends
     from pipeline.geo import build_geo
 
-    build_slices()
     build_orgtree()
-    build_trends()
     build_geo()
     return 0
 

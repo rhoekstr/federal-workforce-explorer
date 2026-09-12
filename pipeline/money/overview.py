@@ -9,7 +9,7 @@ from datetime import date
 import duckdb
 
 from pipeline import manifest as mf
-from pipeline.config import SLICES, WORK
+from pipeline.config import WORK
 from pipeline.fwd.lookups import load_lookup
 from pipeline.money.groups import load_groups
 from pipeline.money.omb import fte_by_label
@@ -151,14 +151,13 @@ def build_overview(force: bool = False, today: date | None = None) -> list[dict]
         })
     rows.sort(key=lambda r: -(r["headcount_latest"] or 0))
     OVERVIEW_DIR.mkdir(parents=True, exist_ok=True)
-    SLICES.mkdir(parents=True, exist_ok=True)
     tmp = OVERVIEW_DIR / "agency_period.jsonl"
     with open(tmp, "w") as fh:
         for r in rows:
             fh.write(json.dumps({**r, "fte_series": json.dumps(r["fte_series"])}) + "\n")
     duckdb.connect().execute(f"COPY (SELECT * FROM read_json_auto('{tmp}')) TO '{OVERVIEW_DIR / 'agency_period.parquet'}' (FORMAT PARQUET, COMPRESSION ZSTD)")
     tmp.unlink()
-    (SLICES / "overview.json").write_text(json.dumps({"period": period, "quarter_end_yyyymm": qend, "latest_yyyymm": latest, "rows": rows}, separators=(",", ":")))
+    (OVERVIEW_DIR / "overview.json").write_text(json.dumps({"period": period, "quarter_end_yyyymm": qend, "latest_yyyymm": latest, "rows": rows}, separators=(",", ":")))
     manifest = mf.load()
     manifest["money"] = {"period": period, "fy": fy, "quarter": quarter, "fileb_periods": [f"FY{fy}Q{quarter}", f"FY{fy-1}Q4", f"FY{fy-1}Q{quarter}"], "omb_table": "AP FY2027 Table 5-1", "groups": len(rows)}
     mf.save(manifest)

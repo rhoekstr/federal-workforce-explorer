@@ -59,7 +59,7 @@ export function el(tag, attrs = {}, ...children) {
 }
 
 export function renderChrome(current) {
-  const links = [["index.html", "Overview"], ["org.html", "Org chart"], ["explore.html", "Explore"], ["catalog.html", "Catalog"], ["data.html", "Data"], ["about.html", "About"]];
+  const links = [["index.html", "Pulse"], ["unit.html", "Units"], ["explore.html", "Explore"], ["catalog.html", "Catalog"], ["data.html", "Data"], ["about.html", "About"]];
   const header = document.querySelector("header.top");
   if (header) {
     header.innerHTML = "";
