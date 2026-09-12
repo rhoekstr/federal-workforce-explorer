@@ -55,12 +55,21 @@ def build_nodes() -> dict[str, dict]:
     return nodes
 
 
-def _load_extracts(con: duckdb.DuckDBPyConnection) -> int:
+def _load_extracts(con: duckdb.DuckDBPyConnection) -> tuple[int, int]:
+    """Returns (fact rows, extract files). The file count is the regression guard: a run that sees far
+    fewer extracts than the last published build is reading a partial history and must not overwrite it."""
     files = sorted(EXTRACT_DIR.glob("*.parquet"))
     if not files:
         raise RuntimeError(f"no extracts in {EXTRACT_DIR}")
+    prior = mf.load().get("measures", {}).get("extract_files")
+    if prior and len(files) < prior * 0.8:
+        raise RuntimeError(
+            f"only {len(files)} extracts in {EXTRACT_DIR}, but the last published build used {prior}. "
+            "The extract archive was probably not restored from the measures Release; refusing to "
+            "replace the published table with a partial history."
+        )
     con.execute(f"CREATE OR REPLACE TABLE raw_facts AS SELECT * FROM read_parquet({[str(f) for f in files]}, union_by_name=true)")
-    return con.execute("SELECT count(*) FROM raw_facts").fetchone()[0]
+    return con.execute("SELECT count(*) FROM raw_facts").fetchone()[0], len(files)
 
 
 def _register_nodes(con: duckdb.DuckDBPyConnection, nodes: dict) -> None:
@@ -411,7 +420,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     catalog = Catalog.load()
     nodes = build_nodes()
     con = duckdb.connect()
-    n_raw = _load_extracts(con)
+    n_raw, n_files = _load_extracts(con)
     _add_historical_nodes(con, nodes)
     _register_nodes(con, nodes)
     _base_facts(con, catalog)
@@ -427,7 +436,10 @@ def build_measures(fetch_money: bool = False) -> dict:
     stats = con.execute("SELECT count(*), count(DISTINCT node), count(DISTINCT measure), min(period_start), max(period_start) FROM facts").fetchone()
     _write_slices(con, catalog, nodes)
     manifest = mf.load()
-    manifest["measures"] = {"rows": stats[0], "nodes": stats[1], "measures": stats[2], "first_period": stats[3], "last_period": stats[4], "parquet_bytes": OUT.stat().st_size, "extracts": n_raw}
+    manifest.setdefault("measures", {}).update({
+        "rows": stats[0], "nodes": stats[1], "measures": stats[2], "first_period": stats[3], "last_period": stats[4],
+        "parquet_bytes": OUT.stat().st_size, "extracts": n_raw, "extract_files": n_files,
+    })
     mf.save(manifest)
     log.info("measures.parquet: %s rows, %s nodes, %s measures, %s to %s, %.1f MB", *stats, OUT.stat().st_size / 1e6)
     return manifest["measures"]

@@ -41,7 +41,11 @@ def restore_extracts() -> int:
 
     manifest = mf.load()
     url = manifest.get("measures", {}).get("extracts_url")
-    if not url or (EXTRACT_DIR.exists() and any(EXTRACT_DIR.glob("*.parquet"))):
+    if EXTRACT_DIR.exists() and any(EXTRACT_DIR.glob("*.parquet")):
+        log.info("measure extracts already present; not restoring")
+        return 0
+    if not url:
+        log.warning("manifest has no measures.extracts_url; the build will see only locally extracted months")
         return 0
     EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
     archive = EXTRACT_DIR.parent / "extracts.tar.gz"

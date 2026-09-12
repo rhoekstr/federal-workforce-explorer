@@ -108,10 +108,11 @@ function renderMovers() {
   const spec = M.spec(measure);
   const host = document.getElementById("movers");
   host.innerHTML = "";
-  document.getElementById("movers-note").replaceChildren(
+  document.getElementById("movers-note").replaceChildren(...[
     el("span", {}, "Agencies ranked by change in ", M.defineLink(measure), ` from ${M.periodLabel("month", w?.start || latest)} to ${M.periodLabel("month", latest)}. `),
     el("span", {}, "Units under 250 people at the start are excluded so a small office cannot top the ranking."),
-    rSel.value === "p" ? el("span", {}, " Ranked by percent change within the twelve largest movers each way.") : null);
+    rank === "p" ? el("span", {}, " Ranked by percent change within the twelve largest movers each way.") : null,
+  ].filter(Boolean));
   if (!data) { host.append(el("p", { class: "muted" }, "No ranking for this measure and window.")); return; }
   const pool = [...data.down, ...data.up];
   const byPct = [...pool].filter((r) => r.p != null).sort((a, b) => a.p - b.p);
