@@ -13,6 +13,7 @@ from pipeline.fwd.lookups import load_lookup
 from pipeline.measures.catalog import Catalog, write_public_catalog
 from pipeline.measures.evaluator import Evaluator
 from pipeline.measures.extract_other import fevs_facts, money_facts, omb_facts
+from pipeline.measures.extract_fevs_level1 import level1_facts
 from pipeline.measures.extract_va import va_facts
 from pipeline.plum.build import plum_facts
 from pipeline.money.groups import load_groups
@@ -188,6 +189,15 @@ def _plum_or_none(con: duckdb.DuckDBPyConnection) -> list[tuple]:
         log.warning("no PLUM positions table; leadership measures will be absent")
         return []
     return plum_facts(con)
+
+
+def _fevs_level1_or_none() -> list[tuple]:
+    """2019 sub-agency FEVS is optional: it needs the respondent file, which lives outside the repo."""
+    try:
+        return level1_facts()
+    except Exception as exc:  # noqa: BLE001
+        log.warning("2019 sub-agency FEVS unavailable: %s", exc)
+        return []
 
 
 def _insert(con: duckdb.DuckDBPyConnection, facts: list[tuple]) -> None:
@@ -445,6 +455,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     _insert(con, fevs_facts())
     _insert(con, _plum_or_none(con))
     _insert(con, va_facts())
+    _insert(con, _fevs_level1_or_none())
     _latest_subelement_dims(con)
     unknown = con.execute("SELECT DISTINCT measure FROM facts WHERE measure NOT IN (SELECT unnest(?))", [list(catalog.measures)]).fetchall()
     if unknown:

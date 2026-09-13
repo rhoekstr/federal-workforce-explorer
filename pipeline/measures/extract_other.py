@@ -15,10 +15,11 @@ from pipeline.money.usaspending import fileb_path
 log = logging.getLogger(__name__)
 MONEY_BUCKETS = {
     "personnel_obligations": ("personnel",),
+    "military_personnel_obligations": ("military",),
     "contracted_services_obligations": ("contracted",),
     "federal_services_obligations": ("federal_services",),
     "administered_obligations": ("administered",),
-    "operations_obligations": ("personnel", "contracted", "federal_services", "operations_other"),
+    "operations_obligations": ("personnel", "military", "contracted", "federal_services", "operations_other"),
 }
 FIRST_FILEB = (2017, 2)  # File B object class data begins FY2017 Q2
 

@@ -1480,7 +1480,7 @@
   },
   "personnel_obligations": {
    "title": "Personnel compensation and benefits",
-   "definition": "Direct obligations in object classes 11 (compensation), 12 (benefits), and 13 (benefits for former personnel), rolling four fiscal quarters, from USAspending File B.",
+   "definition": "Direct obligations for civilian current-employee compensation and benefits (object classes 11.1, 11.3, 11.5, 11.8, 11.9 and 12.1), rolling four fiscal quarters, from USAspending File B. Military pay (11.7, 12.2) and benefits for former personnel (13.0) are excluded and reported separately: they pay populations the headcount on this site does not contain.",
    "kind": "base",
    "unit": "currency",
    "aggregation": "latest",
@@ -1538,7 +1538,7 @@
   },
   "administered_obligations": {
    "title": "Dollars administered",
-   "definition": "Direct obligations for grants (41), insurance claims and benefits (42), interest (43), refunds (44), investments and loans (33), and financial transfers (94), rolling four fiscal quarters.",
+   "definition": "Direct obligations for grants (41), insurance claims and benefits (42), interest (43), refunds (44), investments and loans (33), financial transfers (94) and benefits for former personnel (13.0), rolling four fiscal quarters. Retiree annuities sit here rather than in operations: they are money the agency administers, not money its staff runs on.",
    "kind": "base",
    "unit": "currency",
    "aggregation": "latest",
@@ -1555,7 +1555,7 @@
   },
   "operations_obligations": {
    "title": "Dollars for operations",
-   "definition": "Direct obligations in object classes 11 through 26, 31, and 32, rolling four fiscal quarters: what the staff runs on.",
+   "definition": "Direct obligations in object classes 11, 12 and 21 through 26, 31 and 32, rolling four fiscal quarters: what the staff runs on, including military pay where an agency has it. Benefits for former personnel are excluded and counted as administered.",
    "kind": "base",
    "unit": "currency",
    "aggregation": "latest",
@@ -1646,9 +1646,8 @@
    },
    "format": "currency",
    "digits": 0,
-   "extensiveness": "intensive",
-   "definition": "Personnel compensation and benefits divided by Headcount, per quarter.",
-   "definition_generated": true
+   "definition": "Civilian personnel compensation and benefits divided by headcount at the quarter's end. Military pay and retiree annuities are excluded from the numerator, so the figure describes the civilian workforce this site counts.",
+   "extensiveness": "intensive"
   },
   "omb_fte": {
    "title": "Full-time equivalents (OMB)",
@@ -2248,6 +2247,23 @@
    "title": "Satisfied with pay (VA survey)",
    "definition": "Percent positive on satisfaction with pay. VA has not asked this item in the published years, so the measure carries no values yet.",
    "display": false
+  },
+  "military_personnel_obligations": {
+   "title": "Military personnel compensation",
+   "kind": "base",
+   "unit": "currency",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "input",
+   "cadence": "quarter",
+   "year_type": "federal_fiscal",
+   "since": "2017-10-01",
+   "levels": [
+    "group"
+   ],
+   "format": "currency",
+   "digits": 0,
+   "definition": "Direct obligations for military personnel and their benefits (object classes 11.7 and 12.2), rolling four fiscal quarters. Shown so the civilian personnel figure is not mistaken for an agency's whole payroll; service members are not in this site's headcount."
   }
  },
  "dimensions": {

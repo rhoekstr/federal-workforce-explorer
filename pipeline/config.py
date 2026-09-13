@@ -78,11 +78,20 @@ CODE_TABLES = {
 }
 
 # USAspending object class classification (PRD 5.8). Keys are the 2- or 4-char code prefixes.
-PERSONNEL_CODES = {"11.1", "11.3", "11.5", "11.7", "11.8", "11.9", "12.1", "12.2", "13.0"}
+# Personnel is CIVILIAN CURRENT-EMPLOYEE compensation only. The reconciliation report caught the earlier
+# definition sweeping in two populations the site's headcount does not contain:
+#   11.7 / 12.2  military personnel and their benefits — $157B at Defense, none of it civilian
+#   13.0         benefits for former personnel — $455B at Defense, $3.7B at OPM; retiree annuities, not pay
+# Leaving them in made spending per employee read $1.2M at Defense and $2.6M at OPM, and distorted the
+# in-sourcing ratio for every agency that administers a large retirement programme.
+PERSONNEL_CODES = {"11.1", "11.3", "11.5", "11.8", "11.9", "12.1"}
+MILITARY_CODES = {"11.7", "12.2"}
+FORMER_PERSONNEL_CODES = {"13.0"}
 CONTRACTED_CODES = {"25.1", "25.2"}
 FEDERAL_SERVICES_CODES = {"25.3"}
-ADMINISTERED_CODES = {"41.0", "42.0", "43.0", "44.0", "33.0", "94.0"}
-OPERATIONS_PREFIXES = ("11", "12", "13", "21", "22", "23", "24", "25", "26", "31", "32")
+# Retiree annuities are money the agency administers, not money its staff runs on.
+ADMINISTERED_CODES = {"41.0", "42.0", "43.0", "44.0", "33.0", "94.0"} | FORMER_PERSONNEL_CODES
+OPERATIONS_PREFIXES = ("11", "12", "21", "22", "23", "24", "25", "26", "31", "32")
 
 
 def classify_object_class(code: str) -> str:
@@ -90,6 +99,8 @@ def classify_object_class(code: str) -> str:
     code = (code or "").strip()
     if code in PERSONNEL_CODES:
         return "personnel"
+    if code in MILITARY_CODES:
+        return "military"
     if code in CONTRACTED_CODES:
         return "contracted"
     if code in FEDERAL_SERVICES_CODES:

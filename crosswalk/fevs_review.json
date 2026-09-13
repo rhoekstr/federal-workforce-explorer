@@ -1,0 +1,615 @@
+{
+ "_about": "FEVS 2019 sub-agency units that could not be placed on an org node by name. Codes are never used to join: FEVS LEVEL1 codes coincide with OPM sub-element codes only for Defense, Treasury and Transportation, and a colliding code can name a different unit. Set \"method\": \"manual\" on an entry in fevs_level1.json to pin it.",
+ "counts": {
+  "units": 238,
+  "mapped": 117,
+  "unmatched": 121
+ },
+ "unmatched": [
+  {
+   "level1": "AF0M",
+   "name": "AFR - HQ AIR FORCE RESERVE COMMAND",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AF0V",
+   "name": "SOC - AIR FORCE SPECIAL OPERATIONS COMMAND",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AF17",
+   "name": "IMS - AF INSTALLATION AND MISSION SUPPORT",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AF1S",
+   "name": "SPC - HQ AIR FORCE SPACE COMMAND",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AF3Q",
+   "name": "SAJ - AFELM US STRATEGIC COMMAND",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AFGS",
+   "name": "GBS - GLOBAL STRIKE COMMAND",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AFZZ",
+   "name": "United States Department of the Air Force, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "AG05",
+   "name": "Natural Resources and Environment",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AG07",
+   "name": "Food Nutrition and Consumer Services",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AG10",
+   "name": "Research, Education, and Economics",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AG14",
+   "name": "Marketing and Regulatory Programs",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AG27",
+   "name": "Headquarters Agencies",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AG29",
+   "name": "Farm Production and Conservation",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AGZZ",
+   "name": "Department of Agriculture, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "AM01",
+   "name": "Washington",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AM02",
+   "name": "Overseas",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "AMZZ",
+   "name": "U.S. Agency for International Development, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "ARHQ",
+   "name": "Headquarters, Department of the Army",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ARX0",
+   "name": "Army Materiel Command",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ARZZ",
+   "name": "United States Department of the Army, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "BGZZ",
+   "name": "Pension Benefit Guaranty Corporation, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "BOZZ",
+   "name": "Office of Management and Budget, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "CMZZ",
+   "name": "Department of Commerce, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "CTZZ",
+   "name": "Commodity Futures Trading Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "CUZZ",
+   "name": "National Credit Union Administration, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "DD12",
+   "name": "Defense Security Service",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DD16",
+   "name": "Department of Defense Education Activity",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DDZZ",
+   "name": "OSD, Joint Staff, Defense Agencies, and Field Activities, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "DJCM",
+   "name": "Criminal Division",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DJCV",
+   "name": "Civil Division",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DJEN",
+   "name": "Environment and Natural Resources Division",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DJZZ",
+   "name": "Department of Justice, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "DLZZ",
+   "name": "Department of Labor, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "DN13",
+   "name": "Under Secretary For Nuclear Security",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DN14",
+   "name": "Power Marketing Administrations",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DN15",
+   "name": "Office Of The Secretary And Departmental Offices",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DN17",
+   "name": "Office Of The Under Secretary For Science",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "DNZZ",
+   "name": "Department of Energy, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "DRZZ",
+   "name": "Federal Energy Regulatory Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "EDZZ",
+   "name": "Department of Education, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "EE01",
+   "name": "HEADQUARTERS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EE02",
+   "name": "FIELD",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP02",
+   "name": "Office of Air & Radiation",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP05",
+   "name": "Office of Chemical Safety & Pollution Prevention",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP06",
+   "name": "Office of Enforcement & Compliance Assistance",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP11",
+   "name": "Office of Research & Development",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP13",
+   "name": "Office of Water",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP15",
+   "name": "Region 2",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP16",
+   "name": "Region 3",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP17",
+   "name": "Region 4",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP18",
+   "name": "Region 5",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP19",
+   "name": "Region 6",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP20",
+   "name": "Region 7",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP22",
+   "name": "Region 9",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP23",
+   "name": "Region 10",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EP24",
+   "name": "Office of Mission Support",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "EPZZ",
+   "name": "Environmental Protection Agency, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "FCZZ",
+   "name": "Federal Communications Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "FQ01",
+   "name": "Community Supervision Program",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "FQZZ",
+   "name": "Court Services and Offender Supervision Agency, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "FTZZ",
+   "name": "Federal Trade Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "GS01",
+   "name": "Office of the Commissioner (FAS - Q)",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "GS02",
+   "name": "PBS / Office of the Commissioner (PBS - P)",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "GSZZ",
+   "name": "General Services Administration, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "HE02",
+   "name": "Administration for Children and Family",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "HE10",
+   "name": "Office of the Secretary",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "HEZZ",
+   "name": "Department of Health and Human Services, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "HFZZ",
+   "name": "Federal Housing Finance Agency, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "HS01",
+   "name": "Citizen and Immigration Services (CIS)",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "HS09",
+   "name": "Under Secretary for Management",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "HSZZ",
+   "name": "Department of Homeland Security, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "HU16",
+   "name": "Assistant Secretary for Housing - FHA",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "HU19",
+   "name": "Assistant Secretary for Public & Indian Housing",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "HUZZ",
+   "name": "Department of Housing and Urban Development, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "IB04",
+   "name": "VOICE OF AMERICA",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "IBZZ",
+   "name": "Broadcasting Board of Governors, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "INZZ",
+   "name": "Department of the Interior, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "NFZZ",
+   "name": "National Science Foundation, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "NL10",
+   "name": "Office of the General Counsel Staff",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NLZZ",
+   "name": "National Labor Relations Board, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "NNZZ",
+   "name": "National Aeronautics and Space Administration, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "NQ01",
+   "name": "AGENCY SERVICES",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NQ09",
+   "name": "RESEARCH SERVICES",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NQZZ",
+   "name": "National Archives and Records Administration, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "NU04",
+   "name": "Office of Nuclear Reactor Regulation",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NUZZ",
+   "name": "Nuclear Regulatory Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "NV12",
+   "name": "DON, ASSISTANT FOR ADMINISTRATION",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NV18",
+   "name": "BUREAU OF MEDICINE AND SURGERY",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NV39",
+   "name": "SPACE AND NAVAL WARFARE SYSTEMS COMMAND",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "NVZZ",
+   "name": "United States Department of the Navy, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "OM17",
+   "name": "Retirement Services",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "OM24",
+   "name": "National Background Investigations Bureau",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "OMZZ",
+   "name": "Office of Personnel Management, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "RRZZ",
+   "name": "Railroad Retirement Board, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "SBZZ",
+   "name": "Small Business Administration, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "SE21",
+   "name": "National Examination Program",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SE22",
+   "name": "National Enforcement Program",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SEZZ",
+   "name": "Securities and Exchange Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "SKZZ",
+   "name": "Consumer Product Safety Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "SNZZ",
+   "name": "National Gallery of Art, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "ST11",
+   "name": "BUREAU OF AFRICAN AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST14",
+   "name": "BUREAU OF CONSULAR AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST20",
+   "name": "BUREAU OF DIPLOMATIC SECURITY",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST22",
+   "name": "BUREAU OF EAST ASIAN AND PACIFIC AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST26",
+   "name": "BUREAU OF EUROPEAN AND EURASIAN AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST42",
+   "name": "BUREAU NEAR EASTERN AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST50",
+   "name": "BUREAU OF SOUTH AND CENTRAL ASIAN AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "ST52",
+   "name": "BUREAU OF WESTERN HEMISPHERE AFFAIRS",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "STZZ",
+   "name": "Department of State, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "SZ02",
+   "name": "Deputy Commissioner for Operations",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SZ03",
+   "name": "Deputy Commissioner for Systems",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SZ06",
+   "name": "Office of the General Counsel",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SZ13",
+   "name": "Deputy Commissioner for Hearing Operations",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SZ14",
+   "name": "Deputy Commissioner for Retirement & Disability Policy",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SZ15",
+   "name": "Deputy Commissioner for Analytics, Review, and Oversight",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "SZZZ",
+   "name": "Social Security Administration, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "TCZZ",
+   "name": "U.S. International Trade Commission, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "TDZZ",
+   "name": "Department of Transportation, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "TRCC",
+   "name": "IRS Chief Counsel",
+   "why": "no sub-element of this agency matches by name"
+  },
+  {
+   "level1": "TRZZ",
+   "name": "Department of the Treasury, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  },
+  {
+   "level1": "XXZZ",
+   "name": "All Other Agencies, All Other",
+   "why": "residual 'all other' unit, not a real org node"
+  }
+ ]
+}

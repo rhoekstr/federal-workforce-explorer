@@ -131,6 +131,13 @@ def cmd_va(args) -> int:
     return 0
 
 
+def cmd_reconcile(args) -> int:
+    from pipeline.reconcile import build_report
+
+    build_report()
+    return 0
+
+
 def cmd_publish(args) -> int:
     from pipeline.publish import publish_releases
 
@@ -160,6 +167,7 @@ def main(argv=None) -> int:
     sub.add_parser("slices").set_defaults(fn=cmd_slices)
     sub.add_parser("site").set_defaults(fn=cmd_site)
     sub.add_parser("va").set_defaults(fn=cmd_va)
+    sub.add_parser("reconcile").set_defaults(fn=cmd_reconcile)
     pl = sub.add_parser("plum")
     pl.add_argument("--no-fetch", action="store_true")
     pl.set_defaults(fn=cmd_plum)

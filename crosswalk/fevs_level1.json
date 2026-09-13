@@ -1,0 +1,821 @@
+{
+ "AF0J": {
+  "fevs_name": "AET - AIR EDUCATION & TRAINING COMMAND",
+  "level1": "AF0J",
+  "method": "name_contains",
+  "node": "AF0J",
+  "node_name": "AIR EDUCATION AND TRAINING COMMAND"
+ },
+ "AF0R": {
+  "fevs_name": "PAF - PACIFIC AIR FORCES",
+  "level1": "AF0R",
+  "method": "name_contains",
+  "node": "AF0R",
+  "node_name": "PACIFIC AIR FORCES"
+ },
+ "AF1C": {
+  "fevs_name": "ACC - AIR COMBAT COMMAND",
+  "level1": "AF1C",
+  "method": "name_contains",
+  "node": "AF1C",
+  "node_name": "AIR COMBAT COMMAND"
+ },
+ "AF1L": {
+  "fevs_name": "AMC - AIR MOBILITY COMMAND",
+  "level1": "AF1L",
+  "method": "name_contains",
+  "node": "AF1L",
+  "node_name": "AIR MOBILITY COMMAND"
+ },
+ "AF1M": {
+  "fevs_name": "MTC - AIR FORCE MATERIEL COMMAND",
+  "level1": "AF1M",
+  "method": "name_contains",
+  "node": "AF1M",
+  "node_name": "AIR FORCE MATERIEL COMMAND"
+ },
+ "AFZB": {
+  "fevs_name": "AHQ - HQ USAF AND SUPPORT ELEMENTS",
+  "level1": "AFZB",
+  "method": "name_contains",
+  "node": "AF13",
+  "node_name": "HQ USAF AND SUPPORT ELEMENTS"
+ },
+ "AFZG": {
+  "fevs_name": "CCT - AIR FORCE CIVILIAN CAREER TRAINING",
+  "level1": "AFZG",
+  "method": "name_contains",
+  "node": "AF1Y",
+  "node_name": "AIR FORCE CIVILIAN CAREER TRAINING"
+ },
+ "AG04": {
+  "fevs_name": "Food Safety",
+  "level1": "AG04",
+  "method": "name_contains",
+  "node": "AG37",
+  "node_name": "FOOD SAFETY AND INSPECTION SERVICE"
+ },
+ "AG09": {
+  "fevs_name": "Rural Development (Agencies 07, 15, & 32)",
+  "level1": "AG09",
+  "method": "name",
+  "node": "AG07",
+  "node_name": "RURAL DEVELOPMENT"
+ },
+ "AG15": {
+  "fevs_name": "Departmental Administration - ASA",
+  "level1": "AG15",
+  "method": "name_contains",
+  "node": "AGDA",
+  "node_name": "DEPARTMENTAL ADMINISTRATION"
+ },
+ "AR2A": {
+  "fevs_name": "Army Cyber Command",
+  "level1": "AR2A",
+  "method": "name",
+  "node": "AR2A",
+  "node_name": "UNITED STATES ARMY CYBER COMMAND"
+ },
+ "ARAE": {
+  "fevs_name": "US Army Acquisition Support Center",
+  "level1": "ARAE",
+  "method": "name",
+  "node": "ARAE",
+  "node_name": "U.S. ARMY ACQUISITION SUPPORT CENTER"
+ },
+ "ARAP": {
+  "fevs_name": "Military Entrance Processing Command",
+  "level1": "ARAP",
+  "method": "name",
+  "node": "ARAP",
+  "node_name": "U. S. MILITARY ENTRANCE PROCESSING COMMAND"
+ },
+ "ARAT": {
+  "fevs_name": "Army Test & Evaluation Command",
+  "level1": "ARAT",
+  "method": "name",
+  "node": "ARAT",
+  "node_name": "U.S. ARMY TEST AND EVALUATION COMMAND"
+ },
+ "ARCE": {
+  "fevs_name": "U.S. Army Corps of Engineers",
+  "level1": "ARCE",
+  "method": "name",
+  "node": "ARCE",
+  "node_name": "U.S. ARMY CORPS OF ENGINEERS"
+ },
+ "ARE0": {
+  "fevs_name": "Army Europe and Seventh Army",
+  "level1": "ARE0",
+  "method": "name_contains",
+  "node": "ARE1",
+  "node_name": "IMMEDIATE OFFICE OF THE COMMANDER-IN-CHIEF OF THE U.S. ARMY EUROPE AND SEVENTH ARMY"
+ },
+ "ARFC": {
+  "fevs_name": "Army Forces Command",
+  "level1": "ARFC",
+  "method": "name",
+  "node": "ARFC",
+  "node_name": "U.S. ARMY FORCES COMMAND"
+ },
+ "ARFU": {
+  "fevs_name": "Army Futures Command",
+  "level1": "ARFU",
+  "method": "name",
+  "node": "ARAF",
+  "node_name": "UNITED STATES ARMY FUTURES COMMAND"
+ },
+ "ARHR": {
+  "fevs_name": "Army Reserve Command",
+  "level1": "ARHR",
+  "method": "name",
+  "node": "ARHR",
+  "node_name": "U.S. ARMY RESERVE COMMAND"
+ },
+ "ARJA": {
+  "fevs_name": "Joint Activities",
+  "level1": "ARJA",
+  "method": "name",
+  "node": "ARJA",
+  "node_name": "JOINT ACTIVITIES"
+ },
+ "ARK0": {
+  "fevs_name": "Army Civilian Human Resources Agency",
+  "level1": "ARK0",
+  "method": "name",
+  "node": "ARCH",
+  "node_name": "US ARMY CIVILIAN HUMAN RESOURCES AGENCY"
+ },
+ "ARMC": {
+  "fevs_name": "Army Medical Command",
+  "level1": "ARMC",
+  "method": "name",
+  "node": "ARMC",
+  "node_name": "U.S. ARMY MEDICAL COMMAND"
+ },
+ "ARP1": {
+  "fevs_name": "Army Pacific",
+  "level1": "ARP1",
+  "method": "name",
+  "node": "ARP1",
+  "node_name": "U.S. ARMY, PACIFIC"
+ },
+ "ARQ0": {
+  "fevs_name": "Army Human Resources Command",
+  "level1": "ARQ0",
+  "method": "name",
+  "node": "ARHC",
+  "node_name": "US ARMY HUMAN RESOURCES COMMAND (DRU)"
+ },
+ "ARSP": {
+  "fevs_name": "Army Special Operations Command",
+  "level1": "ARSP",
+  "method": "name_contains",
+  "node": "ARSP",
+  "node_name": "U.S. SPECIAL OPERATIONS COMMAND (ARMY)"
+ },
+ "ARTC": {
+  "fevs_name": "Army Training and Doctrine Command",
+  "level1": "ARTC",
+  "method": "name",
+  "node": "ARTC",
+  "node_name": "U.S. ARMY TRAINING AND DOCTRINE COMMAND"
+ },
+ "CM03": {
+  "fevs_name": "Census Bureau",
+  "level1": "CM03",
+  "method": "name",
+  "node": "CM63",
+  "node_name": "U.S. CENSUS BUREAU"
+ },
+ "CM06": {
+  "fevs_name": "International Trade Administration",
+  "level1": "CM06",
+  "method": "name",
+  "node": "CM55",
+  "node_name": "INTERNATIONAL TRADE ADMINISTRATION"
+ },
+ "CM08": {
+  "fevs_name": "National Institute of Standards and Technology",
+  "level1": "CM08",
+  "method": "name",
+  "node": "CM57",
+  "node_name": "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY"
+ },
+ "CM09": {
+  "fevs_name": "National Oceanic and Atmospheric Administration",
+  "level1": "CM09",
+  "method": "name",
+  "node": "CM54",
+  "node_name": "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION"
+ },
+ "CM14": {
+  "fevs_name": "U.S. Patent & Trademark Office",
+  "level1": "CM14",
+  "method": "name",
+  "node": "CM56",
+  "node_name": "PATENT AND TRADEMARK OFFICE"
+ },
+ "DD01": {
+  "fevs_name": "Washington Headquarters Services",
+  "level1": "DD01",
+  "method": "name",
+  "node": "DD21",
+  "node_name": "WASHINGTON HEADQUARTERS SERVICES"
+ },
+ "DD04": {
+  "fevs_name": "Defense Information Systems Agency",
+  "level1": "DD04",
+  "method": "name",
+  "node": "DD04",
+  "node_name": "DEFENSE INFORMATION SYSTEMS AGENCY"
+ },
+ "DD07": {
+  "fevs_name": "Defense Logistics Agency",
+  "level1": "DD07",
+  "method": "name",
+  "node": "DD07",
+  "node_name": "DEFENSE LOGISTICS AGENCY"
+ },
+ "DD10": {
+  "fevs_name": "Defense Contract Audit Agency",
+  "level1": "DD10",
+  "method": "name",
+  "node": "DD10",
+  "node_name": "DEFENSE CONTRACT AUDIT AGENCY"
+ },
+ "DD26": {
+  "fevs_name": "Office of the Inspector General",
+  "level1": "DD26",
+  "method": "name",
+  "node": "DD26",
+  "node_name": "OFFICE OF THE INSPECTOR GENERAL"
+ },
+ "DD27": {
+  "fevs_name": "Missile Defense Agency",
+  "level1": "DD27",
+  "method": "name",
+  "node": "DD27",
+  "node_name": "MISSILE DEFENSE AGENCY"
+ },
+ "DD34": {
+  "fevs_name": "Defense Commissary Agency",
+  "level1": "DD34",
+  "method": "name",
+  "node": "DD34",
+  "node_name": "DEFENSE COMMISSARY AGENCY"
+ },
+ "DD35": {
+  "fevs_name": "Defense Finance and Accounting Service",
+  "level1": "DD35",
+  "method": "name",
+  "node": "DD35",
+  "node_name": "DEFENSE FINANCE AND ACCOUNTING SERVICE"
+ },
+ "DD48": {
+  "fevs_name": "Defense Human Resources Activity",
+  "level1": "DD48",
+  "method": "name",
+  "node": "DD48",
+  "node_name": "DEFENSE HUMAN RESOURCES ACTIVITY"
+ },
+ "DD60": {
+  "fevs_name": "Defense Health Agency",
+  "level1": "DD60",
+  "method": "name",
+  "node": "DD60",
+  "node_name": "DEFENSE HEALTH AGENCY"
+ },
+ "DD61": {
+  "fevs_name": "Defense Threat Reduction Agency",
+  "level1": "DD61",
+  "method": "name",
+  "node": "DD61",
+  "node_name": "DEFENSE THREAT REDUCTION AGENCY"
+ },
+ "DD63": {
+  "fevs_name": "Defense Contract Management Agency",
+  "level1": "DD63",
+  "method": "name",
+  "node": "DD63",
+  "node_name": "DEFENSE CONTRACT MANAGEMENT AGENCY"
+ },
+ "DJAT": {
+  "fevs_name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
+  "level1": "DJAT",
+  "method": "name",
+  "node": "DJ15",
+  "node_name": "BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES"
+ },
+ "DJBP": {
+  "fevs_name": "Bureau of Prisons",
+  "level1": "DJBP",
+  "method": "name_contains",
+  "node": "DJ03",
+  "node_name": "BUREAU OF PRISONS/FEDERAL PRISON SYSTEM"
+ },
+ "DJEA": {
+  "fevs_name": "Drug Enforcement Administration",
+  "level1": "DJEA",
+  "method": "name",
+  "node": "DJ06",
+  "node_name": "DRUG ENFORCEMENT ADMINISTRATION"
+ },
+ "DJFB": {
+  "fevs_name": "Federal Bureau of Investigation",
+  "level1": "DJFB",
+  "method": "name",
+  "node": "DJ02",
+  "node_name": "FEDERAL BUREAU OF INVESTIGATION"
+ },
+ "DJIR": {
+  "fevs_name": "Executive Office for Immigration Review",
+  "level1": "DJIR",
+  "method": "name",
+  "node": "DJ12",
+  "node_name": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW"
+ },
+ "DJMS": {
+  "fevs_name": "U.S. Marshals Service",
+  "level1": "DJMS",
+  "method": "name",
+  "node": "DJ08",
+  "node_name": "U.S. MARSHALS SERVICE"
+ },
+ "DJOA": {
+  "fevs_name": "Office of the U.S. Attorneys",
+  "level1": "DJOA",
+  "method": "name_contains",
+  "node": "DJ09",
+  "node_name": "EXECUTIVE OFFICE FOR U.S. ATTORNEYS AND THE OFFICES OF THE U.S. ATTORNEYS"
+ },
+ "DJTP": {
+  "fevs_name": "U.S. Trustee Program",
+  "level1": "DJTP",
+  "method": "name",
+  "node": "DJ11",
+  "node_name": "U.S. TRUSTEE PROGRAM"
+ },
+ "DL03": {
+  "fevs_name": "Bureau of Labor Statistics",
+  "level1": "DL03",
+  "method": "name",
+  "node": "DLLS",
+  "node_name": "BUREAU OF LABOR STATISTICS"
+ },
+ "DL04": {
+  "fevs_name": "Mine Safety and Health Administration",
+  "level1": "DL04",
+  "method": "name",
+  "node": "DLMS",
+  "node_name": "MINE SAFETY AND HEALTH ADMINISTRATION"
+ },
+ "DL05": {
+  "fevs_name": "Employee Benefits Security Administration",
+  "level1": "DL05",
+  "method": "name",
+  "node": "DLPW",
+  "node_name": "EMPLOYEE BENEFITS SECURITY ADMINISTRATION"
+ },
+ "DL06": {
+  "fevs_name": "Occupational Safety and Health Administration",
+  "level1": "DL06",
+  "method": "name",
+  "node": "DLSH",
+  "node_name": "OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION"
+ },
+ "DL09": {
+  "fevs_name": "Office of Workers' Compensation Programs",
+  "level1": "DL09",
+  "method": "name",
+  "node": "DLOW",
+  "node_name": "OFFICE OF WORKERS' COMPENSATION PROGRAMS"
+ },
+ "DL10": {
+  "fevs_name": "Wage & Hour Division",
+  "level1": "DL10",
+  "method": "name",
+  "node": "DLWH",
+  "node_name": "WAGE AND HOUR DIVISION"
+ },
+ "DL11": {
+  "fevs_name": "Office of the Solicitor",
+  "level1": "DL11",
+  "method": "name",
+  "node": "DLSL",
+  "node_name": "OFFICE OF THE SOLICITOR"
+ },
+ "DN16": {
+  "fevs_name": "Office Of The Under Secretary OF Energy",
+  "level1": "DN16",
+  "method": "name_contains",
+  "node": "DN00",
+  "node_name": "DEPARTMENT OF ENERGY"
+ },
+ "ED12": {
+  "fevs_name": "FEDERAL STUDENT AID",
+  "level1": "ED12",
+  "method": "name",
+  "node": "EDEN",
+  "node_name": "FEDERAL STUDENT AID"
+ },
+ "HE04": {
+  "fevs_name": "Centers for Disease Control & Prevention",
+  "level1": "HE04",
+  "method": "name",
+  "node": "HE39",
+  "node_name": "CENTERS FOR DISEASE CONTROL AND PREVENTION"
+ },
+ "HE05": {
+  "fevs_name": "Centers for Medicare and Medicaid Services",
+  "level1": "HE05",
+  "method": "name",
+  "node": "HE70",
+  "node_name": "CENTERS FOR MEDICARE & MEDICAID SERVICES"
+ },
+ "HE06": {
+  "fevs_name": "Food and Drug Administration",
+  "level1": "HE06",
+  "method": "name",
+  "node": "HE36",
+  "node_name": "FOOD AND DRUG ADMINISTRATION"
+ },
+ "HE07": {
+  "fevs_name": "Health Resources and Services Administration",
+  "level1": "HE07",
+  "method": "name",
+  "node": "HE34",
+  "node_name": "HEALTH RESOURCES AND SERVICES ADMINISTRATION"
+ },
+ "HE08": {
+  "fevs_name": "Indian Health Service",
+  "level1": "HE08",
+  "method": "name",
+  "node": "HE37",
+  "node_name": "INDIAN HEALTH SERVICE"
+ },
+ "HE09": {
+  "fevs_name": "National Institutes of Health",
+  "level1": "HE09",
+  "method": "name",
+  "node": "HE38",
+  "node_name": "NATIONAL INSTITUTES OF HEALTH"
+ },
+ "HE12": {
+  "fevs_name": "Office of the Inspector General",
+  "level1": "HE12",
+  "method": "name",
+  "node": "HE13",
+  "node_name": "OFFICE OF INSPECTOR GENERAL"
+ },
+ "HS02": {
+  "fevs_name": "U.S. Customs and Border Protection (CBP)",
+  "level1": "HS02",
+  "method": "name",
+  "node": "HSBD",
+  "node_name": "CUSTOMS AND BORDER PROTECTION"
+ },
+ "HS03": {
+  "fevs_name": "United States Coast Guard (USCG)",
+  "level1": "HS03",
+  "method": "name",
+  "node": "HSAC",
+  "node_name": "U.S. COAST GUARD"
+ },
+ "HS04": {
+  "fevs_name": "Federal Emergency Management Agency (FEMA)",
+  "level1": "HS04",
+  "method": "name",
+  "node": "HSCB",
+  "node_name": "FEDERAL EMERGENCY MANAGEMENT AGENCY"
+ },
+ "HS05": {
+  "fevs_name": "Federal Law Enforcement Training Center (FLETC)",
+  "level1": "HS05",
+  "method": "name_contains",
+  "node": "HSBE",
+  "node_name": "FEDERAL LAW ENFORCEMENT TRAINING CENTERS"
+ },
+ "HS06": {
+  "fevs_name": "Immigration and Customs Enforcement (ICE)",
+  "level1": "HS06",
+  "method": "name",
+  "node": "HSBB",
+  "node_name": "IMMIGRATION AND CUSTOMS ENFORCEMENT"
+ },
+ "HS12": {
+  "fevs_name": "U.S. Secret Service (USSS)",
+  "level1": "HS12",
+  "method": "name",
+  "node": "HSAD",
+  "node_name": "U.S. SECRET SERVICE"
+ },
+ "HS14": {
+  "fevs_name": "Transportation Security Administration (TSA)",
+  "level1": "HS14",
+  "method": "name",
+  "node": "HSBC",
+  "node_name": "TRANSPORTATION SECURITY ADMINISTRATION"
+ },
+ "HSCI": {
+  "fevs_name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+  "level1": "HSCI",
+  "method": "name",
+  "node": "HSCA",
+  "node_name": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
+ },
+ "IN01": {
+  "fevs_name": "Bureau of Land Management",
+  "level1": "IN01",
+  "method": "name",
+  "node": "IN05",
+  "node_name": "BUREAU OF LAND MANAGEMENT"
+ },
+ "IN02": {
+  "fevs_name": "Bureau of Reclamation",
+  "level1": "IN02",
+  "method": "name",
+  "node": "IN07",
+  "node_name": "BUREAU OF RECLAMATION"
+ },
+ "IN03": {
+  "fevs_name": "Bureau of Indian Affairs",
+  "level1": "IN03",
+  "method": "name",
+  "node": "IN06",
+  "node_name": "INDIAN AFFAIRS"
+ },
+ "IN05": {
+  "fevs_name": "United States Geological Survey",
+  "level1": "IN05",
+  "method": "name",
+  "node": "IN08",
+  "node_name": "GEOLOGICAL SURVEY"
+ },
+ "IN06": {
+  "fevs_name": "National Park Service",
+  "level1": "IN06",
+  "method": "name",
+  "node": "IN10",
+  "node_name": "NATIONAL PARK SERVICE"
+ },
+ "IN07": {
+  "fevs_name": "Fish and Wildlife Service",
+  "level1": "IN07",
+  "method": "name",
+  "node": "IN15",
+  "node_name": "U.S. FISH AND WILDLIFE SERVICE"
+ },
+ "IN14": {
+  "fevs_name": "Office of the Secretary of the Interior",
+  "level1": "IN14",
+  "method": "name",
+  "node": "IN01",
+  "node_name": "OFFICE OF THE SECRETARY OF THE INTERIOR"
+ },
+ "IN15": {
+  "fevs_name": "Bureau of Safety and Environmental Enforcement",
+  "level1": "IN15",
+  "method": "name",
+  "node": "IN26",
+  "node_name": "BUREAU OF SAFETY AND ENVIRONMENTAL ENFORCEMENT"
+ },
+ "IN16": {
+  "fevs_name": "Bureau of Ocean Energy Management",
+  "level1": "IN16",
+  "method": "name",
+  "node": "IN27",
+  "node_name": "BUREAU OF OCEAN ENERGY MANAGEMENT"
+ },
+ "NN10": {
+  "fevs_name": "Headquarters NASA",
+  "level1": "NN10",
+  "method": "name",
+  "node": "NN10",
+  "node_name": "HEADQUARTERS, NASA"
+ },
+ "NN21": {
+  "fevs_name": "Ames Research Center",
+  "level1": "NN21",
+  "method": "name",
+  "node": "NN21",
+  "node_name": "AMES RESEARCH CENTER"
+ },
+ "NN22": {
+  "fevs_name": "John Glenn Research Center at Lewis Field",
+  "level1": "NN22",
+  "method": "name",
+  "node": "NN22",
+  "node_name": "JOHN GLENN RESEARCH CENTER AT LEWIS FIELD"
+ },
+ "NN23": {
+  "fevs_name": "Langley Research Center",
+  "level1": "NN23",
+  "method": "name",
+  "node": "NN23",
+  "node_name": "LANGLEY RESEARCH CENTER"
+ },
+ "NN51": {
+  "fevs_name": "Goddard Space Flight Center",
+  "level1": "NN51",
+  "method": "name",
+  "node": "NN51",
+  "node_name": "GODDARD SPACE FLIGHT CENTER"
+ },
+ "NN62": {
+  "fevs_name": "George C. Marshall Space Flight Center",
+  "level1": "NN62",
+  "method": "name",
+  "node": "NN62",
+  "node_name": "GEORGE C. MARSHALL SPACE FLIGHT CENTER"
+ },
+ "NN72": {
+  "fevs_name": "Lyndon B. Johnson Space Center",
+  "level1": "NN72",
+  "method": "name",
+  "node": "NN72",
+  "node_name": "LYNDON B. JOHNSON SPACE CENTER"
+ },
+ "NN76": {
+  "fevs_name": "John F. Kennedy Space Center",
+  "level1": "NN76",
+  "method": "name",
+  "node": "NN76",
+  "node_name": "JOHN F. KENNEDY SPACE CENTER"
+ },
+ "NV14": {
+  "fevs_name": "OFFICE OF NAVAL RESEARCH",
+  "level1": "NV14",
+  "method": "name",
+  "node": "NV14",
+  "node_name": "OFFICE OF NAVAL RESEARCH"
+ },
+ "NV19": {
+  "fevs_name": "NAVAL AIR SYSTEMS COMMAND",
+  "level1": "NV19",
+  "method": "name",
+  "node": "NV19",
+  "node_name": "NAVAL AIR SYSTEMS COMMAND"
+ },
+ "NV22": {
+  "fevs_name": "CHIEF OF BUREAU OF NAVAL PERSONNEL",
+  "level1": "NV22",
+  "method": "name_contains",
+  "node": "NV22",
+  "node_name": "BUREAU OF NAVAL PERSONNEL"
+ },
+ "NV23": {
+  "fevs_name": "NAVAL SUPPLY SYSTEMS COMMAND",
+  "level1": "NV23",
+  "method": "name",
+  "node": "NV23",
+  "node_name": "NAVAL SUPPLY SYSTEMS COMMAND"
+ },
+ "NV24": {
+  "fevs_name": "NAVAL SEA SYSTEMS COMMAND",
+  "level1": "NV24",
+  "method": "name",
+  "node": "NV24",
+  "node_name": "NAVAL SEA SYSTEMS COMMAND"
+ },
+ "NV25": {
+  "fevs_name": "NAVAL FACILITIES ENGINEERING COMMAND",
+  "level1": "NV25",
+  "method": "name",
+  "node": "NV25",
+  "node_name": "NAVAL FACILITIES ENGINEERING COMMAND"
+ },
+ "NV27": {
+  "fevs_name": "U.S. Marine Corps",
+  "level1": "NV27",
+  "method": "name",
+  "node": "NV27",
+  "node_name": "U.S. MARINE CORPS"
+ },
+ "NV52": {
+  "fevs_name": "COMMANDER, NAVY INSTALLATIONS",
+  "level1": "NV52",
+  "method": "name_contains",
+  "node": "NV52",
+  "node_name": "COMMANDER, NAVY INSTALLATIONS COMMAND"
+ },
+ "NV60": {
+  "fevs_name": "U.S. FLEET FORCES COMMAND",
+  "level1": "NV60",
+  "method": "name",
+  "node": "NV60",
+  "node_name": "UNITED STATES FLEET FORCES COMMAND"
+ },
+ "NV70": {
+  "fevs_name": "U.S. PACIFIC FLEET COMMAND",
+  "level1": "NV70",
+  "method": "name_contains",
+  "node": "NV70",
+  "node_name": "U.S. PACIFIC FLEET, COMMANDER IN CHIEF"
+ },
+ "NV74": {
+  "fevs_name": "NAVAL SPECIAL WARFARE COMMAND",
+  "level1": "NV74",
+  "method": "name",
+  "node": "NV74",
+  "node_name": "NAVAL SPECIAL WARFARE COMMAND"
+ },
+ "NV76": {
+  "fevs_name": "NAVAL EDUCATION AND TRAINING COMMAND",
+  "level1": "NV76",
+  "method": "name",
+  "node": "NV76",
+  "node_name": "NAVAL EDUCATION AND TRAINING COMMAND"
+ },
+ "TD01": {
+  "fevs_name": "Office of the Secretary of Transportation (OST)",
+  "level1": "TD01",
+  "method": "name",
+  "node": "TD01",
+  "node_name": "OFFICE OF THE SECRETARY OF TRANSPORTATION"
+ },
+ "TD03": {
+  "fevs_name": "Federal Aviation Administration (FAA)",
+  "level1": "TD03",
+  "method": "name",
+  "node": "TD03",
+  "node_name": "FEDERAL AVIATION ADMINISTRATION"
+ },
+ "TD04": {
+  "fevs_name": "Federal Highway Administration (FHWA)",
+  "level1": "TD04",
+  "method": "name",
+  "node": "TD04",
+  "node_name": "FEDERAL HIGHWAY ADMINISTRATION"
+ },
+ "TD05": {
+  "fevs_name": "Federal Railroad Administration (FRA)",
+  "level1": "TD05",
+  "method": "name",
+  "node": "TD05",
+  "node_name": "FEDERAL RAILROAD ADMINISTRATION"
+ },
+ "TD16": {
+  "fevs_name": "Pipeline and Hazardous Materials Safety Administration (PHMSA)",
+  "level1": "TD16",
+  "method": "name",
+  "node": "TD16",
+  "node_name": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION"
+ },
+ "TD17": {
+  "fevs_name": "Federal Motor Carrier Safety Administration (FMCSA)",
+  "level1": "TD17",
+  "method": "name",
+  "node": "TD17",
+  "node_name": "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION"
+ },
+ "TR91": {
+  "fevs_name": "Departmental Offices",
+  "level1": "TR91",
+  "method": "name",
+  "node": "TR91",
+  "node_name": "DEPARTMENTAL OFFICES"
+ },
+ "TR93": {
+  "fevs_name": "Internal Revenue Service",
+  "level1": "TR93",
+  "method": "name",
+  "node": "TR93",
+  "node_name": "INTERNAL REVENUE SERVICE"
+ },
+ "TRAD": {
+  "fevs_name": "United States Mint",
+  "level1": "TRAD",
+  "method": "name",
+  "node": "TRAD",
+  "node_name": "U.S. MINT"
+ },
+ "TRAI": {
+  "fevs_name": "Bureau of Engraving and Printing",
+  "level1": "TRAI",
+  "method": "name",
+  "node": "TRAI",
+  "node_name": "BUREAU OF ENGRAVING AND PRINTING"
+ },
+ "TRAJ": {
+  "fevs_name": "Office of the Comptroller of the Currency",
+  "level1": "TRAJ",
+  "method": "name",
+  "node": "TRAJ",
+  "node_name": "OFFICE OF THE COMPTROLLER OF THE CURRENCY"
+ },
+ "TRFD": {
+  "fevs_name": "Bureau of the Fiscal Service",
+  "level1": "TRFD",
+  "method": "name",
+  "node": "TRFD",
+  "node_name": "BUREAU OF THE FISCAL SERVICE"
+ },
+ "TRTG": {
+  "fevs_name": "Inspector General for Tax Administration",
+  "level1": "TRTG",
+  "method": "name",
+  "node": "TRTG",
+  "node_name": "OFFICE OF THE INSPECTOR GENERAL FOR TAX ADMINISTRATION"
+ }
+}

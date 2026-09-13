@@ -805,18 +805,18 @@
    }
   }
  },
- "generated": "2026-09-13T00:08:01Z",
+ "generated": "2026-09-13T01:33:01Z",
  "measures": {
   "extract_files": 725,
   "extracts": 6983053,
   "extracts_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/extracts.tar.gz",
   "first_period": "2005-01-01",
   "last_period": "2026-10-01",
-  "measures": 93,
+  "measures": 94,
   "nodes": 984,
-  "parquet_bytes": 32969163,
+  "parquet_bytes": 32987010,
   "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/measures.parquet",
-  "rows": 12216544
+  "rows": 12220096
  },
  "money": {
   "fileb_periods": [
