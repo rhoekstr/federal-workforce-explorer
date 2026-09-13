@@ -805,7 +805,7 @@
    }
   }
  },
- "generated": "2026-09-13T00:05:39Z",
+ "generated": "2026-09-13T00:08:01Z",
  "measures": {
   "extract_files": 725,
   "extracts": 6983053,
@@ -814,7 +814,7 @@
   "last_period": "2026-10-01",
   "measures": 93,
   "nodes": 984,
-  "parquet_bytes": 32969402,
+  "parquet_bytes": 32969163,
   "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/measures.parquet",
   "rows": 12216544
  },
