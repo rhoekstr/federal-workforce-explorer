@@ -142,17 +142,29 @@ async function surveyPanel(container, code) {
   let agency = code;
   while (agency && nodes[agency]?.kind !== "agency" && nodes[agency]?.kind !== "gov") agency = nodes[agency]?.parent;
   if (!agency) return;
-  const keys = ["fevs_engagement", "fevs_global_satisfaction", "fevs_leave_outside", "fevs_leave_within", "fevs_recommend", "fevs_workload_reasonable"];
+  // VA has never appeared in a public FEVS file; it runs its own census survey, and its units carry those
+  // measures at sub-element level rather than only at the agency.
+  const vaKeys = ["va_aes_engagement", "va_aes_recommend", "va_aes_job_satisfaction", "va_aes_org_satisfaction", "va_aes_workload_reasonable"];
+  const fevsKeys = ["fevs_engagement", "fevs_global_satisfaction", "fevs_leave_outside", "fevs_leave_within", "fevs_recommend", "fevs_workload_reasonable"];
   const lines = [];
-  for (const k of keys) {
-    const pts = await M.series(agency, k);
-    if (pts.length) lines.push({ key: k, name: M.spec(k).title.replace(" (FEVS)", ""), pts });
+  let source = "fevs", surveyNode = agency;
+  for (const k of vaKeys) {
+    const pts = await M.series(code, k);
+    if (pts.length) { lines.push({ key: k, name: M.spec(k).title.replace(" (VA survey)", ""), pts }); source = "va"; surveyNode = code; }
+  }
+  if (!lines.length) {
+    for (const k of fevsKeys) {
+      const pts = await M.series(agency, k);
+      if (pts.length) lines.push({ key: k, name: M.spec(k).title.replace(" (FEVS)", ""), pts });
+    }
   }
   if (!lines.length) return;
   const panel = el("div", { class: "panel" }, el("h2", {}, "Survey"));
   panel.append(el("p", { class: "muted" },
-    agency === code ? "Federal Employee Viewpoint Survey, weighted percent positive. No survey was run in 2025."
-                    : `Survey results are published per agency. These are for ${nodes[agency].name}, not this unit. No survey was run in 2025.`));
+    source === "va"
+      ? "VA All Employee Survey, percent positive on the items VA shares with the governmentwide survey. VA has never appeared in a public FEVS file, so these are its own survey's results; the engagement index is built the same way OPM builds theirs. Published percentages are rounded to whole numbers."
+      : agency === code ? "Federal Employee Viewpoint Survey, weighted percent positive. No survey was run in 2025."
+                        : `Survey results are published per agency. These are for ${nodes[agency].name}, not this unit. No survey was run in 2025.`));
   const rows = lines.flatMap((L) => L.pts.map((d) => ({ ...d, series: L.name })));
   const width = Math.min(900, Math.max(300, (container.clientWidth || 700) - 30));
   const plot = Plot.plot({
@@ -163,8 +175,8 @@ async function surveyPanel(container, code) {
     marks: [Plot.lineY(rows, { x: "date", y: "value", stroke: "series", strokeWidth: 2 }),
             Plot.dot(rows, { x: "date", y: "value", fill: "series", r: 3, title: (d) => `${d.series}, ${d.label}: ${d.value.toFixed(1)}%${d.n ? ` (n ${fmt.int(d.n)})` : ""}` })],
   });
-  panel.append(figure("Engagement, satisfaction, and intent to leave", plot));
-  panel.append(el("p", { class: "muted" }, el("a", { href: `explore.html?nodes=${encodeURIComponent(agency)}&measures=fevs_engagement,fevs_leave_outside` }, "Open the survey measures in the explorer")));
+  panel.append(figure(source === "va" ? "Engagement and satisfaction (VA survey)" : "Engagement, satisfaction, and intent to leave", plot));
+  panel.append(el("p", { class: "muted" }, el("a", { href: `explore.html?nodes=${encodeURIComponent(surveyNode)}&measures=${source === "va" ? "va_aes_engagement,va_aes_recommend" : "fevs_engagement,fevs_leave_outside"}` }, "Open the survey measures in the explorer")));
   container.append(panel);
 }
 

@@ -1929,6 +1929,236 @@
    },
    "format": "percentage",
    "digits": 1
+  },
+  "va_aes_engagement": {
+   "kind": "base",
+   "unit": "index",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "number",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Employee Engagement Index (VA survey)",
+   "definition": "OPM's Employee Engagement Index computed from the VA All Employee Survey: the mean of the Leaders Lead, Supervisors, and Intrinsic Work Experience subindices, each the mean of its five items' percent positive, with \"Missing or Do not Know\" excluded from the base. Comparable in construction to the FEVS index, but VA's own survey and its own respondents.",
+   "display": true
+  },
+  "va_aes_recommend": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Would recommend organization (VA survey)",
+   "definition": "Percent positive on \"I recommend my organization as a good place to work\"."
+  },
+  "va_aes_job_satisfaction": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Satisfied with job (VA survey)",
+   "definition": "Percent positive on \"Considering everything, how satisfied are you with your job?\"."
+  },
+  "va_aes_org_satisfaction": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Satisfied with organization (VA survey)",
+   "definition": "Percent positive on \"Considering everything, how satisfied are you with your organization?\"."
+  },
+  "va_aes_workload_reasonable": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Workload is reasonable (VA survey)",
+   "definition": "Percent positive on \"My workload is reasonable\"."
+  },
+  "va_aes_encouraged": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Encouraged to innovate (VA survey)",
+   "definition": "Percent positive on \"I feel encouraged to come up with new and better ways of doing things\".",
+   "display": false
+  },
+  "va_aes_accomplishment": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Feeling of personal accomplishment (VA survey)",
+   "definition": "Percent positive on \"My work gives me a feeling of personal accomplishment\".",
+   "display": false
+  },
+  "va_aes_talents_used": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Talents used well (VA survey)",
+   "definition": "Percent positive on \"My talents are used well in the workplace\".",
+   "display": false
+  },
+  "va_aes_pay_satisfaction": {
+   "kind": "base",
+   "unit": "percentage",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "survey_year",
+   "lag_days": 200,
+   "since": "2018-01-01",
+   "levels": [
+    "agency",
+    "subelement"
+   ],
+   "sources": [
+    {
+     "name": "VA All Employee Survey, FEVS-comparable items",
+     "url": "https://www.data.va.gov/browse?q=AES%20FEVS%20Percents"
+    }
+   ],
+   "format": "percentage",
+   "digits": 1,
+   "notation_default": "estimate",
+   "title": "Satisfied with pay (VA survey)",
+   "definition": "Percent positive on satisfaction with pay. VA has not asked this item in the published years, so the measure carries no values yet.",
+   "display": false
   }
  }
 }

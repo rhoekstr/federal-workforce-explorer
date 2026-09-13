@@ -13,6 +13,7 @@ from pipeline.fwd.lookups import load_lookup
 from pipeline.measures.catalog import Catalog, write_public_catalog
 from pipeline.measures.evaluator import Evaluator
 from pipeline.measures.extract_other import fevs_facts, money_facts, omb_facts
+from pipeline.measures.extract_va import va_facts
 from pipeline.plum.build import plum_facts
 from pipeline.money.groups import load_groups
 
@@ -443,6 +444,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     _insert(con, omb_facts())
     _insert(con, fevs_facts())
     _insert(con, _plum_or_none(con))
+    _insert(con, va_facts(fetch_missing=False))
     _latest_subelement_dims(con)
     unknown = con.execute("SELECT DISTINCT measure FROM facts WHERE measure NOT IN (SELECT unnest(?))", [list(catalog.measures)]).fetchall()
     if unknown:
