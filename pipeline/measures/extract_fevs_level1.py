@@ -23,7 +23,7 @@ from pathlib import Path
 
 import duckdb
 
-from pipeline.config import CROSSWALK, RAW
+from pipeline.config import CROSSWALK, RAW, REFERENCE
 from pipeline.fwd.lookups import load_lookup
 from pipeline.measures.periods import survey_year_start
 from pipeline.money.groups import normalize
@@ -34,6 +34,9 @@ FEVS_2019 = RAW / "fevs" / "2019" / "2019"
 MAP_PATH = CROSSWALK / "fevs_level1.json"
 REVIEW_PATH = CROSSWALK / "fevs_review.json"
 MIN_RESPONDENTS = 300
+# Committed, like the VA and OSHA tables: the respondent file is 126 MB and lives outside the repo, so CI
+# cannot recompute these and would silently drop them.
+FACTS_CSV = REFERENCE / "fevs" / "fevs_level1_2019.csv"
 DROP_WORDS = re.compile(r"\b(OFFICE OF THE|OFFICE OF|BUREAU OF|DIVISION OF|THE|US|U S)\b")
 PARENTHETICAL = re.compile(r"\s*\([^)]*\)")
 
@@ -141,7 +144,38 @@ def _positive_sql(item: str) -> str:
     )
 
 
-def level1_facts(con: duckdb.DuckDBPyConnection | None = None) -> list[tuple]:
+def refresh_from_prdf(con: duckdb.DuckDBPyConnection | None = None) -> int:
+    """Recompute from the 2019 respondent file and rewrite the committed CSV. Local step."""
+    import csv
+
+    facts = _compute(con)
+    FACTS_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with open(FACTS_CSV, "w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["measure", "node", "period_start", "value", "n", "source_ref"])
+        for f in sorted(facts, key=lambda r: (r[1], r[0])):
+            w.writerow([f[0], f[1], f[3], f[6], f[7], f[9]])
+    log.info("fevs 2019 sub-agency: wrote %d facts to %s", len(facts), FACTS_CSV.name)
+    return len(facts)
+
+
+def level1_facts() -> list[tuple]:
+    """Facts for the measures build, read from the committed CSV."""
+    import csv
+
+    if not FACTS_CSV.exists():
+        log.warning("no committed 2019 sub-agency table; run refresh_from_prdf() to build it")
+        return []
+    out: list[tuple] = []
+    with open(FACTS_CSV, newline="") as fh:
+        for r in csv.DictReader(fh):
+            out.append((r["measure"], r["node"], "survey_year", r["period_start"], None, None,
+                        float(r["value"]), int(r["n"]) if r["n"] else None, None, r["source_ref"]))
+    log.info("fevs 2019 sub-agency: %d facts", len(out))
+    return out
+
+
+def _compute(con: duckdb.DuckDBPyConnection | None = None) -> list[tuple]:
     csv = next(FEVS_2019.glob("*PRDF*.csv"), None)
     if csv is None:
         log.warning("2019 FEVS respondent file not present; sub-agency measures skipped")

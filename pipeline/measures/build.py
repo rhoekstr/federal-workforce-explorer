@@ -192,15 +192,6 @@ def _plum_or_none(con: duckdb.DuckDBPyConnection) -> list[tuple]:
     return plum_facts(con)
 
 
-def _fevs_level1_or_none() -> list[tuple]:
-    """2019 sub-agency FEVS is optional: it needs the respondent file, which lives outside the repo."""
-    try:
-        return level1_facts()
-    except Exception as exc:  # noqa: BLE001
-        log.warning("2019 sub-agency FEVS unavailable: %s", exc)
-        return []
-
-
 def _insert(con: duckdb.DuckDBPyConnection, facts: list[tuple]) -> None:
     if facts:
         con.executemany("INSERT INTO facts VALUES (?,?,?,?,?,?,?,?,?,?)", facts)
@@ -468,7 +459,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     _insert(con, fevs_facts())
     _insert(con, _plum_or_none(con))
     _insert(con, va_facts())
-    _insert(con, _fevs_level1_or_none())
+    _insert(con, level1_facts())
     _insert(con, osha_facts())
     _latest_subelement_dims(con)
     unknown = con.execute("SELECT DISTINCT measure FROM facts WHERE measure NOT IN (SELECT unnest(?))", [list(catalog.measures)]).fetchall()

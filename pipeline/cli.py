@@ -141,6 +141,15 @@ def cmd_osha(args) -> int:
     return 0
 
 
+def cmd_fevs_level1(args) -> int:
+    """Recompute 2019 sub-agency FEVS from the respondent file into the committed table."""
+    from pipeline.measures.extract_fevs_level1 import build_crosswalk, refresh_from_prdf
+
+    build_crosswalk()
+    refresh_from_prdf()
+    return 0
+
+
 def cmd_reconcile(args) -> int:
     from pipeline.reconcile import build_report
 
@@ -179,6 +188,7 @@ def main(argv=None) -> int:
     sub.add_parser("va").set_defaults(fn=cmd_va)
     sub.add_parser("reconcile").set_defaults(fn=cmd_reconcile)
     sub.add_parser("osha").set_defaults(fn=cmd_osha)
+    sub.add_parser("fevs-level1").set_defaults(fn=cmd_fevs_level1)
     pl = sub.add_parser("plum")
     pl.add_argument("--no-fetch", action="store_true")
     pl.set_defaults(fn=cmd_plum)
