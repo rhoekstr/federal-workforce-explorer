@@ -42,7 +42,7 @@
 </main>
 <footer></footer>
 <script type="module">
-import { loadJSON, fmt, el, qs, setQs, renderChrome } from "./js/common.js";
+import { loadJSON, fmt, el, qs, setQs, renderChrome, altTable } from "./js/common.js";
 import * as M from "./js/measures.js";
 import { renderOrgNav } from "./js/orgnav.js";
 import { vitalsStrip } from "./js/vitals.js";
@@ -126,11 +126,15 @@ async function moneyPanel(container, code) {
   panel.append(cards);
   const admin = snap.administered_obligations?.v, ops = snap.operations_obligations?.v;
   if (admin != null && ops != null) {
+    const splitParts = [{ label: "Administered", value: admin }, { label: "Operations", value: ops }];
     panel.append(el("figure", {}, el("figcaption", {}, "What the agency administers versus what it runs on"),
-      splitBar([{ label: "Administered", value: admin }, { label: "Operations", value: ops }])));
+      splitBar(splitParts),
+      altTable(["Category", "Obligations"], splitParts.map((p) => [p.label, fmt.dollars(p.value)]))));
     const pers = snap.personnel_obligations?.v || 0, con = snap.contracted_services_obligations?.v || 0, fed = snap.federal_services_obligations?.v || 0;
+    const opsParts = [{ label: "Personnel", value: pers }, { label: "Contracted services", value: con }, { label: "From other agencies", value: fed }, { label: "Other operations", value: Math.max(0, ops - pers - con - fed) }];
     panel.append(el("figure", {}, el("figcaption", {}, "Operations detail"),
-      splitBar([{ label: "Personnel", value: pers }, { label: "Contracted services", value: con }, { label: "From other agencies", value: fed }, { label: "Other operations", value: Math.max(0, ops - pers - con - fed) }])));
+      splitBar(opsParts),
+      altTable(["Category", "Obligations"], opsParts.map((p) => [p.label, fmt.dollars(p.value)]))));
   }
   panel.append(el("p", { class: "muted" }, el("a", { href: `explore.html?nodes=${encodeURIComponent(gid)}&measures=personnel_obligations,contracted_services_obligations` }, "Open the money measures in the explorer")));
   container.append(panel);
@@ -175,7 +179,12 @@ async function surveyPanel(container, code) {
     marks: [Plot.lineY(rows, { x: "date", y: "value", stroke: "series", strokeWidth: 2 }),
             Plot.dot(rows, { x: "date", y: "value", fill: "series", r: 3, title: (d) => `${d.series}, ${d.label}: ${d.value.toFixed(1)}%${d.n ? ` (n ${fmt.int(d.n)})` : ""}` })],
   });
-  panel.append(figure(source === "va" ? "Engagement and satisfaction (VA survey)" : "Engagement, satisfaction, and intent to leave", plot));
+  const years = [...new Set(rows.map((d) => d.label))].sort();
+  panel.append(figure(source === "va" ? "Engagement and satisfaction (VA survey)" : "Engagement, satisfaction, and intent to leave", plot,
+    altTable(["Measure", ...years], lines.map((L) => [L.name, ...years.map((y) => {
+      const hit = L.pts.find((d) => d.label === y);
+      return hit ? hit.value.toFixed(1) : "—";
+    })]))));
   panel.append(el("p", { class: "muted" }, el("a", { href: `explore.html?nodes=${encodeURIComponent(surveyNode)}&measures=${source === "va" ? "va_aes_engagement,va_aes_recommend" : "fevs_engagement,fevs_leave_outside"}` }, "Open the survey measures in the explorer")));
   container.append(panel);
 }
@@ -239,7 +248,8 @@ async function renderDetail(code) {
     const { filterPanel } = await import("./js/query.js");
     filterPanel(document.getElementById("query"), {
       fileUrl: new URL(fileUrl, location.href).href, month: latest, orgCode: orgPrefix ?? "",
-      lookups: { codes: (await M.dimLabels()).codes, series: (await M.dimLabels()).series, step: (await M.dimLabels()).step, duty_station: await loadJSON("data/lookups/duty_station.json").catch(() => ({})) },
+      lookups: { codes: (await M.dimLabels()).codes, series: (await M.dimLabels()).series, step: (await M.dimLabels()).step,
+                 loadDutyStations: () => loadJSON("data/lookups/duty_station.json").catch(() => ({})) },
     });
   }
 }

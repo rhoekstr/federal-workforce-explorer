@@ -56,11 +56,11 @@ for a small policy office and worth a look for a large operating agency.
 | Commodity Futures Trading Commission | 27 | 580 | 46.6 |
 | Federal Election Commission | 25 | 255 | 98.0 |
 | Ofc Of The Nat Cyber Director | 24 | 29 | 827.6 |
-| Medicaid & Chip Payment & Access Comm | 22 | 50 | 440.0 |
 | Consumer Product Safety Commission | 22 | 419 | 52.5 |
+| Medicaid & Chip Payment & Access Comm | 22 | 50 | 440.0 |
 | Commission On Civil Rights | 20 | 50 | 400.0 |
-| Millennium Challenge Corporation | 17 | 228 | 74.6 |
 | National Transportation Safety Board | 17 | 410 | 41.5 |
+| Millennium Challenge Corporation | 17 | 228 | 74.6 |
 | Surface Transportation Board | 15 | 110 | 136.4 |
 
 ## 4. Personnel obligations per employee

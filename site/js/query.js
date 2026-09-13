@@ -39,6 +39,13 @@ const DIMS = [
   ["duty_station_code", "Duty station", "duty_station"],
 ];
 
+// Duty stations are a 2.7 MB table; the panel fetches them the first time a query actually needs them.
+let dutyStations = null;
+async function ensureDutyStations(lookups) {
+  if (dutyStations === null && lookups.loadDutyStations) dutyStations = await lookups.loadDutyStations();
+  return dutyStations || lookups.duty_station || {};
+}
+
 function labelFor(dim, lookups, value) {
   const src = DIMS.find((d) => d[0] === dim)?.[2];
   if (!src) return value === "R" && dim === "pay_band" ? "Redacted" : value;
@@ -94,6 +101,7 @@ export function filterPanel(container, { fileUrl, month, orgCode, lookups }) {
       const where = [`org_code LIKE '${orgCode.replace(/'/g, "''")}%'`];
       if (filterDim.value && filterVal.value.trim()) where.push(`${filterDim.value} = '${filterVal.value.trim().replace(/'/g, "''")}'`);
       const sql = `SELECT ${dim} AS k, sum(n)::BIGINT AS n, sum(pay_sum) / nullif(sum(pay_n), 0) AS avg_pay FROM read_parquet('${fileUrl}') WHERE ${where.join(" AND ")} GROUP BY 1 ORDER BY 2 DESC LIMIT 40`;
+      if (dim === "duty_station_code") lookups.duty_station = await ensureDutyStations(lookups);
       const res = await conn.query(sql);
       const rows = res.toArray().map((r) => ({ k: r.k, n: Number(r.n), avg_pay: r.avg_pay == null ? null : Number(r.avg_pay) }));
       await conn.close();

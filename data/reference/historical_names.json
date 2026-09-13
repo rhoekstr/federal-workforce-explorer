@@ -1,0 +1,662 @@
+{
+ "AB**": {
+  "from": "201702",
+  "name": "INVALID"
+ },
+ "AF**": {
+  "from": "201702",
+  "name": "INVALID"
+ },
+ "AF01": {
+  "from": "200909",
+  "name": "AIR FORCE MANAGEMENT ENGINEERING AGENCY"
+ },
+ "AF04": {
+  "from": "201112",
+  "name": "AIR FORCE COMMUNICATIONS AGENCY"
+ },
+ "AF05": {
+  "from": "201405",
+  "name": "AIR FORCE INTELLIGENCE ANALYSIS AGENCY"
+ },
+ "AF08": {
+  "from": "201405",
+  "name": "HEADQUARTERS, U.S. AIR FORCE SECURITY FORCES CENTER"
+ },
+ "AF0N": {
+  "from": "201405",
+  "name": "HEADQUARTERS, U.S. AIR FORCE"
+ },
+ "AF10": {
+  "from": "200606",
+  "name": "AIR FORCE CENTER FOR QUALITY AND MANAGEMENT INNOVATION"
+ },
+ "AF11": {
+  "from": "201112",
+  "name": "AIR FORCE MANPOWER AGENCY"
+ },
+ "AF14": {
+  "from": "201405",
+  "name": "AIR FORCE INSTALLATION CONTRACTING AGENCY"
+ },
+ "AF15": {
+  "from": "201405",
+  "name": "AIR FORCE CIVIL ENGINEER CENTER"
+ },
+ "AF17": {
+  "from": "202011",
+  "name": "AF INSTALLATION AND MISSION SUPPORT"
+ },
+ "AF1A": {
+  "from": "201112",
+  "name": "AIR FORCE C2 & INTELLIGENCE, SURVEILLANCE & RECONNAISSANCE"
+ },
+ "AF1G": {
+  "from": "201112",
+  "name": "AIR FORCE LOGISTICS MANAGEMENT AGENCY"
+ },
+ "AF1P": {
+  "from": "201112",
+  "name": "AIR FORCE REAL PROPERTY AGENCY"
+ },
+ "AF1R": {
+  "from": "200909",
+  "name": "AIR FORCE ELEMENTS, U.S. AFRICA COMMAND"
+ },
+ "AF1W": {
+  "from": "201112",
+  "name": "AIR FORCE ENGINEERING AND SERVICES CENTER"
+ },
+ "AF21": {
+  "from": "200909",
+  "name": "AIR FORCE NUCLEAR WEAPONS AGENCY"
+ },
+ "AF24": {
+  "from": "201108",
+  "name": "HQ USAF DIRECT SUPPORT ELEMENT"
+ },
+ "AF25": {
+  "from": "201112",
+  "name": "AF-WIDE SUPPORT ELEMENT"
+ },
+ "AF27": {
+  "from": "200812",
+  "name": "AIR FORCE AGENCY FOR MODELING AND SIMULATION"
+ },
+ "AF29": {
+  "from": "200606",
+  "name": "AIR FORCE NATIONAL SECURITY EMERGENCY PREPAREDNESS"
+ },
+ "AF2B": {
+  "from": "200606",
+  "name": "AIR FORCE DOCTRINE CENTER"
+ },
+ "AF2D": {
+  "from": "201405",
+  "name": "AIR FORCE PERSONNEL OPERATIONS AGENCY"
+ },
+ "AF2G": {
+  "from": "201108",
+  "name": "AIR FORCE SERVICE INFORMATION AND NEWS CENTER"
+ },
+ "AF2N": {
+  "from": "201112",
+  "name": "AIR FORCE CENTER FOR STUDIES AND ANALYSES"
+ },
+ "AF2Q": {
+  "from": "201702",
+  "name": "HEADQUARTERS, AIR FORCE WEATHER AGENCY"
+ },
+ "AF2U": {
+  "from": "201112",
+  "name": "AIR FORCE MORALE, WELFARE AND RECREATION CENTER"
+ },
+ "AF2V": {
+  "from": "200503",
+  "name": "AIR FORCE DISPOSAL AGENCY"
+ },
+ "AF2W": {
+  "from": "201112",
+  "name": "11TH WING"
+ },
+ "AF2Y": {
+  "from": "200606",
+  "name": "AIR FORCE PENTAGON COMMUNICATIONS AGENCY"
+ },
+ "AF34": {
+  "from": "202309",
+  "name": "AIR NATIONAL GUARD"
+ },
+ "AF3G": {
+  "from": "202309",
+  "name": "AIR FORCE ELEMENTS, NATO"
+ },
+ "AF3N": {
+  "from": "201112",
+  "name": "AIR FORCE ELEMENTS, U.S. ATLANTIC COMMAND"
+ },
+ "AF3W": {
+  "from": "201112",
+  "name": "AIR FORCE CENTER FOR ENVIRONMENTAL EXCELLENCE"
+ },
+ "AF3Y": {
+  "from": "201112",
+  "name": "AIR FORCE FREQUENCY MANAGEMENT AGENCY"
+ },
+ "AF4C": {
+  "from": "202309",
+  "name": "AFELM US CYBER COMMAND"
+ },
+ "AF5J": {
+  "from": "201405",
+  "name": "AIR FORCE FINANCIAL SERVICES"
+ },
+ "AF5K": {
+  "from": "201702",
+  "name": "AIR FORCE PETROLEUM AGENCY"
+ },
+ "AG**": {
+  "from": "201112",
+  "name": "INVALID"
+ },
+ "AG15": {
+  "from": "202309",
+  "name": "RURAL UTILITIES SERVICE"
+ },
+ "AG36": {
+  "from": "201702",
+  "name": "GRAIN INSPECTION, PACKERS AND STOCKYARDS ADMINISTRATION"
+ },
+ "AGES": {
+  "from": "201702",
+  "name": "OFFICE OF THE EXECUTIVE SECRETARIAT"
+ },
+ "AGHS": {
+  "from": "200606",
+  "name": "HOMELAND SECURITY STAFF"
+ },
+ "AGSC": {
+  "from": "200606",
+  "name": "NATIONAL SHEEP INDUSTRY IMPROVEMENT CENTER"
+ },
+ "AI00": {
+  "from": "200606",
+  "name": "U.S. INSTITUTE OF PEACE"
+ },
+ "AM**": {
+  "from": "202011",
+  "name": "INVALID"
+ },
+ "ARA1": {
+  "from": "202203",
+  "name": "US ARMY AFRICA/SOUTHERN EUROPEAN TASK FORCE (USARAF/SETAF)"
+ },
+ "ARAA": {
+  "from": "201405",
+  "name": "U. S. ARMY ACCESSION COMMAND"
+ },
+ "ARAC": {
+  "from": "200909",
+  "name": "U.S. ARMY CONTRACTING AGENCY"
+ },
+ "ARAU": {
+  "from": "200606",
+  "name": "U.S. ARMY AUDIT AGENCY"
+ },
+ "AREB": {
+  "from": "200812",
+  "name": "1ST PERSONNEL COMMAND"
+ },
+ "ARFB": {
+  "from": "202011",
+  "name": "US ARMY FINANCIAL MANAGEMENT COMMAND"
+ },
+ "ARFL": {
+  "from": "200606",
+  "name": "U.S. ARMY SOUTH COMMAND"
+ },
+ "ARG6": {
+  "from": "201702",
+  "name": "U.S. ARMY NETWORK ENTERPRISE TECHNOLOGY COMMAND/9TH ARMY SIGNAL COMMAND"
+ },
+ "ARMP": {
+  "from": "200606",
+  "name": "U.S. ARMY HUMAN RESOURCES COMMAND"
+ },
+ "ARMT": {
+  "from": "200606",
+  "name": "MILITARY SURFACE DEPLOYMENT AND DISTRIBUTION COMMAND"
+ },
+ "ARP8": {
+  "from": "201112",
+  "name": "EIGHTH U.S. ARMY"
+ },
+ "ARPC": {
+  "from": "200512",
+  "name": "MILITARY ENTRANCE PROCESSING COMMAND"
+ },
+ "ARRC": {
+  "from": "200512",
+  "name": "U.S. ARMY RECRUITING COMMAND"
+ },
+ "ARSF": {
+  "from": "201405",
+  "name": "MISCELLANEOUS FIELD OPERATING AGENCIES"
+ },
+ "ARSS": {
+  "from": "200512",
+  "name": "STAFF SUPPORT AGENCIES OF THE CHIEF OF STAFF, ARMY"
+ },
+ "ARSU": {
+  "from": "200503",
+  "name": "U.S. ARMY SOUTHERN COMMAND"
+ },
+ "ARTM": {
+  "from": "201108",
+  "name": "U.S. MILITARY ENTRANCE PROCESSING COMMAND"
+ },
+ "ARX1": {
+  "from": "201702",
+  "name": "U.S. ARMY MATERIAL COMMAND"
+ },
+ "ARX3": {
+  "from": "200909",
+  "name": "HEADQUARTERS, STAFF SUPPORT ACTIVITIES, AMC"
+ },
+ "ARX4": {
+  "from": "201112",
+  "name": "TRAINING ACTIVITIES, AMC"
+ },
+ "ARX5": {
+  "from": "200503",
+  "name": "U.S. ARMY MATERIEL COMMAND, ALL OTHERS"
+ },
+ "ARXL": {
+  "from": "200812",
+  "name": "MATERIEL ACQUISITION PROJECT MANAGERS"
+ },
+ "ARXR": {
+  "from": "201702",
+  "name": "U.S. ARMY RESEARCH, DEVELOPMENT AND ENGINEERING COMMAND"
+ },
+ "BZ00": {
+  "from": "201405",
+  "name": "CHRISTOPHER COLUMBUS FELLOWSHIP FOUNDATION"
+ },
+ "CM33": {
+  "from": "200606",
+  "name": "TECHNOLOGY ADMINISTRATION"
+ },
+ "CM65": {
+  "from": "201702",
+  "name": "ECONOMICS AND STATISTICS ADMINISTRATION"
+ },
+ "DD**": {
+  "from": "202203",
+  "name": "INVALID"
+ },
+ "DD09": {
+  "from": "200806",
+  "name": "AMERICAN FORCES INFORMATION SERVICE"
+ },
+ "DD58": {
+  "from": "201405",
+  "name": "DEFENSE PRISONER OF WAR/MISSING PERSONNEL OFFICE"
+ },
+ "DD77": {
+  "from": "201108",
+  "name": "BUSINESS TRANSFORMATION AGENCY"
+ },
+ "DD84": {
+  "from": "202203",
+  "name": "SPACE DEVELOPMENT AGENCY"
+ },
+ "DF00": {
+  "from": "201405",
+  "name": "OFFICE OF THE FEDERAL COORDINATOR FOR ALASKA NATURAL GAS TRANSPORTATION PROJECTS"
+ },
+ "DJ**": {
+  "from": "200909",
+  "name": "INVALID"
+ },
+ "DL**": {
+  "from": "200806",
+  "name": "INVALID"
+ },
+ "DLEB": {
+  "from": "200812",
+  "name": "EMPLOYEE BENEFITS SECURITY ADMINISTRATION"
+ },
+ "DLES": {
+  "from": "200909",
+  "name": "EMPLOYMENT STANDARDS ADMINISTRATION"
+ },
+ "EDEL": {
+  "from": "201702",
+  "name": "OFFICE OF THE CHIEF FINANCIAL OFFICER"
+ },
+ "EDEM": {
+  "from": "201702",
+  "name": "OFFICE OF MANAGEMENT"
+ },
+ "EDEQ": {
+  "from": "201112",
+  "name": "OFFICE OF SAFE AND DRUG-FREE SCHOOLS"
+ },
+ "EDEU": {
+  "from": "201702",
+  "name": "OFFICE OF INNOVATION AND IMPROVEMENT"
+ },
+ "EDEX": {
+  "from": "201702",
+  "name": "NATIONAL INSTITUTE FOR LITERACY"
+ },
+ "EDEY": {
+  "from": "201702",
+  "name": "ADVISORY COUNCILS AND COMMITTEES"
+ },
+ "FY00": {
+  "from": "200812",
+  "name": "FEDERAL HOUSING FINANCE BOARD"
+ },
+ "GB**": {
+  "from": "202309",
+  "name": "INVALID"
+ },
+ "GM00": {
+  "from": "201702",
+  "name": "VALLES CALDERA TRUST"
+ },
+ "GO00": {
+  "from": "201702",
+  "name": "VIETNAM EDUCATION FOUNDATION"
+ },
+ "GS16": {
+  "from": "201112",
+  "name": "OFFICE OF THE CHIEF ACQUISITION OFFICER"
+ },
+ "GS18": {
+  "from": "201702",
+  "name": "TECHNOLOGY TRANSFORMATION SERVICE"
+ },
+ "GS19": {
+  "from": "201405",
+  "name": "OFFICE OF CITIZEN SERVICES AND INNOVATIVE TECHNOLOGIES"
+ },
+ "GS24": {
+  "from": "200806",
+  "name": "FEDERAL SUPPLY SERVICE"
+ },
+ "GS27": {
+  "from": "200806",
+  "name": "FEDERAL TECHNOLOGY SERVICE"
+ },
+ "GZ00": {
+  "from": "202309",
+  "name": "THE WOMEN'S SUFFRAGE CENTENNIAL COMMISSION"
+ },
+ "HB**": {
+  "from": "201702",
+  "name": "INVALID"
+ },
+ "HB00": {
+  "from": "201405",
+  "name": "COMMITTEE FOR PURCHASE FROM PEOPLE WHO ARE BLIND OR SEVERELY DISABLED"
+ },
+ "HF**": {
+  "from": "201112",
+  "name": "INVALID"
+ },
+ "HF00": {
+  "from": "201108",
+  "name": "FEDERAL HOUSING FINANCE AGENCY"
+ },
+ "HS**": {
+  "from": "200806",
+  "name": "INVALID"
+ },
+ "HSBA": {
+  "from": "200606",
+  "name": "US-VISIT"
+ },
+ "HSDB": {
+  "from": "200512",
+  "name": "OFFICE FOR INFORMATION ANALYSIS"
+ },
+ "HSEA": {
+  "from": "200512",
+  "name": "OFFICE OF THE UNDER SECRETARY FOR MANAGEMENT"
+ },
+ "HU01": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR NEW ENGLAND"
+ },
+ "HU02": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR NEW YORK/NEW JERSEY"
+ },
+ "HU03": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR MID-ATLANTIC"
+ },
+ "HU04": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR SOUTHEAST/CARIBBEAN"
+ },
+ "HU07": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR GREAT PLAINS"
+ },
+ "HU08": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR ROCKY MOUNTAINS"
+ },
+ "HU09": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR PACIFIC/HAWAII"
+ },
+ "HU10": {
+  "from": "202309",
+  "name": "OFFICE OF THE SENIOR COORDINATOR FOR NORTHWEST/ALASKA"
+ },
+ "HUFH": {
+  "from": "200812",
+  "name": "OFFICE OF FEDERAL HOUSING ENTERPRISE OVERSIGHT"
+ },
+ "HUKA": {
+  "from": "202309",
+  "name": "CENTER FOR FAITH-BASED AND COMMUNITY INITIATIVES"
+ },
+ "HUPP": {
+  "from": "202309",
+  "name": "ASSISTANT SECRETARY FOR PUBLIC AND INDIAN HOUSING"
+ },
+ "HUQQ": {
+  "from": "202309",
+  "name": "OFFICE OF THE CHIEF INFORMATION OFFICER"
+ },
+ "HURR": {
+  "from": "202309",
+  "name": "ASSISTANT SECRETARY FOR POLICY DEVELOPMENT AND RESEARCH"
+ },
+ "HUUU": {
+  "from": "202309",
+  "name": "OFFICE OF DEPARTMENTAL EQUAL EMPLOYMENT OPPORTUNITY"
+ },
+ "HUVV": {
+  "from": "202309",
+  "name": "OFFICE OF DISASTER MANAGEMENT AND NATIONAL SECURITY"
+ },
+ "HUWW": {
+  "from": "202309",
+  "name": "ASSISTANT SECRETARY FOR PUBLIC AFFAIRS"
+ },
+ "HUXX": {
+  "from": "202203",
+  "name": "OFFICE OF STRATEGIC PLANNING AND MANAGEMENT"
+ },
+ "HUYY": {
+  "from": "201405",
+  "name": "OFFICE OF SUSTAINABLE HOUSING AND COMMUNTIES"
+ },
+ "IN23": {
+  "from": "201108",
+  "name": "BUREAU OF OCEAN ENERGY MANAGEMENT, REGULATION, AND ENFORCEMENT"
+ },
+ "IW00": {
+  "from": "200503",
+  "name": "COMMISSION ON THE INTELLIGENCE CAPABILITIES OF THE UNITED STATES REGARDING WEAPONS OF MASS DESTRUCTION"
+ },
+ "LT00": {
+  "from": "201112",
+  "name": "U.S. TAX COURT"
+ },
+ "NV10": {
+  "from": "200606",
+  "name": "NAVY FIELD OFFICES"
+ },
+ "NV33": {
+  "from": "202011",
+  "name": "MILITARY SEALIFT COMMAND"
+ },
+ "NV61": {
+  "from": "200503",
+  "name": "U.S. NAVAL FORCES, EUROPE"
+ },
+ "NV62": {
+  "from": "200512",
+  "name": "CHIEF OF NAVAL EDUCATION AND TRAINING"
+ },
+ "NV65": {
+  "from": "200606",
+  "name": "NAVAL METEOROLOGY AND OCEANOGRAPHY COMMAND"
+ },
+ "NV69": {
+  "from": "200512",
+  "name": "NAVAL SECURITY GROUP COMMAND"
+ },
+ "OY00": {
+  "from": "202309",
+  "name": "COMMISSION ON THE STATE OF U.S. OLYMPICS AND PARALYMPICS (CSUSOP)"
+ },
+ "RO**": {
+  "from": "201108",
+  "name": "INVALID"
+ },
+ "RZ00": {
+  "from": "201405",
+  "name": "RECOVERY ACT ACCOUNTABILITY & TRANSPARENCY BOARD"
+ },
+ "TD11": {
+  "from": "201405",
+  "name": "OFFICE OF THE SECRETARY, RESEARCH AND TECHNOLOGY"
+ },
+ "TD15": {
+  "from": "201702",
+  "name": "SURFACE TRANSPORTATION BOARD"
+ },
+ "TR**": {
+  "from": "200909",
+  "name": "INVALID"
+ },
+ "TR35": {
+  "from": "201108",
+  "name": "OFFICE OF THRIFT SUPERVISION"
+ },
+ "TR36": {
+  "from": "202309",
+  "name": "SPECIAL INSPECTOR GENERAL FOR THE TROUBLED ASSETS RELIEF PROGRAM (TARP)"
+ },
+ "TRAA": {
+  "from": "201112",
+  "name": "FINANCIAL MANAGEMENT SERVICE"
+ },
+ "TRAB": {
+  "from": "201112",
+  "name": "BUREAU OF THE PUBLIC DEBT"
+ },
+ "VA**": {
+  "from": "202203",
+  "name": "INVALID"
+ },
+ "VAAC": {
+  "from": "200606",
+  "name": "BOARD OF CONTRACT APPEALS"
+ },
+ "VAAG": {
+  "from": "201702",
+  "name": "MY VA INITIATIVE"
+ },
+ "VAAH": {
+  "from": "200606",
+  "name": "OFFICE OF SMALL AND DISADVANTAGED BUSINESS UTILIZATION"
+ },
+ "VABI": {
+  "from": "201702",
+  "name": "DEAN FOR VA LEARNING UNIVERSITY"
+ },
+ "VABJ": {
+  "from": "201702",
+  "name": "VETERAN EMPLOYMENT SERVICES OFFICE"
+ },
+ "VAGE": {
+  "from": "202011",
+  "name": "DIRECTOR FOR RESOURCE MANAGEMENT"
+ },
+ "VAHB": {
+  "from": "201702",
+  "name": "DEPUTY ASSISTANT SECRETARY FOR PROGRAM AND DATA ANALYSIS"
+ },
+ "VAHC": {
+  "from": "202011",
+  "name": "DEPUTY ASSISTANT SECRETARY FOR PLANNING AND EVALUATION"
+ },
+ "VAHD": {
+  "from": "201702",
+  "name": "NATIONAL CENTER FOR VETERAN ANALYSIS AND STATISTICS"
+ },
+ "VB00": {
+  "from": "201405",
+  "name": "COMMISSION TO ELIMINATE CHILD ABUSE AND NEGLECT FATALITIES"
+ },
+ "WX00": {
+  "from": "202309",
+  "name": "WORLD WAR 1 CENTENNIAL COMMISSION"
+ },
+ "YA00": {
+  "from": "200503",
+  "name": "COMMISSION ON THE REVIEW OF THE OVERSEAS MILITARY FACILITY STRUCTURE OF THE UNITED STATES"
+ },
+ "YB00": {
+  "from": "200606",
+  "name": "ANTITRUST MODERNIZATION COMMISSION"
+ },
+ "YD00": {
+  "from": "200606",
+  "name": "HELPING TO ENHANCE THE LIVELIHOOD OF PEOPLE (HELP) AROUND THE GLOBE COMMISSION"
+ },
+ "YE00": {
+  "from": "200909",
+  "name": "COMMISSION ON THE PREVENTION OF WEAPONS OF MASS DESTRUCTION PROLIFERATION AND TERRORISM"
+ },
+ "YF00": {
+  "from": "200909",
+  "name": "FINANCIAL CRISIS INQUIRY COMMISSION"
+ },
+ "YG00": {
+  "from": "201112",
+  "name": "RONALD REAGAN CENTENNIAL COMMISSION"
+ },
+ "ZL**": {
+  "from": "201702",
+  "name": "INVALID"
+ },
+ "ZL00": {
+  "from": "202011",
+  "name": "MEDICARE PAYMENT ADVISORY COMMISSION"
+ },
+ "ZU00": {
+  "from": "202011",
+  "name": "DWIGHT D. EISENHOWER MEMORIAL COMMISSION"
+ }
+}

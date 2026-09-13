@@ -427,6 +427,9 @@ def _add_historical_nodes(con: duckdb.DuckDBPyConnection, nodes: dict[str, dict]
         GROUP BY node
     """).fetchall()
     added = 0
+    from pipeline.fwd.names import NAMES_PATH
+
+    historical = json.loads(NAMES_PATH.read_text()) if NAMES_PATH.exists() else {}
     for code, first, last in rows:
         if code in nodes:
             continue
@@ -436,7 +439,16 @@ def _add_historical_nodes(con: duckdb.DuckDBPyConnection, nodes: dict[str, dict]
             parent = code[:2]
             if parent not in nodes:
                 nodes[parent] = {"code": parent, "kind": "agency", "name": f"Agency {parent} (historical; not in current OPM files)", "parent": "gov", "first_seen": first[:7].replace("-", ""), "last_seen": last[:7].replace("-", ""), "historical": True}
-            nodes[code] = {"code": code, "kind": "subelement", "name": f"{code} (historical sub-element; name not in current OPM files)", "parent": parent, "first_seen": first[:7].replace("-", ""), "last_seen": last[:7].replace("-", ""), "historical": True}
+            known = historical.get(code)
+            # OPM records some sub-element codes as literally "INVALID"; say that plainly rather than
+            # presenting it as the unit's name.
+            if known and known["name"].strip().upper() in ("INVALID", "NO DATA REPORTED", "UNKNOWN"):
+                label = f"Unrecorded sub-element ({code})"
+            elif known:
+                label = known["name"].title()
+            else:
+                label = f"{code} (historical sub-element; name not in current OPM files)"
+            nodes[code] = {"code": code, "kind": "subelement", "name": label, "parent": parent, "first_seen": first[:7].replace("-", ""), "last_seen": last[:7].replace("-", ""), "historical": True, **({"name_from": known["from"]} if known else {})}
         added += 1
     NODES_PATH.write_text(json.dumps({"nodes": nodes}, indent=0, ensure_ascii=False))
     log.info("added %d historical nodes", added)

@@ -16,7 +16,7 @@ from collections import defaultdict
 
 import duckdb
 
-from pipeline.config import RAW, ROOT
+from pipeline.config import RAW, REFERENCE, ROOT
 from pipeline.fwd.discover import current_files
 from pipeline.measures.backfill import download_text
 from pipeline.fwd.facts import ORG_CODE_SQL
@@ -26,6 +26,9 @@ from pipeline.measures.build import EXTRACT_DIR
 
 log = logging.getLogger(__name__)
 MAX_FILES = 30
+# Committed, because these units vanished before the current files and their names exist nowhere else the
+# pipeline can reach. CI reads this; re-harvesting is a local step.
+NAMES_PATH = REFERENCE / "historical_names.json"
 
 
 def nameless_nodes() -> set[str]:
@@ -90,26 +93,26 @@ def harvest(months: list[str], con: duckdb.DuckDBPyConnection | None = None) -> 
     return out
 
 
-def merge(harvested: dict[str, dict[str, str]], targets: set[str] | None = None) -> dict:
-    """Merge harvested names into the org lookup as name history. Never overwrites a name already known."""
-    org = load_lookup("org")
-    added = 0
+def write_reference(harvested: dict[str, dict[str, str]], targets: set[str] | None = None) -> dict[str, dict]:
+    """Write data/reference/historical_names.json: code -> {name, from}.
+
+    These units are not in the org lookup at all — they were abolished before the months the fact pipeline
+    processes, which is why they had no name. So this is a new source of truth rather than a merge, and it is
+    committed so CI has it. The latest month a name was seen wins, matching the lookup's own rule.
+    """
+    existing = json.loads(NAMES_PATH.read_text()) if NAMES_PATH.exists() else {}
+    out = dict(existing)
     for yyyymm in sorted(harvested):
         for code, name in harvested[yyyymm].items():
-            entry = org.get(code)
-            if entry is None or (targets is not None and code not in targets):
+            if targets is not None and code not in targets:
                 continue
-            history = entry.setdefault("name_history", [])
-            if any(h["yyyymm"] == yyyymm for h in history):
-                continue
-            history.append({"yyyymm": yyyymm, "name": name})
-            history.sort(key=lambda h: h["yyyymm"])
-            # The display name stays the latest one observed, which is what the lookup already promises.
-            entry["name"] = max(history, key=lambda h: h["yyyymm"])["name"]
-            added += 1
-    (LOOKUPS / "org.json").write_text(json.dumps(org, separators=(",", ":"), ensure_ascii=False, sort_keys=True))
-    log.info("merged %d historical names into the org lookup", added)
-    return org
+            prior = out.get(code)
+            if prior is None or yyyymm >= prior.get("from", ""):
+                out[code] = {"name": name, "from": yyyymm}
+    NAMES_PATH.parent.mkdir(parents=True, exist_ok=True)
+    NAMES_PATH.write_text(json.dumps(out, indent=1, ensure_ascii=False, sort_keys=True))
+    log.info("wrote %d historical names to %s", len(out), NAMES_PATH.name)
+    return out
 
 
 def run() -> dict:
@@ -120,6 +123,6 @@ def run() -> dict:
     months = covering_months(targets)
     log.info("covering set: %d months (%s)", len(months), ", ".join(m[:7] for m in months))
     harvested = harvest(months)
-    merge(harvested, targets)
-    named = sum(1 for c in targets if any(c in names for names in harvested.values()))
+    written = write_reference(harvested, targets)
+    named = sum(1 for c in targets if c in written)
     return {"targets": len(targets), "months": len(months), "named": named}
