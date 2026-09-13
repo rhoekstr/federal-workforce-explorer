@@ -123,6 +123,14 @@ def cmd_plum(args) -> int:
     return 0
 
 
+def cmd_va(args) -> int:
+    """Re-parse VA's published survey PDFs into the committed table. Only needed when VA adds a year."""
+    from pipeline.measures.extract_va import refresh_from_pdfs
+
+    refresh_from_pdfs()
+    return 0
+
+
 def cmd_publish(args) -> int:
     from pipeline.publish import publish_releases
 
@@ -151,6 +159,7 @@ def main(argv=None) -> int:
     m.set_defaults(fn=cmd_money)
     sub.add_parser("slices").set_defaults(fn=cmd_slices)
     sub.add_parser("site").set_defaults(fn=cmd_site)
+    sub.add_parser("va").set_defaults(fn=cmd_va)
     pl = sub.add_parser("plum")
     pl.add_argument("--no-fetch", action="store_true")
     pl.set_defaults(fn=cmd_plum)

@@ -20,11 +20,14 @@ import re
 import zlib
 from pathlib import Path
 
-from pipeline.config import RAW
+from pipeline.config import RAW, REFERENCE
 from pipeline.measures.periods import survey_year_start
 
 log = logging.getLogger(__name__)
 VA_DIR = RAW / "va"
+# Parsed values are committed, like the FEVS table: the PDFs are large, static, and only re-parsed when VA
+# publishes a new year, so CI reads this instead of re-downloading and re-parsing on every run.
+FACTS_CSV = REFERENCE / "va" / "va_aes.csv"
 # data.va.gov dataset ids, one per survey year. 2024 exists only as a tabular file keyed by unpublished item
 # numbers, so it is deliberately absent: see PRD section 8.
 DATASETS = {2018: "isnh-negm", 2020: "5bqz-r7ak", 2022: "4cvs-huag", 2023: "y9gb-p7uj"}
@@ -146,7 +149,37 @@ def parse(path: Path) -> list[dict]:
     return out
 
 
-def va_facts(fetch_missing: bool = True) -> list[tuple]:
+def refresh_from_pdfs(fetch_missing: bool = True) -> int:
+    """Re-parse the published PDFs and rewrite the committed CSV. Run when VA publishes a new year."""
+    import csv
+
+    facts = _parse_all(fetch_missing)
+    FACTS_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with open(FACTS_CSV, "w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["measure", "node", "period_start", "value", "source_ref"])
+        for f in sorted(facts, key=lambda r: (r[3], r[0], r[1])):
+            w.writerow([f[0], f[1], f[3], f[6], f[9]])
+    log.info("va aes: wrote %d facts to %s", len(facts), FACTS_CSV.name)
+    return len(facts)
+
+
+def va_facts(fetch_missing: bool = False) -> list[tuple]:
+    """Facts for the measures build, read from the committed CSV."""
+    import csv
+
+    if not FACTS_CSV.exists():
+        log.warning("no committed VA survey table; run refresh_from_pdfs() to build it")
+        return []
+    out: list[tuple] = []
+    with open(FACTS_CSV, newline="") as fh:
+        for r in csv.DictReader(fh):
+            out.append((r["measure"], r["node"], "survey_year", r["period_start"], None, None, float(r["value"]), None, "estimate", r["source_ref"]))
+    log.info("va aes: %d facts", len(out))
+    return out
+
+
+def _parse_all(fetch_missing: bool = True) -> list[tuple]:
     facts: list[tuple] = []
     for year in sorted(DATASETS):
         path = VA_DIR / f"aes_{year}.pdf"

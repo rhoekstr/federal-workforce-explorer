@@ -444,7 +444,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     _insert(con, omb_facts())
     _insert(con, fevs_facts())
     _insert(con, _plum_or_none(con))
-    _insert(con, va_facts(fetch_missing=False))
+    _insert(con, va_facts())
     _latest_subelement_dims(con)
     unknown = con.execute("SELECT DISTINCT measure FROM facts WHERE measure NOT IN (SELECT unnest(?))", [list(catalog.measures)]).fetchall()
     if unknown:
