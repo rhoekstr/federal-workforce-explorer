@@ -2177,6 +2177,56 @@
    "format": "currency",
    "digits": 0,
    "definition": "Direct obligations for military personnel and their benefits (object classes 11.7 and 12.2), rolling four fiscal quarters. Shown so the civilian personnel figure is not mistaken for an agency's whole payroll; service members are not in this site's headcount."
+  },
+  "osha_total_case_rate": {
+   "kind": "base",
+   "unit": "rate",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "fiscal_year",
+   "year_type": "federal_fiscal",
+   "lag_days": 180,
+   "since": "2003-10-01",
+   "until": "2018-10-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "number",
+   "digits": 2,
+   "sources": [
+    {
+     "name": "OSHA Federal Agency Injury and Illness Statistics",
+     "url": "https://www.osha.gov/enforcement/fap/statistics"
+    }
+   ],
+   "title": "Recordable injury and illness rate",
+   "definition": "Recordable work-related injury and illness cases per 100 employees in the fiscal year, as published by OSHA for federal agencies. OSHA has published nothing after FY2019, so the series ends there."
+  },
+  "osha_lost_time_case_rate": {
+   "kind": "base",
+   "unit": "rate",
+   "aggregation": "latest",
+   "extensiveness": "intensive",
+   "category": "outcome",
+   "cadence": "fiscal_year",
+   "year_type": "federal_fiscal",
+   "lag_days": 180,
+   "since": "2003-10-01",
+   "until": "2018-10-01",
+   "levels": [
+    "agency"
+   ],
+   "format": "number",
+   "digits": 2,
+   "sources": [
+    {
+     "name": "OSHA Federal Agency Injury and Illness Statistics",
+     "url": "https://www.osha.gov/enforcement/fap/statistics"
+    }
+   ],
+   "title": "Lost-time injury and illness rate",
+   "definition": "Work-related injury and illness cases involving days away from work, per 100 employees in the fiscal year, as published by OSHA. The series ends at FY2019."
   }
  }
 }

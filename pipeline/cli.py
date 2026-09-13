@@ -131,6 +131,16 @@ def cmd_va(args) -> int:
     return 0
 
 
+def cmd_osha(args) -> int:
+    """Re-scrape OSHA's published tables into the committed table. Only needed if OSHA resumes publishing."""
+    from pipeline.measures.extract_osha import refresh_from_source
+
+    report = refresh_from_source()
+    for year, v in sorted(report.items()):
+        log.info("FY%s: %d/%d rows reproduce their published rate", year, v["agreed"], v["checked"])
+    return 0
+
+
 def cmd_reconcile(args) -> int:
     from pipeline.reconcile import build_report
 
@@ -168,6 +178,7 @@ def main(argv=None) -> int:
     sub.add_parser("site").set_defaults(fn=cmd_site)
     sub.add_parser("va").set_defaults(fn=cmd_va)
     sub.add_parser("reconcile").set_defaults(fn=cmd_reconcile)
+    sub.add_parser("osha").set_defaults(fn=cmd_osha)
     pl = sub.add_parser("plum")
     pl.add_argument("--no-fetch", action="store_true")
     pl.set_defaults(fn=cmd_plum)

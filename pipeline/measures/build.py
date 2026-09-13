@@ -14,6 +14,7 @@ from pipeline.measures.catalog import Catalog, write_public_catalog
 from pipeline.measures.evaluator import Evaluator
 from pipeline.measures.extract_other import fevs_facts, money_facts, omb_facts
 from pipeline.measures.extract_fevs_level1 import level1_facts
+from pipeline.measures.extract_osha import osha_facts
 from pipeline.measures.extract_va import va_facts
 from pipeline.plum.build import plum_facts
 from pipeline.money.groups import load_groups
@@ -456,6 +457,7 @@ def build_measures(fetch_money: bool = False) -> dict:
     _insert(con, _plum_or_none(con))
     _insert(con, va_facts())
     _insert(con, _fevs_level1_or_none())
+    _insert(con, osha_facts())
     _latest_subelement_dims(con)
     unknown = con.execute("SELECT DISTINCT measure FROM facts WHERE measure NOT IN (SELECT unnest(?))", [list(catalog.measures)]).fetchall()
     if unknown:
