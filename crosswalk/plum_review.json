@@ -38,11 +38,11 @@
    "positions": 10
   },
   {
-   "agency_name": "TENNESSEE VALLEY AUTHORITY",
+   "agency_name": "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
    "positions": 9
   },
   {
-   "agency_name": "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
+   "agency_name": "TENNESSEE VALLEY AUTHORITY",
    "positions": 9
   },
   {
@@ -50,11 +50,11 @@
    "positions": 6
   },
   {
-   "agency_name": "JAMES MADISON MEMORIAL FELLOWSHIP FOUNDATION",
+   "agency_name": "GREAT LAKES FISHERY COMMISSION",
    "positions": 5
   },
   {
-   "agency_name": "GREAT LAKES FISHERY COMMISSION",
+   "agency_name": "JAMES MADISON MEMORIAL FELLOWSHIP FOUNDATION",
    "positions": 5
   },
   {
@@ -66,19 +66,19 @@
    "positions": 4
   },
   {
-   "agency_name": "PRIVACY AND CIVIL LIBERTIES AND OVERSIGHT BOARD",
-   "positions": 4
-  },
-  {
-   "agency_name": "CENTRAL INTELLIGENCE AGENCY",
-   "positions": 4
-  },
-  {
    "agency_name": "CIVIL RIGHTS COLD CASE RECORDS REVIEW BOARD",
    "positions": 4
   },
   {
    "agency_name": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
+   "positions": 4
+  },
+  {
+   "agency_name": "PRIVACY AND CIVIL LIBERTIES AND OVERSIGHT BOARD",
+   "positions": 4
+  },
+  {
+   "agency_name": "CENTRAL INTELLIGENCE AGENCY",
    "positions": 4
   },
   {
@@ -90,7 +90,11 @@
    "positions": 3
   },
   {
-   "agency_name": "FEDERAL PERMITTING IMPROVEMENT STEERING COUNCIL",
+   "agency_name": "U.S. ABILITYONE COMMISSION",
+   "positions": 3
+  },
+  {
+   "agency_name": "COURT SERVICES AND OFFENDER SUPERVISION AGENCY FOR THE DISTRICT OF COLUMBIA",
    "positions": 3
   },
   {
@@ -106,11 +110,7 @@
    "positions": 3
   },
   {
-   "agency_name": "U.S. ABILITYONE COMMISSION",
-   "positions": 3
-  },
-  {
-   "agency_name": "COURT SERVICES AND OFFENDER SUPERVISION AGENCY FOR THE DISTRICT OF COLUMBIA",
+   "agency_name": "FEDERAL PERMITTING IMPROVEMENT STEERING COUNCIL",
    "positions": 3
   },
   {
@@ -130,10 +130,6 @@
    "positions": 2
   },
   {
-   "agency_name": "INTELLECTUAL PROPERTY ENFORCEMENT COORDINATOR",
-   "positions": 2
-  },
-  {
    "agency_name": "GOVERNMENT ACCOUNTABILITY OFFICE",
    "positions": 2
   },
@@ -143,6 +139,10 @@
   },
   {
    "agency_name": "FEDERAL ELECTION COMMISSION OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 2
+  },
+  {
+   "agency_name": "INTELLECTUAL PROPERTY ENFORCEMENT COORDINATOR",
    "positions": 2
   },
   {
@@ -190,6 +190,50 @@
    "positions": 1
   },
   {
+   "agency_name": "ARCHITECT OF THE CAPITOL",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF TRANSPORTATION OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF JUSTICE OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "GENERAL SERVICES ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "OFFICE OF PANDEMIC PREPAREDNESS AND RESPONSE POLICY",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF THE TREASURY OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "DEPARTMENT OF THE INTERIOR OFFICE OF THE INSPECTOR GENERAL",
+   "positions": 1
+  },
+  {
+   "agency_name": "ASIAN DEVELOPMENT BANK",
+   "positions": 1
+  },
+  {
    "agency_name": "U.S. SEMIQUINCENTENNIAL COMMISSION",
    "positions": 1
   },
@@ -227,50 +271,6 @@
   },
   {
    "agency_name": "DEPARTMENT OF STATE OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "GENERAL SERVICES ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "OFFICE OF PANDEMIC PREPAREDNESS AND RESPONSE POLICY",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF THE TREASURY OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF THE INTERIOR OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "ASIAN DEVELOPMENT BANK",
-   "positions": 1
-  },
-  {
-   "agency_name": "ARCHITECT OF THE CAPITOL",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF HOMELAND SECURITY OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF TRANSPORTATION OFFICE OF THE INSPECTOR GENERAL",
-   "positions": 1
-  },
-  {
-   "agency_name": "DEPARTMENT OF JUSTICE OFFICE OF THE INSPECTOR GENERAL",
    "positions": 1
   }
  ],
@@ -330,15 +330,15 @@
    "positions": 43
   },
   {
-   "agency": "DD",
-   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-   "org_name": "OFFICE OF THE SECRETARY OF WAR",
-   "positions": 42
-  },
-  {
    "agency": "IN",
    "agency_name": "DEPARTMENT OF THE INTERIOR",
    "org_name": "SECRETARYS IMMEDIATE OFFICE",
+   "positions": 42
+  },
+  {
+   "agency": "DD",
+   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
+   "org_name": "OFFICE OF THE SECRETARY OF WAR",
    "positions": 42
   },
   {
@@ -420,18 +420,6 @@
    "positions": 31
   },
   {
-   "agency": "DJ",
-   "agency_name": "DEPARTMENT OF JUSTICE",
-   "org_name": "ENVIRONMENT AND NATURAL RESOURCES DIVISION",
-   "positions": 29
-  },
-  {
-   "agency": "TR",
-   "agency_name": "DEPARTMENT OF THE TREASURY",
-   "org_name": "GENERAL COUNSEL",
-   "positions": 29
-  },
-  {
    "agency": "IN",
    "agency_name": "DEPARTMENT OF THE INTERIOR",
    "org_name": "ASSISTANT SECRETARY - POLICY, MANAGEMENT AND BUDGET",
@@ -444,22 +432,22 @@
    "positions": 29
   },
   {
+   "agency": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "org_name": "ENVIRONMENT AND NATURAL RESOURCES DIVISION",
+   "positions": 29
+  },
+  {
+   "agency": "TR",
+   "agency_name": "DEPARTMENT OF THE TREASURY",
+   "org_name": "GENERAL COUNSEL",
+   "positions": 29
+  },
+  {
    "agency": "HE",
    "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
    "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR PUBLIC AFFAIRS",
    "positions": 28
-  },
-  {
-   "agency": "OM",
-   "agency_name": "OFFICE OF PERSONNEL MANAGEMENT",
-   "org_name": "OFFICE OF THE DIRECTOR",
-   "positions": 26
-  },
-  {
-   "agency": "NL",
-   "agency_name": "NATIONAL LABOR RELATIONS BOARD",
-   "org_name": "REGIONAL OFFICES",
-   "positions": 26
   },
   {
    "agency": "SB",
@@ -480,10 +468,16 @@
    "positions": 26
   },
   {
-   "agency": "DJ",
-   "agency_name": "DEPARTMENT OF JUSTICE",
-   "org_name": "JUSTICE MANAGEMENT DIVISION",
-   "positions": 24
+   "agency": "OM",
+   "agency_name": "OFFICE OF PERSONNEL MANAGEMENT",
+   "org_name": "OFFICE OF THE DIRECTOR",
+   "positions": 26
+  },
+  {
+   "agency": "NL",
+   "agency_name": "NATIONAL LABOR RELATIONS BOARD",
+   "org_name": "REGIONAL OFFICES",
+   "positions": 26
   },
   {
    "agency": "HS",
@@ -492,10 +486,10 @@
    "positions": 24
   },
   {
-   "agency": "DD",
-   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-   "org_name": "OFFICE OF THE DIRECTOR OF COST ASSESSMENT AND PROGRAM EVALUATION",
-   "positions": 23
+   "agency": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "org_name": "JUSTICE MANAGEMENT DIVISION",
+   "positions": 24
   },
   {
    "agency": "DD",
@@ -510,21 +504,27 @@
    "positions": 23
   },
   {
+   "agency": "DD",
+   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
+   "org_name": "OFFICE OF THE DIRECTOR OF COST ASSESSMENT AND PROGRAM EVALUATION",
+   "positions": 23
+  },
+  {
    "agency": "DL",
    "agency_name": "DEPARTMENT OF LABOR",
    "org_name": "OFFICE OF THE SECRETARY",
    "positions": 21
   },
   {
-   "agency": "SB",
-   "agency_name": "SMALL BUSINESS ADMINISTRATION",
-   "org_name": "OFFICE OF THE ADMINISTRATOR",
-   "positions": 21
-  },
-  {
    "agency": "DJ",
    "agency_name": "DEPARTMENT OF JUSTICE",
    "org_name": "OFFICE OF THE DEPUTY ATTORNEY GENERAL",
+   "positions": 21
+  },
+  {
+   "agency": "SB",
+   "agency_name": "SMALL BUSINESS ADMINISTRATION",
+   "org_name": "OFFICE OF THE ADMINISTRATOR",
    "positions": 21
   },
   {
@@ -540,12 +540,6 @@
    "positions": 20
   },
   {
-   "agency": "TD",
-   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-   "org_name": "IMMEDIATE OFFICE OF THE ADMINISTRATOR",
-   "positions": 20
-  },
-  {
    "agency": "AM",
    "agency_name": "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT",
    "org_name": "OFFICE OF THE ADMINISTRATOR",
@@ -558,10 +552,10 @@
    "positions": 20
   },
   {
-   "agency": "NL",
-   "agency_name": "NATIONAL LABOR RELATIONS BOARD",
-   "org_name": "OFFICE OF THE BOARD MEMBERS",
-   "positions": 19
+   "agency": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "org_name": "IMMEDIATE OFFICE OF THE ADMINISTRATOR",
+   "positions": 20
   },
   {
    "agency": "AG",
@@ -582,15 +576,21 @@
    "positions": 19
   },
   {
-   "agency": "ST",
-   "agency_name": "DEPARTMENT OF STATE",
-   "org_name": "OFFICE OF THE SECRETARY",
-   "positions": 18
+   "agency": "NL",
+   "agency_name": "NATIONAL LABOR RELATIONS BOARD",
+   "org_name": "OFFICE OF THE BOARD MEMBERS",
+   "positions": 19
   },
   {
    "agency": "DN",
    "agency_name": "DEPARTMENT OF ENERGY",
    "org_name": "OFFICE OF MANAGEMENT",
+   "positions": 18
+  },
+  {
+   "agency": "ST",
+   "agency_name": "DEPARTMENT OF STATE",
+   "org_name": "OFFICE OF THE SECRETARY",
    "positions": 18
   },
   {
@@ -606,15 +606,15 @@
    "positions": 17
   },
   {
-   "agency": "EP",
-   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
-   "org_name": "OFFICE OF EXTERNAL AFFAIRS",
+   "agency": "TR",
+   "agency_name": "DEPARTMENT OF THE TREASURY",
+   "org_name": "UNDER SECRETARY FOR DOMESTIC FINANCE",
    "positions": 17
   },
   {
-   "agency": "NV",
-   "agency_name": "DEPARTMENT OF THE NAVY",
-   "org_name": "OFFICE OF THE SECRETARY OF THE NAVY",
+   "agency": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR LEGISLATION",
    "positions": 17
   },
   {
@@ -642,15 +642,15 @@
    "positions": 17
   },
   {
-   "agency": "TR",
-   "agency_name": "DEPARTMENT OF THE TREASURY",
-   "org_name": "UNDER SECRETARY FOR DOMESTIC FINANCE",
+   "agency": "EP",
+   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
+   "org_name": "OFFICE OF EXTERNAL AFFAIRS",
    "positions": 17
   },
   {
-   "agency": "HE",
-   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR LEGISLATION",
+   "agency": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "org_name": "OFFICE OF THE SECRETARY OF THE NAVY",
    "positions": 17
   },
   {
@@ -660,27 +660,9 @@
    "positions": 16
   },
   {
-   "agency": "DJ",
-   "agency_name": "DEPARTMENT OF JUSTICE",
-   "org_name": "OFFICE OF THE ATTORNEY GENERAL",
-   "positions": 16
-  },
-  {
-   "agency": "GB",
-   "agency_name": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
-   "org_name": "OFFICE OF THE CHIEF EXECUTIVE",
-   "positions": 16
-  },
-  {
-   "agency": "DD",
-   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-   "org_name": "OFFICE OF THE DEPARTMENT OF WAR CHIEF INFORMATION OFFICER",
-   "positions": 16
-  },
-  {
-   "agency": "HS",
-   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-   "org_name": "OFFICE OF LEGISLATIVE AFFAIRS",
+   "agency": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR PLANNING AND EVALUATION",
    "positions": 16
   },
   {
@@ -714,9 +696,27 @@
    "positions": 16
   },
   {
-   "agency": "HE",
-   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR PLANNING AND EVALUATION",
+   "agency": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "org_name": "OFFICE OF THE ATTORNEY GENERAL",
+   "positions": 16
+  },
+  {
+   "agency": "GB",
+   "agency_name": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+   "org_name": "OFFICE OF THE CHIEF EXECUTIVE",
+   "positions": 16
+  },
+  {
+   "agency": "DD",
+   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
+   "org_name": "OFFICE OF THE DEPARTMENT OF WAR CHIEF INFORMATION OFFICER",
+   "positions": 16
+  },
+  {
+   "agency": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "org_name": "OFFICE OF LEGISLATIVE AFFAIRS",
    "positions": 16
   },
   {
@@ -726,21 +726,27 @@
    "positions": 15
   },
   {
-   "agency": "HU",
-   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT",
-   "org_name": "OFFICE OF THE SECRETARY",
-   "positions": 15
-  },
-  {
    "agency": "FT",
    "agency_name": "FEDERAL TRADE COMMISSION",
-   "org_name": "BUREAU OF COMPETITION",
+   "org_name": "BUREAU OF CONSUMER PROTECTION",
    "positions": 15
   },
   {
    "agency": "ST",
    "agency_name": "DEPARTMENT OF STATE",
-   "org_name": "BUREAU OF NEAR EASTERN AFFAIRS",
+   "org_name": "BUREAU OF CONSULAR AFFAIRS",
+   "positions": 15
+  },
+  {
+   "agency": "TR",
+   "agency_name": "DEPARTMENT OF THE TREASURY",
+   "org_name": "ASSISTANT SECRETARY (TAX POLICY)",
+   "positions": 15
+  },
+  {
+   "agency": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "org_name": "OFFICE OF THE ADMINISTRATOR",
    "positions": 15
   },
   {
@@ -768,27 +774,21 @@
    "positions": 15
   },
   {
+   "agency": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT",
+   "org_name": "OFFICE OF THE SECRETARY",
+   "positions": 15
+  },
+  {
    "agency": "FT",
    "agency_name": "FEDERAL TRADE COMMISSION",
-   "org_name": "BUREAU OF CONSUMER PROTECTION",
+   "org_name": "BUREAU OF COMPETITION",
    "positions": 15
   },
   {
    "agency": "ST",
    "agency_name": "DEPARTMENT OF STATE",
-   "org_name": "BUREAU OF CONSULAR AFFAIRS",
-   "positions": 15
-  },
-  {
-   "agency": "TR",
-   "agency_name": "DEPARTMENT OF THE TREASURY",
-   "org_name": "ASSISTANT SECRETARY (TAX POLICY)",
-   "positions": 15
-  },
-  {
-   "agency": "GS",
-   "agency_name": "GENERAL SERVICES ADMINISTRATION",
-   "org_name": "OFFICE OF THE ADMINISTRATOR",
+   "org_name": "BUREAU OF NEAR EASTERN AFFAIRS",
    "positions": 15
   },
   {
@@ -822,36 +822,6 @@
    "positions": 14
   },
   {
-   "agency": "TB",
-   "agency_name": "NATIONAL TRANSPORTATION SAFETY BOARD",
-   "org_name": "OFFICE OF BOARD MEMBERS",
-   "positions": 14
-  },
-  {
-   "agency": "DJ",
-   "agency_name": "DEPARTMENT OF JUSTICE",
-   "org_name": "OFFICE OF LEGAL POLICY",
-   "positions": 14
-  },
-  {
-   "agency": "TR",
-   "agency_name": "DEPARTMENT OF THE TREASURY",
-   "org_name": "ASSISTANT SECRETARY FOR INTERNATIONAL FINANCE",
-   "positions": 14
-  },
-  {
-   "agency": "DN",
-   "agency_name": "DEPARTMENT OF ENERGY",
-   "org_name": "ASSISTANT SECRETARY FOR ENVIRONMENTAL MANAGEMENT",
-   "positions": 14
-  },
-  {
-   "agency": "TR",
-   "agency_name": "DEPARTMENT OF THE TREASURY",
-   "org_name": "ASSISTANT SECRETARY (PUBLIC AFFAIRS)",
-   "positions": 14
-  },
-  {
    "agency": "NQ",
    "agency_name": "NATIONAL ARCHIVES AND RECORDS ADMINISTRATION",
    "org_name": "OFFICE OF PRESIDENTIAL LIBRARIES",
@@ -870,51 +840,39 @@
    "positions": 14
   },
   {
-   "agency": "ST",
-   "agency_name": "DEPARTMENT OF STATE",
-   "org_name": "BUREAU OF DIPLOMATIC TECHNOLOGY",
-   "positions": 13
-  },
-  {
-   "agency": "NU",
-   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-   "org_name": "OFFICE OF NUCLEAR REGULATORY RESEARCH",
-   "positions": 13
+   "agency": "DN",
+   "agency_name": "DEPARTMENT OF ENERGY",
+   "org_name": "ASSISTANT SECRETARY FOR ENVIRONMENTAL MANAGEMENT",
+   "positions": 14
   },
   {
    "agency": "TR",
    "agency_name": "DEPARTMENT OF THE TREASURY",
-   "org_name": "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE",
-   "positions": 13
+   "org_name": "ASSISTANT SECRETARY (PUBLIC AFFAIRS)",
+   "positions": 14
   },
   {
-   "agency": "BT",
-   "agency_name": "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
-   "org_name": "Public Board",
-   "positions": 13
+   "agency": "TB",
+   "agency_name": "NATIONAL TRANSPORTATION SAFETY BOARD",
+   "org_name": "OFFICE OF BOARD MEMBERS",
+   "positions": 14
   },
   {
-   "agency": "NU",
-   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-   "org_name": "OFFICE OF THE CHAIRMAN",
-   "positions": 13
+   "agency": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "org_name": "OFFICE OF LEGAL POLICY",
+   "positions": 14
   },
   {
-   "agency": "FT",
-   "agency_name": "FEDERAL TRADE COMMISSION",
-   "org_name": "OFFICE OF THE CHAIR",
-   "positions": 13
+   "agency": "TR",
+   "agency_name": "DEPARTMENT OF THE TREASURY",
+   "org_name": "ASSISTANT SECRETARY FOR INTERNATIONAL FINANCE",
+   "positions": 14
   },
   {
-   "agency": "SZ",
-   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-   "org_name": "OFFICE OF THE COMMISSIONER",
-   "positions": 13
-  },
-  {
-   "agency": "DD",
-   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-   "org_name": "OFFICE OF THE GENERAL COUNSEL",
+   "agency": "ST",
+   "agency_name": "DEPARTMENT OF STATE",
+   "org_name": "BUREAU OF DIPLOMATIC TECHNOLOGY",
    "positions": 13
   },
   {
@@ -954,6 +912,48 @@
    "positions": 13
   },
   {
+   "agency": "TR",
+   "agency_name": "DEPARTMENT OF THE TREASURY",
+   "org_name": "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE",
+   "positions": 13
+  },
+  {
+   "agency": "BT",
+   "agency_name": "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
+   "org_name": "Public Board",
+   "positions": 13
+  },
+  {
+   "agency": "NU",
+   "agency_name": "NUCLEAR REGULATORY COMMISSION",
+   "org_name": "OFFICE OF THE CHAIRMAN",
+   "positions": 13
+  },
+  {
+   "agency": "FT",
+   "agency_name": "FEDERAL TRADE COMMISSION",
+   "org_name": "OFFICE OF THE CHAIR",
+   "positions": 13
+  },
+  {
+   "agency": "SZ",
+   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
+   "org_name": "OFFICE OF THE COMMISSIONER",
+   "positions": 13
+  },
+  {
+   "agency": "DD",
+   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
+   "org_name": "OFFICE OF THE GENERAL COUNSEL",
+   "positions": 13
+  },
+  {
+   "agency": "NU",
+   "agency_name": "NUCLEAR REGULATORY COMMISSION",
+   "org_name": "OFFICE OF NUCLEAR REGULATORY RESEARCH",
+   "positions": 13
+  },
+  {
    "agency": "ST",
    "agency_name": "DEPARTMENT OF STATE",
    "org_name": "BUREAU OF WESTERN HEMISPHERE AFFAIRS",
@@ -990,9 +990,9 @@
    "positions": 12
   },
   {
-   "agency": "DJ",
-   "agency_name": "DEPARTMENT OF JUSTICE",
-   "org_name": "OFFICE OF LEGISLATIVE AFFAIRS",
+   "agency": "DD",
+   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
+   "org_name": "OFFICE OF THE DIRECTOR OF ADMINISTRATION AND MANAGEMENT",
    "positions": 12
   }
  ],
