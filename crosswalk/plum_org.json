@@ -317,7 +317,7 @@
  "DEPARTMENT OF AGRICULTURE|FOOD SAFETY AND INSPECTION SERVICE": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 6,
+  "filled": 7,
   "method": "normalized",
   "node": "AG37",
   "org_name": "FOOD SAFETY AND INSPECTION SERVICE",
@@ -398,7 +398,7 @@
  "DEPARTMENT OF AGRICULTURE|NATURAL RESOURCES CONSERVATION SERVICE": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 20,
+  "filled": 21,
   "method": "normalized",
   "node": "AG16",
   "org_name": "NATURAL RESOURCES CONSERVATION SERVICE",
@@ -443,11 +443,11 @@
  "DEPARTMENT OF AGRICULTURE|OFFICE OF COMMUNICATIONS": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 9,
+  "filled": 10,
   "method": "normalized",
   "node": "AG13",
   "org_name": "OFFICE OF COMMUNICATIONS",
-  "positions": 11
+  "positions": 12
  },
  "DEPARTMENT OF AGRICULTURE|OFFICE OF HOMELAND SECURITY AND EMERGENCY COORDINATION": {
   "agency": "AG",
@@ -524,11 +524,11 @@
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE ASSISTANT SECRETARY FOR CONGRESSIONAL RELATIONS": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 10,
+  "filled": 11,
   "method": "agency",
   "node": "AG",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR CONGRESSIONAL RELATIONS",
-  "positions": 12
+  "positions": 13
  },
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE CHIEF ECONOMIST": {
   "agency": "AG",
@@ -578,11 +578,11 @@
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE SECRETARY": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 28,
+  "filled": 29,
   "method": "contains",
   "node": "AG01",
   "org_name": "OFFICE OF THE SECRETARY",
-  "positions": 47
+  "positions": 48
  },
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE UNDER SECRETARY FOR FARM PRODUCTION AND CONSERVATION": {
   "agency": "AG",
@@ -605,11 +605,11 @@
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE UNDER SECRETARY FOR FOOD, NUTRITION AND CONSUMER SERVICES": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "AG",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR FOOD, NUTRITION AND CONSUMER SERVICES",
-  "positions": 5
+  "positions": 6
  },
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE UNDER SECRETARY FOR MARKETING AND REGULATORY PROGRAMS": {
   "agency": "AG",
@@ -641,7 +641,7 @@
  "DEPARTMENT OF AGRICULTURE|OFFICE OF THE UNDER SECRETARY FOR TRADE AND FOREIGN AGRICULTURAL AFFAIRS": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 2,
+  "filled": 3,
   "method": "agency",
   "node": "AG",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR TRADE AND FOREIGN AGRICULTURAL AFFAIRS",
@@ -704,11 +704,11 @@
  "DEPARTMENT OF AGRICULTURE|RURAL BUSINESS SERVICE": {
   "agency": "AG",
   "agency_name": "DEPARTMENT OF AGRICULTURE",
-  "filled": 2,
+  "filled": 3,
   "method": "agency",
   "node": "AG",
   "org_name": "RURAL BUSINESS SERVICE",
-  "positions": 4
+  "positions": 5
  },
  "DEPARTMENT OF AGRICULTURE|RURAL DEVELOPMENT": {
   "agency": "AG",
@@ -794,7 +794,7 @@
  "DEPARTMENT OF COMMERCE|ASSISTANT SECRETARY FOR INDUSTRY AND ANALYSIS": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 4,
+  "filled": 3,
   "method": "contains",
   "node": "CM51",
   "org_name": "ASSISTANT SECRETARY FOR INDUSTRY AND ANALYSIS",
@@ -902,7 +902,7 @@
  "DEPARTMENT OF COMMERCE|BUREAU OF INDUSTRY AND SECURITY": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 13,
+  "filled": 14,
   "method": "normalized",
   "node": "CM67",
   "org_name": "BUREAU OF INDUSTRY AND SECURITY",
@@ -978,7 +978,7 @@
   "method": "contains",
   "node": "CM51",
   "org_name": "DEPUTY ASSISTANT SECRETARY FOR AD/CVD OPERATIONS",
-  "positions": 4
+  "positions": 3
  },
  "DEPARTMENT OF COMMERCE|DEPUTY ASSISTANT SECRETARY FOR AFRICA, THE MIDDLE EAST AND SOUTH ASIA": {
   "agency": "CM",
@@ -1001,7 +1001,7 @@
  "DEPARTMENT OF COMMERCE|DEPUTY ASSISTANT SECRETARY FOR POLICY AND NEGOTIATIONS": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 1,
+  "filled": 2,
   "method": "contains",
   "node": "CM51",
   "org_name": "DEPUTY ASSISTANT SECRETARY FOR POLICY AND NEGOTIATIONS",
@@ -1100,11 +1100,11 @@
  "DEPARTMENT OF COMMERCE|INTERNATIONAL TRADE ADMINISTRATION": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 29,
+  "filled": 31,
   "method": "normalized",
   "node": "CM55",
   "org_name": "INTERNATIONAL TRADE ADMINISTRATION",
-  "positions": 37
+  "positions": 39
  },
  "DEPARTMENT OF COMMERCE|MINORITY BUSINESS DEVELOPMENT AGENCY": {
   "agency": "CM",
@@ -1172,7 +1172,7 @@
  "DEPARTMENT OF COMMERCE|NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 7,
+  "filled": 8,
   "method": "normalized",
   "node": "CM54",
   "org_name": "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION",
@@ -1203,7 +1203,7 @@
   "method": "normalized",
   "node": "CM61",
   "org_name": "NATIONAL TELECOMMUNICATIONS AND INFORMATION ADMINISTRATION",
-  "positions": 13
+  "positions": 12
  },
  "DEPARTMENT OF COMMERCE|NATIONAL WEATHER SERVICE": {
   "agency": "CM",
@@ -1361,11 +1361,11 @@
  "DEPARTMENT OF COMMERCE|OFFICE OF LEGISLATIVE AND INTERGOVERNMENTAL AFFAIRS": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 5,
+  "filled": 6,
   "method": "agency",
   "node": "CM",
   "org_name": "OFFICE OF LEGISLATIVE AND INTERGOVERNMENTAL AFFAIRS",
-  "positions": 7
+  "positions": 8
  },
  "DEPARTMENT OF COMMERCE|OFFICE OF MARINE AND AVIATION OPERATIONS": {
   "agency": "CM",
@@ -1631,11 +1631,11 @@
  "DEPARTMENT OF COMMERCE|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 23,
+  "filled": 24,
   "method": "agency",
   "node": "CM",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 33
+  "positions": 34
  },
  "DEPARTMENT OF COMMERCE|OFFICE OF THE SECRETARY": {
   "agency": "CM",
@@ -1685,7 +1685,7 @@
  "DEPARTMENT OF COMMERCE|OFFICE OF UNDER SECRETARY": {
   "agency": "CM",
   "agency_name": "DEPARTMENT OF COMMERCE",
-  "filled": 7,
+  "filled": 6,
   "method": "contains",
   "node": "CM51",
   "org_name": "OFFICE OF UNDER SECRETARY",
@@ -1793,11 +1793,11 @@
  "DEPARTMENT OF EDUCATION|OFFICE FOR CIVIL RIGHTS": {
   "agency": "ED",
   "agency_name": "DEPARTMENT OF EDUCATION",
-  "filled": 6,
+  "filled": 7,
   "method": "normalized",
   "node": "EDEC",
   "org_name": "OFFICE FOR CIVIL RIGHTS",
-  "positions": 9
+  "positions": 10
  },
  "DEPARTMENT OF EDUCATION|OFFICE OF CAREER TECHNICAL AND ADULT EDUCATION": {
   "agency": "ED",
@@ -1901,11 +1901,11 @@
  "DEPARTMENT OF EDUCATION|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "ED",
   "agency_name": "DEPARTMENT OF EDUCATION",
-  "filled": 21,
+  "filled": 22,
   "method": "normalized",
   "node": "EDEG",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 28
+  "positions": 29
  },
  "DEPARTMENT OF EDUCATION|OFFICE OF THE SECRETARY": {
   "agency": "ED",
@@ -1928,11 +1928,11 @@
  "DEPARTMENT OF ENERGY|ADVANCED RESEARCH PROJECTS AGENCY - ENERGY": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 3,
+  "filled": 4,
   "method": "contains",
   "node": "DN00",
   "org_name": "ADVANCED RESEARCH PROJECTS AGENCY - ENERGY",
-  "positions": 3
+  "positions": 4
  },
  "DEPARTMENT OF ENERGY|ASSISTANT SECRETARY FOR CONGRESSIONAL AND INTERGOVERNMENTAL AFFAIRS": {
   "agency": "DN",
@@ -1946,11 +1946,11 @@
  "DEPARTMENT OF ENERGY|ASSISTANT SECRETARY FOR ELECTRICITY": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 8,
+  "filled": 9,
   "method": "agency",
   "node": "DN",
   "org_name": "ASSISTANT SECRETARY FOR ELECTRICITY",
-  "positions": 9
+  "positions": 10
  },
  "DEPARTMENT OF ENERGY|ASSISTANT SECRETARY FOR ENVIRONMENTAL MANAGEMENT": {
   "agency": "DN",
@@ -1964,11 +1964,11 @@
  "DEPARTMENT OF ENERGY|ASSISTANT SECRETARY FOR INTERNATIONAL AFFAIRS": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 8,
+  "filled": 10,
   "method": "agency",
   "node": "DN",
   "org_name": "ASSISTANT SECRETARY FOR INTERNATIONAL AFFAIRS",
-  "positions": 11
+  "positions": 12
  },
  "DEPARTMENT OF ENERGY|ASSISTANT SECRETARY FOR NUCLEAR ENERGY": {
   "agency": "DN",
@@ -1978,6 +1978,15 @@
   "node": "DN00",
   "org_name": "ASSISTANT SECRETARY FOR NUCLEAR ENERGY",
   "positions": 20
+ },
+ "DEPARTMENT OF ENERGY|BONNEVILLE POWER ADMINISTRATION": {
+  "agency": "DN",
+  "agency_name": "DEPARTMENT OF ENERGY",
+  "filled": 1,
+  "method": "agency",
+  "node": "DN",
+  "org_name": "BONNEVILLE POWER ADMINISTRATION",
+  "positions": 1
  },
  "DEPARTMENT OF ENERGY|HYDROCARBONS AND GEOTHERMAL ENERGY": {
   "agency": "DN",
@@ -1991,11 +2000,20 @@
  "DEPARTMENT OF ENERGY|NATIONAL NUCLEAR SECURITY ADMINISTRATION": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 15,
+  "filled": 14,
   "method": "agency",
   "node": "DN",
   "org_name": "NATIONAL NUCLEAR SECURITY ADMINISTRATION",
-  "positions": 17
+  "positions": 18
+ },
+ "DEPARTMENT OF ENERGY|NOT IN USE - THIS WAS A DUPLICATE ORG NAME.": {
+  "agency": "DN",
+  "agency_name": "DEPARTMENT OF ENERGY",
+  "filled": 0,
+  "method": "agency",
+  "node": "DN",
+  "org_name": "NOT IN USE - THIS WAS A DUPLICATE ORG NAME.",
+  "positions": 1
  },
  "DEPARTMENT OF ENERGY|OFFICE OF ARTIFICIAL INTELLIGENCE AND TECHNOLOGY": {
   "agency": "DN",
@@ -2009,7 +2027,7 @@
  "DEPARTMENT OF ENERGY|OFFICE OF CLEAN ENERGY DEMONSTRATIONS": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 2,
+  "filled": 3,
   "method": "contains",
   "node": "DN00",
   "org_name": "OFFICE OF CLEAN ENERGY DEMONSTRATIONS",
@@ -2018,11 +2036,11 @@
  "DEPARTMENT OF ENERGY|OFFICE OF CRITICAL MINERALS AND ENERGY INNOVATION": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 20,
+  "filled": 23,
   "method": "contains",
   "node": "DN00",
   "org_name": "OFFICE OF CRITICAL MINERALS AND ENERGY INNOVATION",
-  "positions": 31
+  "positions": 34
  },
  "DEPARTMENT OF ENERGY|OFFICE OF CYBERSECURITY, ENERGY SECURITY &AMP; EMERGENCY RESPONSE": {
   "agency": "DN",
@@ -2090,11 +2108,11 @@
  "DEPARTMENT OF ENERGY|OFFICE OF MANUFACTURING AND ENERGY SUPPLY CHAINS": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 2,
+  "filled": 1,
   "method": "contains",
   "node": "DN00",
   "org_name": "OFFICE OF MANUFACTURING AND ENERGY SUPPLY CHAINS",
-  "positions": 3
+  "positions": 2
  },
  "DEPARTMENT OF ENERGY|OFFICE OF POLICY": {
   "agency": "DN",
@@ -2112,7 +2130,7 @@
   "method": "agency",
   "node": "DN",
   "org_name": "OFFICE OF PUBLIC AFFAIRS",
-  "positions": 10
+  "positions": 11
  },
  "DEPARTMENT OF ENERGY|OFFICE OF SCIENCE": {
   "agency": "DN",
@@ -2171,7 +2189,7 @@
  "DEPARTMENT OF ENERGY|OFFICE OF THE CHIEF INFORMATION OFFICER": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 4,
+  "filled": 5,
   "method": "agency",
   "node": "DN",
   "org_name": "OFFICE OF THE CHIEF INFORMATION OFFICER",
@@ -2189,29 +2207,20 @@
  "DEPARTMENT OF ENERGY|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 13,
+  "filled": 14,
   "method": "agency",
   "node": "DN",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 20
+  "positions": 21
  },
  "DEPARTMENT OF ENERGY|OFFICE OF THE SECRETARY": {
   "agency": "DN",
   "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 8,
+  "filled": 9,
   "method": "agency",
   "node": "DN",
   "org_name": "OFFICE OF THE SECRETARY",
-  "positions": 8
- },
- "DEPARTMENT OF ENERGY|STATE AND COMMUNITY ENERGY PROGRAMS": {
-  "agency": "DN",
-  "agency_name": "DEPARTMENT OF ENERGY",
-  "filled": 1,
-  "method": "contains",
-  "node": "DN00",
-  "org_name": "STATE AND COMMUNITY ENERGY PROGRAMS",
-  "positions": 2
+  "positions": 9
  },
  "DEPARTMENT OF ENERGY|U.S. ENERGY INFORMATION ADMINISTRATION": {
   "agency": "DN",
@@ -2252,11 +2261,11 @@
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|ADMINISTRATION FOR CHILDREN AND FAMILIES": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 22,
+  "filled": 23,
   "method": "normalized",
   "node": "HE90",
   "org_name": "ADMINISTRATION FOR CHILDREN AND FAMILIES",
-  "positions": 36
+  "positions": 37
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|ADMINISTRATION FOR COMMUNITY LIVING": {
   "agency": "HE",
@@ -2279,11 +2288,11 @@
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|ADMINISTRATION FOR STRATEGIC PREPAREDNESS AND RESPONSE": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 15,
+  "filled": 16,
   "method": "normalized",
   "node": "HE60",
   "org_name": "ADMINISTRATION FOR STRATEGIC PREPAREDNESS AND RESPONSE",
-  "positions": 20
+  "positions": 21
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|ADMINISTRATON FOR CHILDREN, YOUTH AND FAMILIES / OFFICE OF COMMISSIONER": {
   "agency": "HE",
@@ -2319,7 +2328,7 @@
   "method": "agency",
   "node": "HE",
   "org_name": "ASSOCIATE GENERAL COUNSEL DIVISIONS",
-  "positions": 11
+  "positions": 10
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|CENTER FOR CLINICAL STANDARDS AND QUALITY": {
   "agency": "HE",
@@ -2427,7 +2436,7 @@
   "method": "normalized",
   "node": "HE36",
   "org_name": "FOOD AND DRUG ADMINISTRATION",
-  "positions": 30
+  "positions": 31
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|HEALTH RESOURCES AND SERVICES ADMINISTRATION": {
   "agency": "HE",
@@ -2486,11 +2495,11 @@
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE FOR CIVIL RIGHTS": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 3,
+  "filled": 4,
   "method": "agency",
   "node": "HE",
   "org_name": "OFFICE FOR CIVIL RIGHTS",
-  "positions": 4
+  "positions": 5
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF CHILD SUPPORT ENFORCEMENT/OFFICE OF THE DIRECTOR": {
   "agency": "HE",
@@ -2513,7 +2522,7 @@
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF EXTERNAL AFFAIRS": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "HE",
   "org_name": "OFFICE OF EXTERNAL AFFAIRS",
@@ -2589,7 +2598,7 @@
   "method": "agency",
   "node": "HE",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR ADMINISTRATION",
-  "positions": 23
+  "positions": 24
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE ASSISTANT SECRETARY FOR FINANCIAL RESOURCES": {
   "agency": "HE",
@@ -2607,16 +2616,16 @@
   "method": "normalized",
   "node": "HE31",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR HEALTH",
-  "positions": 35
+  "positions": 36
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE ASSISTANT SECRETARY FOR LEGISLATION": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 12,
+  "filled": 14,
   "method": "agency",
   "node": "HE",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR LEGISLATION",
-  "positions": 17
+  "positions": 18
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE ASSISTANT SECRETARY FOR PLANNING AND EVALUATION": {
   "agency": "HE",
@@ -2630,11 +2639,11 @@
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE ASSISTANT SECRETARY FOR PUBLIC AFFAIRS": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 20,
+  "filled": 21,
   "method": "agency",
   "node": "HE",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR PUBLIC AFFAIRS",
-  "positions": 28
+  "positions": 29
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE ASSISTANT SECRETARY FOR TECHNOLOGY POLICY AND OFFICE OF THE NATIONAL COORDINATOR FOR HEALTH INFORMATION TECHNOLOGY": {
   "agency": "HE",
@@ -2693,11 +2702,11 @@
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "HE",
   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-  "filled": 21,
+  "filled": 22,
   "method": "agency",
   "node": "HE",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 32
+  "positions": 33
  },
  "DEPARTMENT OF HEALTH AND HUMAN SERVICES|OFFICE OF THE NATIONAL COORDINATOR FOR HEALTH INFORMATION TECHNOLOGY": {
   "agency": "HE",
@@ -2747,7 +2756,7 @@
  "DEPARTMENT OF HOMELAND SECURITY|CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 28,
+  "filled": 29,
   "method": "normalized",
   "node": "HSCA",
   "org_name": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
@@ -2774,11 +2783,11 @@
  "DEPARTMENT OF HOMELAND SECURITY|MANAGEMENT DIRECTORATE": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 31,
+  "filled": 35,
   "method": "agency",
   "node": "HS",
   "org_name": "MANAGEMENT DIRECTORATE",
-  "positions": 54
+  "positions": 55
  },
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE FOR CIVIL RIGHTS AND CIVIL LIBERTIES": {
   "agency": "HS",
@@ -2801,7 +2810,7 @@
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF HEALTH SECURITY": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF HEALTH SECURITY",
@@ -2828,11 +2837,11 @@
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF LEGISLATIVE AFFAIRS": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 14,
+  "filled": 15,
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF LEGISLATIVE AFFAIRS",
-  "positions": 16
+  "positions": 17
  },
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF PARTNERSHIP AND ENGAGEMENT": {
   "agency": "HS",
@@ -2841,30 +2850,30 @@
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF PARTNERSHIP AND ENGAGEMENT",
-  "positions": 10
+  "positions": 9
  },
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF PUBLIC AFFAIRS": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 23,
+  "filled": 25,
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF PUBLIC AFFAIRS",
-  "positions": 26
+  "positions": 27
  },
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF STRATEGY, POLICY, AND PLANS": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 45,
+  "filled": 47,
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF STRATEGY, POLICY, AND PLANS",
-  "positions": 62
+  "positions": 63
  },
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 11,
+  "filled": 12,
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
@@ -2882,11 +2891,11 @@
  "DEPARTMENT OF HOMELAND SECURITY|OFFICE OF THE SECRETARY": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 45,
+  "filled": 43,
   "method": "agency",
   "node": "HS",
   "org_name": "OFFICE OF THE SECRETARY",
-  "positions": 54
+  "positions": 50
  },
  "DEPARTMENT OF HOMELAND SECURITY|PRIVACY OFFICE": {
   "agency": "HS",
@@ -2900,7 +2909,7 @@
  "DEPARTMENT OF HOMELAND SECURITY|SCIENCE AND TECHNOLOGY DIRECTORATE": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 7,
+  "filled": 8,
   "method": "normalized",
   "node": "HSFA",
   "org_name": "SCIENCE AND TECHNOLOGY DIRECTORATE",
@@ -2909,20 +2918,20 @@
  "DEPARTMENT OF HOMELAND SECURITY|TRANSPORTATION SECURITY ADMINISTRATION": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 115,
+  "filled": 117,
   "method": "normalized",
   "node": "HSBC",
   "org_name": "TRANSPORTATION SECURITY ADMINISTRATION",
-  "positions": 179
+  "positions": 178
  },
  "DEPARTMENT OF HOMELAND SECURITY|U.S. CITIZENSHIP AND IMMIGRATION SERVICES": {
   "agency": "HS",
   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
-  "filled": 27,
+  "filled": 29,
   "method": "normalized",
   "node": "HSAB",
   "org_name": "U.S. CITIZENSHIP AND IMMIGRATION SERVICES",
-  "positions": 41
+  "positions": 43
  },
  "DEPARTMENT OF HOMELAND SECURITY|U.S. CUSTOMS AND BORDER PROTECTION": {
   "agency": "HS",
@@ -2940,7 +2949,7 @@
   "method": "normalized",
   "node": "HSBB",
   "org_name": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT",
-  "positions": 56
+  "positions": 57
  },
  "DEPARTMENT OF HOMELAND SECURITY|UNITED STATES COAST GUARD": {
   "agency": "HS",
@@ -3057,16 +3066,16 @@
   "method": "normalized",
   "node": "HUKK",
   "org_name": "OFFICE OF FIELD POLICY AND MANAGEMENT",
-  "positions": 8
+  "positions": 7
  },
  "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT|OFFICE OF HOUSING": {
   "agency": "HU",
   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT",
-  "filled": 17,
+  "filled": 18,
   "method": "agency",
   "node": "HU",
   "org_name": "OFFICE OF HOUSING",
-  "positions": 26
+  "positions": 28
  },
  "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT|OFFICE OF POLICY DEVELOPMENT AND RESEARCH": {
   "agency": "HU",
@@ -3152,7 +3161,7 @@
  "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT|OFFICE OF THE SECRETARY": {
   "agency": "HU",
   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPMENT",
-  "filled": 9,
+  "filled": 10,
   "method": "agency",
   "node": "HU",
   "org_name": "OFFICE OF THE SECRETARY",
@@ -3197,16 +3206,16 @@
  "DEPARTMENT OF JUSTICE|ANTITRUST DIVISION": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 15,
+  "filled": 16,
   "method": "agency",
   "node": "DJ",
   "org_name": "ANTITRUST DIVISION",
-  "positions": 31
+  "positions": 23
  },
  "DEPARTMENT OF JUSTICE|BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 24,
+  "filled": 25,
   "method": "normalized",
   "node": "DJ15",
   "org_name": "BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES",
@@ -3224,11 +3233,11 @@
  "DEPARTMENT OF JUSTICE|CIVIL DIVISION": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 45,
+  "filled": 54,
   "method": "agency",
   "node": "DJ",
   "org_name": "CIVIL DIVISION",
-  "positions": 63
+  "positions": 75
  },
  "DEPARTMENT OF JUSTICE|CIVIL RIGHTS DIVISION": {
   "agency": "DJ",
@@ -3237,12 +3246,12 @@
   "method": "agency",
   "node": "DJ",
   "org_name": "CIVIL RIGHTS DIVISION",
-  "positions": 40
+  "positions": 41
  },
  "DEPARTMENT OF JUSTICE|COMMUNITY ORIENTED POLICING SERVICES": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 0,
+  "filled": 1,
   "method": "agency",
   "node": "DJ",
   "org_name": "COMMUNITY ORIENTED POLICING SERVICES",
@@ -3251,11 +3260,11 @@
  "DEPARTMENT OF JUSTICE|CRIMINAL DIVISION": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 23,
+  "filled": 27,
   "method": "agency",
   "node": "DJ",
   "org_name": "CRIMINAL DIVISION",
-  "positions": 35
+  "positions": 41
  },
  "DEPARTMENT OF JUSTICE|DEPARTMENT OF JUSTICE": {
   "agency": "DJ",
@@ -3273,21 +3282,21 @@
   "method": "normalized",
   "node": "DJ06",
   "org_name": "DRUG ENFORCEMENT ADMINISTRATION",
-  "positions": 7
+  "positions": 8
  },
- "DEPARTMENT OF JUSTICE|ENVIRONMENT AND NATURAL RESOURCES DIVISION": {
+ "DEPARTMENT OF JUSTICE|ENERGY AND NATURAL RESOURCES DIVISION": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
   "filled": 18,
   "method": "agency",
   "node": "DJ",
-  "org_name": "ENVIRONMENT AND NATURAL RESOURCES DIVISION",
-  "positions": 29
+  "org_name": "ENERGY AND NATURAL RESOURCES DIVISION",
+  "positions": 26
  },
  "DEPARTMENT OF JUSTICE|EXECUTIVE OFFICE FOR IMMIGRATION REVIEW": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 5,
+  "filled": 11,
   "method": "normalized",
   "node": "DJ12",
   "org_name": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW",
@@ -3300,16 +3309,16 @@
   "method": "agency",
   "node": "DJ",
   "org_name": "EXECUTIVE OFFICE FOR ORGANIZED CRIME DRUG ENFORCEMENT TASK FORCES",
-  "positions": 2
+  "positions": 1
  },
  "DEPARTMENT OF JUSTICE|EXECUTIVE OFFICE FOR UNITED STATES ATTORNEYS": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 66,
+  "filled": 68,
   "method": "agency",
   "node": "DJ",
   "org_name": "EXECUTIVE OFFICE FOR UNITED STATES ATTORNEYS",
-  "positions": 85
+  "positions": 86
  },
  "DEPARTMENT OF JUSTICE|EXECUTIVE OFFICE FOR UNITED STATES TRUSTEES": {
   "agency": "DJ",
@@ -3332,11 +3341,11 @@
  "DEPARTMENT OF JUSTICE|FEDERAL BUREAU OF PRISONS": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 15,
+  "filled": 21,
   "method": "agency",
   "node": "DJ",
   "org_name": "FEDERAL BUREAU OF PRISONS",
-  "positions": 41
+  "positions": 42
  },
  "DEPARTMENT OF JUSTICE|FOREIGN CLAIMS SETTLEMENT COMMISSION": {
   "agency": "DJ",
@@ -3350,11 +3359,11 @@
  "DEPARTMENT OF JUSTICE|JUSTICE MANAGEMENT DIVISION": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 18,
+  "filled": 19,
   "method": "agency",
   "node": "DJ",
   "org_name": "JUSTICE MANAGEMENT DIVISION",
-  "positions": 24
+  "positions": 23
  },
  "DEPARTMENT OF JUSTICE|NATIONAL FRAUD ENFORCEMENT DIVISION": {
   "agency": "DJ",
@@ -3363,7 +3372,7 @@
   "method": "agency",
   "node": "DJ",
   "org_name": "NATIONAL FRAUD ENFORCEMENT DIVISION",
-  "positions": 1
+  "positions": 16
  },
  "DEPARTMENT OF JUSTICE|NATIONAL INSTITUTE OF JUSTICE": {
   "agency": "DJ",
@@ -3383,15 +3392,6 @@
   "org_name": "NATIONAL SECURITY DIVISION",
   "positions": 20
  },
- "DEPARTMENT OF JUSTICE|OFFICE FOR ACCESS TO JUSTICE": {
-  "agency": "DJ",
-  "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 1,
-  "method": "agency",
-  "node": "DJ",
-  "org_name": "OFFICE FOR ACCESS TO JUSTICE",
-  "positions": 2
- },
  "DEPARTMENT OF JUSTICE|OFFICE OF DEPUTY ASSISTANT ATTORNEY GENERAL I": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
@@ -3399,7 +3399,7 @@
   "method": "agency",
   "node": "DJ",
   "org_name": "OFFICE OF DEPUTY ASSISTANT ATTORNEY GENERAL I",
-  "positions": 1
+  "positions": 2
  },
  "DEPARTMENT OF JUSTICE|OFFICE OF INFORMATION POLICY": {
   "agency": "DJ",
@@ -3413,7 +3413,7 @@
  "DEPARTMENT OF JUSTICE|OFFICE OF JUSTICE PROGRAMS": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 9,
+  "filled": 10,
   "method": "normalized",
   "node": "DJ07",
   "org_name": "OFFICE OF JUSTICE PROGRAMS",
@@ -3444,7 +3444,7 @@
   "method": "agency",
   "node": "DJ",
   "org_name": "OFFICE OF LEGAL POLICY",
-  "positions": 14
+  "positions": 16
  },
  "DEPARTMENT OF JUSTICE|OFFICE OF LEGISLATIVE AFFAIRS": {
   "agency": "DJ",
@@ -3489,7 +3489,7 @@
   "method": "agency",
   "node": "DJ",
   "org_name": "OFFICE OF THE ASSOCIATE ATTORNEY GENERAL",
-  "positions": 19
+  "positions": 13
  },
  "DEPARTMENT OF JUSTICE|OFFICE OF THE ATTORNEY GENERAL": {
   "agency": "DJ",
@@ -3554,15 +3554,6 @@
   "org_name": "PROFESSIONAL RESPONSIBILITY ADVISORY OFFICE",
   "positions": 1
  },
- "DEPARTMENT OF JUSTICE|TAX DIVISION": {
-  "agency": "DJ",
-  "agency_name": "DEPARTMENT OF JUSTICE",
-  "filled": 13,
-  "method": "agency",
-  "node": "DJ",
-  "org_name": "TAX DIVISION",
-  "positions": 19
- },
  "DEPARTMENT OF JUSTICE|UNITED STATES MARSHALS SERVICE": {
   "agency": "DJ",
   "agency_name": "DEPARTMENT OF JUSTICE",
@@ -3570,7 +3561,7 @@
   "method": "normalized",
   "node": "DJ08",
   "org_name": "UNITED STATES MARSHALS SERVICE",
-  "positions": 97
+  "positions": 98
  },
  "DEPARTMENT OF JUSTICE|UNITED STATES PAROLE COMMISSION": {
   "agency": "DJ",
@@ -3602,11 +3593,11 @@
  "DEPARTMENT OF LABOR|EMPLOYEE BENEFITS SECURITY ADMINISTRATION": {
   "agency": "DL",
   "agency_name": "DEPARTMENT OF LABOR",
-  "filled": 14,
+  "filled": 15,
   "method": "normalized",
   "node": "DLPW",
   "org_name": "EMPLOYEE BENEFITS SECURITY ADMINISTRATION",
-  "positions": 18
+  "positions": 19
  },
  "DEPARTMENT OF LABOR|EMPLOYMENT AND TRAINING ADMINISTRATION": {
   "agency": "DL",
@@ -3674,11 +3665,11 @@
  "DEPARTMENT OF LABOR|OFFICE OF PUBLIC AFFAIRS": {
   "agency": "DL",
   "agency_name": "DEPARTMENT OF LABOR",
-  "filled": 8,
+  "filled": 7,
   "method": "normalized",
   "node": "DLPA",
   "org_name": "OFFICE OF PUBLIC AFFAIRS",
-  "positions": 10
+  "positions": 9
  },
  "DEPARTMENT OF LABOR|OFFICE OF PUBLIC LIAISON": {
   "agency": "DL",
@@ -3845,11 +3836,11 @@
  "DEPARTMENT OF STATE|BUREAU OF CYBERSPACE AND DIGITAL POLICY": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 4,
+  "filled": 3,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF CYBERSPACE AND DIGITAL POLICY",
-  "positions": 6
+  "positions": 4
  },
  "DEPARTMENT OF STATE|BUREAU OF DEMOCRACY, HUMAN RIGHTS AND LABOR": {
   "agency": "ST",
@@ -3881,11 +3872,11 @@
  "DEPARTMENT OF STATE|BUREAU OF DISASTER AND HUMANITARIAN RESPONSE": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 1,
+  "filled": 3,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF DISASTER AND HUMANITARIAN RESPONSE",
-  "positions": 1
+  "positions": 3
  },
  "DEPARTMENT OF STATE|BUREAU OF EAST ASIAN AND PACIFIC AFFAIRS": {
   "agency": "ST",
@@ -3899,7 +3890,7 @@
  "DEPARTMENT OF STATE|BUREAU OF ECONOMIC AND BUSINESS AFFAIRS": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 4,
+  "filled": 3,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF ECONOMIC AND BUSINESS AFFAIRS",
@@ -3944,11 +3935,11 @@
  "DEPARTMENT OF STATE|BUREAU OF GLOBAL ACQUISITION": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF GLOBAL ACQUISITION",
-  "positions": 2
+  "positions": 1
  },
  "DEPARTMENT OF STATE|BUREAU OF GLOBAL HEALTH SECURITY AND DIPLOMACY": {
   "agency": "ST",
@@ -3962,7 +3953,7 @@
  "DEPARTMENT OF STATE|BUREAU OF GLOBAL PUBLIC AFFAIRS": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 8,
+  "filled": 9,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF GLOBAL PUBLIC AFFAIRS",
@@ -3984,7 +3975,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF INTELLIGENCE AND RESEARCH",
-  "positions": 10
+  "positions": 9
  },
  "DEPARTMENT OF STATE|BUREAU OF INTERNATIONAL NARCOTICS AND LAW ENFORCEMENT AFFAIRS": {
   "agency": "ST",
@@ -4020,7 +4011,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF LEGISLATIVE AFFAIRS",
-  "positions": 14
+  "positions": 13
  },
  "DEPARTMENT OF STATE|BUREAU OF MEDICAL SERVICES": {
   "agency": "ST",
@@ -4052,7 +4043,7 @@
  "DEPARTMENT OF STATE|BUREAU OF OVERSEAS BUILDINGS OPERATIONS": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 7,
+  "filled": 6,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF OVERSEAS BUILDINGS OPERATIONS",
@@ -4061,11 +4052,11 @@
  "DEPARTMENT OF STATE|BUREAU OF PERSONNEL AND TRAINING": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF PERSONNEL AND TRAINING",
-  "positions": 10
+  "positions": 8
  },
  "DEPARTMENT OF STATE|BUREAU OF POLITICAL-MILITARY AFFAIRS": {
   "agency": "ST",
@@ -4097,11 +4088,11 @@
  "DEPARTMENT OF STATE|BUREAU OF THE COMPTROLLER AND GLOBAL FINANCIAL SERVICES": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 3,
+  "filled": 4,
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF THE COMPTROLLER AND GLOBAL FINANCIAL SERVICES",
-  "positions": 8
+  "positions": 9
  },
  "DEPARTMENT OF STATE|BUREAU OF WESTERN HEMISPHERE AFFAIRS": {
   "agency": "ST",
@@ -4110,7 +4101,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "BUREAU OF WESTERN HEMISPHERE AFFAIRS",
-  "positions": 12
+  "positions": 11
  },
  "DEPARTMENT OF STATE|NATIONAL FOREIGN AFFAIRS TRAINING CENTER": {
   "agency": "ST",
@@ -4119,7 +4110,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "NATIONAL FOREIGN AFFAIRS TRAINING CENTER",
-  "positions": 9
+  "positions": 8
  },
  "DEPARTMENT OF STATE|OFFICE OF CHIEF ECONOMIST": {
   "agency": "ST",
@@ -4200,7 +4191,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF MANAGEMENT STRATEGY AND SOLUTIONS",
-  "positions": 2
+  "positions": 1
  },
  "DEPARTMENT OF STATE|OFFICE OF POLICY PLANNING": {
   "agency": "ST",
@@ -4232,7 +4223,7 @@
  "DEPARTMENT OF STATE|OFFICE OF THE CHIEF OF PROTOCOL": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 16,
+  "filled": 15,
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE CHIEF OF PROTOCOL",
@@ -4245,7 +4236,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE COUNSELOR",
-  "positions": 6
+  "positions": 7
  },
  "DEPARTMENT OF STATE|OFFICE OF THE DEPUTY SECRETARY": {
   "agency": "ST",
@@ -4272,7 +4263,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE LEGAL ADVISER",
-  "positions": 37
+  "positions": 36
  },
  "DEPARTMENT OF STATE|OFFICE OF THE PRESIDENTIAL COORDINATOR FOR THE PARTNERSHIP FOR GLOBAL INFRASTRUCTURE AND INVESTMENT": {
   "agency": "ST",
@@ -4286,7 +4277,7 @@
  "DEPARTMENT OF STATE|OFFICE OF THE SECRETARY": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 9,
+  "filled": 8,
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE SECRETARY",
@@ -4322,11 +4313,11 @@
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOR ARMS CONTROL AND INTERNATIONAL SECURITY": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 6,
+  "filled": 7,
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR ARMS CONTROL AND INTERNATIONAL SECURITY",
-  "positions": 6
+  "positions": 7
  },
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOR ECONOMIC AFFAIRS": {
   "agency": "ST",
@@ -4335,16 +4326,16 @@
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR ECONOMIC AFFAIRS",
-  "positions": 9
+  "positions": 8
  },
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOR FOREIGN ASSISTANCE, HUMANITARIAN AFFAIRS AND RELIGIOUS FREEDOM": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 1,
+  "filled": 0,
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR FOREIGN ASSISTANCE, HUMANITARIAN AFFAIRS AND RELIGIOUS FREEDOM",
-  "positions": 3
+  "positions": 2
  },
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOR MANAGEMENT": {
   "agency": "ST",
@@ -4353,16 +4344,16 @@
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR MANAGEMENT",
-  "positions": 14
+  "positions": 13
  },
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOR POLITICAL AFFAIRS": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 87,
+  "filled": 88,
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOR POLITICAL AFFAIRS",
-  "positions": 196
+  "positions": 189
  },
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOR PUBLIC DIPLOMACY AND PUBLIC AFFAIRS": {
   "agency": "ST",
@@ -4376,11 +4367,11 @@
  "DEPARTMENT OF STATE|OFFICE OF THE UNDER SECRETARY FOREIGN ASSISTANCE AND HUMANITARIAN AFFAIRS AND RELIGIOUS FREEDOM": {
   "agency": "ST",
   "agency_name": "DEPARTMENT OF STATE",
-  "filled": 9,
+  "filled": 8,
   "method": "agency",
   "node": "ST",
   "org_name": "OFFICE OF THE UNDER SECRETARY FOREIGN ASSISTANCE AND HUMANITARIAN AFFAIRS AND RELIGIOUS FREEDOM",
-  "positions": 9
+  "positions": 8
  },
  "DEPARTMENT OF STATE|OFFICE OF U.S. FOREIGN ASSISTANCE": {
   "agency": "ST",
@@ -4407,7 +4398,7 @@
   "method": "agency",
   "node": "ST",
   "org_name": "Office for the Under Secretary of Political Affairs",
-  "positions": 5
+  "positions": 4
  },
  "DEPARTMENT OF STATE|SUBNATIONAL DIPLOMACY UNIT": {
   "agency": "ST",
@@ -4673,7 +4664,7 @@
  "DEPARTMENT OF THE ARMY|OFFICE ASSISTANT SECRETARY ARMY (FINANCIAL MANAGEMENT AND COMPTROLLER)": {
   "agency": "AR",
   "agency_name": "DEPARTMENT OF THE ARMY",
-  "filled": 2,
+  "filled": 3,
   "method": "agency",
   "node": "AR",
   "org_name": "OFFICE ASSISTANT SECRETARY ARMY (FINANCIAL MANAGEMENT AND COMPTROLLER)",
@@ -4718,7 +4709,7 @@
  "DEPARTMENT OF THE ARMY|OFFICE OF LEGISLATIVE LIAISON": {
   "agency": "AR",
   "agency_name": "DEPARTMENT OF THE ARMY",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "AR",
   "org_name": "OFFICE OF LEGISLATIVE LIAISON",
@@ -4736,11 +4727,11 @@
  "DEPARTMENT OF THE ARMY|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "AR",
   "agency_name": "DEPARTMENT OF THE ARMY",
-  "filled": 9,
+  "filled": 8,
   "method": "agency",
   "node": "AR",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 10
+  "positions": 9
  },
  "DEPARTMENT OF THE ARMY|OFFICE OF THE JUDGE ADVOCATE GENERAL": {
   "agency": "AR",
@@ -4875,15 +4866,6 @@
   "method": "contains",
   "node": "ARSC",
   "org_name": "UNITED STATES ARMY SPACE AND MISSILE DEFENSE COMMAND",
-  "positions": 1
- },
- "DEPARTMENT OF THE ARMY|UNITED STATES ARMY SUSTAINMENT COMMAND": {
-  "agency": "AR",
-  "agency_name": "DEPARTMENT OF THE ARMY",
-  "filled": 0,
-  "method": "normalized",
-  "node": "ARXC",
-  "org_name": "UNITED STATES ARMY SUSTAINMENT COMMAND",
   "positions": 1
  },
  "DEPARTMENT OF THE ARMY|UNITED STATES EUROPEAN COMMAND": {
@@ -5163,7 +5145,7 @@
   "method": "normalized",
   "node": "IN15",
   "org_name": "UNITED STATES FISH AND WILDLIFE SERVICE",
-  "positions": 11
+  "positions": 12
  },
  "DEPARTMENT OF THE INTERIOR|UNITED STATES GEOLOGICAL SURVEY": {
   "agency": "IN",
@@ -5190,7 +5172,7 @@
   "method": "contains",
   "node": "NV11",
   "org_name": "CHIEF OF NAVAL OPERATIONS",
-  "positions": 11
+  "positions": 10
  },
  "DEPARTMENT OF THE NAVY|COMMANDER, NAVAL EXPEDITIONARY COMBAT COMMAND": {
   "agency": "NV",
@@ -5262,7 +5244,7 @@
   "method": "normalized",
   "node": "NV24",
   "org_name": "NAVAL SEA SYSTEMS COMMAND",
-  "positions": 5
+  "positions": 6
  },
  "DEPARTMENT OF THE NAVY|NAVAL SUPPLY SYSTEMS COMMAND HEADQUARTERS": {
   "agency": "NV",
@@ -5303,11 +5285,11 @@
  "DEPARTMENT OF THE NAVY|OFFICE OF THE ASSISTANT SECRETARY OF NAVY (FINANCIAL MANAGEMENT AND COMPTROLLER)": {
   "agency": "NV",
   "agency_name": "DEPARTMENT OF THE NAVY",
-  "filled": 3,
+  "filled": 4,
   "method": "agency",
   "node": "NV",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY OF NAVY (FINANCIAL MANAGEMENT AND COMPTROLLER)",
-  "positions": 4
+  "positions": 5
  },
  "DEPARTMENT OF THE NAVY|OFFICE OF THE ASSISTANT SECRETARY OF NAVY (MANPOWER AND RESERVE AFFAIRS)": {
   "agency": "NV",
@@ -5339,7 +5321,7 @@
  "DEPARTMENT OF THE NAVY|OFFICE OF THE COMMANDER, UNITED STATES PACIFIC FLEET": {
   "agency": "NV",
   "agency_name": "DEPARTMENT OF THE NAVY",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "NV",
   "org_name": "OFFICE OF THE COMMANDER, UNITED STATES PACIFIC FLEET",
@@ -5357,11 +5339,11 @@
  "DEPARTMENT OF THE NAVY|OFFICE OF THE SECRETARY OF THE NAVY": {
   "agency": "NV",
   "agency_name": "DEPARTMENT OF THE NAVY",
-  "filled": 12,
+  "filled": 13,
   "method": "agency",
   "node": "NV",
   "org_name": "OFFICE OF THE SECRETARY OF THE NAVY",
-  "positions": 17
+  "positions": 18
  },
  "DEPARTMENT OF THE NAVY|OFFICE OF THE UNDER SECRETARY OF THE NAVY": {
   "agency": "NV",
@@ -5384,7 +5366,7 @@
  "DEPARTMENT OF THE NAVY|UNITED STATES MARINE CORPS HEADQUARTERS OFFICE": {
   "agency": "NV",
   "agency_name": "DEPARTMENT OF THE NAVY",
-  "filled": 0,
+  "filled": 1,
   "method": "contains",
   "node": "NV27",
   "org_name": "UNITED STATES MARINE CORPS HEADQUARTERS OFFICE",
@@ -5402,7 +5384,7 @@
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY (ECONOMIC POLICY)": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 4,
+  "filled": 5,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY (ECONOMIC POLICY)",
@@ -5411,7 +5393,7 @@
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY (LEGISLATIVE AFFAIRS)": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 8,
+  "filled": 9,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY (LEGISLATIVE AFFAIRS)",
@@ -5420,25 +5402,25 @@
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY (PUBLIC AFFAIRS)": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 12,
+  "filled": 13,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY (PUBLIC AFFAIRS)",
-  "positions": 14
+  "positions": 15
  },
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY (TAX POLICY)": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 12,
+  "filled": 13,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY (TAX POLICY)",
-  "positions": 15
+  "positions": 16
  },
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY FOR FINANCIAL INSTITUTIONS": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 9,
+  "filled": 8,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY FOR FINANCIAL INSTITUTIONS",
@@ -5447,11 +5429,11 @@
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY FOR FINANCIAL MARKETS": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 7,
+  "filled": 8,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY FOR FINANCIAL MARKETS",
-  "positions": 8
+  "positions": 9
  },
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY FOR INTELLIGENCE AND ANALYSIS": {
   "agency": "TR",
@@ -5465,7 +5447,7 @@
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY FOR INTERNATIONAL FINANCE": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 9,
+  "filled": 11,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY FOR INTERNATIONAL FINANCE",
@@ -5483,29 +5465,29 @@
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY FOR MANAGEMENT": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 22,
+  "filled": 25,
   "method": "agency",
   "node": "TR",
   "org_name": "ASSISTANT SECRETARY FOR MANAGEMENT",
-  "positions": 34
+  "positions": 36
  },
  "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY FOR TERRORIST FINANCING": {
+  "agency": "TR",
+  "agency_name": "DEPARTMENT OF THE TREASURY",
+  "filled": 8,
+  "method": "agency",
+  "node": "TR",
+  "org_name": "ASSISTANT SECRETARY FOR TERRORIST FINANCING",
+  "positions": 11
+ },
+ "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY INVESTMENT SECURITY": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
   "filled": 7,
   "method": "agency",
   "node": "TR",
-  "org_name": "ASSISTANT SECRETARY FOR TERRORIST FINANCING",
-  "positions": 10
- },
- "DEPARTMENT OF THE TREASURY|ASSISTANT SECRETARY INVESTMENT SECURITY": {
-  "agency": "TR",
-  "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 6,
-  "method": "agency",
-  "node": "TR",
   "org_name": "ASSISTANT SECRETARY INVESTMENT SECURITY",
-  "positions": 7
+  "positions": 8
  },
  "DEPARTMENT OF THE TREASURY|BUREAU OF ENGRAVING AND PRINTING": {
   "agency": "TR",
@@ -5514,16 +5496,16 @@
   "method": "normalized",
   "node": "TRAI",
   "org_name": "BUREAU OF ENGRAVING AND PRINTING",
-  "positions": 8
+  "positions": 9
  },
  "DEPARTMENT OF THE TREASURY|BUREAU OF THE FISCAL SERVICE": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 16,
+  "filled": 20,
   "method": "normalized",
   "node": "TRFD",
   "org_name": "BUREAU OF THE FISCAL SERVICE",
-  "positions": 33
+  "positions": 23
  },
  "DEPARTMENT OF THE TREASURY|COMPTROLLER OF THE CURRENCY": {
   "agency": "TR",
@@ -5537,11 +5519,11 @@
  "DEPARTMENT OF THE TREASURY|DEPARTMENT OF THE TREASURY": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "TR",
   "org_name": "DEPARTMENT OF THE TREASURY",
-  "positions": 2
+  "positions": 3
  },
  "DEPARTMENT OF THE TREASURY|FINANCIAL CRIMES ENFORCEMENT NETWORK": {
   "agency": "TR",
@@ -5582,29 +5564,29 @@
  "DEPARTMENT OF THE TREASURY|INTERNAL REVENUE SERVICE": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 55,
+  "filled": 59,
   "method": "normalized",
   "node": "TR93",
   "org_name": "INTERNAL REVENUE SERVICE",
-  "positions": 67
+  "positions": 80
  },
  "DEPARTMENT OF THE TREASURY|INTERNAL REVENUE SERVICE CHIEF COUNSEL": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 8,
+  "filled": 11,
   "method": "contains",
   "node": "TR93",
   "org_name": "INTERNAL REVENUE SERVICE CHIEF COUNSEL",
-  "positions": 11
+  "positions": 14
  },
  "DEPARTMENT OF THE TREASURY|SECRETARY OF THE TREASURY": {
   "agency": "TR",
   "agency_name": "DEPARTMENT OF THE TREASURY",
-  "filled": 37,
+  "filled": 39,
   "method": "agency",
   "node": "TR",
   "org_name": "SECRETARY OF THE TREASURY",
-  "positions": 43
+  "positions": 44
  },
  "DEPARTMENT OF THE TREASURY|TREASURER OF THE UNITED STATES": {
   "agency": "TR",
@@ -5631,7 +5613,7 @@
   "method": "agency",
   "node": "TR",
   "org_name": "UNDER SECRETARY FOR DOMESTIC FINANCE",
-  "positions": 17
+  "positions": 16
  },
  "DEPARTMENT OF THE TREASURY|UNDER SECRETARY FOR INTERNATIONAL AFFAIRS": {
   "agency": "TR",
@@ -5717,11 +5699,11 @@
  "DEPARTMENT OF TRANSPORTATION|ASSISTANT SECRETARY FOR TRANSPORTATION POLICY": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 5,
+  "filled": 6,
   "method": "agency",
   "node": "TD",
   "org_name": "ASSISTANT SECRETARY FOR TRANSPORTATION POLICY",
-  "positions": 6
+  "positions": 7
  },
  "DEPARTMENT OF TRANSPORTATION|ASSISTANT SECRETARY FOR TRIBAL GOVERNMENT AFFAIRS": {
   "agency": "TD",
@@ -5816,7 +5798,7 @@
  "DEPARTMENT OF TRANSPORTATION|ASSOCIATE ADMINISTRATOR FOR INFRASTRUCTURE": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 3,
+  "filled": 4,
   "method": "agency",
   "node": "TD",
   "org_name": "ASSOCIATE ADMINISTRATOR FOR INFRASTRUCTURE",
@@ -5825,11 +5807,11 @@
  "DEPARTMENT OF TRANSPORTATION|ASSOCIATE ADMINISTRATOR FOR OPERATIONS": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 4,
+  "filled": 5,
   "method": "agency",
   "node": "TD",
   "org_name": "ASSOCIATE ADMINISTRATOR FOR OPERATIONS",
-  "positions": 4
+  "positions": 5
  },
  "DEPARTMENT OF TRANSPORTATION|ASSOCIATE ADMINISTRATOR FOR PLANNING AND ANALYTICS": {
   "agency": "TD",
@@ -5852,7 +5834,7 @@
  "DEPARTMENT OF TRANSPORTATION|ASSOCIATE ADMINISTRATOR FOR PLANNING, ENVIRONMENT AND REALTY": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 4,
+  "filled": 5,
   "method": "agency",
   "node": "TD",
   "org_name": "ASSOCIATE ADMINISTRATOR FOR PLANNING, ENVIRONMENT AND REALTY",
@@ -5901,16 +5883,16 @@
   "method": "agency",
   "node": "TD",
   "org_name": "ASSOCIATE ADMINISTRATOR FOR RAILROAD SAFETY",
-  "positions": 3
+  "positions": 2
  },
  "DEPARTMENT OF TRANSPORTATION|ASSOCIATE ADMINISTRATOR FOR REGIONAL OPERATIONS AND PROGRAM DELIVERY": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "TD",
   "org_name": "ASSOCIATE ADMINISTRATOR FOR REGIONAL OPERATIONS AND PROGRAM DELIVERY",
-  "positions": 1
+  "positions": 2
  },
  "DEPARTMENT OF TRANSPORTATION|ASSOCIATE ADMINISTRATOR FOR RESEARCH AND PROGRAM DEVELOPMENT": {
   "agency": "TD",
@@ -6045,12 +6027,12 @@
   "method": "agency",
   "node": "TD",
   "org_name": "DEPARTMENTAL OFFICE OF CIVIL RIGHTS",
-  "positions": 1
+  "positions": 2
  },
  "DEPARTMENT OF TRANSPORTATION|DEPARTMENTAL OFFICE OF HUMAN RESOURCE MANAGEMENT": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "TD",
   "org_name": "DEPARTMENTAL OFFICE OF HUMAN RESOURCE MANAGEMENT",
@@ -6194,11 +6176,11 @@
  "DEPARTMENT OF TRANSPORTATION|OFFICE OF BUDGET AND PROGRAM PERFORMANCE": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "TD",
   "org_name": "OFFICE OF BUDGET AND PROGRAM PERFORMANCE",
-  "positions": 2
+  "positions": 3
  },
  "DEPARTMENT OF TRANSPORTATION|OFFICE OF DRUG AND ALCOHOL POLICY AND COMPLIANCE": {
   "agency": "TD",
@@ -6342,7 +6324,7 @@
   "method": "agency",
   "node": "TD",
   "org_name": "OFFICE OF PUBLIC AFFAIRS AND PUBLIC ENGAGEMENT",
-  "positions": 10
+  "positions": 11
  },
  "DEPARTMENT OF TRANSPORTATION|OFFICE OF REGULATION AND LEGISLATION": {
   "agency": "TD",
@@ -6455,7 +6437,7 @@
  "DEPARTMENT OF TRANSPORTATION|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "TD",
   "agency_name": "DEPARTMENT OF TRANSPORTATION",
-  "filled": 5,
+  "filled": 6,
   "method": "agency",
   "node": "TD",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
@@ -6536,11 +6518,11 @@
  "DEPARTMENT OF VETERANS AFFAIRS|DEPARTMENT OF VETERANS AFFAIRS": {
   "agency": "VA",
   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
-  "filled": 3,
+  "filled": 2,
   "method": "agency",
   "node": "VA",
   "org_name": "DEPARTMENT OF VETERANS AFFAIRS",
-  "positions": 3
+  "positions": 2
  },
  "DEPARTMENT OF VETERANS AFFAIRS|NATIONAL CEMETERY ADMINISTRATION": {
   "agency": "VA",
@@ -6662,7 +6644,7 @@
  "DEPARTMENT OF VETERANS AFFAIRS|OFFICE OF THE ASSISTANT SECRETARY FOR HUMAN RESOURCES AND ADMINISTRATION/OPERATIONS, SECURITY, AND PREPAREDNESS": {
   "agency": "VA",
   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
-  "filled": 7,
+  "filled": 8,
   "method": "contains",
   "node": "VAAA",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY FOR HUMAN RESOURCES AND ADMINISTRATION/OPERATIONS, SECURITY, AND PREPAREDNESS",
@@ -6743,7 +6725,7 @@
  "DEPARTMENT OF VETERANS AFFAIRS|VETERANS HEALTH ADMINISTRATION": {
   "agency": "VA",
   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
-  "filled": 231,
+  "filled": 229,
   "method": "normalized",
   "node": "VATA",
   "org_name": "VETERANS HEALTH ADMINISTRATION",
@@ -6797,11 +6779,11 @@
  "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF NATIONAL SECURITY AND OPERATIONS COORDINATION": {
   "agency": "EP",
   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
-  "filled": 3,
+  "filled": 2,
   "method": "agency",
   "node": "EP",
   "org_name": "OFFICE OF NATIONAL SECURITY AND OPERATIONS COORDINATION",
-  "positions": 3
+  "positions": 2
  },
  "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF POLICY AND REGULATORY MANAGEMENT": {
   "agency": "EP",
@@ -6824,7 +6806,7 @@
  "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF THE ASSISTANT ADMINISTRATOR FOR AIR AND RADIATION": {
   "agency": "EP",
   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
-  "filled": 12,
+  "filled": 13,
   "method": "agency",
   "node": "EP",
   "org_name": "OFFICE OF THE ASSISTANT ADMINISTRATOR FOR AIR AND RADIATION",
@@ -6860,11 +6842,20 @@
  "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF THE ASSISTANT ADMINISTRATOR FOR LAND AND EMERGENCY MANAGEMENT": {
   "agency": "EP",
   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
-  "filled": 9,
+  "filled": 11,
   "method": "agency",
   "node": "EP",
   "org_name": "OFFICE OF THE ASSISTANT ADMINISTRATOR FOR LAND AND EMERGENCY MANAGEMENT",
-  "positions": 10
+  "positions": 12
+ },
+ "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF THE ASSISTANT ADMINISTRATOR FOR RESEARCH AND DEVELOPMENT": {
+  "agency": "EP",
+  "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
+  "filled": 1,
+  "method": "agency",
+  "node": "EP",
+  "org_name": "OFFICE OF THE ASSISTANT ADMINISTRATOR FOR RESEARCH AND DEVELOPMENT",
+  "positions": 1
  },
  "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF THE ASSISTANT ADMINISTRATOR FOR WATER": {
   "agency": "EP",
@@ -6887,11 +6878,11 @@
  "ENVIRONMENTAL PROTECTION AGENCY|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "EP",
   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
-  "filled": 13,
+  "filled": 14,
   "method": "agency",
   "node": "EP",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 16
+  "positions": 17
  },
  "ENVIRONMENTAL PROTECTION AGENCY|REGION 1- BOSTON, MASSACHUSETTS": {
   "agency": "EP",
@@ -7265,7 +7256,7 @@
  "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF NATIONAL DRUG CONTROL POLICY|OFFICE OF ADDICTION PREVENTION": {
   "agency": "QQ",
   "agency_name": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF NATIONAL DRUG CONTROL POLICY",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "QQ",
   "org_name": "OFFICE OF ADDICTION PREVENTION",
@@ -7355,11 +7346,11 @@
  "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE NATIONAL CYBER DIRECTOR|OFFICE OF THE NATIONAL CYBER DIRECTOR": {
   "agency": "DO",
   "agency_name": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE NATIONAL CYBER DIRECTOR",
-  "filled": 16,
+  "filled": 19,
   "method": "contains",
   "node": "DO00",
   "org_name": "OFFICE OF THE NATIONAL CYBER DIRECTOR",
-  "positions": 24
+  "positions": 25
  },
  "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE UNITED STATES TRADE REPRESENTATIVE|CHIEF AGRICULTURAL NEGOTIATOR": {
   "agency": "TN",
@@ -7436,11 +7427,11 @@
  "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE UNITED STATES TRADE REPRESENTATIVE|OFFICE OF THE UNITED STATES TRADE REPRESENTATIVE": {
   "agency": "TN",
   "agency_name": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE UNITED STATES TRADE REPRESENTATIVE",
-  "filled": 16,
+  "filled": 17,
   "method": "agency",
   "node": "TN",
   "org_name": "OFFICE OF THE UNITED STATES TRADE REPRESENTATIVE",
-  "positions": 17
+  "positions": 18
  },
  "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE UNITED STATES TRADE REPRESENTATIVE|PUBLIC AND MEDIA AFFAIRS": {
   "agency": "TN",
@@ -7454,11 +7445,11 @@
  "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE VICE PRESIDENT|OFFICE OF THE VICE PRESIDENT": {
   "agency": "EC",
   "agency_name": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE VICE PRESIDENT",
-  "filled": 11,
+  "filled": 12,
   "method": "agency",
   "node": "EC",
   "org_name": "OFFICE OF THE VICE PRESIDENT",
-  "positions": 11
+  "positions": 12
  },
  "EXECUTIVE OFFICE OF THE PRESIDENT - WHITE HOUSE OFFICE|WHITE HOUSE OFFICE": {
   "agency": "EC",
@@ -7548,7 +7539,7 @@
   "method": "agency",
   "node": "FC",
   "org_name": "OFFICE OF ENGINEERING AND TECHNOLOGY",
-  "positions": 3
+  "positions": 2
  },
  "FEDERAL COMMUNICATIONS COMMISSION|OFFICE OF GENERAL COUNSEL": {
   "agency": "FC",
@@ -7593,7 +7584,7 @@
   "method": "agency",
   "node": "FC",
   "org_name": "OFFICE OF THE MANAGING DIRECTOR",
-  "positions": 12
+  "positions": 13
  },
  "FEDERAL COMMUNICATIONS COMMISSION|OFFICE OF WORKPLACE DIVERSITY": {
   "agency": "FC",
@@ -7661,7 +7652,7 @@
  "FEDERAL ELECTION COMMISSION|FEDERAL ELECTION COMMISSION": {
   "agency": "LF",
   "agency_name": "FEDERAL ELECTION COMMISSION",
-  "filled": 16,
+  "filled": 18,
   "method": "normalized",
   "node": "LF00",
   "org_name": "FEDERAL ELECTION COMMISSION",
@@ -7674,7 +7665,7 @@
   "method": "agency",
   "node": "DN",
   "org_name": "OFFICE OF ADMINISTRATIVE LITIGATION",
-  "positions": 2
+  "positions": 1
  },
  "FEDERAL ENERGY REGULATORY COMMISSION|OFFICE OF ELECTRIC RELIABILITY": {
   "agency": "DN",
@@ -7697,11 +7688,11 @@
  "FEDERAL ENERGY REGULATORY COMMISSION|OFFICE OF ENERGY MARKET REGULATION": {
   "agency": "DN",
   "agency_name": "FEDERAL ENERGY REGULATORY COMMISSION",
-  "filled": 4,
+  "filled": 5,
   "method": "contains",
   "node": "DN00",
   "org_name": "OFFICE OF ENERGY MARKET REGULATION",
-  "positions": 6
+  "positions": 7
  },
  "FEDERAL ENERGY REGULATORY COMMISSION|OFFICE OF ENERGY PROJECTS": {
   "agency": "DN",
@@ -7926,16 +7917,16 @@
   "method": "agency",
   "node": "FT",
   "org_name": "BUREAU OF COMPETITION",
-  "positions": 15
+  "positions": 13
  },
  "FEDERAL TRADE COMMISSION|BUREAU OF CONSUMER PROTECTION": {
   "agency": "FT",
   "agency_name": "FEDERAL TRADE COMMISSION",
-  "filled": 10,
+  "filled": 12,
   "method": "agency",
   "node": "FT",
   "org_name": "BUREAU OF CONSUMER PROTECTION",
-  "positions": 15
+  "positions": 16
  },
  "FEDERAL TRADE COMMISSION|BUREAU OF ECONOMICS": {
   "agency": "FT",
@@ -7958,7 +7949,7 @@
  "FEDERAL TRADE COMMISSION|OFFICE OF CHIEF INFORMATION OFFICER": {
   "agency": "FT",
   "agency_name": "FEDERAL TRADE COMMISSION",
-  "filled": 0,
+  "filled": 1,
   "method": "agency",
   "node": "FT",
   "org_name": "OFFICE OF CHIEF INFORMATION OFFICER",
@@ -8025,7 +8016,7 @@
   "method": "agency",
   "node": "FT",
   "org_name": "OFFICE OF THE CHAIR",
-  "positions": 13
+  "positions": 12
  },
  "GENERAL SERVICES ADMINISTRATION|FEDERAL ACQUISITION SERVICE": {
   "agency": "GS",
@@ -8034,7 +8025,7 @@
   "method": "normalized",
   "node": "GS30",
   "org_name": "FEDERAL ACQUISITION SERVICE",
-  "positions": 8
+  "positions": 7
  },
  "GENERAL SERVICES ADMINISTRATION|GENERAL SERVICES ADMINISTRATION": {
   "agency": "GS",
@@ -8111,7 +8102,7 @@
  "GENERAL SERVICES ADMINISTRATION|OFFICE OF STRATEGIC COMMUNICATION": {
   "agency": "GS",
   "agency_name": "GENERAL SERVICES ADMINISTRATION",
-  "filled": 1,
+  "filled": 2,
   "method": "normalized",
   "node": "GS32",
   "org_name": "OFFICE OF STRATEGIC COMMUNICATION",
@@ -8120,7 +8111,7 @@
  "GENERAL SERVICES ADMINISTRATION|OFFICE OF THE ADMINISTRATOR": {
   "agency": "GS",
   "agency_name": "GENERAL SERVICES ADMINISTRATION",
-  "filled": 11,
+  "filled": 12,
   "method": "agency",
   "node": "GS",
   "org_name": "OFFICE OF THE ADMINISTRATOR",
@@ -8489,11 +8480,11 @@
  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION|OFFICE OF COMMUNICATIONS": {
   "agency": "NN",
   "agency_name": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
-  "filled": 5,
+  "filled": 7,
   "method": "agency",
   "node": "NN",
   "org_name": "OFFICE OF COMMUNICATIONS",
-  "positions": 6
+  "positions": 7
  },
  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION|OFFICE OF GENERAL COUNSEL": {
   "agency": "NN",
@@ -8507,11 +8498,11 @@
  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION|OFFICE OF LEGISLATIVE AND INTERGOVERNMENTAL AFFAIRS": {
   "agency": "NN",
   "agency_name": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
-  "filled": 4,
+  "filled": 5,
   "method": "agency",
   "node": "NN",
   "org_name": "OFFICE OF LEGISLATIVE AND INTERGOVERNMENTAL AFFAIRS",
-  "positions": 4
+  "positions": 5
  },
  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION|OFFICE OF SMALL BUSINESS PROGRAMS": {
   "agency": "NN",
@@ -8534,11 +8525,11 @@
  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION|OFFICE OF THE ADMINISTRATOR": {
   "agency": "NN",
   "agency_name": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
-  "filled": 9,
+  "filled": 10,
   "method": "agency",
   "node": "NN",
   "org_name": "OFFICE OF THE ADMINISTRATOR",
-  "positions": 15
+  "positions": 16
  },
  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION|OFFICE OF THE CHIEF FINANCIAL OFFICER": {
   "agency": "NN",
@@ -8718,7 +8709,7 @@
   "method": "normalized",
   "node": "AH02",
   "org_name": "NATIONAL ENDOWMENT FOR THE HUMANITIES",
-  "positions": 19
+  "positions": 18
  },
  "NATIONAL LABOR RELATIONS BOARD|DIVISION OF ADMINISTRATION": {
   "agency": "NL",
@@ -8772,7 +8763,7 @@
   "method": "agency",
   "node": "NL",
   "org_name": "OFFICE OF THE BOARD MEMBERS",
-  "positions": 19
+  "positions": 18
  },
  "NATIONAL LABOR RELATIONS BOARD|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "NL",
@@ -8781,7 +8772,7 @@
   "method": "agency",
   "node": "NL",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 7
+  "positions": 6
  },
  "NATIONAL LABOR RELATIONS BOARD|REGIONAL OFFICES": {
   "agency": "NL",
@@ -9020,11 +9011,11 @@
  "NUCLEAR REGULATORY COMMISSION|ADVISORY COMMITTEE ON REACTOR SAFEGUARDS": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "NU",
   "org_name": "ADVISORY COMMITTEE ON REACTOR SAFEGUARDS",
-  "positions": 2
+  "positions": 1
  },
  "NUCLEAR REGULATORY COMMISSION|ATOMIC SAFETY AND LICENSING BOARD PANEL": {
   "agency": "NU",
@@ -9038,7 +9029,7 @@
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF ADMINISTRATION": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 1,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF ADMINISTRATION",
@@ -9092,25 +9083,25 @@
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF ENFORCEMENT": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 2,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF ENFORCEMENT",
-  "positions": 3
+  "positions": 2
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF INTERNATIONAL PROGRAMS": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 3,
+  "filled": 2,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF INTERNATIONAL PROGRAMS",
-  "positions": 4
+  "positions": 2
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF INVESTIGATIONS": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 1,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF INVESTIGATIONS",
@@ -9119,38 +9110,38 @@
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF NUCLEAR MATERIAL SAFETY AND SAFEGUARDS": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 4,
+  "filled": 1,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF NUCLEAR MATERIAL SAFETY AND SAFEGUARDS",
-  "positions": 6
+  "positions": 3
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF NUCLEAR REACTOR REGULATION": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 7,
+  "filled": 1,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF NUCLEAR REACTOR REGULATION",
-  "positions": 11
+  "positions": 1
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF NUCLEAR REGULATORY RESEARCH": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 8,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF NUCLEAR REGULATORY RESEARCH",
-  "positions": 13
+  "positions": 4
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 2,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE",
-  "positions": 3
+  "positions": 1
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF PUBLIC AFFAIRS": {
   "agency": "NU",
@@ -9159,7 +9150,7 @@
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF PUBLIC AFFAIRS",
-  "positions": 2
+  "positions": 1
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF THE CHAIRMAN": {
   "agency": "NU",
@@ -9182,7 +9173,7 @@
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF THE CHIEF HUMAN CAPITAL OFFICER": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 2,
+  "filled": 1,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF THE CHIEF HUMAN CAPITAL OFFICER",
@@ -9195,25 +9186,25 @@
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF THE CHIEF INFORMATION OFFICER",
-  "positions": 3
+  "positions": 2
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF THE EXECUTIVE DIRECTOR FOR OPERATIONS": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 5,
+  "filled": 2,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF THE EXECUTIVE DIRECTOR FOR OPERATIONS",
-  "positions": 9
+  "positions": 7
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 12,
+  "filled": 11,
   "method": "agency",
   "node": "NU",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 17
+  "positions": 16
  },
  "NUCLEAR REGULATORY COMMISSION|OFFICE OF THE SECRETARY": {
   "agency": "NU",
@@ -9227,7 +9218,7 @@
  "NUCLEAR REGULATORY COMMISSION|REGION I": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 1,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "REGION I",
@@ -9236,7 +9227,7 @@
  "NUCLEAR REGULATORY COMMISSION|REGION II": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 1,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "REGION II",
@@ -9254,7 +9245,7 @@
  "NUCLEAR REGULATORY COMMISSION|REGION IV": {
   "agency": "NU",
   "agency_name": "NUCLEAR REGULATORY COMMISSION",
-  "filled": 1,
+  "filled": 0,
   "method": "agency",
   "node": "NU",
   "org_name": "REGION IV",
@@ -9353,7 +9344,7 @@
  "OFFICE OF PERSONNEL MANAGEMENT|OFFICE OF THE  CHIEF INFORMATION OFFICER": {
   "agency": "OM",
   "agency_name": "OFFICE OF PERSONNEL MANAGEMENT",
-  "filled": 3,
+  "filled": 2,
   "method": "agency",
   "node": "OM",
   "org_name": "OFFICE OF THE  CHIEF INFORMATION OFFICER",
@@ -9366,12 +9357,12 @@
   "method": "agency",
   "node": "OM",
   "org_name": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
-  "positions": 1
+  "positions": 2
  },
  "OFFICE OF PERSONNEL MANAGEMENT|OFFICE OF THE CHIEF HUMAN CAPITAL OFFICER": {
   "agency": "OM",
   "agency_name": "OFFICE OF PERSONNEL MANAGEMENT",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "OM",
   "org_name": "OFFICE OF THE CHIEF HUMAN CAPITAL OFFICER",
@@ -9384,7 +9375,7 @@
   "method": "agency",
   "node": "OM",
   "org_name": "OFFICE OF THE DIRECTOR",
-  "positions": 26
+  "positions": 27
  },
  "OFFICE OF PERSONNEL MANAGEMENT|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "OM",
@@ -9393,7 +9384,7 @@
   "method": "agency",
   "node": "OM",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 5
+  "positions": 6
  },
  "OFFICE OF PERSONNEL MANAGEMENT|RETIREMENT SERVICES": {
   "agency": "OM",
@@ -9465,7 +9456,7 @@
   "method": "normalized",
   "node": "DD60",
   "org_name": "DEFENSE HEALTH AGENCY",
-  "positions": 12
+  "positions": 10
  },
  "OFFICE OF THE SECRETARY OF WAR|DEFENSE INFORMATION SYSTEMS AGENCY": {
   "agency": "DD",
@@ -9538,15 +9529,6 @@
   "node": "DD16",
   "org_name": "DEPARTMENT OF WAR EDUCATION ACTIVITY",
   "positions": 6
- },
- "OFFICE OF THE SECRETARY OF WAR|DOW HUMAN RESOURCES ACTIVITY": {
-  "agency": "DD",
-  "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-  "filled": 6,
-  "method": "agency",
-  "node": "DD",
-  "org_name": "DOW HUMAN RESOURCES ACTIVITY",
-  "positions": 10
  },
  "OFFICE OF THE SECRETARY OF WAR|MISSILE DEFENSE AGENCY": {
   "agency": "DD",
@@ -9645,7 +9627,7 @@
   "method": "agency",
   "node": "DD",
   "org_name": "OFFICE OF THE ASSISTANT SECRETARY OF WAR (INTERNATIONAL SECURITY AFFAIRS)",
-  "positions": 7
+  "positions": 6
  },
  "OFFICE OF THE SECRETARY OF WAR|OFFICE OF THE ASSISTANT SECRETARY OF WAR (LEGISLATIVE AFFAIRS)": {
   "agency": "DD",
@@ -9767,7 +9749,7 @@
  "OFFICE OF THE SECRETARY OF WAR|OFFICE OF THE DIRECTOR OF COST ASSESSMENT AND PROGRAM EVALUATION": {
   "agency": "DD",
   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-  "filled": 21,
+  "filled": 20,
   "method": "agency",
   "node": "DD",
   "org_name": "OFFICE OF THE DIRECTOR OF COST ASSESSMENT AND PROGRAM EVALUATION",
@@ -9827,13 +9809,13 @@
   "org_name": "OFFICE OF THE UNDER SECRETARY OF WAR (COMPTROLLER)/CHIEF FINANCIAL OFFICER OF THE DEPARTMENT OF WAR",
   "positions": 29
  },
- "OFFICE OF THE SECRETARY OF WAR|OFFICE OF THE UNDER SECRETARY OF WAR (INTELLIGENCE &AMP; SECURITY)": {
+ "OFFICE OF THE SECRETARY OF WAR|OFFICE OF THE UNDER SECRETARY OF WAR (INTELLIGENCE AND SECURITY)": {
   "agency": "DD",
   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
   "filled": 6,
   "method": "agency",
   "node": "DD",
-  "org_name": "OFFICE OF THE UNDER SECRETARY OF WAR (INTELLIGENCE &AMP; SECURITY)",
+  "org_name": "OFFICE OF THE UNDER SECRETARY OF WAR (INTELLIGENCE AND SECURITY)",
   "positions": 6
  },
  "OFFICE OF THE SECRETARY OF WAR|OFFICE OF THE UNDER SECRETARY OF WAR (PERSONNEL AND READINESS)": {
@@ -9857,11 +9839,20 @@
  "OFFICE OF THE SECRETARY OF WAR|OFFICE OF THE UNDER SECRETARY OF WAR (RESEARCH AND ENGINEERING)": {
   "agency": "DD",
   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-  "filled": 34,
+  "filled": 33,
   "method": "agency",
   "node": "DD",
   "org_name": "OFFICE OF THE UNDER SECRETARY OF WAR (RESEARCH AND ENGINEERING)",
-  "positions": 39
+  "positions": 37
+ },
+ "OFFICE OF THE SECRETARY OF WAR|PERSONNEL READINESS MANAGEMENT ACTIVITY": {
+  "agency": "DD",
+  "agency_name": "OFFICE OF THE SECRETARY OF WAR",
+  "filled": 7,
+  "method": "agency",
+  "node": "DD",
+  "org_name": "PERSONNEL READINESS MANAGEMENT ACTIVITY",
+  "positions": 10
  },
  "OFFICE OF THE SECRETARY OF WAR|UNITED STATES COURT OF APPEALS FOR THE ARMED FORCES": {
   "agency": "DD",
@@ -9875,11 +9866,11 @@
  "OFFICE OF THE SECRETARY OF WAR|WASHINGTON HEADQUARTERS SERVICES": {
   "agency": "DD",
   "agency_name": "OFFICE OF THE SECRETARY OF WAR",
-  "filled": 14,
+  "filled": 15,
   "method": "normalized",
   "node": "DD21",
   "org_name": "WASHINGTON HEADQUARTERS SERVICES",
-  "positions": 15
+  "positions": 16
  },
  "PEACE CORPS|DEPARTMENT OF ADMINISTRATION AND MANAGEMENT": {
   "agency": "PU",
@@ -10079,6 +10070,15 @@
   "org_name": "OFFICE OF THE DIRECTOR",
   "positions": 3
  },
+ "SMALL BUSINESS ADMINISTRATION|INVESTMENT OFFICE": {
+  "agency": "SB",
+  "agency_name": "SMALL BUSINESS ADMINISTRATION",
+  "filled": 1,
+  "method": "agency",
+  "node": "SB",
+  "org_name": "INVESTMENT OFFICE",
+  "positions": 1
+ },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF ADVOCACY": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
@@ -10106,14 +10106,23 @@
   "org_name": "OFFICE OF CERTIFICATION &AMP; ELIGIBILITY",
   "positions": 1
  },
+ "SMALL BUSINESS ADMINISTRATION|OFFICE OF COMMUNICATIONS": {
+  "agency": "SB",
+  "agency_name": "SMALL BUSINESS ADMINISTRATION",
+  "filled": 1,
+  "method": "agency",
+  "node": "SB",
+  "org_name": "OFFICE OF COMMUNICATIONS",
+  "positions": 1
+ },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF COMMUNICATIONS AND PUBLIC LIAISON": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
-  "filled": 8,
+  "filled": 7,
   "method": "agency",
   "node": "SB",
   "org_name": "OFFICE OF COMMUNICATIONS AND PUBLIC LIAISON",
-  "positions": 8
+  "positions": 7
  },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF CONGRESSIONAL AND LEGISLATIVE AFFAIRS": {
   "agency": "SB",
@@ -10127,11 +10136,11 @@
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF DISASTER RECOVERY AND RESILIENCE": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
-  "filled": 6,
+  "filled": 9,
   "method": "agency",
   "node": "SB",
   "org_name": "OFFICE OF DISASTER RECOVERY AND RESILIENCE",
-  "positions": 7
+  "positions": 9
  },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF ENTREPRENEURIAL DEVELOPMENT": {
   "agency": "SB",
@@ -10145,7 +10154,7 @@
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF EQUAL EMPLOYMENT OPPORTUNITY AND CIVIL RIGHTS COMPLIANCE": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
-  "filled": 0,
+  "filled": 1,
   "method": "agency",
   "node": "SB",
   "org_name": "OFFICE OF EQUAL EMPLOYMENT OPPORTUNITY AND CIVIL RIGHTS COMPLIANCE",
@@ -10154,20 +10163,20 @@
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF FIELD OPERATIONS": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
-  "filled": 24,
+  "filled": 25,
   "method": "agency",
   "node": "SB",
   "org_name": "OFFICE OF FIELD OPERATIONS",
-  "positions": 26
+  "positions": 27
  },
- "SMALL BUSINESS ADMINISTRATION|OFFICE OF GOVERNMENT CONTRACTING AND BUSINESS DEVELOPMENT": {
+ "SMALL BUSINESS ADMINISTRATION|OFFICE OF GOVERNMENT CONTRACTING AND BUSINESS DEVELOPMENT. - CANCELLED": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
   "filled": 4,
   "method": "agency",
   "node": "SB",
-  "org_name": "OFFICE OF GOVERNMENT CONTRACTING AND BUSINESS DEVELOPMENT",
-  "positions": 8
+  "org_name": "OFFICE OF GOVERNMENT CONTRACTING AND BUSINESS DEVELOPMENT. - CANCELLED",
+  "positions": 5
  },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF HUMAN RESOURCES SOLUTIONS": {
   "agency": "SB",
@@ -10194,7 +10203,7 @@
   "method": "agency",
   "node": "SB",
   "org_name": "OFFICE OF INVESTMENT AND INNOVATION",
-  "positions": 9
+  "positions": 7
  },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF PERFORMANCE, PLANNING, AND THE CHIEF FINANCIAL OFFICER": {
   "agency": "SB",
@@ -10226,11 +10235,11 @@
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF THE GENERAL COUNSEL": {
   "agency": "SB",
   "agency_name": "SMALL BUSINESS ADMINISTRATION",
-  "filled": 7,
+  "filled": 6,
   "method": "agency",
   "node": "SB",
   "org_name": "OFFICE OF THE GENERAL COUNSEL",
-  "positions": 7
+  "positions": 8
  },
  "SMALL BUSINESS ADMINISTRATION|OFFICE OF THE OMBUDSMAN": {
   "agency": "SB",
@@ -10250,14 +10259,23 @@
   "org_name": "OFFICE OF VETERANS' BUSINESS DEVELOPMENT",
   "positions": 3
  },
+ "SOCIAL SECURITY ADMINISTRATION|CENTRAL PROCESSING": {
+  "agency": "SZ",
+  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
+  "filled": 1,
+  "method": "agency",
+  "node": "SZ",
+  "org_name": "CENTRAL PROCESSING",
+  "positions": 1
+ },
  "SOCIAL SECURITY ADMINISTRATION|CHIEF INFORMATION OFFICER": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 4,
+  "filled": 8,
   "method": "agency",
   "node": "SZ",
   "org_name": "CHIEF INFORMATION OFFICER",
-  "positions": 6
+  "positions": 8
  },
  "SOCIAL SECURITY ADMINISTRATION|COMMUNICATIONS": {
   "agency": "SZ",
@@ -10271,20 +10289,29 @@
  "SOCIAL SECURITY ADMINISTRATION|DISABILITY ADJUDICATION": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
+  "filled": 2,
   "method": "agency",
   "node": "SZ",
   "org_name": "DISABILITY ADJUDICATION",
-  "positions": 1
+  "positions": 2
  },
- "SOCIAL SECURITY ADMINISTRATION|FINANCE AND MANAGEMENT": {
+ "SOCIAL SECURITY ADMINISTRATION|FIELD OPERATIONS": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
   "filled": 1,
   "method": "agency",
   "node": "SZ",
-  "org_name": "FINANCE AND MANAGEMENT",
+  "org_name": "FIELD OPERATIONS",
   "positions": 1
+ },
+ "SOCIAL SECURITY ADMINISTRATION|FINANCE AND MANAGEMENT": {
+  "agency": "SZ",
+  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
+  "filled": 5,
+  "method": "agency",
+  "node": "SZ",
+  "org_name": "FINANCE AND MANAGEMENT",
+  "positions": 5
  },
  "SOCIAL SECURITY ADMINISTRATION|HUMAN RESOURCES": {
   "agency": "SZ",
@@ -10298,29 +10325,11 @@
  "SOCIAL SECURITY ADMINISTRATION|LAW AND POLICY": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
+  "filled": 5,
   "method": "agency",
   "node": "SZ",
   "org_name": "LAW AND POLICY",
-  "positions": 1
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF ANALYSIS, INTEGRATION, AND PERFORMANCE OVERSIGHT": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF ANALYSIS, INTEGRATION, AND PERFORMANCE OVERSIGHT",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF ANALYTICS AND IMPROVEMENTS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF ANALYTICS AND IMPROVEMENTS",
-  "positions": 1
+  "positions": 5
  },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF APPELLATE OPERATIONS": {
   "agency": "SZ",
@@ -10331,15 +10340,6 @@
   "org_name": "OFFICE OF APPELLATE OPERATIONS",
   "positions": 1
  },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF BENEFIT INFORMATION SYSTEMS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF BENEFIT INFORMATION SYSTEMS",
-  "positions": 2
- },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF CENTRAL OPERATIONS": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
@@ -10347,69 +10347,15 @@
   "method": "agency",
   "node": "SZ",
   "org_name": "OFFICE OF CENTRAL OPERATIONS",
-  "positions": 8
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF DIGITAL TRANSFORMATION": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF DIGITAL TRANSFORMATION",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF DISABILITY INFORMATION SYSTEMS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF DISABILITY INFORMATION SYSTEMS",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF DISABILITY POLICY": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 2,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF DISABILITY POLICY",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF ENTERPRISE INFORMATION SYSTEMS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF ENTERPRISE INFORMATION SYSTEMS",
-  "positions": 1
+  "positions": 7
  },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF FACILITIES AND SECURITY MANAGEMENT": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 3,
+  "filled": 1,
   "method": "agency",
   "node": "SZ",
   "org_name": "OFFICE OF FACILITIES AND SECURITY MANAGEMENT",
-  "positions": 3
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF GENERAL LAW": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF GENERAL LAW",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF HEARINGS OPERATIONS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF HEARINGS OPERATIONS",
   "positions": 1
  },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF HUMAN RESOURCES OPERATIONS": {
@@ -10419,51 +10365,6 @@
   "method": "agency",
   "node": "SZ",
   "org_name": "OFFICE OF HUMAN RESOURCES OPERATIONS",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF INCOME SECURITY PROGRAMS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF INCOME SECURITY PROGRAMS",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF INFORMATION SECURITY": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF INFORMATION SECURITY",
-  "positions": 1
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF LABOR-MANAGEMENT AND EMPLOYEE RELATIONS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF LABOR-MANAGEMENT AND EMPLOYEE RELATIONS",
-  "positions": 1
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF LEGAL OPERATIONS": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF LEGAL OPERATIONS",
-  "positions": 1
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF MANAGEMENT": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF MANAGEMENT",
   "positions": 1
  },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF MISSION SUPPORT": {
@@ -10478,11 +10379,11 @@
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF OPERATIONS": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 3,
+  "filled": 2,
   "method": "agency",
   "node": "SZ",
   "org_name": "OFFICE OF OPERATIONS",
-  "positions": 5
+  "positions": 2
  },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF PROGRAM LAW": {
   "agency": "SZ",
@@ -10493,41 +10394,14 @@
   "org_name": "OFFICE OF PROGRAM LAW",
   "positions": 1
  },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF QUALITY REVIEW": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 2,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF QUALITY REVIEW",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF SYSTEMS ARCHITECTURE": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 1,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF SYSTEMS ARCHITECTURE",
-  "positions": 2
- },
- "SOCIAL SECURITY ADMINISTRATION|OFFICE OF THE CHIEF TECHNOLOGY OFFICER": {
-  "agency": "SZ",
-  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 0,
-  "method": "agency",
-  "node": "SZ",
-  "org_name": "OFFICE OF THE CHIEF TECHNOLOGY OFFICER",
-  "positions": 1
- },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF THE COMMISSIONER": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
-  "filled": 8,
+  "filled": 7,
   "method": "agency",
   "node": "SZ",
   "org_name": "OFFICE OF THE COMMISSIONER",
-  "positions": 13
+  "positions": 8
  },
  "SOCIAL SECURITY ADMINISTRATION|OFFICE OF THE REGIONAL COMMISSIONERS": {
   "agency": "SZ",
@@ -10536,15 +10410,33 @@
   "method": "agency",
   "node": "SZ",
   "org_name": "OFFICE OF THE REGIONAL COMMISSIONERS",
-  "positions": 7
+  "positions": 6
  },
- "SOCIAL SECURITY ADMINISTRATION|SECURITY AND RESILIENCY": {
+ "SOCIAL SECURITY ADMINISTRATION|RISK AND QUALITY": {
   "agency": "SZ",
   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
   "filled": 1,
   "method": "agency",
   "node": "SZ",
+  "org_name": "RISK AND QUALITY",
+  "positions": 1
+ },
+ "SOCIAL SECURITY ADMINISTRATION|SECURITY AND RESILIENCY": {
+  "agency": "SZ",
+  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
+  "filled": 3,
+  "method": "agency",
+  "node": "SZ",
   "org_name": "SECURITY AND RESILIENCY",
+  "positions": 3
+ },
+ "SOCIAL SECURITY ADMINISTRATION|STRATEGY AND MARKETING": {
+  "agency": "SZ",
+  "agency_name": "SOCIAL SECURITY ADMINISTRATION",
+  "filled": 1,
+  "method": "agency",
+  "node": "SZ",
+  "org_name": "STRATEGY AND MARKETING",
   "positions": 1
  },
  "SURFACE TRANSPORTATION BOARD|SURFACE TRANSPORTATION BOARD": {
@@ -10797,7 +10689,7 @@
   "method": "agency",
   "node": "AM",
   "org_name": "OFFICE OF THE ADMINISTRATOR",
-  "positions": 20
+  "positions": 19
  },
  "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT|OFFICE OF THE CHIEF ECONOMIST": {
   "agency": "AM",
@@ -10838,11 +10730,11 @@
  "U.S. COMMISSION ON CIVIL RIGHTS|COMMISSIONERS": {
   "agency": "CC",
   "agency_name": "U.S. COMMISSION ON CIVIL RIGHTS",
-  "filled": 10,
+  "filled": 11,
   "method": "agency",
   "node": "CC",
   "org_name": "COMMISSIONERS",
-  "positions": 14
+  "positions": 15
  },
  "U.S. COMMISSION ON CIVIL RIGHTS|STAFF MEMBERS": {
   "agency": "CC",
@@ -10869,7 +10761,7 @@
   "method": "agency",
   "node": "SK",
   "org_name": "OFFICE OF COMMISSIONERS",
-  "positions": 10
+  "positions": 11
  },
  "U.S. CONSUMER PRODUCT SAFETY COMMISSION|OFFICE OF COMMUNICATIONS": {
   "agency": "SK",
@@ -11058,15 +10950,6 @@
   "method": "agency",
   "node": "TC",
   "org_name": "OFFICE OF COMMISSIONER SCHMIDTLEIN",
-  "positions": 1
- },
- "U.S. INTERNATIONAL TRADE COMMISSION|OFFICE OF INDUSTRY AND COMPETITIVENESS ANALYSIS": {
-  "agency": "TC",
-  "agency_name": "U.S. INTERNATIONAL TRADE COMMISSION",
-  "filled": 1,
-  "method": "agency",
-  "node": "TC",
-  "org_name": "OFFICE OF INDUSTRY AND COMPETITIVENESS ANALYSIS",
   "positions": 1
  },
  "U.S. INTERNATIONAL TRADE COMMISSION|OFFICE OF THE CHAIRMAN": {

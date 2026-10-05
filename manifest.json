@@ -805,7 +805,7 @@
    }
   }
  },
- "generated": "2026-09-13T01:54:14Z",
+ "generated": "2026-10-05T18:35:08Z",
  "measures": {
   "extract_files": 725,
   "extracts": 6983053,
@@ -814,21 +814,21 @@
   "last_period": "2026-10-01",
   "measures": 96,
   "nodes": 984,
-  "parquet_bytes": 32974080,
+  "parquet_bytes": 32976914,
   "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/measures.parquet",
-  "rows": 12220956
+  "rows": 12221616
  },
  "money": {
   "fileb_periods": [
-   "FY2026Q3",
+   "FY2026Q4",
    "FY2025Q4",
-   "FY2025Q3"
+   "FY2025Q4"
   ],
   "fy": 2026,
   "groups": 118,
   "omb_table": "AP FY2027 Table 5-1",
-  "period": "FY2026Q3",
-  "quarter": 3
+  "period": "FY2026Q4",
+  "quarter": 4
  },
  "releases": {
   "repo": "rhoekstr/federal-workforce-explorer"
