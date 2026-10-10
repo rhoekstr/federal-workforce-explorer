@@ -266,6 +266,20 @@
     "sha256": "12b96d9780668db00542d697fd75ac8475affab788c43b3ee57bedf1526eca51",
     "source_file": "accessions_202607_1.txt",
     "version": 1
+   },
+   "202608": {
+    "file": "fact_accessions_202608.parquet",
+    "incomplete_note": null,
+    "n": 20562,
+    "parquet_bytes": 138999,
+    "publish_date": "2026-10-01T23:48:57.365Z",
+    "release_sha256": "9b2b4ffcf7b0fae4d30a6b1cede74340711a9ee5607260fb1afe2e6e1dfd9e12",
+    "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202608/fact_accessions_202608.parquet",
+    "rows_fact": 16367,
+    "rows_source": 20562,
+    "sha256": "9b2b4ffcf7b0fae4d30a6b1cede74340711a9ee5607260fb1afe2e6e1dfd9e12",
+    "source_file": "accessions_202608_1.parquet",
+    "version": 1
    }
   },
   "employment": {
@@ -533,6 +547,20 @@
     "rows_source": 2020230,
     "sha256": "ebc5b7b6a3b5fc66fcd4b08c1f64c2c11850d4c223576e2856d8adab6530c42b",
     "source_file": "employment_202607_1.parquet",
+    "version": 1
+   },
+   "202608": {
+    "file": "fact_employment_202608.parquet",
+    "incomplete_note": null,
+    "n": 2024832,
+    "parquet_bytes": 8698691,
+    "publish_date": "2026-10-04T03:54:31.484Z",
+    "release_sha256": "c77f962c3006d36ad34b484ae6761f9c200616bd626054a76e47607e2979d82a",
+    "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202608/fact_employment_202608.parquet",
+    "rows_fact": 1439359,
+    "rows_source": 2024832,
+    "sha256": "c77f962c3006d36ad34b484ae6761f9c200616bd626054a76e47607e2979d82a",
+    "source_file": "employment_202608_1.parquet",
     "version": 1
    }
   },
@@ -802,21 +830,35 @@
     "sha256": "e86adc85167a5d8c74391ef17f0915a7909f8f2c98ba43351cc57067fe4c3bce",
     "source_file": "separations_202607_1.txt",
     "version": 1
+   },
+   "202608": {
+    "file": "fact_separations_202608.parquet",
+    "incomplete_note": null,
+    "n": 12270,
+    "parquet_bytes": 136960,
+    "publish_date": "2026-10-02T00:46:41.434Z",
+    "release_sha256": "b151084d2885dfd9e6eaade401d2433108181881d6089f9324a9f7c67cff4148",
+    "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/data-202608/fact_separations_202608.parquet",
+    "rows_fact": 11419,
+    "rows_source": 12270,
+    "sha256": "b151084d2885dfd9e6eaade401d2433108181881d6089f9324a9f7c67cff4148",
+    "source_file": "separations_202608_1.parquet",
+    "version": 1
    }
   }
  },
- "generated": "2026-10-05T18:35:08Z",
+ "generated": "2026-10-10T14:39:21Z",
  "measures": {
-  "extract_files": 725,
-  "extracts": 6983053,
+  "extract_files": 785,
+  "extracts": 7651378,
   "extracts_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/extracts.tar.gz",
   "first_period": "2003-10-01",
   "last_period": "2026-10-01",
   "measures": 96,
   "nodes": 984,
-  "parquet_bytes": 32976914,
+  "parquet_bytes": 32840579,
   "release_url": "https://github.com/rhoekstr/federal-workforce-explorer/releases/download/measures/measures.parquet",
-  "rows": 12221616
+  "rows": 12276007
  },
  "money": {
   "fileb_periods": [
